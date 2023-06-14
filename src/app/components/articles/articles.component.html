@@ -1,1 +1,23 @@
-<p>articles works!</p>
+<div class="article">
+    <h2>{{ article.title }}</h2>
+    <p class="date">Publication Date: {{ article.publication_date | date }}</p>
+    <p class="date">Modification Date: {{ article.modification_date | date }}</p>
+    <p class="lead">{{ article.lead }}</p>
+    <img class="publication-image" src="{{ article.publication_image }}" alt="Publication Image">
+    <div class="author">
+      <h3>Author</h3>
+      <p>Name: {{ article.author.firstname }} {{ article.author.lastname }}</p>
+      <p>ID: {{ article.author.id }}</p>
+    </div>
+    <div class="categories">
+      <h3>Categories</h3>
+      <ul>
+        <li *ngFor="let category of article.categories">{{ category.name }}</li>
+      </ul>
+    </div>
+    <div class="content">
+      <h3>Content</h3>
+      <p>{{ article.content }}</p>
+    </div>
+  </div>
+  
