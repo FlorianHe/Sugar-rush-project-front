@@ -1,3 +1,5 @@
+@use "/src/styles.scss" as *;
+
 header {
     width: 99%;
     height: 90px;
@@ -5,7 +7,8 @@ header {
     border-image-slice: fill;
     display: flex;
     justify-content: space-around;
-
+    border-bottom-style: groove;
+    border-bottom-color: $secondary-text-color;
 }
 
 .logo {
@@ -17,11 +20,6 @@ header {
     padding-left: 4%;
 }
 
-.divnav {
-    border: #FECEE9;
-    border-style: solid;
-    border-radius: 4%;
-}
 
 nav {
     align-self: center;
@@ -30,7 +28,7 @@ nav {
 ul {
     //background-color: #f1e9ea;
     background: linear-gradient(#f1e9ea, rgb(243, 241, 241));
-    border-color: #410B13;
+    //border-color: #410B13;
 
 }
 
@@ -44,7 +42,7 @@ a {
     gap: 13px;
     height: 50px;
     text-decoration: none;
-    color: #410B13;
+    color: $secondary-text-color;
 
 
 }
@@ -61,30 +59,37 @@ nav ul li :hover {
     color: hsl(198, 94%, 37%);
 }
 
+//gastronomie
 #miam {
-    color: #F1BE02;
+    color: $category-food-color;
 }
 
+//sante
 #carie {
-    color: #8FC33E;
+    color: $category-health-color;
 }
 
+//economie
 #money {
-    color: #E41E26;
+    color: $category-economy-color;
 }
 
+//sport
 #sport {
-    color: #1474BB;
+    color: $category-sport-color;
 }
 
+//loisir
 #fun {
-    color: #A72D89;
+    color: $category-fun-color;
 }
 
 .categ {
     background-image: image-set("/assets/images/ti_sucre.png");
     background-repeat: no-repeat;
 }
+
+
 
 @keyframes categ {
     from {
@@ -106,6 +111,7 @@ nav ul li :hover {
 }
 
 #login {
-    //background-image: image-set("/assets/images/user.png");
-    //color: crimson;
+    background-image: image-set("/assets/images/connexion.png");
+    background-repeat: no-repeat;
+    color: transparent;
 }
