@@ -1,15 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Mermaid-babies";
+  src: url("./assets/fonts/MermaidBabies.woff2");
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "Glam-queen";
+  src: url("./assets/fonts/Glam_Queen.ttf");
+}
 
 $main-background-color: #FFF;
 $secondary-background-color: #EEEEEE;
 
 $main-text-color: #000;
 $secondary-text-color: #410B13;
+$fairy-color: #FECEE9;
 
-$category-un-color: #5D2B7D; 
+$category-un-color: #5D2B7D;
 $category-fun-color: #A72D89; // Catégorie Fun : a trouvé
 $category-sport-color: #1474BB; // Catégorie Sport : a trouvé
 $category-health-color: #8FC33E; // Catégorie Santé : carie
@@ -19,3 +26,14 @@ $category-economy-color: #E41E26; // Catégorie Economie : ça coute bonbon
 $main-border: 0.5rem;
 $small-border: 1rem;
 $big-border: 2rem;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $secondary-background-color;
+}

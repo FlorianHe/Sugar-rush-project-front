@@ -1,4 +1,5 @@
 <section id="categories">
+  <!-- Version with Categories and Articles data
   <div class="category" [id]="category.name + 'Category'" *ngFor="let category of categories">
     <div [id]="category.name + 'Title'">
       <h2>{{category.name}}</h2>
@@ -7,6 +8,19 @@
 
     <div [id]="category.name + '3Articles'">
 
+    </div>
+  </div> -->
+  <div class="categories-category" *ngFor="let category of categories">
+    <a class="categories-title" routerLink="/categories/{{category.id}}">
+      <h2 [id]="category.name + '-title'">{{category.name}}</h2>
+      <a routerLink="/categories/{{category.id}}">Voir plus</a>
+      <p><strong>></strong></p>
+    </a>
+
+    <div class="categories-3articles">
+      <article></article>
+      <article></article>
+      <article></article>
     </div>
   </div>
 </section>

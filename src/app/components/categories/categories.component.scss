@@ -1,41 +1,69 @@
 @use "/src/styles.scss" as *;
 
 #categories {
+  margin: $big-border;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  .category {}
+  .categories-category {
+    .categories-title {
+      display: flex;
+      align-items: center;
+      background-color: $main-background-color;
+      padding: $small-border;
+      justify-content: space-between;
+      text-decoration: none;
 
-  #FoodCategory {}
+      h2 {
+        font-family: "Glam-queen";
+        font-size: 3em;
+        margin: 0;
+        padding-left: $small-border;
+      }
 
-  #FoodTitle {
-    display: flex;
-    align-items: center;
-    background-color: $main-background-color;
-    // color: $secondary-text-color;
+      p {
+        color: $secondary-text-color;
+        font-size: 2em;
+        padding: $small-border;
+        margin: 0;
+      }
+
+      a {
+
+        color: $secondary-text-color;
+        font-size: $small-border;
+        display: none;
+      }
+
+      a:hover {
+        color: $fairy-color;
+      }
+    }
   }
 
-  #Food3Articles {}
+  .categories-3articles {
+    display: none;
+  }
 
-  #HealthCategory {}
+  #Food-title {
+    color: $category-food-color;
+  }
 
-  #HealthTitle {}
+  #Health-title {
+    color: $category-health-color;
+  }
 
-  #Health3Articles {}
+  #Economy-title {
+    color: $category-economy-color;
+  }
 
-  #EconomyCategory {}
+  #Sport-title {
+    color: $category-sport-color;
+  }
 
-  #EconomyTitle {}
-
-  #Economy3Articles {}
-
-  #SportCategory {}
-
-  #SportTitle {}
-
-  #Sport3Articles {}
-
-  #FunCategory {}
-
-  #FunTitle {}
-
-  #Fun3Articles {}
+  #Fun-title {
+    color: $category-fun-color;
+  }
 }
