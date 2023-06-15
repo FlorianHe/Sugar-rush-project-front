@@ -1,0 +1,12 @@
+<section id="categories">
+  <div class="category" [id]="category.name + 'Category'" *ngFor="let category of categories">
+    <div [id]="category.name + 'Title'">
+      <h2>{{category.name}}</h2>
+      <a routerLink="/categories/{{category.id}}">Voir plus</a>
+    </div>
+
+    <div [id]="category.name + '3Articles'">
+
+    </div>
+  </div>
+</section>

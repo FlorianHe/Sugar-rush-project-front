@@ -1,0 +1,41 @@
+@use "/src/styles.scss" as *;
+
+#categories {
+
+  .category {}
+
+  #FoodCategory {}
+
+  #FoodTitle {
+    display: flex;
+    align-items: center;
+    background-color: $main-background-color;
+    // color: $secondary-text-color;
+  }
+
+  #Food3Articles {}
+
+  #HealthCategory {}
+
+  #HealthTitle {}
+
+  #Health3Articles {}
+
+  #EconomyCategory {}
+
+  #EconomyTitle {}
+
+  #Economy3Articles {}
+
+  #SportCategory {}
+
+  #SportTitle {}
+
+  #Sport3Articles {}
+
+  #FunCategory {}
+
+  #FunTitle {}
+
+  #Fun3Articles {}
+}
