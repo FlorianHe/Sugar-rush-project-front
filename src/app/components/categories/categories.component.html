@@ -11,9 +11,9 @@
     </div>
   </div> -->
   <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-title" routerLink="/categories/{{category.id}}">
+    <a class="categories-header" [id]="category.name + '-header'" routerLink="/categories/{{category.id}}">
       <h2 [id]="category.name + '-title'">{{category.name}}</h2>
-      <a routerLink="/categories/{{category.id}}">Voir plus</a>
+      <p routerLink="/categories/{{category.id}}">Voir plus</p>
       <p><strong>></strong></p>
     </a>
 
