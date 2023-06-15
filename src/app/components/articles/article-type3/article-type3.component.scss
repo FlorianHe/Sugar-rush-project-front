@@ -1,0 +1,18 @@
+@use "/src/styles.scss" as *;
+img {
+    width:100%;
+}
+
+.description {
+    background-color:$category-health-color;
+    box-sizing: border-box;
+    height:50px;
+    bottom:54px;
+    position:relative;
+    object-position: left bottom;
+    padding-left:.5rem;
+}
+
+h6,h5 {
+    margin:0px;
+}
