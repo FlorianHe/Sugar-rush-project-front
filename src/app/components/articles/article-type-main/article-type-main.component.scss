@@ -1,6 +1,6 @@
 @use "/src/styles.scss" as *;
 
-.article-type1 {
+.main-type1 {
     //position:relative;
     height:700px;
 
@@ -21,14 +21,19 @@
     .description {
         margin-left:1rem;
         h2 {
-            color:$category-health-color;
+            color:#FECEE9;
             font-weight: normal;
         }
     
-        h4,h6 {
-            color:#FECEE9;
-            font-weight: normal;
+        h4 {
+            color:$category-health-color;
+            font-size:1.7rem;
+            margin-bottom:1rem;
             
+        }
+        time {
+            color:#FECEE9;
+            font-size: 1rem;
         }
     }
 

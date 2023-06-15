@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticleType2Component } from './article-type2.component';
+import { ArticleType1Component } from './article-type-main.component';
 
-describe('ArticleType2Component', () => {
-  let component: ArticleType2Component;
-  let fixture: ComponentFixture<ArticleType2Component>;
+describe('ArticleType1Component', () => {
+  let component: ArticleType1Component;
+  let fixture: ComponentFixture<ArticleType1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArticleType2Component ]
+      declarations: [ ArticleType1Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ArticleType2Component);
+    fixture = TestBed.createComponent(ArticleType1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

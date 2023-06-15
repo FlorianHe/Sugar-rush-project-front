@@ -5,18 +5,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ArticleTypeMainComponent } from './components/articles/article-type-main/article-type-main.component';
+import { ArticleTypeSideComponent } from './components/articles/article-type-side/article-type-side.component';
+import { ArticleTypeSmallComponent } from './components/articles/article-type-small/article-type-small.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoDirective } from './directives/demo.directive';
 import { DemoPageComponent } from './pages/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
-import { ArticleType1Component } from './components/articles/article-type1/article-type1.component';
-import { ArticleType2Component } from './components/articles/article-type2/article-type2.component';
-import { ArticleType3Component } from './components/articles/article-type3/article-type3.component';
 
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleType1Component, ArticleType2Component, ArticleType3Component],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

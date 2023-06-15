@@ -1,9 +1,9 @@
 @use "/src/styles.scss" as *;
-.side-band {
+.main-type2 {
     background-color: $category-health-color;
     width:400px;
     
-    .article-type2 {
+    .side-band {
         display:flex;
         flex-direction:row;
         width:400px;
@@ -17,11 +17,16 @@
         .description {
             margin-left:1rem;
             
-            h5 {
+            h4 {
                 color:$category-health-color;
                 font-weight: normal;
                 margin-top:.5rem;
                 margin-bottom: .5rem;
+            }
+
+            h3{
+                font-weight: normal;
+                font-size:1rem;
             }
         }
     
