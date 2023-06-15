@@ -6,66 +6,85 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .article {
     background-color: $main-background-color;
-    padding: 20px;
+    padding-left: $big-border; 
+    padding-right: $big-border;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: $small-border;
+
+    h2 {
+        font-size: 24px;
+        color: $main-text-color;
+        margin-bottom: $small-border;
+        ;
+    }
+
+    .categories {
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .categories ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories li {
+        margin-right: 10px;
+        font-size: 16px;
+        color: $category-food-color;
+    }
+
+    .lead {
+        margin-top: 10px;
+        font-size: 14px;
+        color: $main-text-color;
+    }
+
+    .author {
+        margin-top: 10px;
+        font-size: 14px;
+        color: $main-text-color;
+    }
 }
 
-.article h2 {
-    font-size: 24px;
-    color: $main-text-color;
-    margin-bottom: 1rem;
+.publication-image {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
 }
 
-.article .categories {
-    display: flex;
-    align-items: center;
-}
+//.article .categories .category-food {
+//   color: $category-food-color;
+// }
+//.article .categories .category-health {
+//   color: $category-health-color;
+// }
 
-.article .categories ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-.article .categories li {
-    margin-right: 10px;
-    font-size: 16px;
-    color: $category-food-color;
-}
 
-.article .lead {
-    margin-top: 10px;
-    font-size: 14px;
-    color: $main-text-color;
-}
-
-.article .author {
-    margin-top: 10px;
-    font-size: 14px;
-    color: $main-text-color;
-}
-
-.article .publication-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-}
 
 @media screen and (min-width: 1036px) {
 
     .article {
         width: 100%;
-        max-width: 1036px;
-        margin: 0 auto;
+        padding-left: $big-border; 
+        padding-right: $big-border;
+
+
+    }
+
+    .publication-image {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: cover;
+        padding-left: $big-border; 
+        padding-right: $big-border;
     }
 }

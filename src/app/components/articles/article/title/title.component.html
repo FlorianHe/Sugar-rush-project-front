@@ -1,14 +1,17 @@
-<div class="article">
-    <h2>{{ article.title }}</h2>
-    <div class="categories">
-        <ul>
-            <li *ngFor="let category of article.categories">{{ category.name }}</li>
-        </ul>
-        <p class="lead">{{ article.lead }}</p>
-    </div>
-    <div class="author">
-        <p>{{ article.author.firstname }} {{ article.author.lastname }}
-            Published: {{ article.publication_date | date }} Updated: {{ article.modification_date | date }}
-        </p>
+<section>
+    <div class="article">
+        <h2>{{ article.title }}</h2>
+        <div class="categories">
+            <ul>
+                <li *ngFor="let category of article.categories" [ngClass]="category.name">{{ category.name }}</li>
+            </ul>
+            <p class="lead">{{ article.lead }}</p>
+        </div>
+        <div class="author">
+            <p>{{ article.author.firstname }} {{ article.author.lastname }}
+                Published: {{ article.publication_date | date }} | Updated: {{ article.modification_date | date }}
+            </p>
+        </div>
     </div>
     <img class="publication-image" src="{{ article.publication_image }}" alt="Publication Image">
+</section>

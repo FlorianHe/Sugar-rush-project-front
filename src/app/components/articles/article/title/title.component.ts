@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Article } from 'src/app/models/article';
 
 @Component({
-  selector: 'app-title',
+  selector: 'app-article-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
