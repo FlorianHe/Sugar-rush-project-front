@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-other',
+  selector: 'app-article-other',
   templateUrl: './other.component.html',
   styleUrls: ['./other.component.scss']
 })
