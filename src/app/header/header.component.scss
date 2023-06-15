@@ -1,0 +1,111 @@
+header {
+    width: 99%;
+    height: 90px;
+
+    border-image-slice: fill;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.logo {
+    background-image: image-set("/assets/images/sugar_rush.png");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 80px;
+    padding-top: 6%;
+    padding-left: 4%;
+}
+
+.divnav {
+    border: #FECEE9;
+    border-style: solid;
+    border-radius: 4%;
+}
+
+nav {
+    align-self: center;
+}
+
+ul {
+    //background-color: #f1e9ea;
+    background: linear-gradient(#f1e9ea, rgb(243, 241, 241));
+    border-color: #410B13;
+
+}
+
+ul,
+li,
+a {
+    box-sizing: border border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 13px;
+    height: 50px;
+    text-decoration: none;
+    color: #410B13;
+
+
+}
+
+
+
+nav ul li .active {
+    background-color: #FECEE9;
+    color: hsl(198, 94%, 37%);
+}
+
+nav ul li :hover {
+    background-color: #FECEE9;
+    color: hsl(198, 94%, 37%);
+}
+
+#miam {
+    color: #F1BE02;
+}
+
+#carie {
+    color: #8FC33E;
+}
+
+#money {
+    color: #E41E26;
+}
+
+#sport {
+    color: #1474BB;
+}
+
+#fun {
+    color: #A72D89;
+}
+
+.categ {
+    background-image: image-set("/assets/images/ti_sucre.png");
+    background-repeat: no-repeat;
+}
+
+@keyframes categ {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.categ :hover {
+
+    background-repeat: round;
+    background-image: linear-gradient("/assets/images/ti_sucre.png");
+    text-decoration: blink;
+    animation: alternate-reverse;
+}
+
+#login {
+    //background-image: image-set("/assets/images/user.png");
+    //color: crimson;
+}
