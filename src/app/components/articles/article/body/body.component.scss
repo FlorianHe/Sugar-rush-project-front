@@ -1,16 +1,14 @@
 @use "/src/styles.scss" as *;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+section {
+  background-color: $main-background-color;
+  color: $main-text-color;
+  padding-left: $big-border; 
+  padding-right: $big-border;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-.div {
-    background-color: $main-background-color;
-    color: $main-text-color;
-    padding: $big-border;
-  }
 
   h2 {
     font-size: 1.5rem;
@@ -20,13 +18,8 @@
 
   p {
     line-height: 1.5;
-    margin-bottom: $main-border;
-  }
-  
-  ol, ul {
-    margin-left: $big-border;
   }
   
   li {
-    margin-bottom: $main-border;
+    margin-bottom: $small-border;
   }
