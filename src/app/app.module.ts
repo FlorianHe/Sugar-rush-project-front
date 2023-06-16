@@ -11,12 +11,15 @@ import { ArticleTypeSmallComponent } from './components/articles/article-type-sm
 import { ArticlesComponent } from './components/articles/articles.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoDirective } from './directives/demo.directive';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+
 import { DemoPageComponent } from './pages/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
