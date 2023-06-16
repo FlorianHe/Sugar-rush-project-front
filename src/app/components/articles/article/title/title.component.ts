@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from 'src/app/models/article';
+import { Article } from 'src/app/article';
 
 @Component({
   selector: 'app-article-title',

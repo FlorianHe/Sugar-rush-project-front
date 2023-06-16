@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Article } from 'src/app/models/article';
 
 @Component({
   selector: 'app-articles',
@@ -7,6 +6,5 @@ import { Article } from 'src/app/models/article';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent {
-  article!: Article;
 
 }
