@@ -16,6 +16,11 @@ const routes: Routes = [
     component: ArticlesComponent,
     title: "Sugar Rush | L'actu Sucré "
   },
+  /*{
+    path: APP_ROUTES.rArticles + ':articleId',
+    component: ArticleComponent,
+    title: 'Sugar Rush : News',
+  },*/ // A décommenté après merge
   {
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,
