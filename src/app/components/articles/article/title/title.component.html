@@ -1,6 +1,6 @@
 <section class="title">
     <div class="article">
-        <h2>{{ article.title }}</h2>
+        <h1>{{ article.title }}</h1>
         <div class="categories">
             <ul>
                 <li *ngFor="let category of article.categories" [ngClass]="category.name">{{ category.name }}</li>
