@@ -11,6 +11,12 @@ import { ArticleTypeSmallComponent } from './components/articles/article-type-sm
 import { ArticlesComponent } from './components/articles/articles.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoDirective } from './directives/demo.directive';
+
+import { ArticleComponent } from './components/articles/article/article.component';
+import { TitleComponent } from './components/articles/article/title/title.component';
+import { BodyComponent } from './components/articles/article/body/body.component';
+import { OtherComponent } from './components/articles/article/other/other.component';
+
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
@@ -19,7 +25,7 @@ import { DemoPipe } from './pipes/demo.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
