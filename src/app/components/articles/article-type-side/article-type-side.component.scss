@@ -1,0 +1,37 @@
+@use "/src/styles.scss" as *;
+.main-type2 {
+    background-color: $category-health-color;
+    width:400px;
+    
+    .side-band {
+        display:flex;
+        flex-direction:row;
+        width:400px;
+        margin-left: 0.5rem;
+        background-color: white;
+
+        img {
+            height:164px;
+        }
+    
+        .description {
+            margin-left:1rem;
+            
+            h4 {
+                color:$category-health-color;
+                font-weight: normal;
+                margin-top:.5rem;
+                margin-bottom: .5rem;
+            }
+
+            h3{
+                font-weight: normal;
+                font-size:1rem;
+            }
+        }
+    
+    }
+
+
+
+}

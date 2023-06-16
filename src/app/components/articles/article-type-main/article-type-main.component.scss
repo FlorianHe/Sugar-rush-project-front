@@ -1,0 +1,43 @@
+@use "/src/styles.scss" as *;
+
+.main-type1 {
+    //position:relative;
+    height:700px;
+
+
+    img {
+        width:1050px;
+    }
+
+    .blur {
+    position: relative;
+    width: 1050px;
+    height: 150px;
+    left: 0px;
+    bottom: 170px;
+
+    backdrop-filter: blur(9.5px);
+
+    .description {
+        margin-left:1rem;
+        h2 {
+            color:#FECEE9;
+            font-weight: normal;
+        }
+    
+        h4 {
+            color:$category-health-color;
+            font-size:1.7rem;
+            margin-bottom:1rem;
+            
+        }
+        time {
+            color:#FECEE9;
+            font-size: 1rem;
+        }
+    }
+
+    }
+  
+ 
+}
