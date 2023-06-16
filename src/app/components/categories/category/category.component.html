@@ -3,7 +3,7 @@
     <h2 [id]="categories[categoryID].name + '-title'">{{categories[categoryID].name}}</h2>
     <p><strong>V</strong></p>
   </div>
-  <div *ngFor="let i of Arr(20).fill(1)" class="category-articles">
-    <article class="category-article"></article>
+  <div class="category-articles">
+    <article *ngFor="let i of Arr(20).fill(1)" class="category-article"></article>
   </div>
 </section>

@@ -57,11 +57,37 @@
 
     .category-article {
       width: 95%;
-      height: 300px;
+      height: 200px;
       border: $fairy-color 1px solid;
+      box-shadow: 10px 10px 10px $fairy-color;
+      transition: 0.3s ease-in-out;
 
       &:hover {
         border: $secondary-text-color 1px solid;
+        box-shadow: 10px 10px 10px $secondary-text-color;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  #category-main {
+    .category-header {
+      h2 {
+        padding-left: 5%;
+      }
+    }
+
+    .category-articles {
+      width: 100%;
+      margin-top: $big-border;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: $main-border;
+
+      .category-article {
+        width: 95%;
+        height: 300px;
       }
     }
   }
