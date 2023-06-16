@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
-import { DemoPageComponent } from './pages/demo/demo.component';
-import { ArticleComponent } from './components/articles/article/article.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 const routes: Routes = [
   { 
     
-    path: APP_ROUTES.rIndex, 
-    redirectTo: APP_ROUTES.rArticles,
+    path: APP_ROUTES.rArticles, 
+    redirectTo: APP_ROUTES.rIndex,
     pathMatch: 'full'
   },
   {
-    path: APP_ROUTES.rArticles,
+    path: APP_ROUTES.rIndex,
     component: ArticlesComponent,
     title: "Sugar Rush | L'actu Sucré "
   },
