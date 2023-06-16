@@ -19,7 +19,11 @@
   p {
     line-height: 1.5;
   }
-  
+  ol {
+    list-style: none;
+  }
+
   li {
+    margin-top: $small-border;
     margin-bottom: $small-border;
   }
