@@ -1,9 +1,78 @@
 @use "/src/styles.scss" as *;
 
-footer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    background-color: #FECEE9;
-    color: $secondary-text-color;
+@media screen and (min-width: 800px) {
+    footer {
+        background-color: #FECEE9;
+        height: 20%;
+    }
+
+    #marquee {
+
+
+        background-color: #FECEE9;
+        color: $secondary-text-color;
+        text-align: center;
+        visibility: visible;
+    }
+
+    #smallscr {
+        visibility: hidden;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    footer {
+        background-color: #FECEE9;
+    }
+
+    #marquee {
+        visibility: hidden;
+    }
+
+    nav {
+        align-self: center;
+    }
+
+    a {
+        height: 3rem;
+    }
+
+    ul,
+    li,
+    a {
+        box-sizing: border border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+        height: max-content;
+        text-decoration: none;
+        color: $secondary-text-color;
+    }
+
+    #smallscr a {
+        background-color: #FECEE9;
+        //box-sizing: border border-box;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        height: 4rem;
+    }
+
+    #accueil {
+        background-image: image-set("/assets/images/home.png");
+        background-repeat: no-repeat;
+        color: transparent;
+    }
+
+    #login {
+        background-image: image-set("/assets/images/user.png");
+        background-repeat: no-repeat;
+        color: transparent;
+    }
+
 }
