@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
+import { DemoPageComponent } from './pages/demo/demo.component';
+import { ArticleComponent } from './components/articles/article/article.component';
 
 const routes: Routes = [
   { 
@@ -16,11 +18,11 @@ const routes: Routes = [
     component: ArticlesComponent,
     title: "Sugar Rush | L'actu Sucré "
   },
-  /*{
-    path: APP_ROUTES.rArticles + ':articleId',
+  {
+    path: APP_ROUTES.rArticles + '/:articleSlug',
     component: ArticleComponent,
     title: 'Sugar Rush : News',
-  },*/ // A décommenté après merge
+  },// A décommenté après merge
   {
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,

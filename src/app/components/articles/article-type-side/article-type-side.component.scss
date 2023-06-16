@@ -1,17 +1,15 @@
-@use "/src/styles.scss" as *;
+@use "/src/_import.scss" as *;
 .main-type2 {
     background-color: $category-health-color;
-    width:400px;
     
     .side-band {
         display:flex;
         flex-direction:row;
-        width:400px;
         margin-left: 0.5rem;
         background-color: white;
 
         img {
-            height:164px;
+            height:78px;
         }
     
         .description {
@@ -20,13 +18,15 @@
             h4 {
                 color:$category-health-color;
                 font-weight: normal;
-                margin-top:.5rem;
-                margin-bottom: .5rem;
+                font-size:.8125rem;
+                margin-top:.3rem;
+                margin-bottom: .3rem;
             }
 
             h3{
                 font-weight: normal;
-                font-size:1rem;
+                font-size:.8125rem;
+                margin: 0;
             }
         }
     

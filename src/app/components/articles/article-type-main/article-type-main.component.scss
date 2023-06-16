@@ -1,18 +1,15 @@
-@use "/src/styles.scss" as *;
+@use "/src/_import.scss" as *;
 
 .main-type1 {
     //position:relative;
-    height:700px;
-
+    //height:700px;
 
     img {
-        width:1050px;
+        width:100%;
     }
 
     .blur {
     position: relative;
-    width: 1050px;
-    height: 150px;
     left: 0px;
     bottom: 170px;
 
