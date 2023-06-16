@@ -3,6 +3,7 @@ import { Article } from "../interfaces/article";
 export const ARTICLE: Article = {
     "id": 1,
     "title": "Le caramel qui colle aux dents : pour ou contre ?",
+    "slug": "le-caramel-qui-colle-aux-dents-pour-ou-contre",
     "publication_date": new Date("2023-06-15T15:14:00.000Z"),
     "modification_date": new Date("2023-06-15T15:14:00.000Z"),
     "lead" : "Un sondage a été réalisé auprès de membres de la Wild Code School pour savoir s'ils aimaient le caramel qui colle aux dents. Des résultats surprenants, ou pas...",
@@ -16,7 +17,8 @@ export const ARTICLE: Article = {
     "categories" : [
     {
         "id" : 4,
-        "name" : "Miam"
+        "name" : "Miam",
+        "slug" : "miam"
     }
     ]
 }

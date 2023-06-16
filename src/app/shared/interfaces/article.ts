@@ -5,6 +5,7 @@ export interface Article {
 
     id: number
     title: string
+    slug: string
     publication_date: Date
     modification_date : Date
     lead: string
