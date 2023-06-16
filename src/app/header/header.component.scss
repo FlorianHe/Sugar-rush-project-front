@@ -1,7 +1,7 @@
 @use "/src/styles.scss" as *;
 
 @media screen and (min-width: 800px) {
-    header {
+    #head {
         width: 99%;
         height: 90px;
 
@@ -10,121 +10,127 @@
         justify-content: space-around;
         border-bottom-style: groove;
         border-bottom-color: $secondary-text-color;
-    }
 
-    .logo {
-        background-image: image-set("/assets/images/sugar_rush.png");
-        background-repeat: no-repeat;
-        width: 200px;
-        height: 80px;
-        padding-top: 6%;
-        padding-left: 4%;
-    }
-
-
-    nav {
-        align-self: center;
-        visibility: visible
-    }
-
-    ul {
-        //background-color: #f1e9ea;
-        background: linear-gradient(#f1e9ea, rgb(243, 241, 241));
-        //border-color: #410B13;
-
-    }
-
-    ul,
-    li,
-    a {
-        box-sizing: border border-box;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 13px;
-        height: 50px;
-        text-decoration: none;
-        color: $secondary-text-color;
-
-
-    }
-
-
-
-    nav ul li .active {
-        background-color: #FECEE9;
-        color: hsl(198, 94%, 37%);
-    }
-
-    nav ul li :hover {
-        background-color: #FECEE9;
-        color: hsl(198, 94%, 37%);
-    }
-
-    //gastronomie
-    #miam {
-        color: $category-food-color;
-    }
-
-    //sante
-    #carie {
-        color: $category-health-color;
-    }
-
-    //economie
-    #money {
-        color: $category-economy-color;
-    }
-
-    //sport
-    #sport {
-        color: $category-sport-color;
-    }
-
-    //loisir
-    #fun {
-        color: $category-fun-color;
-    }
-
-    .categ {
-        // background-image: image-set("/assets/images/ti_sucre.png");
-        background-repeat: no-repeat;
-    }
-
-
-
-    @keyframes categ {
-        from {
-            transform: rotate(0deg);
+        .logo {
+            background-image: image-set("/assets/images/sugar_rush.png");
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 80px;
+            padding-top: 6%;
+            padding-left: 4%;
         }
 
-        to {
-            transform: rotate(360deg);
+        nav {
+            align-self: center;
+            visibility: visible
         }
+
+        ul {
+            //background-color: #f1e9ea;
+            background: linear-gradient(#f1e9ea, rgb(243, 241, 241));
+            //border-color: #410B13;
+
+        }
+
+        ul,
+        li,
+        a {
+            box-sizing: border border-box;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 13px;
+            height: 50px;
+            text-decoration: none;
+            color: $secondary-text-color;
+
+
+        }
+
+
+
+        nav ul li .active {
+            background-color: #FECEE9;
+            color: hsl(198, 94%, 37%);
+        }
+
+        nav ul li :hover {
+            background-color: #FECEE9;
+            color: hsl(198, 94%, 37%);
+        }
+
+        //gastronomie
+        #miam {
+            color: $category-food-color;
+        }
+
+        //sante
+        #carie {
+            color: $category-health-color;
+        }
+
+        //economie
+        #money {
+            color: $category-economy-color;
+        }
+
+        //sport
+        #sport {
+            color: $category-sport-color;
+        }
+
+        //loisir
+        #fun {
+            color: $category-fun-color;
+        }
+
+        .categ {
+            // background-image: image-set("/assets/images/ti_sucre.png");
+            background-repeat: no-repeat;
+        }
+
+
+
+        @keyframes categ {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .categ :hover {
+
+            background-repeat: round;
+            background-image: linear-gradient("/assets/images/ti_sucre.png");
+            text-decoration: blink;
+            animation: alternate-reverse;
+        }
+
+        #login {
+            background-image: image-set("/assets/images/connexion.png");
+            background-repeat: no-repeat;
+            color: transparent;
+        }
+
+
     }
 
 
-    .categ :hover {
 
-        background-repeat: round;
-        background-image: linear-gradient("/assets/images/ti_sucre.png");
-        text-decoration: blink;
-        animation: alternate-reverse;
-    }
 
-    #login {
-        background-image: image-set("/assets/images/connexion.png");
-        background-repeat: no-repeat;
-        color: transparent;
-    }
+
+
+
 }
 
 @media screen and (max-width: 800px) {
-    nav {
-        visibility: hidden;
-    }
 
-    header {
+
+    #head {
         display: flex;
         justify-content: center;
         background-color: #FECEE9;
@@ -135,6 +141,10 @@
         height: 80px;
         padding-top: 6%;
         padding-left: 4%;
+    }
+
+    nav {
+        visibility: hidden;
     }
 
 }
