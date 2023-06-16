@@ -1,0 +1,68 @@
+@use "/src/styles.scss" as *;
+
+#category-main {
+  margin: $big-border;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    background-color: $main-background-color;
+    padding: $small-border;
+    justify-content: space-between;
+
+    h2 {
+      font-family: "Glam-queen";
+      font-size: 3em;
+      margin: 0;
+      padding-left: $small-border;
+    }
+
+    p {
+      color: $secondary-text-color;
+      font-size: 2em;
+      padding: $small-border;
+      margin: 0;
+    }
+
+    #Food-title {
+      color: $category-food-color;
+    }
+
+    #Health-title {
+      color: $category-health-color;
+    }
+
+    #Economy-title {
+      color: $category-economy-color;
+    }
+
+    #Sport-title {
+      color: $category-sport-color;
+    }
+
+    #Fun-title {
+      color: $category-fun-color;
+    }
+  }
+
+  .category-articles {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: $big-border;
+
+    .category-article {
+      width: 95%;
+      height: 300px;
+      border: $fairy-color 1px solid;
+
+      &:hover {
+        border: $secondary-text-color 1px solid;
+      }
+    }
+  }
+}
