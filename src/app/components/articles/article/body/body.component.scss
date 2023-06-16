@@ -1,0 +1,30 @@
+@use "/src/_import.scss" as *;
+
+.body {
+  background-color: $main-background-color;
+  color: $main-text-color;
+  padding-left: $big-border;
+  padding-right: $big-border;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: $small-border;
+    color: $category-food-color;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  ol {
+    list-style: none;
+  }
+
+  li {
+    margin-top: $small-border;
+    margin-bottom: $small-border;
+  }
+}
