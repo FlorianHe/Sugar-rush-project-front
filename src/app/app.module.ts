@@ -5,14 +5,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DemoPageComponent } from './pages/demo/demo.component';
-import { DemoComponent } from './components/demo/demo.component';
-import { DemoPipe } from './pipes/demo.pipe';
-import { DemoDirective } from './directives/demo.directive';
+import { ArticleTypeMainComponent } from './components/articles/article-type-main/article-type-main.component';
+import { ArticleTypeSideComponent } from './components/articles/article-type-side/article-type-side.component';
+import { ArticleTypeSmallComponent } from './components/articles/article-type-small/article-type-small.component';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { DemoComponent } from './components/demo/demo.component';
+import { DemoDirective } from './directives/demo.directive';
+import { DemoPageComponent } from './pages/demo/demo.component';
+import { DemoPipe } from './pipes/demo.pipe';
+
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
