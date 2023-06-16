@@ -1,11 +1,4 @@
 @use "/src/styles.scss" as *;
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .article {
     background-color: $main-background-color;
     padding-left: $big-border; 
