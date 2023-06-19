@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "/src/_import.scss" as *;
+
 @font-face {
   font-family: "Mermaid-babies";
   src: url("./assets/fonts/MermaidBabies.woff2");
@@ -28,13 +30,40 @@ $main-border: 0.5rem;
 $small-border: 1rem;
 $big-border: 2rem;
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+  
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: $secondary-background-color;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $secondary-background-color;
+}
+  
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+#page-wrap {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background-color: $secondary-background-color;
+}
+
+@media screen and (min-width: 48em) {
+    #page-content {
+        width: 70%; /* Set the width to 60% of the screen */
+        max-width: 71em; /* Optional: Set a maximum width for larger screens */
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        background-color: $main-background-color;
+        box-shadow: 0.75rem 0 0 $secondary-background-color, -0.75rem 0 0 $secondary-background-color;
+        overflow: initial;
+        margin: 0 auto; /* Center the element horizontally */
+    }
+
 }
