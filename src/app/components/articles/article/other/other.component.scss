@@ -1,0 +1,11 @@
+@use "/src/_import.scss" as *;
+
+.other {
+    margin-right: $big-border;
+
+
+    h2 {
+        background-color: $category-food-color;
+        padding: $small-border;
+    }
+}
