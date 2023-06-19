@@ -1,12 +1,13 @@
 <section id="categories">
   <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-header" [id]="category.name + '-header'" routerLink="/categories/{{category.id}}">
-      <h1 [id]="category.name + '-title'">{{category.name}}</h1>
+    <a class="categories-header" [id]="category.slug + '-header'" routerLink="/categories/{{category.id}}">
+      <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
       <p routerLink="/categories/{{category.id}}">Voir plus</p>
       <p><strong>></strong></p>
     </a>
 
     <div class="categories-3articles">
+      <!-- used to illustrate where the articles will be -->
       <article></article>
       <article></article>
       <article></article>

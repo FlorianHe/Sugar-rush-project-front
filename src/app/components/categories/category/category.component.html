@@ -1,9 +1,10 @@
 <section id="category-main">
   <div class="category-header">
-    <h1 [id]="categories[categoryID].name + '-title'">{{categories[categoryID].name}}</h1>
+    <h1 [id]="categories[categoryID].slug + '-title'">{{categories[categoryID].name}}</h1>
     <p><strong>V</strong></p>
   </div>
   <div class="category-articles">
-    <article *ngFor="let i of Arr(20).fill(1)" class="category-article"></article>
+    <!-- used to illustrate where the articles will be -->
+    <article *ngFor="let i of arr(20).fill(1)" class="category-article"></article>
   </div>
 </section>

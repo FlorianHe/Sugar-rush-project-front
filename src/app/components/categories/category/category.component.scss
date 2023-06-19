@@ -1,4 +1,4 @@
-@use "/src/styles.scss" as *;
+@use "/src/_import.scss" as *;
 
 #category-main {
   margin: $big-border;
@@ -10,7 +10,6 @@
   .category-header {
     display: flex;
     align-items: center;
-    background-color: $main-background-color;
     padding: $small-border;
     justify-content: space-between;
 
@@ -28,23 +27,23 @@
       margin: 0;
     }
 
-    #Food-title {
+    #miam-title {
       color: $category-food-color;
     }
 
-    #Health-title {
+    #carie-title {
       color: $category-health-color;
     }
 
-    #Economy-title {
+    #ca-coute-bonbon-title {
       color: $category-economy-color;
     }
 
-    #Sport-title {
+    #sport-title {
       color: $category-sport-color;
     }
 
-    #Fun-title {
+    #fun-title {
       color: $category-fun-color;
     }
   }
@@ -73,7 +72,7 @@
 @media screen and (min-width: 600px) and (orientation: landscape) {
   #category-main {
     .category-header {
-      h2 {
+      h1 {
         padding-left: 5%;
       }
     }
@@ -87,7 +86,7 @@
 
       .category-article {
         width: 95%;
-        height: 300px;
+        height: 250px;
       }
     }
   }

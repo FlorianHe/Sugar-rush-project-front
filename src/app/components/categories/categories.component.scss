@@ -1,4 +1,4 @@
-@use "/src/styles.scss" as *;
+@use "/src/_import.scss" as *;
 
 #categories {
   margin: $big-border;
@@ -16,7 +16,7 @@
       justify-content: space-between;
       text-decoration: none;
 
-      h1 {
+      h2 {
         font-family: "Glam-queen";
         font-size: 3em;
         margin: 0;
@@ -40,23 +40,23 @@
     display: none;
   }
 
-  #Food-title {
+  #miam-title {
     color: $category-food-color;
   }
 
-  #Health-title {
+  #carie-title {
     color: $category-health-color;
   }
 
-  #Economy-title {
+  #ca-coute-bonbon-title {
     color: $category-economy-color;
   }
 
-  #Sport-title {
+  #sport-title {
     color: $category-sport-color;
   }
 
-  #Fun-title {
+  #fun-title {
     color: $category-fun-color;
   }
 }
@@ -70,23 +70,23 @@
       margin-bottom: $big-border;
 
       &:hover {
-        #Food-header {
+        #miam-header {
           box-shadow: 0.5rem 0.5rem 10px $category-food-color;
         }
 
-        #Health-header {
+        #carie-header {
           box-shadow: 0.5rem 0.5rem 10px $category-health-color;
         }
 
-        #Economy-header {
+        #ca-coute-bonbon-header {
           box-shadow: 0.5rem 0.5rem 10px $category-economy-color;
         }
 
-        #Sport-header {
+        #sport-header {
           box-shadow: 0.5rem 0.5rem 10px $category-sport-color;
         }
 
-        #Fun-header {
+        #fun-header {
           box-shadow: 0.5rem 0.5rem 10px $category-fun-color;
         }
       }
@@ -95,7 +95,7 @@
         align-items: center;
         transition: 0.3s ease-in-out;
 
-        h1 {
+        h2 {
           padding-left: 5%;
         }
 

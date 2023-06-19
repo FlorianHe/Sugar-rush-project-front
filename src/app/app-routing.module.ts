@@ -9,9 +9,8 @@ import { DemoPageComponent } from './pages/demo/demo.component';
 import { ArticleComponent } from './components/articles/article/article.component';
 
 const routes: Routes = [
-  { 
-    
-    path: APP_ROUTES.rIndex, 
+  {
+    path: APP_ROUTES.rIndex,
     redirectTo: APP_ROUTES.rArticles,
     pathMatch: 'full'
   },
@@ -25,16 +24,16 @@ const routes: Routes = [
     component: ArticleComponent,
     title: 'Sugar Rush : News',
   },
-  { 
+  {
     path: 'categories',
     title: 'Catégories',
-    component: CategoriesComponent },
-  { 
+    component: CategoriesComponent
+  },
+  {
     path: 'categories/:categoryID',
     title: 'Categorie',
-    component: CategoryComponent },
+    component: CategoryComponent
   },
-
   {
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,
