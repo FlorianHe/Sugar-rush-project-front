@@ -13,9 +13,9 @@ import { DemoComponent } from './components/demo/demo.component';
 import { DemoDirective } from './directives/demo.directive';
 
 import { ArticleComponent } from './components/articles/article/article.component';
-import { TitleComponent } from './components/articles/article/title/title.component';
 import { BodyComponent } from './components/articles/article/body/body.component';
 import { OtherComponent } from './components/articles/article/other/other.component';
+import { TitleComponent } from './components/articles/article/title/title.component';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
@@ -23,10 +23,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { DemoPageComponent } from './pages/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

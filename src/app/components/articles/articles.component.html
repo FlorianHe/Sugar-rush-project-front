@@ -1,17 +1,17 @@
 <h1 class="main-title">Sugar Rush : Votre actu sucrée au quotidien !</h1>
 <div class="top">
-    <a routerLink="{{APP_ROUTES.articles}}/{{ articles[0].slug }}"><app-article-type-main class="main"></app-article-type-main></a>
+    <a routerLink="{{APP_ROUTES.articles}}/{{ articles[0].slug }}"><app-article-type-main [article]="articles[0]" class="main"></app-article-type-main></a>
     <div class="side">
         <h2>Plus de {{articles[0].categories[0].name}}</h2>
-        <a *ngFor="let article of articles.slice(0, 4)" routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}"><app-article-type-side></app-article-type-side></a>
+        <a *ngFor="let article of articles.slice(0, 4)" routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}"><app-article-type-side [article]="article"></app-article-type-side></a>
     </div>
 </div>
 <div class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)"></app-article-type-small>
+    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small >
 </div>
 <div class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)"></app-article-type-small>
+    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small >
 </div>
 <div class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)"></app-article-type-small>
+    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small >
 </div>
