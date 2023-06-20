@@ -18,8 +18,8 @@ import { BodyComponent } from './components/articles/article/body/body.component
 import { OtherComponent } from './components/articles/article/other/other.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
-import { CategoriesComponent } from './components/categories/categories.component';
-import { CategoryComponent } from './components/categories/category/category.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 
 
