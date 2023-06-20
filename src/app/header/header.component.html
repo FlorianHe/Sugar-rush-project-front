@@ -1,16 +1,19 @@
 <header id="head">
-    <div class="logo"></div>
+    <a [routerLink]="APP_ROUTES.index">
+        <div class="logo">
+        </div>
+    </a>
     <div>
         <nav>
             <ul class="divnav">
-                <li><a [routerLink]="['/home']">Accueil</a></li>
-                <li><a class="categ" [routerLink]="['/categ']">Catégories</a></li>
-                <li><a id="fun" [routerLink]="['/fun']">Hav'Fun</a></li>
-                <li><a id="sport" [routerLink]="['/sport']">NRgy</a></li>
-                <li><a id="carie" [routerLink]="['/sante']">Carie</a></li>
-                <li><a id="miam" [routerLink]="['/gastronomie']">Miam</a></li>
-                <li><a id="money" [routerLink]="['/economie']">Ca_coute_bonbon</a></li>
-                <li><a id="login" [routerLink]="['/login']">Connexion</a></li>
+                <li><a [routerLink]="APP_ROUTES.index">Accueil</a></li>
+                <li><a class="categ" [routerLink]="">Catégories</a></li>
+                <li><a id="fun" [routerLink]="">Hav'Fun</a></li>
+                <li><a id="sport" [routerLink]="">NRgy</a></li>
+                <li><a id="carie" [routerLink]="">Carie</a></li>
+                <li><a id="miam" [routerLink]="">Miam</a></li>
+                <li><a id="money" [routerLink]="">Ca coute bonbon</a></li>
+                <li><a id="login" [routerLink]="">Connexion</a></li>
                 <li></li>
             </ul>
         </nav>

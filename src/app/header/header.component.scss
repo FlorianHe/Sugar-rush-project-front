@@ -22,15 +22,10 @@
 
         nav {
             align-self: center;
-            visibility: visible
+            visibility: visible;
+            height: 90px;
         }
 
-        ul {
-            //background-color: #f1e9ea;
-            background: linear-gradient(#f1e9ea, rgb(243, 241, 241));
-            //border-color: #410B13;
-
-        }
 
         ul,
         li,
@@ -40,7 +35,7 @@
             justify-content: flex-start;
             align-items: center;
             gap: 13px;
-            height: 50px;
+            height: 90px;
             text-decoration: none;
             color: $secondary-text-color;
 
