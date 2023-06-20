@@ -23,14 +23,15 @@
         padding-left: $small-border;
       }
 
-      p:nth-of-type(2) {
+      span:nth-of-type(2) {
         color: $secondary-text-color;
         font-size: 2em;
         padding: $small-border;
         margin: 0;
+        font-weight: bold;
       }
 
-      p:nth-of-type(1) {
+      span:nth-of-type(1) {
         display: none;
       }
     }
@@ -99,18 +100,18 @@
           padding-left: 5%;
         }
 
-        p:nth-of-type(2) {
+        span:nth-of-type(2) {
           display: none;
         }
 
-        p:nth-of-type(1) {
+        span:nth-of-type(1) {
           display: initial;
           color: $secondary-text-color;
           font-size: 1.5rem;
-        }
 
-        p:nth-of-type(1):hover {
-          color: $fairy-color;
+          &:hover {
+            color: $fairy-color;
+          }
         }
       }
     }
