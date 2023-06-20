@@ -11,6 +11,9 @@ import { ArticleTypeSmallComponent } from './components/articles/article-type-sm
 import { ArticlesComponent } from './components/articles/articles.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoDirective } from './directives/demo.directive';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 import { ArticleComponent } from './components/articles/article/article.component';
 import { TitleComponent } from './components/articles/article/title/title.component';
 import { BodyComponent } from './components/articles/article/body/body.component';
@@ -22,7 +25,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryComponent } from './components/categories/category/category.component';
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, CategoriesComponent, CategoryComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, CategoriesComponent, CategoryComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent,  HeaderComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
