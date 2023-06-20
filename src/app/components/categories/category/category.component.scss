@@ -86,7 +86,8 @@
 
       .category-article {
         width: 95%;
-        height: 250px;
+        height: fit-content;
+        margin-bottom: $big-border;
       }
     }
   }

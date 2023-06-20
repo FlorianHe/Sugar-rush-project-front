@@ -121,9 +121,8 @@
       justify-content: space-around;
       margin-top: $big-border;
 
-      article {
+      app-article-type-small {
         width: 30%;
-        height: 200px;
         border: $fairy-color 1px solid;
 
         &:hover {
