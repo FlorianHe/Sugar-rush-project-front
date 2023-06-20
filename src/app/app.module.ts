@@ -9,17 +9,24 @@ import { ArticleTypeMainComponent } from './components/articles/article-type-mai
 import { ArticleTypeSideComponent } from './components/articles/article-type-side/article-type-side.component';
 import { ArticleTypeSmallComponent } from './components/articles/article-type-small/article-type-small.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { ArticleComponent } from './pages/article/article.component';
 import { TitleComponent } from './components/articles/article/title/title.component';
 import { BodyComponent } from './components/articles/article/body/body.component';
 import { OtherComponent } from './components/articles/article/other/other.component';
-
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoryComponent } from './components/categories/category/category.component';
+
+
+
 
 
 @NgModule({
-  declarations: [AppComponent, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent],
+  declarations: [AppComponent, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, CategoriesComponent, CategoryComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent,  HeaderComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
