@@ -1,6 +1,28 @@
 @use "/src/_import.scss" as *;
+
+@media (min-width: 768px) {
+
+.fun-background{
+    background-color:$category-fun-color;
+}
+
+.sport-background{
+    background-color:$category-sport-color;
+}
+
+.carie-background{
+    background-color:$category-health-color;
+}
+
+.miam-background{
+    background-color:$category-food-color;
+}
+
+.ca-coute-bonbon-background{
+    background-color:$category-economy-color;
+}
+
 .main-type2 {
-    background-color: $category-health-color;
     
     .side-band {
         display:flex;
@@ -16,7 +38,26 @@
             margin-left:1rem;
             
             h4 {
-                color:$category-health-color;
+                .fun-color{
+                    color:$category-fun-color;
+                }
+            
+                .sport-color{
+                    color:$category-sport-color;
+                }
+            
+                .carie-color{
+                    color:$category-health-color;
+                }
+                
+                .miam-color{
+                    color:$category-food-color;
+                }
+            
+                .ca-coute-bonbon-color{
+                    color:$category-economy-color;
+                }
+
                 font-weight: normal;
                 font-size:.8125rem;
                 margin-top:.3rem;
@@ -32,6 +73,12 @@
     
     }
 
+}
 
+}
 
+@media (max-width:768px){
+    .main-type2{
+        display:none;
+    }
 }

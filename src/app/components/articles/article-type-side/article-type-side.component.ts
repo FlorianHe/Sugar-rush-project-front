@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-article-type-side',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./article-type-side.component.scss']
 })
 export class ArticleTypeSideComponent {
-
+  @Input() article!:any
 }

@@ -1,5 +1,7 @@
 @use "/src/_import.scss" as *;
 
+@media(min-width:768px){
+
 .main-title {
     margin-top: $big-border;
     margin-bottom: $big-border;
@@ -17,10 +19,24 @@
     }
 }
 
-
-
 .small {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $main-border;
+}
+
+}
+
+@media(max-width:768px){
+    .main-title {
+        margin-top: $big-border;
+        margin-bottom: $big-border;
+    }
+    .top {
+        margin:$main-border;
+    }
+    
+    .small {
+        margin: $main-border;
+    }
 }

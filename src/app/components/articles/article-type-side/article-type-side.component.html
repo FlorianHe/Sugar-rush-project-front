@@ -1,8 +1,8 @@
-<article class="main-type2">
+<article [ngClass]="'main-type2 '+article.categories[0].slug+'-background'">
     <div class="side-band">
-        <img src="https://media.istockphoto.com/id/516358950/fr/photo/partie-de-sucre-blanc.jpg?s=612x612&w=0&k=20&c=PQdHZX3hIDHlQQHHoHJNAGxyQun5ORH_4kXJteRYyUU=">
+        <img src={{article.publication_image}}>
         <div class="description">
-            <h4>15:17 | Sweet</h4>
+            <h4>{{article.publication_date | date : 'HH:mm'}} | <span [ngClass]="article.categories[0].slug+'-color'">{{article.categories[0].name}}</span></h4>
             <h3>Comment les bienfaits du sucre se propagent à travers tout le corps</h3>
         </div>
     </div>
