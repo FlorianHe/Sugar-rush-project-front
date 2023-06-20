@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CATEGORIES } from 'src/app/shared/datas/categories';
 
@@ -14,11 +15,12 @@ export class CategoryComponent {
   arr = Array;
   public categories = CATEGORIES;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.categoryID = parseInt(params.get('categoryID') || "");
     })
+    this.titleService.setTitle('Sugar Rush : ' + this.categories[this.categoryID - 1].name);
   };
 }
