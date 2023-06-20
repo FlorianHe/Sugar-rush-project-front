@@ -18,16 +18,14 @@ import { ArticleComponent } from './components/articles/article/article.componen
 import { TitleComponent } from './components/articles/article/title/title.component';
 import { BodyComponent } from './components/articles/article/body/body.component';
 import { OtherComponent } from './components/articles/article/other/other.component';
-
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-
-
 import { DemoPageComponent } from './pages/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
-
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoryComponent } from './components/categories/category/category.component';
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, CategoriesComponent, CategoryComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent,  HeaderComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
