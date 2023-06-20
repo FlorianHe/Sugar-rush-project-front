@@ -14,6 +14,7 @@
         .logo {
             background-image: image-set("/assets/images/sugar_rush.png");
             background-repeat: no-repeat;
+            background-size: contain;
             width: 200px;
             height: 80px;
             padding-top: 6%;
@@ -129,11 +130,12 @@
         display: flex;
         justify-content: center;
         background-color: #FECEE9;
-        background-image: image-set("/assets/images/sugar_rush_2.png");
+        background-image: image-set("/assets/images/sugar_rush.png");
         background-position: center;
         background-repeat: no-repeat;
         width: 100%;
         height: 80px;
+        background-size: contain;
         padding-top: 6%;
         padding-left: 4%;
     }
