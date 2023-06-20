@@ -25,12 +25,12 @@ const routes: Routes = [
     title: 'Sugar Rush : News',
   },
   {
-    path: 'categories',
+    path: APP_ROUTES.rCategories,
     title: 'Catégories',
     component: CategoriesComponent
   },
   {
-    path: 'categories/:categoryID',
+    path: APP_ROUTES.rCategories + '/:categoryID',
     title: 'Categorie',
     component: CategoryComponent
   },
