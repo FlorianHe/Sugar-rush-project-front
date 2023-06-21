@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StockService } from 'src/app/services/stock.service';
-import { PercentChangePipe } from 'src/app/pipes/percent-change.pipe';
+import { Stock } from 'src/app/shared/interfaces/stock';
 
 @Component({
   selector: 'app-stock',
@@ -11,7 +11,7 @@ export class StockComponent implements OnInit {
 
   @Input()
   stockName! : string;
-  stock : any
+  stock! : Stock
 
   constructor(private stockService : StockService) {
 
@@ -20,6 +20,7 @@ export class StockComponent implements OnInit {
   ngOnInit(): void {
     this.stockService.getStocks(this.stockName).subscribe((stock: any) => {
       stock.name = this.stockName;
+      stock.slug = this.stockName.toLowerCase().replace(" ", "-")
       stock.data.forEach((item: any) => {
         if (this.stockName === "SUGAR")
           item.value = item.value * 2.205 / 100;
@@ -28,7 +29,6 @@ export class StockComponent implements OnInit {
       });
       stock.percent = ((stock.data[0].value - stock.data[1].value) / stock.data[1].value) * 100
       this.stock = stock;
-      console.log(this.stock)
     });
   } 
 

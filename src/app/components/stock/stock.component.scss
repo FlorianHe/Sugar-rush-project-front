@@ -1,8 +1,5 @@
 @use "/src/_import.scss" as *;
 
-.desktop {
-    display: none;
-}
 #stock {
     .container {
         display: flex;
@@ -12,17 +9,6 @@
         border-radius: 8px;
         border: 1px solid rgb(218,220,224);
         white-space: nowrap;
-    }
-}
-
-@media screen and (min-width: $min-width-desktop) {
-    .mobile {
-        display: none;
-    }
-    .desktop {
-        display: initial;
-    }
-    #stock {
         .arrow {
             height: 32px;
             min-width: 32px;
@@ -65,7 +51,6 @@
             font-weight: 400;
             text-align: right;
         }
-
         .red {
             color:red;
         }
@@ -78,6 +63,5 @@
         .green-bg {
             background-color: #e6f4ea;
         }
-
     }
 }
