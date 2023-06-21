@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'addPlus'
 })
-export class addPlusPipe implements PipeTransform {
+export class AddPlusPipe implements PipeTransform {
   transform(value: number): string {
     if (value > 0)
         return ("+"+value.toFixed(2));
