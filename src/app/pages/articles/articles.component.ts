@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ARTICLES } from 'src/app/shared/datas/articles';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
 

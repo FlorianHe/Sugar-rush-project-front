@@ -1,9 +1,10 @@
 <article class="main-type3">
-    <img src="https://media.istockphoto.com/id/516358950/fr/photo/partie-de-sucre-blanc.jpg?s=612x612&w=0&k=20&c=PQdHZX3hIDHlQQHHoHJNAGxyQun5ORH_4kXJteRYyUU=">
-    <div class="description">
+    <img src={{article.publication_image}}>
+    <div [ngClass]="'description '+article.categories[0].slug+'-background'">
         <div class="titles">
-            <h4>SWEET</h4>
-            <h3>Manger trop de sucre donne des caries ? Une légende urbaine ?</h3>
+            <h4 [ngClass]="article.categories[0].slug+'-color'"><span>{{article.categories[0].name}}</span></h4>
+            <h3>{{article.title}}</h3>
+            <time>{{article.publication_date | date : 'dd/M/yy' }}</time>
         </div>
     </div>
 </article>

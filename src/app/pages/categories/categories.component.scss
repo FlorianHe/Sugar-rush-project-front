@@ -1,0 +1,135 @@
+@use "/src/_import.scss" as *;
+
+#categories {
+  margin: $big-border;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .categories-category {
+    .categories-header {
+      display: flex;
+      align-items: center;
+      background-color: $main-background-color;
+      padding: $small-border;
+      justify-content: space-between;
+      text-decoration: none;
+
+      h2 {
+        font-family: "Glam-queen";
+        font-size: 3em;
+        margin: 0;
+        padding-left: $small-border;
+      }
+
+      span:nth-of-type(2) {
+        color: $secondary-text-color;
+        font-size: 2em;
+        padding: $small-border;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      span:nth-of-type(1) {
+        display: none;
+      }
+    }
+  }
+
+  .categories-3articles {
+    display: none;
+  }
+
+  #miam-title {
+    color: $category-food-color;
+  }
+
+  #carie-title {
+    color: $category-health-color;
+  }
+
+  #ca-coute-bonbon-title {
+    color: $category-economy-color;
+  }
+
+  #sport-title {
+    color: $category-sport-color;
+  }
+
+  #fun-title {
+    color: $category-fun-color;
+  }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  #categories {
+    height: 100%;
+    display: block;
+
+    .categories-category {
+      margin-bottom: $big-border;
+
+      &:hover {
+        #miam-header {
+          box-shadow: 0.5rem 0.5rem 10px $category-food-color;
+        }
+
+        #carie-header {
+          box-shadow: 0.5rem 0.5rem 10px $category-health-color;
+        }
+
+        #ca-coute-bonbon-header {
+          box-shadow: 0.5rem 0.5rem 10px $category-economy-color;
+        }
+
+        #sport-header {
+          box-shadow: 0.5rem 0.5rem 10px $category-sport-color;
+        }
+
+        #fun-header {
+          box-shadow: 0.5rem 0.5rem 10px $category-fun-color;
+        }
+      }
+
+      .categories-header {
+        align-items: center;
+        transition: 0.3s ease-in-out;
+
+        h2 {
+          padding-left: 5%;
+        }
+
+        span:nth-of-type(2) {
+          display: none;
+        }
+
+        span:nth-of-type(1) {
+          display: initial;
+          color: $secondary-text-color;
+          font-size: 1.5rem;
+
+          &:hover {
+            color: $fairy-color;
+          }
+        }
+      }
+    }
+
+    .categories-3articles {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: $big-border;
+
+      app-article-type-small {
+        width: 30%;
+        border: $fairy-color 1px solid;
+
+        &:hover {
+          border: $secondary-text-color 1px solid;
+        }
+      }
+    }
+  }
+}
