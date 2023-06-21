@@ -1,7 +1,11 @@
-<app-header class="head"></app-header>
+<app-header></app-header>
 <div id="page-wrap">
     <div id="page-content">
+        <div class="stock">
+            <app-stock [stockName]="'SUGAR'"></app-stock>
+            <app-stock [stockName]="'CORN'"></app-stock>
+        </div>
         <router-outlet></router-outlet>
     </div>
 </div>
-<app-footer class="foot"></app-footer>
+<app-footer></app-footer>

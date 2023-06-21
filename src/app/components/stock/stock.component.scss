@@ -1,0 +1,83 @@
+@use "/src/_import.scss" as *;
+
+.desktop {
+    display: none;
+}
+#stock {
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 6px;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid rgb(218,220,224);
+        white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: $min-width-desktop) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: initial;
+    }
+    #stock {
+        .arrow {
+            height: 32px;
+            min-width: 32px;
+            span {
+                align-items: center;
+                height: 32px;
+                width: 32px;
+                min-width: 32px;
+                border-radius: 8px;
+                margin-right: 8px;
+                display: flex;
+                i {
+                    height: 16px;
+                    margin: auto;
+                }
+            }
+            
+        }
+        .middle {
+            display: flex;
+            min-width: 64px;
+            flex-direction: column;
+            line-height: 1rem;
+            font-size: .75rem;
+            letter-spacing: .025em;
+            font-weight: 400;
+            margin-right: 8px;
+            max-width: 120px;
+            .name {
+                font-weight: bold;
+            }
+        }
+
+        .changes {
+            display: flex;
+            flex-direction: column;
+            line-height: 1rem;
+            font-size: .75rem;
+            letter-spacing: .025em;
+            font-weight: 400;
+            text-align: right;
+        }
+
+        .red {
+            color:red;
+        }
+        .green {
+            color: green;
+        }
+        .red-bg {
+            background-color: #fce8e6;
+        }
+        .green-bg {
+            background-color: #e6f4ea;
+        }
+
+    }
+}
