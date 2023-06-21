@@ -1,6 +1,6 @@
 @use "/src/_import.scss" as *;
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $min-width-desktop) {
     #foot {
         background-color: #FECEE9;
         height: 20%;
@@ -14,23 +14,14 @@
             visibility: visible;
         }
 
-        #smallscr {
-            visibility: hidden;
-        }
 
     }
 
-
-
-
-
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $min-width-desktop) {
 
     #foot {
-
-
 
         background-color: #FECEE9;
 
@@ -38,56 +29,8 @@
             visibility: hidden;
         }
 
-        nav {
-            align-self: center;
-        }
-
-        a {
-            height: 3rem;
-        }
-
-        ul,
-        li,
-        a {
-            box-sizing: border border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 13px;
-            height: max-content;
-            text-decoration: none;
-            color: $secondary-text-color;
-        }
-
-        #smallscr a {
-            background-color: #FECEE9;
-            //box-sizing: border border-box;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            height: 4rem;
-        }
-
-        #accueil {
-            background-image: image-set("/assets/images/home.png");
-            background-repeat: no-repeat;
-            color: transparent;
-        }
-
-        #login {
-            background-image: image-set("/assets/images/user.png");
-            background-repeat: no-repeat;
-            color: transparent;
-        }
 
     }
-
-
-
-
-
 
 
 
