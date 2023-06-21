@@ -28,6 +28,10 @@
 }
 
 @media(max-width:768px){
+
+    h1 {
+        display:none;
+    }
     .main-title {
         margin-top: $big-border;
         margin-bottom: $big-border;
