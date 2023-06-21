@@ -34,6 +34,9 @@
     }
     .top {
         margin:$main-border;
+        .side {
+            display: none;
+        }
     }
     
     .small {
