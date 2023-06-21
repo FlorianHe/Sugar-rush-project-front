@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +28,7 @@ import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [AppComponent, ArticlesComponent, ArticleTypeMainComponent, ArticleTypeSideComponent, ArticleTypeSmallComponent, CategoriesComponent, CategoryComponent, PageNotFoundComponent, ArticleComponent, TitleComponent, BodyComponent, OtherComponent,  HeaderComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
