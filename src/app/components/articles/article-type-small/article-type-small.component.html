@@ -1,13 +1,10 @@
 <article class="main-type3">
     <img src={{article.publication_image}}>
-    <div class="description">
+    <div [ngClass]="'description '+article.categories[0].slug+'-background'">
         <div class="titles">
-            <h4><span style="
-                background: black;
-                padding: 2px;
-            ">{{article.categories[0].name}}</span></h4>
+            <h4 [ngClass]="article.categories[0].slug+'-color'"><span>{{article.categories[0].name}}</span></h4>
             <h3>{{article.title}}</h3>
-            <time>{{article.publication_date | date : 'fullDate'}}</time>
+            <time>{{article.publication_date | date : 'dd/M/yy' }}</time>
         </div>
     </div>
 </article>

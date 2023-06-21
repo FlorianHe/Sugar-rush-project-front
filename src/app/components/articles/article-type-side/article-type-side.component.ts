@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./article-type-side.component.scss']
 })
 export class ArticleTypeSideComponent {
-
   @Input() article!:any
 }

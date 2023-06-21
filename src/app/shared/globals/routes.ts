@@ -14,6 +14,8 @@ const APP_ROUTES = {
   rHome: 'home',
   articles: '/articles',
   rArticles: 'articles',
+  categories: '/categories',
+  rCategories: 'categories',
   notFound: '/404',
   rNotFound: '404',
   article: (id: number) => `articles/${id}`
