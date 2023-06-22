@@ -1,7 +1,7 @@
 <h1 class="main-title">Sugar Rush : Votre actu sucrée au quotidien !</h1>
 <div *ngIf="articles" class="top">
     <app-article-type-main [article]="articles[0]" class="main"></app-article-type-main>
-    <div class="side" *ngIf="articles">
+    <div class="side">
         <h2>Plus de {{articles[0].categories[0].name}}</h2>
         <app-article-type-side [article]="article" *ngFor="let article of getSideArticles()" ></app-article-type-side>
     </div>

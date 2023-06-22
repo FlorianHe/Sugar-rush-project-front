@@ -9,7 +9,7 @@
     </a>
 
     <div class="categories-3articles" *ngIf="articles">
-      <app-article-type-small *ngFor="let article of articles.slice(0,3)"
+      <app-article-type-small [article]="article" *ngFor="let article of articles.slice(0,3)"
         class="category-article"></app-article-type-small>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Category } from 'src/app/shared/interfaces/category';
@@ -13,15 +13,15 @@ import { Category } from 'src/app/shared/interfaces/category';
 
 export class CategoryComponent {
 
-  private _category!: any;
+  private _category!: Category;
   private _articles!: Article[];
   arr = Array;
 
   constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this._category = params;
+    this.route.params.subscribe((params: Params) => {
+      this._category = params as Category;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
     });
     this.categoriesService.getArticlesByCategorySlug(this.category.slug).subscribe((articles) => {
@@ -30,7 +30,7 @@ export class CategoryComponent {
     );
   };
 
-  get category(): any {
+  get category(): Category {
     return this._category;
   }
 

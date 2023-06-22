@@ -31,7 +31,7 @@ const routes: Routes = [
     component: CategoriesComponent
   },
   {
-    path: APP_ROUTES.rCategories + '/:categorySlug',
+    path: APP_ROUTES.rCategories + '/:slug',
     title: 'Sugar Rush : Categorie',
     component: CategoryComponent
   },

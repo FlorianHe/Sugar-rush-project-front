@@ -2,10 +2,10 @@
   <div class="category-header">
     <h1 [id]="category.slug + '-title'">
       <span>{{category.name}}</span>
-      <span>V</span>
     </h1>
   </div>
   <div class="category-articles">
-    <app-article-type-small *ngFor="let article of articles" class="category-article"></app-article-type-small>
+    <app-article-type-small [article]="article" *ngFor="let article of articles"
+      class="category-article"></app-article-type-small>
   </div>
 </section>

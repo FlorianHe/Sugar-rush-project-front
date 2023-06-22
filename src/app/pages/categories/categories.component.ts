@@ -11,7 +11,7 @@ import { Category } from 'src/app/shared/interfaces/category';
 })
 export class CategoriesComponent {
 
-  private _categories!: any;
+  private _categories!: Category[];
   private _articles!: Article[];
 
   constructor(public categoriesService: CategoriesApiService, private router: Router) {}
@@ -26,7 +26,7 @@ export class CategoriesComponent {
     });
   }
 
-  get categories(): any {
+  get categories(): Category[] {
     return this._categories;
   }
 
@@ -35,6 +35,6 @@ export class CategoriesComponent {
   }
 
   public navigate(category: Category): void {
-    this.router.navigate(["/categories/" + category.slug, { id: category.id, slug: category.slug, name: category.name }]);
+    this.router.navigate(["/categories/" + category.slug, { id: category.id, name: category.name }]);
   }
 }
