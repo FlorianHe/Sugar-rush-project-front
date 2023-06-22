@@ -4,7 +4,7 @@
     <app-article-type-main class="main"></app-article-type-main>
   </a>
   <div class="side">
-    <h2>Plus de {{ articles[0]?.categories[0]?.name }}</h2>
+    <h2>Plus de {{ articles[0].categories[0].name }}</h2>
     <a *ngFor="let article of articles.slice(0, 4)" [routerLink]="[APP_ROUTES.articles, article.slug]">
       <app-article-type-side></app-article-type-side>
     </a>

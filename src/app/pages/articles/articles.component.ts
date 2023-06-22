@@ -11,8 +11,8 @@ import { APP_ROUTES } from 'src/app/shared/globals/routes';
 
 export class ArticlesComponent implements OnInit {
 
-  public articles! : any;
   public APP_ROUTES = APP_ROUTES;
+  public articles!: any;
 
   constructor(public articleService: ArticleApiService) {}
 
