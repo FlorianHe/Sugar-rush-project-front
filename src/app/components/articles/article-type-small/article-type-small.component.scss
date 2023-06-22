@@ -1,38 +1,196 @@
 @use "/src/_import.scss" as *;
+
+@media (max-width: 768px) {
+
+    .main-type3{
+    
+        img {
+            width:100%;
+        }
+    
+        .fun-background{
+            background-color:$category-fun-color;
+            opacity:0.7;
+        }
+        
+        .sport-background{
+            background-color:$category-sport-color;
+            opacity:0.7;
+        }
+        
+        .carie-background{
+            background-color:$category-health-color;
+            opacity:0.7;
+        }
+        
+        .miam-background{
+            background-color:$category-food-color;
+            opacity:0.7;
+        }
+        
+        .ca-coute-bonbon-background{
+            background-color:$category-economy-color;
+            opacity:0.7;
+        }
+    
+        .description {
+            box-sizing: border-box;
+            min-height:106px;
+            bottom:109px;
+            position:relative;
+            object-position: left bottom;
+            padding-left:.5rem;
+    
+            .titles {
+                padding-top:1px;
+    
+                .fun-color{
+                    color:$category-fun-color;
+                }
+            
+                .sport-color{
+                    color:$category-sport-color;
+                }
+            
+                .carie-color{
+                    color:$category-health-color;
+                }
+                
+                .miam-color{
+                    color:$category-food-color;
+                }
+            
+                .ca-coute-bonbon-color{
+                    color:$category-economy-color;
+                }
+    
+                h4,h3 {
+                    margin:0px;
+                }
+        
+                h4 {
+                    span {
+                        padding:2px;
+                        background-color:$secondary-text-color;
+                    }
+                    
+                    //width:3.5rem;
+                    margin-top:0.5rem;
+                    padding-left:0.3rem;
+                }
+                h3 {
+                    font-weight:500;
+                    font-size:0.9rem;
+                    height:50px;
+                    margin-top:0.5rem;
+                }
+
+                time {
+                    font-size:0.8rem;
+                }
+
+            }
+            
+        }
+    
+    }
+    
+    }
+
+@media (min-width: 768px) {
+
 .main-type3{
 
     img {
         width:100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .fun-background{
+        background-color:$category-fun-color;
+        opacity:0.7;
+    }
+    
+    .sport-background{
+        background-color:$category-sport-color;
+        opacity:0.7;
+    }
+    
+    .carie-background{
+        background-color:$category-health-color;
+        opacity:0.7;
+    }
+    
+    .miam-background{
+        background-color:$category-food-color;
+        opacity:0.7;
+    }
+    
+    .ca-coute-bonbon-background{
+        background-color:$category-economy-color;
+        opacity:0.7;
     }
 
     .description {
-        background-color:$category-health-color;
         box-sizing: border-box;
-        height:80px;
-        bottom:54px;
+        min-height:106px;
+        bottom:110px;
         position:relative;
         object-position: left bottom;
         padding-left:.5rem;
 
         .titles {
             padding-top:1px;
+
+            .fun-color{
+                color:$category-fun-color;
+            }
+        
+            .sport-color{
+                color:$category-sport-color;
+            }
+        
+            .carie-color{
+                color:$category-health-color;
+            }
+            
+            .miam-color{
+                color:$category-food-color;
+            }
+        
+            .ca-coute-bonbon-color{
+                color:$category-economy-color;
+            }
+
             h4,h3 {
                 margin:0px;
             }
     
             h4 {
-                color:$category-health-color;
-                background-color:$secondary-text-color ;
-                width:3.5rem;
+                span {
+                    padding:2px;
+                    background-color:$secondary-text-color;
+                }
+                
+                //width:3.5rem;
                 margin-top:0.5rem;
                 padding-left:0.3rem;
             }
             h3 {
                 font-weight:500;
-                font-size:1rem;
+                font-size:0.9rem;
+                height:50px;
+                margin-top:0.5rem;
+            }
+
+            time {
+                font-size:0.8rem;
             }
         }
         
     }
+
+}
 
 }
