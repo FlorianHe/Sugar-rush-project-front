@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
 import { Article } from 'src/app/shared/interfaces/article';
+import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
+
 
 @Component({
   selector: 'app-articles',
@@ -21,5 +23,9 @@ export class ArticlesComponent implements OnInit {
       .subscribe(articles => {
         this.articles = articles;
       });
+
+
+  getSideArticles():ArticleDisplayed[]{
+    return this.articles.slice(0,4);
   }
 }
