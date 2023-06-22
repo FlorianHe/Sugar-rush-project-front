@@ -4,6 +4,7 @@ import { Category } from './category'
 export interface Article {
 
     id: number
+    isMain: boolean
     title: string
     slug: string
     publication_date: Date
