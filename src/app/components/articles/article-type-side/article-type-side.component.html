@@ -1,10 +1,11 @@
-
-<article [ngClass]="'main-type2 '+article.categories[0].slug+'-background'">
-    <div class="side-band">
-        <img src={{article.publication_image}}>
-        <div class="description">
-            <h4>{{article.publication_date | date : 'HH:mm'}} | <span [ngClass]="article.categories[0].slug+'-color'">{{article.categories[0].name}}</span></h4>
-            <h3>{{article.title}}</h3>
-        </div>
+<article [ngClass]="'main-type2 '+article.categories[0].slug+'-background'"
+  routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}">
+  <div class="side-band">
+    <img src={{article.publication_image}}>
+    <div class="description">
+      <h4>{{article.publication_date | date : 'HH:mm'}} | <span
+          [ngClass]="article.categories[0].slug+'-color'">{{article.categories[0].name}}</span></h4>
+      <h3>{{article.title}}</h3>
     </div>
+  </div>
 </article>

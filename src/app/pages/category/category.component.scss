@@ -56,14 +56,14 @@
     .category-article {
       width: 95%;
       margin-bottom: $main-border;
-      border: $fairy-color 1px solid;
-      box-shadow: 10px 10px 10px $fairy-color;
-      transition: 0.3s ease-in-out;
+      // border: $fairy-color 1px solid;
+      // box-shadow: 10px 10px 10px $fairy-color;
+      // transition: 0.3s ease-in-out;
 
-      &:hover {
-        border: $secondary-text-color 1px solid;
-        box-shadow: 10px 10px 10px $secondary-text-color;
-      }
+      // &:hover {
+      //   border: $secondary-text-color 1px solid;
+      //   box-shadow: 10px 10px 10px $secondary-text-color;
+      // }
     }
   }
 }

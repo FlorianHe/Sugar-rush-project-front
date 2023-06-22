@@ -2,7 +2,7 @@
   <div class="categories-category" *ngFor="let category of categories">
     <a class="categories-header" [id]="category.slug + '-header'" (click)="navigate(category)">
       <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
-      <p routerLink="/categories/{{category.id}}">
+      <p (click)="navigate(category)">
         <span>Voir plus</span>
         <span>></span>
       </p>
