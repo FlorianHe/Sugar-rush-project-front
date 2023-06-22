@@ -1,8 +1,8 @@
-<section class="other">
+<section *ngIf="articles" class="other">
     <h2>Articles liés</h2>
     <div class="article-list">
       <div class="article">
-        <h3>Titre de l'article lié 1</h3>
+        <h3>{{articles[0].title}}</h3>
         <p>Description de l'article lié 1</p>
         <p>IMAGE</p>
       </div>
