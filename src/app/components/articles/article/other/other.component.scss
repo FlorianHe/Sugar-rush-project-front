@@ -5,8 +5,16 @@
     margin-left: $big-border;
     margin-top: $big-border; 
     
-    h2 {
+    .miam {
       background-color: $category-food-color;
+    }
+    .sport {
+      background-color: $category-sport-color;
+    }
+    .carie {
+      background-color: $category-health-color;
+    }
+    h2 {
       padding: $small-border;
       margin-bottom: $small-border;
     }

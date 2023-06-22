@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
 
@@ -10,6 +10,7 @@ import { Article } from 'src/app/shared/interfaces/article';
 })
 export class OtherComponent implements OnInit {
 
+  @Input() categorySlug! : string
   private _articles!: Article[];
 
   constructor(private articleService: ArticleApiService) {}

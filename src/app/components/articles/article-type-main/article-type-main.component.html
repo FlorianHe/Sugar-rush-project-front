@@ -1,5 +1,5 @@
 
-<article class="main-type1" routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}">
+<article class="main-type1" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
     <img src={{article.publication_image}}>
     <div class="blur">
         <div class="description">

@@ -13,23 +13,69 @@
         margin-bottom: $small-border;
     }
 
-    .categories {
+    .categories-sport {
         display: flex;
         align-items: baseline;
         margin-bottom: $small-border;
 
     }
 
-    .categories ul {
+    .categories-sport ul {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
     }
 
-    .categories li {
+    .categories-sport li {
         margin-right: 10px;
         font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-sport-color;
+    }
+
+    .categories-carie {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-carie ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-carie li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-health-color;
+    }
+
+    .categories-miam {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-miam ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-miam li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
         color: $category-food-color;
     }
 

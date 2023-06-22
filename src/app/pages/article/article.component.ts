@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
 
@@ -12,13 +13,16 @@ export class ArticleComponent implements OnInit {
 
   private _article!: Article;
 
-  constructor(public articleService: ArticleApiService) {}
+  constructor(public articleService: ArticleApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.articleService.getArticleById(1)
+    this.route.queryParams.subscribe((params: Params) => {
+      this.articleService.getArticleById(params['id'])
       .subscribe(article => {
         this._article = article;
       });
+    });
+    
   }
 
   get article(): Article {
