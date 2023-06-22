@@ -2,7 +2,11 @@
 
 .other {
     margin-right: $big-border;
-  
+    .article-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
     h2 {
       background-color: $category-food-color;
       padding: $small-border;
