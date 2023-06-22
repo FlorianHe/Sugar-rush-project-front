@@ -1,38 +1,43 @@
 @use "/src/_import.scss" as *;
-.main-type3{
 
-    img {
-        width:100%;
+.main-type3 {
+
+  img {
+    height: 300px;
+    width: 100%;
+  }
+
+  .description {
+    background-color: $category-health-color;
+    box-sizing: border-box;
+    height: 80px;
+    bottom: 54px;
+    position: relative;
+    object-position: left bottom;
+    padding-left: .5rem;
+
+    .titles {
+      padding-top: 1px;
+
+      h4,
+      h3 {
+        margin: 0px;
+      }
+
+      h4 {
+        color: $category-health-color;
+        background-color: $secondary-text-color ;
+        width: 3.5rem;
+        margin-top: 0.5rem;
+        padding-left: 0.3rem;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 1rem;
+      }
     }
 
-    .description {
-        background-color:$category-health-color;
-        box-sizing: border-box;
-        height:80px;
-        bottom:54px;
-        position:relative;
-        object-position: left bottom;
-        padding-left:.5rem;
-
-        .titles {
-            padding-top:1px;
-            h4,h3 {
-                margin:0px;
-            }
-    
-            h4 {
-                color:$category-health-color;
-                background-color:$secondary-text-color ;
-                width:3.5rem;
-                margin-top:0.5rem;
-                padding-left:0.3rem;
-            }
-            h3 {
-                font-weight:500;
-                font-size:1rem;
-            }
-        }
-        
-    }
+  }
 
 }
