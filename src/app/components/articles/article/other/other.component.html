@@ -1,13 +1,14 @@
-  <section ngIf="articles" class="other">
-    <h2>Articles liés</h2>
-    <div class="article-list">
-      <app-article-type-side ></app-article-type-side>
-    </div>
-    <div class="article-list">
-      <app-article-type-side ></app-article-type-side>
-    </div>
-    <div class="article-list">
-      <app-article-type-side></app-article-type-side>
-    </div>
-  </section>
+<section ngIf="articles" class="other">
+  <h2>Articles liés</h2>
+  <div class="article-list">
+    <app-article-type-side [article]="article" ></app-article-type-side>
+  </div>
+  <div class="article-list">
+   <app-article-type-side [article]="article" ></app-article-type-side>
+  </div>
+  <div class="article-list">
+    <app-article-type-side [article]="article"></app-article-type-side>
+  </div>
+</section>
+
   
