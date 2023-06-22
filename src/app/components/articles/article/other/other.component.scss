@@ -2,10 +2,8 @@
 
 .other {
     margin-right: $big-border;
-    .article-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    margin-left: $big-border;
+    margin-top: $big-border; 
     
     h2 {
       background-color: $category-food-color;
@@ -15,15 +13,14 @@
   
     .article-list {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: space-between;
+       
       }
     
       .article {
         margin-bottom: $big-border;
-        width: calc(33.33% - #{$small-border}); /* Répartit les articles sur trois colonnes */
         padding-right: $small-border;
-        box-sizing: border-box;
       }
   }
   
