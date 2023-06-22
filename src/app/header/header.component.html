@@ -6,26 +6,26 @@
     <div>
         <nav>
             <ul class="divnav">
-<<<<<<< HEAD:src/app/components/header/header.component.html
-                <li><a [routerLink]="APP_ROUTES.index">Accueil</a></li>
-                <li><a class="categ" [routerLink]="">Catégories</a></li>
-                <li><a id="fun" [routerLink]="">Hav'Fun</a></li>
-                <li><a id="sport" [routerLink]="">NRgy</a></li>
-                <li><a id="carie" [routerLink]="">Carie</a></li>
-                <li><a id="miam" [routerLink]="">Miam</a></li>
-                <li><a id="money" [routerLink]="">Ça coute bonbon</a></li>
-=======
+
                 <li><a [routerLink]="APP_ROUTES.index">Accueil<i class="fas fa-home"></i></a></li>
                 <li><a class="categ" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
                 <li><a id="fun" [routerLink]="APP_ROUTES.categories+'/1'">Hav'Fun</a></li>
                 <li><a id="sport" [routerLink]="APP_ROUTES.categories+'/2'">NRgy</a></li>
                 <li><a id="carie" [routerLink]="APP_ROUTES.categories+'/3'">Carie</a></li>
                 <li><a id="miam" [routerLink]="APP_ROUTES.categories+'/4'">Miam</a></li>
-                <li><a id="money" [routerLink]="APP_ROUTES.categories+'/5'">Ca coute bonbon</a></li>
->>>>>>> 2fb9d41239f81c9dff6f81ef0f89024a984622a1:src/app/header/header.component.html
-                <li><a id="login" [routerLink]="">Connexion</a></li>
+                <li><a id="money" [routerLink]="APP_ROUTES.categories+'/5'">Ça coûte bonbon</a></li>
+                <li><a id="login" [routerLink]="">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
                 <li></li>
             </ul>
+
+            <ul id="smallscr">
+                <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil</a></li>
+                <li><a id="api" [routerLink]="">Api</a></li>
+                <li><a id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+                <li><a id="login" [routerLink]="">Connexion</a></li>
+            </ul>
+
         </nav>
+
     </div>
 </header>
