@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
-import { ARTICLES } from 'src/app/shared/datas/articles';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
+import { Article } from 'src/app/shared/interfaces/article';
 
 @Component({
   selector: 'app-articles',
@@ -12,12 +12,12 @@ import { APP_ROUTES } from 'src/app/shared/globals/routes';
 export class ArticlesComponent implements OnInit {
 
   public APP_ROUTES = APP_ROUTES;
-  public articles!: any;
+  public articles!: Article[];
 
-  constructor(public articleService: ArticleApiService) {}
+  constructor(public articlesService: ArticleApiService) {}
 
   ngOnInit(): void {
-    this.articleService.getArticles()
+    this.articlesService.getArticles()
       .subscribe(articles => {
         this.articles = articles;
       });

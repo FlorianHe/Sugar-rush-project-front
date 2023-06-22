@@ -1,6 +1,6 @@
 <article *ngIf="article" id="main-content">
-    <app-article-title class="title"></app-article-title>
-    <app-article-body class="body"></app-article-body>
+    <app-article-title [article]="article" class="title"></app-article-title>
+    <app-article-body [content]="article.content" class="body"></app-article-body>
     <div class="article-bottom">
         <div class="comment">&nbsp;</div>
         <app-article-other class="other"></app-article-other>
