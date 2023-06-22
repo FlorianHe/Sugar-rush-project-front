@@ -1,8 +1,8 @@
 @use "/src/_import.scss" as *;
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $min-width-desktop) {
     #head {
-        width: 99%;
+        width: 100%;
         height: 90px;
 
         border-image-slice: fill;
@@ -43,6 +43,9 @@
 
         }
 
+        li {
+            height: 70px;
+        }
 
 
         nav ul li .active {
@@ -106,10 +109,8 @@
             animation: alternate-reverse;
         }
 
-        #login {
-            background-image: image-set("/assets/images/connexion.png");
-            background-repeat: no-repeat;
-            color: transparent;
+        #smallscr {
+            visibility: hidden;
         }
 
 
@@ -123,11 +124,14 @@
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $min-width-desktop) {
 
 
     #head {
         display: flex;
+        position: fixed;
+        top:0;
+        z-index: 10;
         justify-content: center;
         background-color: #FECEE9;
         background-image: image-set("/assets/images/sugar_rush.png");
@@ -141,7 +145,72 @@
     }
 
     nav {
+        align-self: center;
+    }
+    .divnav {
         visibility: hidden;
+    }
+
+    a {
+        height: 3rem;
+    }
+
+    ul,
+    li,
+    a {
+        box-sizing: border border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+        text-decoration: none;
+        color: $secondary-text-color;
+    }
+
+    li {
+        height: 70px;
+    }
+
+    #smallscr {
+        position: fixed;
+        bottom: -1px;
+        left: 0;
+        background: #FECEE9;
+        width: 100%;
+        /* height: 70px; */
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        li {
+            border: 1px solid;
+        }
+    }
+
+    #smallscr a {
+        background-color: #FECEE9;
+        //box-sizing: border border-box;
+        text-decoration: none;
+        //display: flex;
+        //justify-content: space-between;
+
+        align-items: center;
+        gap: 12px;
+        height: 4rem;
+    }
+
+    #accueil {
+        background-image: image-set("/assets/images/home.png");
+        background-repeat: no-repeat;
+        color: transparent;
+
+    }
+
+
+
+    #login {
+        background-image: image-set("/assets/images/user.png");
+        background-repeat: no-repeat;
+        color: transparent;
     }
 
 }

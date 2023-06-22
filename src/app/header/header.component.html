@@ -1,6 +1,6 @@
 <header id="head">
     <a [routerLink]="APP_ROUTES.index">
-        <div class="logo">
+    <div class="logo">
         </div>
     </a>
     <div>
@@ -12,9 +12,14 @@
                 <li><a id="sport" [routerLink]="APP_ROUTES.categories+'/2'">NRgy</a></li>
                 <li><a id="carie" [routerLink]="APP_ROUTES.categories+'/3'">Carie</a></li>
                 <li><a id="miam" [routerLink]="APP_ROUTES.categories+'/4'">Miam</a></li>
-                <li><a id="money" [routerLink]="APP_ROUTES.categories+'/5'">Ca coute bonbon</a></li>
-                <li><a id="login" [routerLink]="">Connexion</a></li>
+                <li><a id="money" [routerLink]="APP_ROUTES.categories+'/5'">Ça coute bonbon</a></li>
+                <li><a id="login" [routerLink]="">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
                 <li></li>
+            </ul>
+            <ul id="smallscr">
+                <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil</a></li>
+                <li><a id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+                <li><a id="login" [routerLink]="">Connexion</a></li>
             </ul>
         </nav>
     </div>
