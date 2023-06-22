@@ -17,7 +17,7 @@ export class CategoriesApiService {
     return this.http.get<Category[]>(url);
   }
 
-  getCategoryById(slug: string): Observable<Article[]> {
+  getArticlesByCategorySlug(slug: string): Observable<Article[]> {
     const url = `${this.apiUrl}/articles.php`;
     return this.http.get<Article[]>(url);
   }
