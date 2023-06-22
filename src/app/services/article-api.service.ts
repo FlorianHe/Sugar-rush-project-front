@@ -3,24 +3,23 @@ import { Injectable } from '@angular/core';
 import { ARTICLE } from '../shared/datas/article';
 import { Article } from '../shared/interfaces/article';
 import { Observable } from 'rxjs';
-import { ARTICLES } from '../shared/datas/articles';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleApiService {
 
-  private apiUrl = 'http://json.helaine.eu/api/articles.php';
+  private apiUrl = 'http://json.helaine.eu/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
-    const url = `${this.apiUrl}/articles`;
+    const url = `${this.apiUrl}/articles.php`;
     return this.http.get<Article[]>(url);
   }
 
   getArticleById(id: number): Observable<Article> {
-    const url = `${this.apiUrl}/articles/${id}`;
+    const url = `${this.apiUrl}/article/${id}.php`;
     return this.http.get<Article>(url);
   }
 }
