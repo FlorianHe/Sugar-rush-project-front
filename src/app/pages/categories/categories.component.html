@@ -1,6 +1,6 @@
-<section id="categories">
+<section *ngIf="categories" id="categories">
   <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-header" [id]="category.slug + '-header'" routerLink="/categories/{{category.id}}">
+    <a class="categories-header" [id]="category.slug + '-header'" routerLink="/categories/{{category.slug}}">
       <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
       <p routerLink="/categories/{{category.id}}">
         <span>Voir plus</span>

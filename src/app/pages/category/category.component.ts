@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { CATEGORIES } from 'src/app/shared/datas/categories';
+import { CategoriesApiService } from 'src/app/services/categories-api.service';
 
 @Component({
   selector: 'app-category',
@@ -10,17 +10,24 @@ import { CATEGORIES } from 'src/app/shared/datas/categories';
 })
 
 export class CategoryComponent {
-  public categoryID: number = 0;
 
+  private categorySlug!: string;
+  private _category!: any;
   arr = Array;
-  public categories = CATEGORIES;
 
-  constructor(private route: ActivatedRoute, private titleService: Title) {}
+  constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.categoryID = parseInt(params.get('categoryID') || "");
-    })
-    this.titleService.setTitle('Sugar Rush : ' + this.categories[this.categoryID - 1].name);
+    this.route.params.subscribe((params) => {
+      this.categorySlug = params['categorySlug'];
+    });
+    this.categoriesService.getCategoryById(this.categorySlug).subscribe((category) => {
+      this._category = category;
+      this.titleService.setTitle('Sugar Rush : ' + this._category.name);
+    });
   };
+
+  get category(): any {
+    return this._category;
+  }
 }

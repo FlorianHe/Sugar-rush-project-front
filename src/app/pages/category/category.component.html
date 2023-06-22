@@ -1,7 +1,7 @@
-<section id="category-main">
+<section *ngIf="category" id="category-main">
   <div class="category-header">
-    <h1 [id]="categories[categoryID-1].slug + '-title'">
-      <span>{{categories[categoryID-1].name}}</span>
+    <h1 [id]="category.slug + '-title'">
+      <span>{{category.name}}</span>
       <span>V</span>
     </h1>
   </div>

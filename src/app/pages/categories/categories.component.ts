@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CATEGORIES } from 'src/app/shared/datas/categories';
+import { CategoriesApiService } from 'src/app/services/categories-api.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,6 +8,18 @@ import { CATEGORIES } from 'src/app/shared/datas/categories';
 })
 export class CategoriesComponent {
 
-  public categories = CATEGORIES
+  private _categories!: any;
 
+  constructor(public categoriesService: CategoriesApiService) {}
+
+  ngOnInit(): void {
+    this.categoriesService.getCategories()
+      .subscribe(categories => {
+        this._categories = categories;
+      });
+  }
+
+  get categories(): any {
+    return this._categories;
+  }
 }
