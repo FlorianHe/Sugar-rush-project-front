@@ -1,5 +1,6 @@
 export const ARTICLES = [{
     "id": 1,
+    "isMain" : true,
     "title": "Le caramel qui colle aux dents : pour ou contre ?",
     "slug": "le-caramel-qui-colle-aux-dents-pour-ou-contre",
     "publication_date": new Date("2023-06-15T15:14:00.000Z"),
@@ -13,8 +14,9 @@ export const ARTICLES = [{
 },
 {
     "id": 2,
+    "isMain" : false,
     "title": "La Maison du Diabète et des maladies chroniques - Marcq-en-Baroeul",
-    "slug": "Les pathologies liées à l'excès de sucre...",
+    "slug": "la-maison-du-diabete-et-des-maladies-chroniques-marcq-en-baroeul",
     "publication_date": new Date("2023-06-18T15:14:00.000Z"),
     "publication_image": "https://www.maison-diabete.com/wordpress/wp-content/uploads/slide_prestas.jpg",
     "categories": [{
@@ -26,8 +28,9 @@ export const ARTICLES = [{
 },
 {
     "id": 3,
+    "isMain" : false,
     "title": "Le Bus Santé sillonne les routes de la Région Hauts-de-France",
-    "slug": "Le concept d’antenne itinérante a vu le jour en septembre 2008...",
+    "slug": "le-bus-sante-sillonne-les-routes-de-la-region-hauts-de-france",
     "publication_date": new Date("2023-06-19T15:14:00.000Z"),
     "publication_image": "https://www.maison-diabete.com/wordpress/wp-content/uploads/slide_bus.jpg",
     "categories": [{
@@ -39,8 +42,9 @@ export const ARTICLES = [{
 },
 {
     "id": 4,
+    "isMain" : false,
     "title": "La prévention en actions !",
-    "slug": "Intervenir auprès des entreprises, tous secteurs confondus, et des associations en fonction de leurs besoins..",
+    "slug": "la-prevention-en-actions",
     "publication_date": new Date("2023-06-20T15:14:00.000Z"),
     "publication_image": "https://www.maison-diabete.com/wordpress/wp-content/uploads/l%C3%A9gumes-642x428.jpg",
     "categories": [{
@@ -52,8 +56,9 @@ export const ARTICLES = [{
 },
 {
     "id": 5,
+    "isMain" : false,
     "title": "Salade de harengs aux lentilles",
-    "slug": "10 min de préparation - 20 min de cuisson - nutriscore A",
+    "slug": "salade-de-harengs-aux-lentilles",
     "publication_date": new Date("2023-06-17T15:14:00.000Z"),
     "publication_image": "https://www.mangerbouger.fr/manger-mieux/la-fabrique-a-menus/_next/image?url=https%3A%2F%2Fapi-prod-fam.mangerbouger.fr%2Fstorage%2Frecettes_generiques%2Fplatcomplet.png&w=1920&q=75",
     "categories": [{
@@ -65,8 +70,9 @@ export const ARTICLES = [{
 },
 {
     "id": 6,
+    "isMain" : false,
     "title": "Une idée de sport : le Badminton",
-    "slug": "Bougez, éliminez !",
+    "slug": "une-idee-de-sport-le-badminton",
     "publication_date": new Date("2023-06-11T15:14:00.000Z"),
     "publication_image": "https://www.mangerbouger.fr/var/mb/storage/images/_aliases/reference/2/6/3/6/6362-1-eng-GB/activite_physique_badminton.jpg",
     "categories": [{
@@ -78,8 +84,9 @@ export const ARTICLES = [{
 },
 {
     "id": 7,
+    "isMain" : false,
     "title": "Bien manger sans se ruiner",
-    "slug": "Notre porte-monnaie s’y retrouve!",
+    "slug": "bien-manger-sans-se ruiner",
     "publication_date": new Date("2023-06-10T15:14:00.000Z"),
     "publication_image": "https://www.mangerbouger.fr/var/mb/storage/images/_aliases/reference/2/6/3/6/6362-1-eng-GB/activite_physique_badminton.jpg",
     "categories": [{
@@ -91,8 +98,9 @@ export const ARTICLES = [{
 },
 {
     "id": 8,
+    "isMain" : false,
     "title": "Sucre est aussi le nom d'une ville !",
-    "slug": "Le saviez-vous ?",
+    "slug": "sucre-est-aussi-le-nom-d-une-ville",
     "publication_date": new Date("2023-06-09T15:14:00.000Z"),
     "publication_image": "https://commons.wikimedia.org/wiki/File:Sucre,_Bolivia_-_(24545082440).jpg?uselang=fr",
     "categories": [{
