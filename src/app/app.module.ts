@@ -23,7 +23,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { StockComponent } from './components/stock/stock.component';
-import { HttpClientModule } from '@angular/common/http';
 import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
 

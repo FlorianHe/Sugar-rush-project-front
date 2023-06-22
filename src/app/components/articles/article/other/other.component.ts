@@ -18,7 +18,6 @@ export class OtherComponent implements OnInit {
     this.articleService.getArticles()
       .subscribe(articles => {
         this._articles = articles;
-        console.log(this._articles);
       });
   }
 

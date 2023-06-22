@@ -23,6 +23,7 @@ export class ArticlesComponent implements OnInit {
       .subscribe(articles => {
         this.articles = articles;
       });
+    }
 
 
   getSideArticles():ArticleDisplayed[]{

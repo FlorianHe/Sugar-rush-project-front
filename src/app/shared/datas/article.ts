@@ -2,6 +2,7 @@ import { Article } from "../interfaces/article";
 
 export const ARTICLE: Article = {
     "id": 1,
+    "isMain": false,
     "title": "Le caramel qui colle aux dents : pour ou contre ?",
     "slug": "le-caramel-qui-colle-aux-dents-pour-ou-contre",
     "publication_date": new Date("2023-06-15T15:14:00.000Z"),
