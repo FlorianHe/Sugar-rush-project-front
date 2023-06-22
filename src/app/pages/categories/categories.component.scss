@@ -11,10 +11,12 @@
     .categories-header {
       display: flex;
       align-items: center;
-      background-color: $main-background-color;
       padding: $small-border;
       justify-content: space-between;
       text-decoration: none;
+      border: 2px solid $secondary-text-color;
+      border-radius: 10px;
+      cursor: pointer;
 
       h2 {
         font-family: "Glam-queen";
