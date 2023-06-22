@@ -1,6 +1,6 @@
 <section *ngIf="categories" id="categories">
   <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-header" [id]="category.slug + '-header'" routerLink="/categories/{{category.slug}}">
+    <a class="categories-header" [id]="category.slug + '-header'" (click)="navigate(category)">
       <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
       <p routerLink="/categories/{{category.id}}">
         <span>Voir plus</span>
@@ -8,10 +8,9 @@
       </p>
     </a>
 
-    <div class="categories-3articles">
-      <app-article-type-small></app-article-type-small>
-      <app-article-type-small></app-article-type-small>
-      <app-article-type-small></app-article-type-small>
+    <div class="categories-3articles" *ngIf="articles">
+      <app-article-type-small *ngFor="let article of articles.slice(0,3)"
+        class="category-article"></app-article-type-small>
     </div>
   </div>
 </section>
