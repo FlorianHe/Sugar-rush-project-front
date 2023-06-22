@@ -1,0 +1,27 @@
+<div *ngIf="stock" id="stock">
+    <div class="container">
+        <div class="arrow">
+            <span [ngClass]="{
+                'red': stock.percent < 0,
+                'red-bg': stock.percent < 0,
+                'green': stock.percent > 0,
+                'green-bg': stock.percent > 0
+              }"><i class="fa-solid" [ngClass]="{
+                'fa-arrow-down': stock.percent < 0,
+                'fa-arrow-up': stock.percent > 0,
+                'fa-arrow-right' : stock.percent == 0
+              }"></i></span>
+        </div>
+        <div class="middle">
+            <div class="name">{{stock.name}}</div>
+            <div class="value">{{stock.data[0].value | number : '1.2-2' | currency}}</div>
+        </div>
+        <div class="changes" [ngClass]="{
+            'red' : stock.percent < 0,
+            'green' : stock.percent > 0
+        }">
+            <div>{{stock.data[0].value | percentChange:stock.data[1].value}}</div>
+            <div>{{stock.data[0].value - stock.data[1].value | addPlus }}</div>
+        </div>
+    </div>
+</div>
