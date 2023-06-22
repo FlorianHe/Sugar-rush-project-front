@@ -1,4 +1,4 @@
-<article class="main-type3">
+<article class="main-type3" routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}">
     <img src={{article.publication_image}}>
     <div [ngClass]="'description '+article.categories[0].slug+'-background'">
         <div class="titles">

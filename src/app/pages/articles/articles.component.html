@@ -1,17 +1,14 @@
 <h1 class="main-title">Sugar Rush : Votre actu sucrée au quotidien !</h1>
 <div class="top">
-    <a routerLink="{{APP_ROUTES.articles}}/{{ articles[0].slug }}"><app-article-type-main [article]="articles[0]" class="main"></app-article-type-main></a>
+    <app-article-type-main [article]="articles[0]" class="main"></app-article-type-main>
     <div class="side">
         <h2>Plus de {{articles[0].categories[0].name}}</h2>
-        <a *ngFor="let article of articles.slice(0, 4)" routerLink="{{APP_ROUTES.articles}}/{{ article.slug }}"><app-article-type-side [article]="article" ></app-article-type-side></a>
+        <app-article-type-side [article]="article" *ngFor="let article of getSideArticles()" ></app-article-type-side>
     </div>
 </div>
 <div class="small">
     <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small>
 </div>
 <div class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small>
-</div>
-<div class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small>
+    <app-article-type-small *ngFor="let article of articles.slice(3, 6)" [article]="article"></app-article-type-small>
 </div>
