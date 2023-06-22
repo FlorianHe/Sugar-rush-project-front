@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Article } from 'src/app/shared/interfaces/article';
 
 @Component({
   selector: 'app-article-other',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./other.component.scss']
 })
 export class OtherComponent {
+
 
 }

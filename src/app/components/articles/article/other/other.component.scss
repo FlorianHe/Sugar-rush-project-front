@@ -2,10 +2,28 @@
 
 .other {
     margin-right: $big-border;
-
-
+  
     h2 {
-        background-color: $category-food-color;
-        padding: $small-border;
+      background-color: $category-food-color;
+      padding: $main-border;
+      margin-bottom: $small-border;
     }
-}
+  
+    .article-list {
+        width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    .article {
+      margin-bottom: $big-border;
+      padding-right: $small-border;
+      box-sizing: border-box;
+    }
+  }
+
+  @media screen and (min-width: 48em) {
+    
+  }
+  

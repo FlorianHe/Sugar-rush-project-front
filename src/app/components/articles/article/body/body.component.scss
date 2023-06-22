@@ -1,5 +1,9 @@
 @use "/src/_import.scss" as *;
 
+* {
+  box-sizing: border-box;
+}
+
 .body {
   background-color: $main-background-color;
   color: $main-text-color;
