@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { CATEGORIES } from 'src/app/shared/datas/categories';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
+import { CategoriesApiService } from 'src/app/services/categories-api.service';
+import { Article } from 'src/app/shared/interfaces/article';
+import { Category } from 'src/app/shared/interfaces/category';
 
 @Component({
   selector: 'app-category',
@@ -10,17 +12,29 @@ import { CATEGORIES } from 'src/app/shared/datas/categories';
 })
 
 export class CategoryComponent {
-  public categoryID: number = 0;
 
+  private _category!: Category;
+  private _articles!: Article[];
   arr = Array;
-  public categories = CATEGORIES;
 
-  constructor(private route: ActivatedRoute, private titleService: Title) {}
+  constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.categoryID = parseInt(params.get('categoryID') || "");
-    })
-    this.titleService.setTitle('Sugar Rush : ' + this.categories[this.categoryID - 1].name);
+    this.route.params.subscribe((params: Params) => {
+      this._category = params as Category;
+      this.titleService.setTitle('Sugar Rush : ' + params['name']);
+    });
+    this.categoriesService.getArticlesByCategorySlug(this.category.slug).subscribe((articles) => {
+      this._articles = articles;
+    }
+    );
   };
+
+  get category(): Category {
+    return this._category;
+  }
+
+  get articles(): Article[] {
+    return this._articles;
+  }
 }

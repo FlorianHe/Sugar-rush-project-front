@@ -1,18 +1,32 @@
-body {
+@use "/src/_import.scss" as *;
+
+.stock {
     display: flex;
-    flex-direction: column;
-    align-content: stretch;
+    gap: $main-border;
+    margin: $main-border 0;
 }
 
-.head {
-    flex: 1;
-}
-
-.route {
-    flex: 9;
-}
-
-.foot {
-
-    flex: 1;
-}
+@media screen and (min-width: $min-width-desktop) {
+    #page-content {
+      width: 70%;
+      /* Set the width to 70% of the screen */
+      max-width: 71em;
+      /* Optional: Set a maximum width for larger screens */
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      background-color: $main-background-color;
+      box-shadow: 0.75rem 0 0 $secondary-background-color, -0.75rem 0 0 $secondary-background-color;
+      overflow: initial;
+      margin: 0 auto;
+      /* Center the element horizontally */
+    }
+  
+    #page-wrap {
+      display: flex;
+      justify-content: center;
+      /* Horizontally center the content */
+      align-items: center;
+      /* Vertically center the content */
+      background-color: $secondary-background-color;
+    }
+  }

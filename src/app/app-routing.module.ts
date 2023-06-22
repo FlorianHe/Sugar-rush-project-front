@@ -9,9 +9,9 @@ import { APP_ROUTES } from './shared/globals/routes';
 import { ArticleComponent } from './pages/article/article.component';
 
 const routes: Routes = [
-  { 
-    
-    path: APP_ROUTES.rArticles, 
+  {
+
+    path: APP_ROUTES.rArticles,
     redirectTo: APP_ROUTES.rIndex,
     pathMatch: 'full'
   },
@@ -31,7 +31,7 @@ const routes: Routes = [
     component: CategoriesComponent
   },
   {
-    path: APP_ROUTES.rCategories + '/:categoryID',
+    path: APP_ROUTES.rCategories + '/:slug',
     title: 'Sugar Rush : Categorie',
     component: CategoryComponent
   },
