@@ -17,6 +17,8 @@
 
   p {
     line-height: 1.5;
+    margin-bottom: $small-border;
+    margin-top: $small-border;
   }
 
   ol {
@@ -25,6 +27,7 @@
 
   li {
     margin-top: $small-border;
-    margin-bottom: $small-border;
+    margin-bottom: $big-border;
+    padding-left: $big-border;
   }
 }

@@ -6,38 +6,128 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: $small-border;
 
     h1 {
         font-size: 24px;
         color: $main-text-color;
         margin-bottom: $small-border;
-        ;
     }
 
-    .categories {
+    .categories-sport {
         display: flex;
         align-items: baseline;
+        margin-bottom: $small-border;
 
     }
 
-    .categories ul {
+    .categories-sport ul {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
     }
 
-    .categories li {
+    .categories-sport li {
         margin-right: 10px;
         font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-sport-color;
+    }
+
+    .categories-carie {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-carie ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-carie li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-health-color;
+    }
+
+    .categories-miam {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-miam ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-miam li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
         color: $category-food-color;
+    }
+
+    .categories-ca-coute-bonbon {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-ca-coute-bonbon ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-ca-coute-bonbon li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-economy-color;
+    }
+
+    .categories-fun {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: $small-border;
+
+    }
+
+    .categories-fun ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories-fun li {
+        margin-right: 10px;
+        font-size: 16px;
+        font-family: "Glam-queen";
+        font-size: 3em;
+        color: $category-fun-color;
     }
 
     .lead {
         margin-top: 10px;
         font-size: 14px;
         color: $main-text-color;
+        margin-top: $big-border;
     }
 
     .author {
@@ -70,7 +160,6 @@
         padding-left: $big-border; 
         padding-right: $big-border;
 
-
     }
 
     .publication-image {
@@ -79,5 +168,8 @@
         object-fit: cover;
         padding-left: $big-border; 
         padding-right: $big-border;
+        margin-bottom: $big-border;
     }
+
+   
 }

@@ -52,3 +52,50 @@ a:visited {
     background-color: $secondary-background-color;
   }
 }
+
+/* Temporary before the content get change */
+h2.h2-title-article-food {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-food-color;
+}
+
+p.p-article-food {
+  line-height: 1.5;
+  margin-bottom: $small-border;
+  margin-top: $small-border;
+}
+
+ol.ol-article-food {
+  list-style: none;
+}
+
+li.li-article-food {
+  margin-top: $small-border;
+  margin-bottom: $big-border;
+  padding-left: $big-border;
+}
+
+h2.h2-title-article-health {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-health-color;
+}
+
+h2.h2-title-article-sport {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-sport-color;
+}
+
+h2.h2-title-article-economy {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-economy-color;
+}
+
+h2.h2-title-article-fun {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-fun-color;
+}

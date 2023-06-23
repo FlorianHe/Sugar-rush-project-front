@@ -1,5 +1,5 @@
 <section *ngIf="articles" class="other">
-    <h2>Articles liés</h2>
+    <h2 class="{{categorySlug}}">Articles liés</h2>
     <div class="article-list">
       <app-article-type-side class="type-side" [article]="article" *ngFor="let article of articles.slice(0,3)" ></app-article-type-side>
     </div>
