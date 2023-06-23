@@ -76,28 +76,11 @@ li.li-article-food {
   padding-left: $big-border;
 }
 
-h2.h2-title-article-carie {
+h2.h2-title-article-health {
   font-size: 1.5rem;
   margin-bottom: $small-border;
   color: $category-health-color;
 }
-
-p.p-article-carie {
-  line-height: 1.5;
-  margin-bottom: $small-border;
-  margin-top: $small-border;
-}
-
-ol.ol-article-carie {
-  list-style: none;
-}
-
-li.li-article-carie {
-  margin-top: $small-border;
-  margin-bottom: $big-border;
-  padding-left: $big-border;
-}
-
 
 h2.h2-title-article-sport {
   font-size: 1.5rem;
@@ -105,18 +88,14 @@ h2.h2-title-article-sport {
   color: $category-sport-color;
 }
 
-p.p-article-sport {
-  line-height: 1.5;
+h2.h2-title-article-economy {
+  font-size: 1.5rem;
   margin-bottom: $small-border;
-  margin-top: $small-border;
+  color: $category-economy-color;
 }
 
-ol.ol-article-sport {
-  list-style: none;
-}
-
-li.li-article-sport {
-  margin-top: $small-border;
-  margin-bottom: $big-border;
-  padding-left: $big-border;
+h2.h2-title-article-fun {
+  font-size: 1.5rem;
+  margin-bottom: $small-border;
+  color: $category-fun-color;
 }
