@@ -142,13 +142,13 @@
         background-size: contain;
         padding-top: 6%;
         padding-left: 4%;
+        .desktop {
+            display: none;
+        }
     }
 
     nav {
         align-self: center;
-    }
-    .divnav {
-        visibility: hidden;
     }
 
     a {
@@ -171,7 +171,7 @@
         height: 70px;
     }
 
-    #smallscr {
+    .divnav {
         position: fixed;
         bottom: -1px;
         left: 0;
@@ -184,18 +184,17 @@
         li {
             border: 1px solid;
         }
-    }
-
-    #smallscr a {
-        background-color: #FECEE9;
-        //box-sizing: border border-box;
-        text-decoration: none;
-        //display: flex;
-        //justify-content: space-between;
-
-        align-items: center;
-        gap: 12px;
-        height: 4rem;
+        a {
+            background-color: #FECEE9;
+            //box-sizing: border border-box;
+            text-decoration: none;
+            //display: flex;
+            //justify-content: space-between;
+    
+            align-items: center;
+            gap: 12px;
+            height: 4rem;
+        }
     }
 
     #accueil {

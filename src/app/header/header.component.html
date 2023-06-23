@@ -6,20 +6,14 @@
     <div>
         <nav>
             <ul class="divnav">
-                <li><a [routerLink]="APP_ROUTES.index">Accueil<i class="fas fa-home"></i></a></li>
-                <li><a class="categ" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
-                <li><a id="fun" [routerLink]="APP_ROUTES.categories+'/1'">Hav'Fun</a></li>
-                <li><a id="sport" [routerLink]="APP_ROUTES.categories+'/2'">NRgy</a></li>
-                <li><a id="carie" [routerLink]="APP_ROUTES.categories+'/3'">Carie</a></li>
-                <li><a id="miam" [routerLink]="APP_ROUTES.categories+'/4'">Miam</a></li>
-                <li><a id="money" [routerLink]="APP_ROUTES.categories+'/5'">Ça coute bonbon</a></li>
+                <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil<i class="fas fa-home"></i></a></li>
+                <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+                <li class="desktop"><a id="fun" [routerLink]="APP_ROUTES.categories+'/fun'">Hav'Fun</a></li>
+                <li class="desktop"><a id="sport" [routerLink]="APP_ROUTES.categories+'/sport'">NRgy</a></li>
+                <li class="desktop"><a id="carie" [routerLink]="APP_ROUTES.categories+'/carie'">Carie</a></li>
+                <li class="desktop"><a id="miam" [routerLink]="APP_ROUTES.categories+'/miam'">Miam</a></li>
+                <li class="desktop"><a id="money" [routerLink]="APP_ROUTES.categories+'/ca-coute-bonbon'">Ça coute bonbon</a></li>
                 <li><a id="login" [routerLink]="">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
-                <li></li>
-            </ul>
-            <ul id="smallscr">
-                <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil</a></li>
-                <li><a id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
-                <li><a id="login" [routerLink]="">Connexion</a></li>
             </ul>
         </nav>
     </div>
