@@ -20,7 +20,7 @@ export class CategoryComponent {
   constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
+    this.route.queryParams.subscribe((params: Params) => {
       this._category = params as Category;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
     });
