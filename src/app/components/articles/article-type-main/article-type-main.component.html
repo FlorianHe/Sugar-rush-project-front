@@ -1,10 +1,12 @@
-<article class="main-type1">
-    <img src="https://media.istockphoto.com/id/516358950/fr/photo/partie-de-sucre-blanc.jpg?s=612x612&w=0&k=20&c=PQdHZX3hIDHlQQHHoHJNAGxyQun5ORH_4kXJteRYyUU=">
+
+<article class="main-type1" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
+    <img src={{article.publication_image}}>
     <div class="blur">
         <div class="description">
-            <h4>Sweet !</h4>
-            <h2>Le sucre c'est trop bien</h2>
-            <time>Il y a 1 heure</time>
+            <h4 [ngClass]="article.categories[0].slug+'-color'">{{article.categories[0].name}} !</h4>
+            <h2>{{article.title}}</h2>
+            <time>{{article.publication_date | date : 'dd/M/yy, HH:mm'}}</time>
+
         </div>
     </div>
 </article>

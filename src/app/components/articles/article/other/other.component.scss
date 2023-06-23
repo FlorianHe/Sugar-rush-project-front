@@ -2,10 +2,33 @@
 
 .other {
     margin-right: $big-border;
-
-
-    h2 {
-        background-color: $category-food-color;
-        padding: $small-border;
+    margin-left: $big-border;
+    margin-top: $big-border; 
+    
+    .miam {
+      background-color: $category-food-color;
     }
-}
+    .sport {
+      background-color: $category-sport-color;
+    }
+    .carie {
+      background-color: $category-health-color;
+    }
+    h2 {
+      padding: $small-border;
+      margin-bottom: $small-border;
+    }
+  
+    .article-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       
+      }
+    
+      .article {
+        margin-bottom: $big-border;
+        padding-right: $small-border;
+      }
+  }
+  

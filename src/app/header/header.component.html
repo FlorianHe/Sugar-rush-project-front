@@ -1,0 +1,20 @@
+<header id="head">
+    <a [routerLink]="APP_ROUTES.index">
+    <div class="logo">
+        </div>
+    </a>
+    <div>
+        <nav>
+            <ul class="divnav">
+                <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil<i class="fas fa-home"></i></a></li>
+                <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+                <li class="desktop"><a id="fun" [routerLink]="APP_ROUTES.categories+'/fun'">Hav'Fun</a></li>
+                <li class="desktop"><a id="sport" [routerLink]="APP_ROUTES.categories+'/sport'">NRgy</a></li>
+                <li class="desktop"><a id="carie" [routerLink]="APP_ROUTES.categories+'/carie'">Carie</a></li>
+                <li class="desktop"><a id="miam" [routerLink]="APP_ROUTES.categories+'/miam'">Miam</a></li>
+                <li class="desktop"><a id="money" [routerLink]="APP_ROUTES.categories+'/ca-coute-bonbon'">Ça coute bonbon</a></li>
+                <li><a id="login" [routerLink]="">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
