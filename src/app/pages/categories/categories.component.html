@@ -1,8 +1,8 @@
 <section *ngIf="categories" id="categories">
   <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-header" [id]="category.slug + '-header'" (click)="navigate(category)">
+    <a class="categories-header" [id]="category.slug + '-header'" routerLink="{{APP_ROUTES.category(category.slug)}}" [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
       <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
-      <p (click)="navigate(category)">
+      <p>
         <span>Voir plus</span>
         <span>></span>
       </p>

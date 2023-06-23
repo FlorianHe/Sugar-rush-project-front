@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Category } from 'src/app/shared/interfaces/category';
+import { APP_ROUTES } from 'src/app/shared/globals/routes';
 
 @Component({
   selector: 'app-categories',
@@ -13,6 +14,7 @@ export class CategoriesComponent {
 
   private _categories!: Category[];
   private _articles!: Article[];
+  public APP_ROUTES = APP_ROUTES;
 
   constructor(public categoriesService: CategoriesApiService, private router: Router) {}
 
@@ -34,7 +36,4 @@ export class CategoriesComponent {
     return this._articles;
   }
 
-  public navigate(category: Category): void {
-    this.router.navigate(["/categories/" + category.slug, { id: category.id, name: category.name }]);
-  }
 }
