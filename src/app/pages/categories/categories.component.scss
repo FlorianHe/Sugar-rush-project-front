@@ -11,10 +11,12 @@
     .categories-header {
       display: flex;
       align-items: center;
-      background-color: $main-background-color;
       padding: $small-border;
       justify-content: space-between;
       text-decoration: none;
+      border: 2px solid $secondary-text-color;
+      border-radius: 10px;
+      cursor: pointer;
 
       h2 {
         font-family: "Glam-queen";
@@ -108,6 +110,7 @@
           display: initial;
           color: $secondary-text-color;
           font-size: 1.5rem;
+          cursor: pointer;
 
           &:hover {
             color: $fairy-color;
@@ -124,11 +127,15 @@
 
       app-article-type-small {
         width: 30%;
-        border: $fairy-color 1px solid;
+        /* CSS that we wish to keep and integrate later */
+        // border: $fairy-color 1px solid;
+        // // box-shadow: 10px 10px 10px $fairy-color;
+        // // transition: 0.3s ease-in-out;
 
-        &:hover {
-          border: $secondary-text-color 1px solid;
-        }
+        // &:hover {
+        //   border: $secondary-text-color 1px solid;
+        //   box-shadow: 10px 10px 10px $secondary-text-color;
+        // }
       }
     }
   }
