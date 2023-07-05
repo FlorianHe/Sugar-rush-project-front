@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Modal Title
+  <i mat-icon-button mat-dialog-close class="fas fa-window-close" style="color: #fecee9;"></i>
+</h1>
+
+<div *ngIf="user">Je suis connecté</div>
+
+<div *ngIf="!user">
+    <form [formGroup]="userForm" (ngSubmit)="login()">
+        <div>
+          <label for="username">username :</label>
+          <input type="text" formControlName="username">
+        </div>
+        <div>
+            <label for="password">password :</label>
+            <input type="password" formControlName="password">
+          </div>
+          <div mat-dialog-actions>
+            <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Se connecter</button>
+            <button mat-button [mat-dialog-close]="false">Fermer</button>
+          </div>
+    </form>
+</div>

@@ -13,7 +13,7 @@
                 <li class="desktop"><a id="carie" [routerLink]="APP_ROUTES.categories+'/carie'">Carie</a></li>
                 <li class="desktop"><a id="miam" [routerLink]="APP_ROUTES.categories+'/miam'">Miam</a></li>
                 <li class="desktop"><a id="money" [routerLink]="APP_ROUTES.categories+'/ca-coute-bonbon'">Ça coute bonbon</a></li>
-                <li><a id="login" [routerLink]="">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
+                <li><a id="login" (click)="openModal()">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
             </ul>
         </nav>
     </div>

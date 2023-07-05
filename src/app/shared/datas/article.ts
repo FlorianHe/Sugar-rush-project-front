@@ -1,6 +1,6 @@
 import { Article } from "../interfaces/article";
 
-export const ARTICLE: Article = {
+export const ARTICLE: any = {
     "id": 1,
     "isMain": false,
     "title": "Le caramel qui colle aux dents : pour ou contre ?",

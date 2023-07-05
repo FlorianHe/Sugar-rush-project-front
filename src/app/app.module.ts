@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +27,9 @@ import { CategoryComponent } from './pages/category/category.component';
 import { StockComponent } from './components/stock/stock.component';
 import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { UsersComponent } from './pages/users/users.component';
+import { ConnectionComponent } from './components/user/connection/connection.component';
+import { DetailComponent } from './components/user/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +49,18 @@ import { AddPlusPipe } from './pipes/add-plus.pipe';
     FooterComponent, 
     StockComponent,
     PercentChangePipe,
-    AddPlusPipe
+    AddPlusPipe,
+    UsersComponent,
+    ConnectionComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
