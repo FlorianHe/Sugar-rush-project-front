@@ -18,8 +18,8 @@ export class CategoriesApiService {
     return this.http.get<Category[]>(url);
   }
 
-  getArticlesByCategorySlug(slug: string): Observable<ArticleDisplayed[]> {
-    const url = `${this.apiUrl}/categories/${slug}/articles`;
+  getArticlesByCategorySlug(slug: string, limit : number, offset: number): Observable<ArticleDisplayed[]> {
+    const url = `${this.apiUrl}/categories/${slug}/articles?limit=${limit}&offset=${offset}`;
     return this.http.get<ArticleDisplayed[]>(url);
   }
 }

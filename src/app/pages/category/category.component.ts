@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
@@ -14,20 +14,25 @@ import { Category } from 'src/app/shared/interfaces/category';
 
 export class CategoryComponent {
 
+  @Input()
+  inputCategory!: Category;
+
   private _category!: Category;
+
   private _articles!: ArticleDisplayed[];
-  arr = Array;
 
   constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
-      this._category = params as Category;
+      if (this.inputCategory == null)
+        this._category = params as Category;
+      else
+        this._category = this.inputCategory;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
     });
-    this.categoriesService.getArticlesByCategorySlug('fun').subscribe((articles) => {
+    this.categoriesService.getArticlesByCategorySlug(this._category.slug, 3, 0).subscribe((articles) => {
       this._articles = articles;
-      console.log(this._articles);
     }
     );
   };

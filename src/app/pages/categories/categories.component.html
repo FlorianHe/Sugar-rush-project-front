@@ -1,5 +1,6 @@
 <section *ngIf="categories" id="categories">
-  <div class="categories-category" *ngFor="let category of categories">
+  <app-category *ngFor="let category of categories" [inputCategory]="category"></app-category>
+<!--  <div class="categories-category" *ngFor="let category of categories">
     <a class="categories-header" [id]="category.slug + '-header'" routerLink="{{APP_ROUTES.category(category.slug)}}" [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
       <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
       <p>
@@ -12,5 +13,5 @@
       <app-article-type-small [article]="article" *ngFor="let article of articles.slice(0,3)"
         class="category-article"></app-article-type-small>
     </div>
-  </div>
+  </div>-->
 </section>

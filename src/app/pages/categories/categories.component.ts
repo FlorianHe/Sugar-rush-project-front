@@ -24,9 +24,6 @@ export class CategoriesComponent {
       .subscribe(categories => {
         this._categories = categories;
       });
-    this.categoriesService.getArticlesByCategorySlug("fun").subscribe((articles) => {
-      this._articles = articles;
-    });
   }
 
   get categories(): Category[] {

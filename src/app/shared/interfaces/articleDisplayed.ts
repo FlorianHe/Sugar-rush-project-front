@@ -8,5 +8,5 @@ export interface ArticleDisplayed {
   slug: string
   publication_date: Date
   publication_image: string
-  categories: Category[]
+  category: Category
 }

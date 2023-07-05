@@ -13,5 +13,5 @@ export interface Article {
   content: string
   publication_image: string
   author: User
-  categories: Category[]
+  category: Category
 }
