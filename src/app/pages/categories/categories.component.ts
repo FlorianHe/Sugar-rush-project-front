@@ -4,6 +4,7 @@ import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Category } from 'src/app/shared/interfaces/category';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
+import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 
 @Component({
   selector: 'app-categories',
@@ -13,7 +14,7 @@ import { APP_ROUTES } from 'src/app/shared/globals/routes';
 export class CategoriesComponent {
 
   private _categories!: Category[];
-  private _articles!: Article[];
+  private _articles!: ArticleDisplayed[];
   public APP_ROUTES = APP_ROUTES;
 
   constructor(public categoriesService: CategoriesApiService, private router: Router) {}
@@ -23,7 +24,7 @@ export class CategoriesComponent {
       .subscribe(categories => {
         this._categories = categories;
       });
-    this.categoriesService.getArticlesByCategorySlug("").subscribe((articles) => {
+    this.categoriesService.getArticlesByCategorySlug("fun").subscribe((articles) => {
       this._articles = articles;
     });
   }
@@ -32,7 +33,7 @@ export class CategoriesComponent {
     return this._categories;
   }
 
-  get articles(): Article[] {
+  get articles(): ArticleDisplayed[] {
     return this._articles;
   }
 

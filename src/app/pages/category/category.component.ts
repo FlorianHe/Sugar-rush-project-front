@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
+import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 import { Category } from 'src/app/shared/interfaces/category';
 
 @Component({
@@ -14,7 +15,7 @@ import { Category } from 'src/app/shared/interfaces/category';
 export class CategoryComponent {
 
   private _category!: Category;
-  private _articles!: Article[];
+  private _articles!: ArticleDisplayed[];
   arr = Array;
 
   constructor(private route: ActivatedRoute, private titleService: Title, public categoriesService: CategoriesApiService) {}
@@ -24,8 +25,9 @@ export class CategoryComponent {
       this._category = params as Category;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
     });
-    this.categoriesService.getArticlesByCategorySlug(this.category.slug).subscribe((articles) => {
+    this.categoriesService.getArticlesByCategorySlug('fun').subscribe((articles) => {
       this._articles = articles;
+      console.log(this._articles);
     }
     );
   };
@@ -34,7 +36,7 @@ export class CategoryComponent {
     return this._category;
   }
 
-  get articles(): Article[] {
+  get articles(): ArticleDisplayed[] {
     return this._articles;
   }
 }
