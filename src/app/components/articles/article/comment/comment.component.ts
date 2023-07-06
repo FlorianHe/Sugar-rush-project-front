@@ -25,8 +25,9 @@ export class ArticleCommentComponent implements OnInit {
   }
 
   getCommentsByArticle(): void {
-    this.commentService.getCommentsByArticle(2).subscribe(comments => {
+    this.commentService.getCommentsByArticle(this.id).subscribe(comments => {
       this._comments = comments;
+      console.log(comments)
       for (let i = 0; i < this._comments.length; i++) {
         this._comments[i].user = {id : 1, firstname : 'Florian', lastname : 'Helaine'};
       }
