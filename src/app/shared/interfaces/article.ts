@@ -7,11 +7,11 @@ export interface Article {
   // isMain: boolean
   title: string
   slug: string
-  publication_date: Date
-  modification_date: Date
-  lead: string
+  publicationDate: Date
+  modificationDate: Date
+  leads: string
   content: string
-  publication_image: string
+  publicationImage: string
   author: User
   category: Category
 }

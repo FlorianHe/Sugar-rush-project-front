@@ -6,7 +6,7 @@ export interface ArticleDisplayed {
   // isMain: boolean
   title: string
   slug: string
-  publication_date: Date
-  publication_image: string
+  publicationDate: Date
+  publicationImage: string
   category: Category
 }
