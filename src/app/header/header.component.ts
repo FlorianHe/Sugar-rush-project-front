@@ -15,7 +15,9 @@ export class HeaderComponent {
 
   openModal() {
     console.log("click")
-    const dialogRef = this.dialog.open(ConnectionComponent);
+    const dialogRef = this.dialog.open(ConnectionComponent, {
+      panelClass: 'modal-login',
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       // Handle modal close event if needed
