@@ -1,8 +1,8 @@
 <article [ngClass]="'main-type2 '+article.category.slug+'-background'" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
     <div class="side-band">
-        <img src={{article.publication_image}}>
+        <img src={{article.publicationImage}}>
         <div class="description">
-            <h4>{{article.publication_date | date : 'HH:mm'}} | <span [ngClass]="article.category.slug+'-color'">{{article.category.name}}</span></h4>
+            <h4>{{article.publicationDate | date : 'HH:mm'}} | <span [ngClass]="article.category.slug+'-color'">{{article.category.name}}</span></h4>
             <h3>{{article.title}}</h3>
         </div>
     </div>

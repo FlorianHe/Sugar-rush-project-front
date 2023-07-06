@@ -9,9 +9,9 @@
         </div>
         <div class="author">
             <p>{{ article.author.firstname }} {{ article.author.lastname }}
-                Published: {{ article.publication_date | date }} | Updated: {{ article.modification_date | date }}
+                Published: {{ article.publicationDate | date }} | Updated: {{ article.modificationDate | date }}
             </p>
         </div>
     </div>
-    <img class="publication-image" src="{{ article.publication_image }}" alt="Publication Image">
+    <img class="publication-image" src="{{ article.publicationImage }}" alt="Publication Image">
 </section>
