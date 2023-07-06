@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ARTICLE } from '../shared/datas/article';
 import { Article } from '../shared/interfaces/article';
 import { Observable } from 'rxjs';
 import { ArticleDisplayed } from '../shared/interfaces/articleDisplayed';

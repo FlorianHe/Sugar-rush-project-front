@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +26,11 @@ import { CategoryComponent } from './pages/category/category.component';
 import { StockComponent } from './components/stock/stock.component';
 import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
+import { CommentComponent } from './components/comment/comment.component';
+
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
+
 
 @NgModule({
   declarations: [
@@ -46,13 +51,16 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     StockComponent,
     PercentChangePipe,
     AddPlusPipe,
+    ArticleCommentComponent,
+    CommentComponent,
     CategoryBlockComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
