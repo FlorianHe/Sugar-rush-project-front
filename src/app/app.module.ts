@@ -25,6 +25,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { StockComponent } from './components/stock/stock.component';
 import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { CategoryBlockComponent } from './components/category-block/category-block.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AddPlusPipe } from './pipes/add-plus.pipe';
     FooterComponent, 
     StockComponent,
     PercentChangePipe,
-    AddPlusPipe
+    AddPlusPipe,
+    CategoryBlockComponent
   ],
   imports: [
     BrowserModule,
