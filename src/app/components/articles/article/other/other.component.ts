@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
+import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { Article } from 'src/app/shared/interfaces/article';
+import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 
 
 @Component({
@@ -10,19 +12,19 @@ import { Article } from 'src/app/shared/interfaces/article';
 })
 export class OtherComponent implements OnInit {
 
-  @Input() categorySlug! : string
-  private _articles!: Article[];
+  @Input() categorySlug!: string
+  private _articles!: ArticleDisplayed[];
 
-  constructor(private articleService: ArticleApiService) {}
+  constructor(private categoriesService: CategoriesApiService) {}
 
   ngOnInit(): void {
-    this.articleService.getArticles()
-      .subscribe(articles => {
-        this._articles = articles;
-      });
+    this.categoriesService.getArticlesByCategorySlug(this.categorySlug, 3, 0).subscribe((articles) => {
+      this._articles = articles;
+    }
+    );
   }
 
-  get articles(): Article[] {
+  get articles(): ArticleDisplayed[] {
     return this._articles;
   }
 
