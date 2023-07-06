@@ -14,7 +14,7 @@ import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 export class ArticlesComponent implements OnInit {
 
   public APP_ROUTES = APP_ROUTES;
-  public articles!: Article[];
+  public articles!: ArticleDisplayed[];
 
   constructor(public articlesService: ArticleApiService) {}
 
@@ -23,10 +23,10 @@ export class ArticlesComponent implements OnInit {
       .subscribe(articles => {
         this.articles = articles;
       });
-    }
+  }
 
 
-  getSideArticles():ArticleDisplayed[]{
-    return this.articles.slice(0,4);
+  getSideArticles(): ArticleDisplayed[] {
+    return this.articles.slice(0, 4);
   }
 }

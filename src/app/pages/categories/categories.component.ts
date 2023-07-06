@@ -17,7 +17,7 @@ export class CategoriesComponent {
   private _articles!: ArticleDisplayed[];
   public APP_ROUTES = APP_ROUTES;
 
-  constructor(public categoriesService: CategoriesApiService, private router: Router) {}
+  constructor(public categoriesService: CategoriesApiService) {}
 
   ngOnInit(): void {
     this.categoriesService.getCategories()

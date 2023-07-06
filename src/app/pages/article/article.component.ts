@@ -18,11 +18,13 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.articleService.getArticleById(params['id'])
-      .subscribe(article => {
-        this._article = article;
-      });
+        .subscribe(article => {
+          this._article = article;
+          console.log(params)
+          console.log(article)
+        });
     });
-    
+
   }
 
   get article(): Article {

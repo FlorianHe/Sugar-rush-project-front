@@ -69,7 +69,7 @@
   }
 }
 
-@media screen and (min-width: 600px) and (orientation: landscape) {
+@media screen and (min-width: $min-width-desktop) and (orientation: landscape) {
   #category-main {
     .category-header {
       h1 {
