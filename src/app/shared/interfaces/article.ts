@@ -1,5 +1,6 @@
 import { User } from './user'
 import { Category } from './category'
+import { Comment } from './comment'
 
 export interface Article {
 
@@ -14,4 +15,5 @@ export interface Article {
     publication_image: string
     author: User
     categories: Category[]
+    comments: Comment[];
 }

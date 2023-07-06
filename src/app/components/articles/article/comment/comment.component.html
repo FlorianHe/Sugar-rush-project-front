@@ -1,1 +1,9 @@
-<p>comment works!</p>
+<section class="section">
+<app-comment *ngFor="let comment of _comments" [comment]="comment">
+</app-comment>
+
+<form #commentForm="ngForm" (ngSubmit)="createComment(commentForm)">
+    <textarea [(ngModel)]="commentForm.value.content" name="content" required></textarea>
+    <button type="submit">Ajouter un commentaire</button>
+</form>
+</section>

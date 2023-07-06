@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ARTICLE } from '../shared/datas/article';
 import { Article } from '../shared/interfaces/article';
 import { Observable } from 'rxjs';
 
@@ -9,17 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ArticleApiService {
 
-  private apiUrl = 'http://json.helaine.eu/api';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
-    const url = `${this.apiUrl}/articles.php`;
+    const url = `${this.apiUrl}/articles?limit=19&offset=0`;
     return this.http.get<Article[]>(url);
   }
 
   getArticleById(id: number): Observable<Article> {
-    const url = `${this.apiUrl}/article/${id}.php`;
+    const url = `${this.apiUrl}/article/${id}`;
     return this.http.get<Article>(url);
   }
 }
