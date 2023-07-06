@@ -1,6 +1,5 @@
 import { User } from './user'
 import { Category } from './category'
-import { Comment } from './comment'
 
 export interface Article {
 

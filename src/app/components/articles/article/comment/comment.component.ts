@@ -30,7 +30,6 @@ export class ArticleCommentComponent implements OnInit {
       for (let i = 0; i < this._comments.length; i++) {
         this._comments[i].user = {id : 1, firstname : 'Florian', lastname : 'Helaine'};
       }
-      console.log(this._comments);
     });
   }
 
