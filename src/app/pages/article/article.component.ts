@@ -20,8 +20,6 @@ export class ArticleComponent implements OnInit {
       this.articleService.getArticleById(params['id'])
         .subscribe(article => {
           this._article = article;
-          console.log(params)
-          console.log(article)
         });
     });
 

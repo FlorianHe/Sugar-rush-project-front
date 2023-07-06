@@ -23,9 +23,7 @@ export class CategoryBlockComponent {
   ngOnInit() {
     this.categoriesService.getArticlesByCategorySlug(this.category.slug, 3, 0).subscribe((articles) => {
       this._articles = articles;
-      console.log(this._articles);
-    }
-    );
+    });
   };
 
   get articles(): ArticleDisplayed[] {
