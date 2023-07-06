@@ -29,6 +29,8 @@ import { AddPlusPipe } from './pipes/add-plus.pipe';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
 
+import { CategoryBlockComponent } from './components/category-block/category-block.component';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { CommentComponent } from './components/comment/comment.component';
     AddPlusPipe,
     ArticleCommentComponent,
     CommentComponent,
+    CategoryBlockComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 <section class="title">
     <div class="article">
         <h1>{{ article.title }}</h1>
-        <div class="categories-{{article.categories[0].slug}}">
+        <div class="categories-{{article.category.slug}}">
             <ul>
-                <li *ngFor="let category of article.categories" [ngClass]="category.name">{{ category.name }}</li>
+                <li [ngClass]="article.category.name">{{ article.category.name }}</li>
             </ul>
             <p class="lead">{{ article.lead }}</p>
         </div>
