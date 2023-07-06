@@ -61,7 +61,7 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     AddPlusPipe,
     UsersComponent,
     ConnectionComponent,
-    DetailComponent
+    DetailComponent,
     ArticleCommentComponent,
     CommentComponent,
     CategoryBlockComponent
@@ -75,7 +75,7 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     MatDialogModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
     FormsModule,
   ],
   providers: [],

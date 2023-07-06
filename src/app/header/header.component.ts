@@ -12,12 +12,10 @@ import { CategoriesApiService } from '../services/categories-api.service';
 })
 export class HeaderComponent {
   public APP_ROUTES = APP_ROUTES;
-
-  constructor(private dialog: MatDialog) {}
   
   private _categories!: Category[];
 
-  constructor(public categoriesService: CategoriesApiService) {}
+  constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.categoriesService.getCategories()
@@ -26,7 +24,6 @@ export class HeaderComponent {
       });
   }
   openModal() {
-    console.log("click")
     const dialogRef = this.dialog.open(ConnectionComponent, {
       panelClass: 'modal-login',
     });
@@ -35,6 +32,7 @@ export class HeaderComponent {
       // Handle modal close event if needed
       console.log('Modal closed', result);
     });
+  }
 
   get categories(): Category[] {
     return this._categories;
