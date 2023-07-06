@@ -9,7 +9,7 @@ export interface Article {
   slug: string
   publicationDate: Date
   modificationDate: Date
-  lead: string
+  leads: string
   content: string
   publicationImage: string
   author: User
