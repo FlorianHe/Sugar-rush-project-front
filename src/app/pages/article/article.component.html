@@ -1,5 +1,5 @@
 <article *ngIf="article" id="main-content">
     <app-article-title [article]="article" class="title"></app-article-title>
     <app-article-body [content]="article.content" class="body"></app-article-body>
-    <app-article-other [categorySlug]="article.categories[0].slug" class="other"></app-article-other>
+    <app-article-other [categorySlug]="article.category.slug" class="other"></app-article-other>
 </article>

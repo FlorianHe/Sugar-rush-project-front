@@ -1,16 +1,3 @@
 <section *ngIf="categories" id="categories">
-  <div class="categories-category" *ngFor="let category of categories">
-    <a class="categories-header" [id]="category.slug + '-header'" routerLink="{{APP_ROUTES.category(category.slug)}}" [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
-      <h2 [id]="category.slug + '-title'">{{category.name}}</h2>
-      <p>
-        <span>Voir plus</span>
-        <span>></span>
-      </p>
-    </a>
-
-    <div class="categories-3articles" *ngIf="articles">
-      <app-article-type-small [article]="article" *ngFor="let article of articles.slice(0,3)"
-        class="category-article"></app-article-type-small>
-    </div>
-  </div>
+  <app-category-block *ngFor="let category of categories" [category]="category"></app-category-block>
 </section>
