@@ -29,8 +29,6 @@ export class HeaderComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Handle modal close event if needed
-      console.log('Modal closed', result);
     });
   }
 

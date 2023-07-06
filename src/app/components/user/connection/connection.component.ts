@@ -21,11 +21,9 @@ export class ConnectionComponent implements OnInit{
 
   ngOnInit(): void {
     this.user = null;//{id: 1, firstname: 'Florian', lastname : "Helaine"};
-    console.log(this.user)
   }
 
   login() : void {
-    console.log("connecté")
   }
 
 }

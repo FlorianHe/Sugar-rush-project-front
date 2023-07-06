@@ -12,10 +12,8 @@ export class UserService {
 
   public login(username: string, password: string) : Observable<any> {
     const credentials = {username, password};
-    console.log(credentials)
     return this.usersApiService.login(credentials).pipe(
       tap(response => {
-        console.log(response)
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
       })
