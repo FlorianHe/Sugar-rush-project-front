@@ -1,11 +1,11 @@
 
 <article class="main-type1" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
-    <img src={{article.publication_image}}>
+    <img src={{article.publicationImage}}>
     <div class="blur">
         <div class="description">
-            <h4 [ngClass]="article.categories[0].slug+'-color'">{{article.categories[0].name}} !</h4>
+            <h4 [ngClass]="article.category.slug+'-color'">{{article.category.name}} !</h4>
             <h2>{{article.title}}</h2>
-            <time>{{article.publication_date | date : 'dd/M/yy, HH:mm'}}</time>
+            <time>{{article.publicationDate | date : 'dd/M/yy, HH:mm'}}</time>
 
         </div>
     </div>

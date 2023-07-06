@@ -1,0 +1,44 @@
+<mat-tab-group animationDuration="0ms" class="connection-group">
+  <mat-tab label="Connexion">
+  <div class="login">
+      <form [formGroup]="userForm" (ngSubmit)="login()">
+          <div class="login-field">
+            <label for="username">Email : <span>*</span></label>
+            <input type="text" formControlName="username">
+          </div>
+          <div class="login-field">
+              <label for="password">Mot de passe : <span>*</span></label>
+              <input type="password" formControlName="password">
+            </div>
+          <div class="login-btn">
+            <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
+          </div>
+      </form>
+  </div>
+  </mat-tab>
+  <mat-tab label="Inscription">
+  <div class="login">
+    <form [formGroup]="userForm" (ngSubmit)="login()">
+        <div class="login-field">
+          <label for="username">Email : <span>*</span></label>
+          <input type="text" formControlName="username">
+        </div>
+        <div class="login-field">
+          <label for="pseudo">Pseudo : <span>*</span></label>
+          <input type="text" formControlName="pseudo">
+        </div>
+        <div class="login-field">
+            <label for="password">Mot de passe : <span>*</span></label>
+            <input type="password" formControlName="password">
+          </div>
+          <div class="login-field">
+            <label for="confirmPassword">Confirmez votre mot de passe : <span>*</span></label>
+            <input type="password" formControlName="confirmPassword">
+          </div>
+        <div class="login-btn">
+          <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
+        </div>
+    </form>
+</div>
+</mat-tab>
+</mat-tab-group>
