@@ -8,17 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ArticleApiService {
 
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://json.helaine.eu/api/';
 
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
-    const url = `${this.apiUrl}/articles?limit=19&offset=0`;
+    const url = `${this.apiUrl}/articles.php`;
     return this.http.get<Article[]>(url);
   }
 
   getArticleById(id: number): Observable<Article> {
-    const url = `${this.apiUrl}/article/${id}`;
+    const url = `${this.apiUrl}/article/${id}.php`;
     return this.http.get<Article>(url);
   }
 }

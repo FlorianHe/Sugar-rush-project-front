@@ -15,18 +15,22 @@ export class ArticleCommentComponent implements OnInit {
   id!: number;
 
 
-  _comments: Comment[] = COMMENT;
+  _comments!: Comment[] ;
 
 
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {
-    //this.getCommentsByArticle();
+    this.getCommentsByArticle();
   }
 
   getCommentsByArticle(): void {
-    this.commentService.getCommentsByArticle(this.id).subscribe(comments => {
+    this.commentService.getCommentsByArticle(2).subscribe(comments => {
       this._comments = comments;
+      for (let i = 0; i < this._comments.length; i++) {
+        this._comments[i].user = {id : 1, firstname : 'Florian', lastname : 'Helaine'};
+      }
+      console.log(this._comments);
     });
   }
 
@@ -44,6 +48,7 @@ export class ArticleCommentComponent implements OnInit {
     };
     this._comments.push(comment);
     this.commentService.createComment(comment).subscribe(createdComment => {
+      createdComment.user = {id : 2, firstname : 'Alexandre', lastname : 'Boutemy'};
       this._comments.push(createdComment);
       form.reset();
     });

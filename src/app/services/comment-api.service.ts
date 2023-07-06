@@ -18,7 +18,8 @@ export class CommentService {
   }
 
   createComment(comment: Comment): Observable<Comment> {
-    const url = `${this.apiUrl}/comments`;
+    const url = `${this.apiUrl}/articles/${comment.articleId
+    }/comments`;
     return this.http.post<Comment>(url, comment);
   }
 
