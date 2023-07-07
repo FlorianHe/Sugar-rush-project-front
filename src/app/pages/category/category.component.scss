@@ -56,14 +56,11 @@
     .category-article {
       margin-bottom: $main-border;
       /* CSS that we wish to keep and integrate later */
-      // border: $fairy-color 1px solid;
-      // box-shadow: 10px 10px 10px $fairy-color;
-      // transition: 0.3s ease-in-out;
+       transition: 0.3s ease-in-out;
 
-      // &:hover {
-      //   border: $secondary-text-color 1px solid;
-      //   box-shadow: 10px 10px 10px $secondary-text-color;
-      // }
+       &:hover {
+         box-shadow: 10px 10px 10px $secondary-text-color;
+       }
     }
   }
 }

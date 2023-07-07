@@ -32,9 +32,15 @@
         padding-top: 0.5rem;
         padding-bottom:0.5rem;
 
-        img {
+        .image-side {
             height:92px;
             width: 138px;
+            img {
+                height:92px;
+                width: 138px;
+                object-fit: cover;
+
+            }
         }
     
         .description {

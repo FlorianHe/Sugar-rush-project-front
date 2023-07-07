@@ -9,17 +9,19 @@
 
 .top {
     display:grid;
+    margin-bottom: $big-border;
     grid-template-columns: 2fr 1fr;
     gap: $big-border;
     .side {
         h2 {
             margin: 0;
-            padding: $small-border;
+            padding-bottom: $main-border;
         }
     }
 }
 
 .small {
+    margin-bottom: $big-border;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $main-border;
@@ -44,6 +46,10 @@
     }
     
     .small {
-        margin: $main-border;
+        margin:0;
+        .article-small {
+            margin: $main-border;
+        }
     }
+    
 }

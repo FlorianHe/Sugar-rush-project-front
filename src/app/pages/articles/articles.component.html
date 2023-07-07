@@ -2,13 +2,16 @@
 <div *ngIf="articles" class="top">
     <app-article-type-main [article]="articles[0]" class="main"></app-article-type-main>
     <div class="side">
-        <h2>Plus de {{articles[0].category.name}}</h2>
+        <h2>Plus de <span class="{{articles[0].category.slug}}-color">{{articles[0].category.name}}</span></h2>
         <app-article-type-side [article]="article" *ngFor="let article of getSideArticles()" ></app-article-type-side>
     </div>
 </div>
 <div *ngIf="articles" class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(0, 3)" [article]="article"></app-article-type-small>
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(0, 3); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
 </div>
 <div *ngIf="articles" class="small">
-    <app-article-type-small *ngFor="let article of articles.slice(3, 6)" [article]="article"></app-article-type-small>
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(3, 6); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
+</div>
+<div *ngIf="articles" class="small">
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(6, 9); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
 </div>
