@@ -9,7 +9,7 @@
   </a>
 
   <div class="categories-3articles" *ngIf="articles">
-    <app-article-type-small [article]="article" *ngFor="let article of articles; let i = index" [pos]="i+1"
+    <app-article-type-small [article]="article" *ngFor="let article of articles; let i = index" [pos]="(i % 3) + 1"
       class="category-article"></app-article-type-small>
   </div>
 </div>

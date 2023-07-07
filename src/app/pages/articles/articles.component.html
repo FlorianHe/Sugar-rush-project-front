@@ -7,11 +7,11 @@
     </div>
 </div>
 <div *ngIf="articles" class="small">
-    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(0, 3); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(0, 3); let i = index" [article]="article" [pos]="(i % 3) + 1"></app-article-type-small>
 </div>
 <div *ngIf="articles" class="small">
-    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(3, 6); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(3, 6); let i = index" [article]="article" [pos]="(i % 3) + 1"></app-article-type-small>
 </div>
 <div *ngIf="articles" class="small">
-    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(6, 9); let i = index" [article]="article" [pos]="i+1"></app-article-type-small>
+    <app-article-type-small class="article-small" *ngFor="let article of articles.slice(6, 9); let i = index" [article]="article" [pos]="(i % 3) + 1"></app-article-type-small>
 </div>
