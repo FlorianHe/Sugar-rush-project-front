@@ -12,6 +12,9 @@
 
     &:hover {
         box-shadow: 10px 10px 10px $secondary-text-color;
+        transform: scale(1.1);
+        z-index: 10;
+        position: relative;
     }
     .fun-background{
         background-color:$category-fun-color;
