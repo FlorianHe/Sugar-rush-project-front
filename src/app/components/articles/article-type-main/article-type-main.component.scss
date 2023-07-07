@@ -1,6 +1,6 @@
 @use "/src/_import.scss" as *;
 
-@media (max-width: 768px) {
+@media (max-width: $min-width-desktop) {
 
   .main-type1 {
     img {
@@ -37,7 +37,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $min-width-desktop) {
 
   .main-type1 {
     margin-top: 3rem;

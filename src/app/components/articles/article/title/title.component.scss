@@ -56,7 +56,7 @@
 }
 
 
-@media screen and (min-width: 1036px) {
+@media screen and (min-width: $min-width-desktop) {
 
   .article {
     width: 100%;

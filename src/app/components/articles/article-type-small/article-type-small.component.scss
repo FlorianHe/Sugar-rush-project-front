@@ -1,6 +1,6 @@
 @use "/src/_import.scss" as *;
 
-@media (max-width: 768px) {
+@media (max-width: $min-width-desktop) {
 
   .main-type3 {
 
@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $min-width-desktop) {
 
   .main-type3 {
 
