@@ -1,85 +1,62 @@
 @use "/src/_import.scss" as *;
 
-.fun-background{
-    background-color:$category-fun-color;
-}
-
-.sport-background{
-    background-color:$category-sport-color;
-}
-
-.carie-background{
-    background-color:$category-health-color;
-}
-
-.miam-background{
-    background-color:$category-food-color;
-}
-
-.ca-coute-bonbon-background{
-    background-color:$category-economy-color;
-
-}
-
 .main-type2 {
+  height: 108px;
 
+  .side-band {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.3rem;
+    background-color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
-    .side-band {
-        display:flex;
-        flex-direction:row;
-        margin-left: 0.3rem;
-        background-color: white;
-        padding-top: 0.5rem;
-        padding-bottom:0.5rem;
+    .image-side {
+      height: 92px;
+      width: 138px;
 
-        .image-side {
-            height:92px;
-            width: 138px;
-            img {
-                height:92px;
-                width: 138px;
-                object-fit: cover;
+      img {
+        height: 92px;
+        width: 138px;
+        object-fit: cover;
 
-            }
-        }
-    
-        .description {
-            margin-left:1rem;
-            
-            h4 {
-                .fun-color{
-                    color:$category-fun-color;
-                }
-            
-                .sport-color{
-                    color:$category-sport-color;
-                }
-            
-                .carie-color{
-                    color:$category-health-color;
-                }
-                
-                .miam-color{
-                    color:$category-food-color;
-                }
-            
-                .ca-coute-bonbon-color{
-                    color:$category-economy-color;
-                }
-
-                font-weight: normal;
-                font-size:.8125rem;
-                margin-top:.3rem;
-                margin-bottom: .3rem;
-            }
-
-            h3{
-                font-weight: normal;
-                font-size:.8125rem;
-                margin: 0;
-            }
-        }
-    
+      }
     }
 
+    .description {
+      margin-left: 1rem;
+      overflow: hidden;
+      max-height: 85px;
+
+      h4 {
+        font-weight: normal;
+        font-size: .8125rem;
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+      }
+
+      h3 {
+        font-weight: normal;
+        font-size: .8125rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .main-type2 {
+    .side-band {
+      .image-side {
+        height: 92px;
+        width: 92px;
+
+        img {
+          height: 92px;
+          width: 92px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }

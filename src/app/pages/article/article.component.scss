@@ -1,24 +1,23 @@
 @use "/src/_import.scss" as *;
 
-@media screen and (min-width: 1036px) {
-    #main-content {
-        .title {
-            width: 100%;
-            max-width: 1036px;
-            margin: 0 auto;
-            text-align: justify;
-        }
-
-        .body {
-            width: 100%;
-            margin: 0 auto;
-            text-align: justify;
-        }
-
-        .article-bottom {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-        }
+@media screen and (min-width: $min-width-desktop) {
+  #main-content {
+    .title {
+      width: 100%;
+      max-width: 1036px;
+      margin: 0 auto;
+      text-align: justify;
     }
 
+    .body {
+      width: 100%;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    .article-bottom {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+  }
 }

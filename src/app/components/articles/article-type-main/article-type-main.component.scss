@@ -1,11 +1,11 @@
 @use "/src/_import.scss" as *;
 
 .main-type1 {
-    height:477px;
-    background-size: cover;
-    background-position: center;
+  height: 477px;
+  background-size: cover;
+  background-position: center;
 
-    .blur {
+  .blur {
     position: relative;
     bottom: -320px;
     min-height: 157px;
@@ -14,48 +14,24 @@
     background-color: rgba(255, 255, 255, 0.6);
 
     .description {
+      margin-left: 1rem;
 
-        .fun-color{
-            color:$category-fun-color;
-        }
+      h2 {
+        opacity: 0.6;
+        font-weight: normal;
+        font-size: 1.4rem;
+        height: 85px;
+      }
 
-        .sport-color{
-            color:$category-sport-color;
-        }
+      h4 {
+        padding: $small-border 0;
+        font-size: 1.5rem;
+      }
 
-        .carie-color{
-            color:$category-health-color;
-        }
-        
-        .miam-color{
-            color:$category-food-color;
-        }
-
-        .ca-coute-bonbon-color{
-            color:$category-economy-color;
-        }
-
-        margin-left:1rem;
-        h2 {
-            opacity: 0.6;
-            font-weight: normal;
-            font-size:1.4rem;
-            height: 85px;
-        }
-    
-        h4 {
-           
-            padding: $small-border 0;
-            font-size:1.5rem;
-            //margin-bottom:1rem;
-            
-        }
-        time {
-            opacity: 0.6;
-            font-size: 0.8rem;
-        }
+      time {
+        opacity: 0.6;
+        font-size: 0.8rem;
+      }
     }
-
-    }
- 
+  }
 }

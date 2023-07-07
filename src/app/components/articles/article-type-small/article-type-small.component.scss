@@ -1,117 +1,78 @@
 @use "/src/_import.scss" as *;
 
-.main-type3{
+.main-type3 {
 
-    height: 300px;
-    width:100%;
-    
-    background-size: cover;
-    background-position: center;
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in-out;
 
-    transition: 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 10px 10px 10px $secondary-text-color;
+    transform: scale(1.1);
+    z-index: 10;
+    position: relative;
+  }
 
-    &:hover {
-        box-shadow: 10px 10px 10px $secondary-text-color;
-    }
-    .fun-background{
-        background-color:$category-fun-color;
-    }
-    
-    .sport-background{
-        background-color:$category-sport-color;
-    }
-    
-    .carie-background{
-        background-color:$category-health-color;
-    }
-    
-    .miam-background{
-        background-color:$category-food-color;
-    }
-    
-    .ca-coute-bonbon-background{
-        background-color:$category-economy-color;
-    }
-
-    .description {
-        box-sizing: border-box;
-        min-height:106px;
-        bottom:-194px;
-        position:relative;
-        object-position: left bottom;
-        padding-left:.5rem;
-        opacity:0.7;
+  .description {
+    box-sizing: border-box;
+    min-height: 106px;
+    bottom: -194px;
+    position: relative;
+    object-position: left bottom;
+    padding-left: .5rem;
+    opacity: 0.7;
 
 
-        .titles {
-            padding-top:1px;
+    .titles {
+      padding-top: 1px;
 
-            .fun-color{
-                color:$category-fun-color;
-            }
-        
-            .sport-color{
-                color:$category-sport-color;
-            }
-        
-            .carie-color{
-                color:$category-health-color;
-            }
-            
-            .miam-color{
-                color:$category-food-color;
-            }
-        
-            .ca-coute-bonbon-color{
-                color:$category-economy-color;
-            }
+      h4,
+      h3 {
+        margin: 0px;
+      }
 
-            h4,h3 {
-                margin:0px;
-            }
-    
-            h4 {
-                span {
-                    padding:2px;
-                    background-color:$secondary-text-color;
-                }
-                
-                //width:3.5rem;
-                margin-top:0.5rem;
-            }
-            h3 {
-                font-weight:500;
-                font-size:0.9rem;
-                height:45px;
-                margin-top:0.5rem;
-            }
+      h4 {
+        margin-top: 0.5rem;
+        padding-left: 0.3rem;
 
-            time {
-                font-size:0.8rem;
-            }
-
+        span {
+          padding: 2px;
+          background-color: $secondary-text-color;
         }
-        
-    }
+      }
 
+      h3 {
+        font-weight: 500;
+        font-size: 0.9rem;
+        height: 45px;
+        margin-top: 0.5rem;
+      }
+
+      time {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
-    .radius-1 {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
+  .radius-1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
 
-    .radius-3 {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
+  .radius-3 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 
-    .radius-bottom-1 {
-        border-bottom-left-radius: 15px;
-    }
+  .radius-bottom-1 {
+    border-bottom-left-radius: 15px;
+  }
 
-    .radius-bottom-3 {
-        border-bottom-right-radius: 15px;
-    }
+  .radius-bottom-3 {
+    border-bottom-right-radius: 15px;
+  }
 }
