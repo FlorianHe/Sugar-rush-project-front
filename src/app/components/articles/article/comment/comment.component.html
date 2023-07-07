@@ -1,5 +1,5 @@
 <section class="section">
-<h2>Commentaires</h2>
+<h2 class="{{article.category.slug}}-background">Commentaires</h2>
 <app-comment *ngFor="let comment of _comments" [comment]="comment" [categorySlug]="article.category.slug" (commentDeleted)="onCommentDeleted($event)">
 </app-comment>
 
