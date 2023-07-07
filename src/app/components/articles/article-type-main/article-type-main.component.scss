@@ -10,7 +10,8 @@
     bottom: -320px;
     min-height: 157px;
 
-    backdrop-filter: blur(9.5px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.6);
 
     .description {
 
@@ -39,12 +40,12 @@
             opacity: 0.6;
             font-weight: normal;
             font-size:1.4rem;
-            height:50px;
+            height: 85px;
         }
     
         h4 {
            
-
+            padding: $small-border 0;
             font-size:1.5rem;
             //margin-bottom:1rem;
             
