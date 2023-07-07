@@ -1,6 +1,8 @@
 @use "/src/_import.scss" as *;
 
 .main-type2 {
+  height: 108px;
+
   .side-band {
     display: flex;
     flex-direction: row;
@@ -9,13 +11,22 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 
-    img {
+    .image-side {
       height: 92px;
       width: 138px;
+
+      img {
+        height: 92px;
+        width: 138px;
+        object-fit: cover;
+
+      }
     }
 
     .description {
       margin-left: 1rem;
+      overflow: hidden;
+      max-height: 85px;
 
       h4 {
         font-weight: normal;
@@ -28,6 +39,23 @@
         font-weight: normal;
         font-size: .8125rem;
         margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .main-type2 {
+    .side-band {
+      .image-side {
+        height: 92px;
+        width: 92px;
+
+        img {
+          height: 92px;
+          width: 92px;
+          object-fit: cover;
+        }
       }
     }
   }

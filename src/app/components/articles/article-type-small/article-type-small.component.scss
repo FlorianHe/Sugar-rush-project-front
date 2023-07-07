@@ -1,104 +1,78 @@
 @use "/src/_import.scss" as *;
 
-@media (max-width: $min-width-desktop) {
+.main-type3 {
 
-  .main-type3 {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in-out;
 
-    img {
-      width: 100%;
-    }
+  &:hover {
+    box-shadow: 10px 10px 10px $secondary-text-color;
+    transform: scale(1.1);
+    z-index: 10;
+    position: relative;
+  }
 
-    .description {
-      box-sizing: border-box;
-      min-height: 106px;
-      bottom: 109px;
-      position: relative;
-      object-position: left bottom;
-      padding-left: .5rem;
-      opacity: 0.7;
+  .description {
+    box-sizing: border-box;
+    min-height: 106px;
+    bottom: -194px;
+    position: relative;
+    object-position: left bottom;
+    padding-left: .5rem;
+    opacity: 0.7;
 
-      .titles {
-        padding-top: 1px;
 
-        h4,
-        h3 {
-          margin: 0px;
+    .titles {
+      padding-top: 1px;
+
+      h4,
+      h3 {
+        margin: 0px;
+      }
+
+      h4 {
+        margin-top: 0.5rem;
+        padding-left: 0.3rem;
+
+        span {
+          padding: 2px;
+          background-color: $secondary-text-color;
         }
+      }
 
-        h4 {
-          margin-top: 0.5rem;
-          padding-left: 0.3rem;
+      h3 {
+        font-weight: 500;
+        font-size: 0.9rem;
+        height: 50px;
+        margin-top: 0.5rem;
+      }
 
-          span {
-            padding: 2px;
-            background-color: $secondary-text-color;
-          }
-        }
-
-        h3 {
-          font-weight: 500;
-          font-size: 0.9rem;
-          height: 50px;
-          margin-top: 0.5rem;
-        }
-
-        time {
-          font-size: 0.8rem;
-        }
+      time {
+        font-size: 0.8rem;
       }
     }
   }
 }
 
-@media (min-width: $min-width-desktop) {
+@media (min-width: 768px) {
+  .radius-1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
 
-  .main-type3 {
+  .radius-3 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 
-    img {
-      height: 300px;
-      width: 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-    }
+  .radius-bottom-1 {
+    border-bottom-left-radius: 15px;
+  }
 
-    .description {
-      box-sizing: border-box;
-      min-height: 106px;
-      bottom: 110px;
-      position: relative;
-      object-position: left bottom;
-      padding-left: .5rem;
-      opacity: 0.7;
-
-      .titles {
-        padding-top: 1px;
-
-        h4,
-        h3 {
-          margin: 0px;
-        }
-
-        h4 {
-          margin-top: 0.5rem;
-          padding-left: 0.3rem;
-
-          span {
-            padding: 2px;
-            background-color: $secondary-text-color;
-          }
-        }
-
-        h3 {
-          font-weight: 500;
-          font-size: 0.9rem;
-          height: 50px;
-          margin-top: 0.5rem;
-        }
-
-        time {
-          font-size: 0.8rem;
-        }
-      }
-    }
+  .radius-bottom-3 {
+    border-bottom-right-radius: 15px;
   }
 }
