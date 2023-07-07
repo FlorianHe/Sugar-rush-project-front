@@ -1,0 +1,57 @@
+@use "/src/_import.scss" as *;
+
+.section {
+  margin: $big-border;
+
+  h2 {
+    padding: $small-border;
+    margin-bottom: $small-border;
+    background-color: $category-fun-color;
+  }
+  
+  .comment-form {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+    .textArea {
+      width: 100%;
+      border: none;
+      border: 1px solid $secondary-text-color;
+      border-radius: $small-border;
+      resize: vertical;
+      min-height: 100px;
+      resize: none;
+    }
+
+    .submitButton {
+      color: $secondary-text-color;
+      padding: 10px 20px;
+      margin-top: $small-border;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  }
+}
+
+.fun-button {
+  background-color: $category-fun-color;
+}
+
+.sport-button {
+  background-color: $category-sport-color;
+}
+
+.miam-button {
+  background-color: $category-food-color;
+}
+
+.carie-button {
+  background-color: $category-health-color;
+}
+
+.ca-coute-bonbon-button {
+  background-color: $category-economy-color;
+}

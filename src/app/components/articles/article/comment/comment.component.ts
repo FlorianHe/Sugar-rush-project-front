@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CommentService } from 'src/app/services/comment-api.service';
 import { COMMENT } from 'src/app/shared/datas/comment';
+import { Article } from 'src/app/shared/interfaces/article';
 import { Comment } from 'src/app/shared/interfaces/comment';
 
 @Component({
@@ -12,10 +13,10 @@ import { Comment } from 'src/app/shared/interfaces/comment';
 export class ArticleCommentComponent implements OnInit {
 
   @Input()
-  id!: number;
+  article! : Article;
 
 
-  _comments!: Comment[] ;
+  _comments!: Comment[];
 
 
   constructor(private commentService: CommentService) {}
@@ -25,10 +26,10 @@ export class ArticleCommentComponent implements OnInit {
   }
 
   getCommentsByArticle(): void {
-    this.commentService.getCommentsByArticle(this.id).subscribe(comments => {
+    this.commentService.getCommentsByArticle(this.article.id).subscribe(comments => {
       this._comments = comments;
       for (let i = 0; i < this._comments.length; i++) {
-        this._comments[i].user = {id : 1, firstname : 'Florian', lastname : 'Helaine'};
+        this._comments[i].user = { id: 1, firstname: 'Florian', lastname: 'Helaine' };
       }
     });
   }
@@ -36,7 +37,7 @@ export class ArticleCommentComponent implements OnInit {
   createComment(form: NgForm): void {
     const comment: Comment = {
       id: 0,
-      articleId: this.id,
+      articleId: this.article.id,
       content: form.value.content,
       creation_date: new Date(),
       user: {
@@ -45,10 +46,9 @@ export class ArticleCommentComponent implements OnInit {
         lastname: 'Helaine',
       }
     };
-    this._comments.push(comment);
     this.commentService.createComment(comment).subscribe(createdComment => {
-      createdComment.user = {id : 2, firstname : 'Alexandre', lastname : 'Boutemy'};
-      this._comments.push(createdComment);
+      createdComment.user = { id: 2, firstname: 'Alexandre', lastname: 'Boutemy' };
+      this.getCommentsByArticle();
       form.reset();
     });
   }
@@ -64,4 +64,9 @@ export class ArticleCommentComponent implements OnInit {
     });
   }
 
+  onCommentDeleted(commentDeleted : Boolean): void {
+    if (commentDeleted) {
+      this.getCommentsByArticle();
+    }
+  }
 }
