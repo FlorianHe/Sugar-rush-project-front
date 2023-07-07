@@ -4,9 +4,7 @@
 
     .main-type3{
     
-        img {
-            width:100%;
-        }
+        width:100%;
     
         .fun-background{
             background-color:$category-fun-color;
@@ -101,12 +99,10 @@
 
 .main-type3{
 
-    img {
-        height: 300px;
-        width:100%;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
+    height: 300px;
+    width:100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     .fun-background{
         background-color:$category-fun-color;
@@ -136,7 +132,7 @@
     .description {
         box-sizing: border-box;
         min-height:106px;
-        bottom:110px;
+        bottom:-194px;
         position:relative;
         object-position: left bottom;
         padding-left:.5rem;
