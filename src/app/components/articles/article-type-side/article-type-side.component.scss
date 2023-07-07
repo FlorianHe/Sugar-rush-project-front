@@ -22,7 +22,7 @@
 }
 
 .main-type2 {
-
+    height:108px;
 
     .side-band {
         display:flex;
@@ -45,6 +45,8 @@
     
         .description {
             margin-left:1rem;
+            overflow: hidden;
+            max-height: 85px;
             
             h4 {
                 .fun-color{
@@ -82,4 +84,20 @@
     
     }
 
+}
+
+@media screen and (max-width: 1250px) {
+    .main-type2 {
+        .side-band {
+            .image-side {
+                height:92px;
+                width: 92px;
+                img {
+                    height:92px;
+                    width: 92px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
 }
