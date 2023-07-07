@@ -1,6 +1,6 @@
 <section *ngIf="category" id="category-main">
   <div class="category-header">
-    <h1 [id]="category.slug + '-title'">
+    <h1 [ngClass]="category.slug + '-color'">
       <span>{{category.name}}</span>
     </h1>
   </div>
