@@ -5,14 +5,22 @@
     margin-top: $big-border;
     margin-bottom: $big-border;
     padding: $big-border;
-    border: 1px solid $fairy-color;
     border-radius: $big-border;
-    color: $secondary-text-color; 
+    color: $secondary-text-color;
 
-  h2 {
+    h1, h2 {
+        font-family: "Glam-queen";
+        font-size: 3rem;
+    }
+
+    h2 {
         color: $fairy-color;
         margin-top: $big-border;
         margin-bottom: $big-border;
+    }
+
+    p {
+        text-align: justify;
     }
 
     .list {
@@ -20,30 +28,48 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: $big-border;
         list-style-type: none;
+        margin-top: $big-border;
     }
 
     .selin {
         color: $category-un-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
-    .florian{
+
+    .florian {
         color: $category-fun-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
-    .alex{
+
+    .alex {
         color: $category-sport-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
-    .guillaume{
+
+    .guillaume {
         color: $category-health-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
-    .patrick{
+
+    .patrick {
         color: $category-food-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
-    .ben{
+
+    .ben {
         color: $category-economy-color;
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
     }
 
     .img {
-        width: 60%;
-        height: 60%;
+        width: 50%;
+        height: 50%;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -53,6 +79,23 @@
         justify-content: space-around;
         align-items: center;
         margin-top: $main-border;
-        margin-bottom: $main-border;
+        margin-bottom: $big-border;
+        padding-bottom: $big-border;
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .container {
+         margin-bottom: $big-border;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: $big-border;
+        }
     }
 }
