@@ -1,0 +1,39 @@
+@use "/src/_import.scss" as *;
+
+.container {
+    text-align: center;
+    margin-top: $big-border;
+    margin-bottom: $big-border;
+    padding: $big-border;
+    border: 1px solid $fairy-color;
+    border-radius: $big-border;
+    color: $secondary-text-color; 
+
+  h2 {
+        color: $fairy-color;
+        margin-top: $big-border;
+        margin-bottom: $big-border;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: $big-border;
+        list-style-type: none;
+    }
+
+    .img {
+        width: 60%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: $main-border;
+        margin-bottom: $main-border;
+    }
+}
