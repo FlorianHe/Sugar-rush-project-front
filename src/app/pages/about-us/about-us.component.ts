@@ -7,4 +7,59 @@ import { Component } from '@angular/core';
 })
 export class AboutUsComponent {
 
+  public selin: any = {
+    name: 'Selin',
+    description: "Issue d'une reconversion professionnelle, Selin est passionnée d'apprentissage et d'amélioration continue dans le domaine du développement. Elle apporte sa créativité et sa rigueur à l'équipe.",
+    image : "assets/images/Selin.jpg",
+    linkedin: 'https://www.linkedin.com/in/selin-a-4534a1200/',
+    github: 'https://github.com/SelinGitt',
+    color : "un",
+  };
+
+  public florian: any = {
+    name: 'Florian',
+    description: " Fort d'une expérience de plus de 5 ans dans le développement, Florian est le pilier technique de l'équipe. Son expertise et sa rigueur garantissent la qualité des solutions que nous proposons.",
+    image : "assets/images/florian.png",
+    linkedin: 'https://www.linkedin.com/in/florian-helaine/',
+    github: 'https://github.com/FlorianHe/',
+    color: "fun"
+  };
+
+  public alexandre: any = {
+    name: 'Alexandre',
+    description: "Membre discret mais toujours prêt à contribuer, Alexandre sait se montrer disponible. Son attention aux détails et son approche méthodique font de lui un atout précieux dans la réalisation de nos projets.",
+    image : "assets/images/Alex.jpg",
+    linkedin: 'https://www.linkedin.com/in/alexandre-b-07b3a491/',
+    github: 'https://github.com/alexboutemy',
+    color: "sport"
+  };
+
+  public guillaume: any = {
+    name: 'Guillaume',
+    description: "Joyeux animateur, son sens de l'humour et son énergie positive maintiennent l'ambiance agréable au sein de l'équipe. Il sait apporter une touche de légèreté dans les moments les plus intenses.",
+    image : "assets/images/guillaume.png",
+    linkedin: 'https://www.linkedin.com/in/11gg/',
+    github: 'https://github.com/Guillaum6e/',
+    color: "health"
+  };
+
+  public patrick: any = {
+    name: 'Patrick',
+    description: "Le membre sénior de l'équipe, apporte son expérience variée et son expertise. Toujours avide de nouvelles connaissances, il cherche à se surpasser et à partager son savoir avec les autres membres.",
+    image : "assets/images/Patrick.jpg",
+    linkedin: 'https://viadeo.journaldunet.com/p/patrick-harle-159799',
+    github: '"https://github.com/pwah59"',
+    color: "food"
+  };
+
+  public benjamin: any = {
+    name: 'Benjamin',
+    description: " Formateur de notre session. Toujours prêt à nous aider et à nous guider, il est notre référent technique. Il est toujours de bonne humeur et sait nous motiver. Nous avons pu, grâce à lui, réaliser ce projet.",
+    image : "assets/images/Benji.png",
+    linkedin: 'https://www.linkedin.com/in/benjamin-beugnet-web-services/',
+    github: "https://github.com/Benja-san",
+    color: "economy"
+  };
+
+  public team: any = [this.selin, this.florian, this.alexandre, this.guillaume, this.patrick, this.benjamin];
 }

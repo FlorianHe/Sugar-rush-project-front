@@ -1,0 +1,52 @@
+@use "/src/_import.scss" as *;
+
+.container {
+    width: 100%;
+
+    p {
+        text-align: justify;
+    }
+
+    .person {
+        font-family: "Glam-queen";
+        font-size: 2.5rem;
+    }
+
+    .img {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: $main-border;
+        margin-bottom: $big-border;
+        padding-bottom: $big-border;
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px) and (min-width: $min-width-desktop) {
+
+    .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+}
+
+@media only screen and (max-width: $min-width-desktop) {
+    .img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

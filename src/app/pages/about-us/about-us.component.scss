@@ -32,31 +32,11 @@
         margin-top: $big-border;
     }
 
-    .person {
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
+}
 
-    .img {
-        width: 70%;
-        height: 70%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .links {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: $main-border;
+@media only screen and (max-width: 1024px) and (min-width: $min-width-desktop) {
+    .container {
         margin-bottom: $big-border;
-        padding-bottom: $big-border;
-    }
-
-    @media only screen and (max-width: 1024px) and (min-width: 768px) {
-        .container {
-            margin-bottom: $big-border;
-        }
 
         .list {
             display: grid;
@@ -66,13 +46,14 @@
             margin-top: $big-border;
             margin-bottom: $big-border;
         }
-
     }
 
-    @media only screen and (max-width: 768px) {
-        .container {
-            margin-bottom: $big-border;
-        }
+
+}
+
+@media only screen and (max-width: $min-width-desktop) {
+    .container {
+        margin-bottom: $big-border;
 
         .list {
             display: flex;
@@ -83,4 +64,6 @@
             margin-top: $big-border;
         }
     }
+
+
 }
