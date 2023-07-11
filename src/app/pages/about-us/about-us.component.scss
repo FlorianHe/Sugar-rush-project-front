@@ -8,7 +8,8 @@
     border-radius: $big-border;
     color: $secondary-text-color;
 
-    h1, h2 {
+    h1,
+    h2 {
         font-family: "Glam-queen";
         font-size: 3rem;
     }
@@ -31,45 +32,14 @@
         margin-top: $big-border;
     }
 
-    .selin {
-        color: $category-un-color;
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
-
-    .florian {
-        color: $category-fun-color;
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
-
-    .alex {
-        color: $category-sport-color;
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
-
-    .guillaume {
-        color: $category-health-color;
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
-
-    .patrick {
-        color: $category-food-color;
-        font-family: "Glam-queen";
-        font-size: 2.5rem;
-    }
-
-    .ben {
-        color: $category-economy-color;
+    .person {
         font-family: "Glam-queen";
         font-size: 2.5rem;
     }
 
     .img {
-        width: 50%;
-        height: 50%;
+        width: 70%;
+        height: 70%;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -83,10 +53,25 @@
         padding-bottom: $big-border;
     }
 
+    @media only screen and (max-width: 1024px) and (min-width: 768px) {
+        .container {
+            margin-bottom: $big-border;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $big-border;
+            list-style-type: none;
+            margin-top: $big-border;
+            margin-bottom: $big-border;
+        }
+
+    }
 
     @media only screen and (max-width: 768px) {
         .container {
-         margin-bottom: $big-border;
+            margin-bottom: $big-border;
         }
 
         .list {
