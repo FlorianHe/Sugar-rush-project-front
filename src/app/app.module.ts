@@ -39,6 +39,10 @@ import { ArticleCommentComponent } from './components/articles/article/comment/c
 import { CommentComponent } from './components/comment/comment.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
+import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
+import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +68,11 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     DetailComponent,
     ArticleCommentComponent,
     CommentComponent,
-    CategoryBlockComponent
+    CategoryBlockComponent,
+    SugarMeterComponent,
+    ProfilesComponent,
+    SugarDataComponent,
+    SugarInputsComponent
   ],
   imports: [
     BrowserModule,
