@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from 'src/app/shared/interfaces/person';
 
 @Component({
   selector: 'app-about-us',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AboutUsComponent {
 
-  public selin: any = {
+  public selin: Person = {
     name: 'Selin',
     description: "Issue d'une reconversion professionnelle, Selin est passionnée d'apprentissage et d'amélioration continue dans le domaine du développement. Elle apporte sa créativité et sa rigueur à l'équipe.",
     image : "assets/images/Selin.jpg",
@@ -16,7 +17,7 @@ export class AboutUsComponent {
     color : "un",
   };
 
-  public florian: any = {
+  public florian: Person = {
     name: 'Florian',
     description: " Fort d'une expérience de plus de 5 ans dans le développement, Florian est le pilier technique de l'équipe. Son expertise et sa rigueur garantissent la qualité des solutions que nous proposons.",
     image : "assets/images/florian.png",
@@ -25,7 +26,7 @@ export class AboutUsComponent {
     color: "fun"
   };
 
-  public alexandre: any = {
+  public alexandre: Person = {
     name: 'Alexandre',
     description: "Membre discret mais toujours prêt à contribuer, Alexandre sait se montrer disponible. Son attention aux détails et son approche méthodique font de lui un atout précieux dans la réalisation de nos projets.",
     image : "assets/images/Alex.jpg",
@@ -34,7 +35,7 @@ export class AboutUsComponent {
     color: "sport"
   };
 
-  public guillaume: any = {
+  public guillaume: Person = {
     name: 'Guillaume',
     description: "Joyeux animateur, son sens de l'humour et son énergie positive maintiennent l'ambiance agréable au sein de l'équipe. Il sait apporter une touche de légèreté dans les moments les plus intenses.",
     image : "assets/images/guillaume.png",
@@ -43,7 +44,7 @@ export class AboutUsComponent {
     color: "health"
   };
 
-  public patrick: any = {
+  public patrick: Person = {
     name: 'Patrick',
     description: "Le membre sénior de l'équipe, apporte son expérience variée et son expertise. Toujours avide de nouvelles connaissances, il cherche à se surpasser et à partager son savoir avec les autres membres.",
     image : "assets/images/Patrick.jpg",
@@ -52,7 +53,7 @@ export class AboutUsComponent {
     color: "food"
   };
 
-  public benjamin: any = {
+  public benjamin: Person = {
     name: 'Benjamin',
     description: " Formateur de notre session. Toujours prêt à nous aider et à nous guider, il est notre référent technique. Il est toujours de bonne humeur et sait nous motiver. Nous avons pu, grâce à lui, réaliser ce projet.",
     image : "assets/images/Benji.png",
@@ -61,5 +62,5 @@ export class AboutUsComponent {
     color: "economy"
   };
 
-  public team: any = [this.selin, this.florian, this.alexandre, this.guillaume, this.patrick, this.benjamin];
+  public team: Person[] = [this.selin, this.florian, this.alexandre, this.guillaume, this.patrick, this.benjamin];
 }
