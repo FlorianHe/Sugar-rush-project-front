@@ -7,7 +7,7 @@
         <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
 
         <li *ngFor="let category of categories" class="desktop">
-          <a [id]="category.slug" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
+          <a [ngClass]="category.slug+'-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
             [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
             {{category.name}}
           </a>

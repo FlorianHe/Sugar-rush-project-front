@@ -1,6 +1,5 @@
 
-<article class="main-type1" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
-    <img src={{article.publicationImage}}>
+<article class="main-type1" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}" [ngStyle]="{ 'background-image': 'url(' + article.publicationImage + ')' }">
     <div class="blur">
         <div class="description">
             <h4 [ngClass]="article.category.slug+'-color'">{{article.category.name}} !</h4>
