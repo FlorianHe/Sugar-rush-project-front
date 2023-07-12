@@ -7,6 +7,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
 import { ArticleComponent } from './pages/article/article.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,
     title: 'Sugar Rush : Not Found',
+  },
+  {
+    path: 'sugar-meter',
+    component: SugarMeterComponent,
   },
   {
     path: '**',
