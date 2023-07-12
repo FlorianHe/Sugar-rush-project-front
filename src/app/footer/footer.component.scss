@@ -11,11 +11,21 @@
       margin-top: $main-border;
       padding-bottom: $main-border;
       text-align: center;
+      font-style: italic;
       visibility: visible;
     }
 
     #smallscr {
       visibility: hidden;
+    }
+
+    ul {
+      text-align: center;
+      margin-top: $main-border;
+    }
+
+    li {
+      display: inline-block;
     }
 
   }
