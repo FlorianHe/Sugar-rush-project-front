@@ -7,6 +7,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
 import { ArticleComponent } from './pages/article/article.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,11 @@ const routes: Routes = [
     path: APP_ROUTES.rCategories + '/:slug',
     title: 'Sugar Rush : Categorie',
     component: CategoryComponent
+  },
+  {
+    path: APP_ROUTES.rAboutUs,
+    title: 'Sugar Rush : A propos',
+    component: AboutUsComponent
   },
   {
     path: APP_ROUTES.rNotFound,

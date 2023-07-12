@@ -39,6 +39,8 @@ import { ArticleCommentComponent } from './components/articles/article/comment/c
 import { CommentComponent } from './components/comment/comment.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     DetailComponent,
     ArticleCommentComponent,
     CommentComponent,
-    CategoryBlockComponent
+    CategoryBlockComponent,
+    AboutUsComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
