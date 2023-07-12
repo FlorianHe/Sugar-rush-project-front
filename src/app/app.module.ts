@@ -43,23 +43,25 @@ import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.compo
 import { ProfilesComponent } from './pages/profiles/profiles.component';
 import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
 import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
-    ArticleTypeMainComponent, 
-    ArticleTypeSideComponent, 
-    ArticleTypeSmallComponent, 
-    CategoriesComponent, 
-    CategoryComponent, 
-    PageNotFoundComponent, 
-    ArticleComponent, 
-    TitleComponent, 
-    BodyComponent, 
-    OtherComponent, 
-    HeaderComponent, 
-    FooterComponent, 
+    ArticleTypeMainComponent,
+    ArticleTypeSideComponent,
+    ArticleTypeSmallComponent,
+    CategoriesComponent,
+    CategoryComponent,
+    PageNotFoundComponent,
+    ArticleComponent,
+    TitleComponent,
+    BodyComponent,
+    OtherComponent,
+    HeaderComponent,
+    FooterComponent,
     StockComponent,
     PercentChangePipe,
     AddPlusPipe,
@@ -72,7 +74,9 @@ import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.com
     SugarMeterComponent,
     ProfilesComponent,
     SugarDataComponent,
-    SugarInputsComponent
+    SugarInputsComponent,
+    AboutUsComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

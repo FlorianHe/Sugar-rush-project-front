@@ -1,49 +1,58 @@
 @use "/src/_import.scss" as *;
 
-@media(min-width:768px){
+@media(min-width:$min-width-desktop) {
 
-.main-title {
+  .main-title {
     margin-top: $big-border;
     margin-bottom: $big-border;
-}
+  }
 
-.top {
-    display:grid;
+  .top {
+    display: grid;
+    margin-bottom: $big-border;
     grid-template-columns: 2fr 1fr;
     gap: $big-border;
-    .side {
-        h2 {
-            margin: 0;
-            padding: $small-border;
-        }
-    }
-}
 
-.small {
+    .side {
+      h2 {
+        margin: 0;
+        padding-bottom: $main-border;
+      }
+    }
+  }
+
+  .small {
+    margin-bottom: $big-border;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $main-border;
+  }
 }
 
-}
+@media(max-width:$min-width-desktop) {
 
-@media(max-width:768px){
+  h1 {
+    display: none;
+  }
 
-    h1 {
-        display:none;
+  .main-title {
+    margin-top: $big-border;
+    margin-bottom: $big-border;
+  }
+
+  .top {
+    margin: $main-border;
+
+    .side {
+      display: none;
     }
-    .main-title {
-        margin-top: $big-border;
-        margin-bottom: $big-border;
+  }
+
+  .small {
+    margin: 0;
+
+    .article-small {
+      margin: $main-border;
     }
-    .top {
-        margin:$main-border;
-        .side {
-            display: none;
-        }
-    }
-    
-    .small {
-        margin: $main-border;
-    }
+  }
 }

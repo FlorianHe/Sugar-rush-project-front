@@ -19,6 +19,8 @@ const APP_ROUTES = {
   category: (slug: string) => `/categories/${slug}`,
   notFound: '/404',
   rNotFound: '404',
+  aboutUs: '/about-us',
+  rAboutUs: 'about-us',
   article: (id: number) => `articles/${id}`
 };
 

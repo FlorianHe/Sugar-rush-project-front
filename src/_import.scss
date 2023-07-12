@@ -5,7 +5,7 @@ $main-text-color: #000;
 $secondary-text-color: #410B13;
 $fairy-color: #FECEE9;
 
-$category-un-color: #5D2B7D;
+$category-un-color: #5D2B7D;  // Catégorie unknown : pas encore trouvé
 $category-fun-color: #A72D89; // Catégorie Fun : a trouvé
 $category-sport-color: #1474BB; // Catégorie Sport : a trouvé
 $category-health-color: #8FC33E; // Catégorie Santé : carie
@@ -17,3 +17,47 @@ $small-border: 0.5rem;
 $big-border: 2rem;
 
 $min-width-desktop: 800px;
+
+.un-color{
+  color: $category-un-color;
+}
+
+.fun-color {
+  color: $category-fun-color;
+}
+
+.sport-color {
+  color: $category-sport-color;
+}
+
+.carie-color {
+  color: $category-health-color;
+}
+
+.miam-color {
+  color: $category-food-color;
+}
+
+.ca-coute-bonbon-color {
+  color: $category-economy-color;
+}
+
+.fun-background {
+  background-color: $category-fun-color;
+}
+
+.sport-background {
+  background-color: $category-sport-color;
+}
+
+.carie-background {
+  background-color: $category-health-color;
+}
+
+.miam-background {
+  background-color: $category-food-color;
+}
+
+.ca-coute-bonbon-background {
+  background-color: $category-economy-color;
+}

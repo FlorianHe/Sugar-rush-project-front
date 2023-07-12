@@ -1,132 +1,37 @@
 @use "/src/_import.scss" as *;
-@media (max-width: 768px) {
-
-    .main-type1 {
-        //position:relative;
-        //height:700px;
-        
-
-        img {
-            width:100%;
-        }
-    
-        .blur {
-        position: relative;
-        left: 0px;
-        bottom: 97px;
-    
-        backdrop-filter: blur(9.5px);
-    
-        .description {
-    
-            .fun-color{
-                color:$category-fun-color;
-            }
-    
-            .sport-color{
-                color:$category-sport-color;
-            }
-    
-            .carie-color{
-                color:$category-health-color;
-            }
-            
-            .miam-color{
-                color:$category-food-color;
-            }
-    
-            .ca-coute-bonbon-color{
-                color:$category-economy-color;
-            }
-    
-            margin-left:1rem;
-            h2 {
-                opacity: 0.6;
-                font-weight: normal;
-                font-size:1.1rem;
-                height:50px;
-            }
-        
-            h4 {
-               
-    
-                font-size:1.2rem;
-                //margin-bottom:1rem;
-                
-            }
-            time {
-                opacity: 0.6;
-                font-size: 0.8rem;
-            }
-        }
-    
-        }
-     
-    }
-    }
-
-@media (min-width: 768px) {
 
 .main-type1 {
-    //position:relative;
-    //height:700px;
-    margin-top:3rem;
-    img {
-        width:95%;
-    }
+  height: 477px;
+  background-size: cover;
+  background-position: center;
 
-    .blur {
-    width:95%;
+  .blur {
     position: relative;
-    left: 0px;
-    bottom: 104px;
+    bottom: -320px;
+    min-height: 157px;
 
-    backdrop-filter: blur(9.5px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.6);
 
     .description {
+      margin-left: 1rem;
 
-        .fun-color{
-            color:$category-fun-color;
-        }
+      h2 {
+        opacity: 0.6;
+        font-weight: normal;
+        font-size: 1.4rem;
+        height: 85px;
+      }
 
-        .sport-color{
-            color:$category-sport-color;
-        }
+      h4 {
+        padding: $small-border 0;
+        font-size: 1.5rem;
+      }
 
-        .carie-color{
-            color:$category-health-color;
-        }
-        
-        .miam-color{
-            color:$category-food-color;
-        }
-
-        .ca-coute-bonbon-color{
-            color:$category-economy-color;
-        }
-
-        margin-left:1rem;
-        h2 {
-            opacity: 0.6;
-            font-weight: normal;
-            font-size:1.4rem;
-            height:50px;
-        }
-    
-        h4 {
-           
-
-            font-size:1.5rem;
-            //margin-bottom:1rem;
-            
-        }
-        time {
-            opacity: 0.6;
-            font-size: 0.8rem;
-        }
+      time {
+        opacity: 0.6;
+        font-size: 0.8rem;
+      }
     }
-
-    }
- 
-}
+  }
 }

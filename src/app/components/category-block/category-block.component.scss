@@ -31,29 +31,8 @@
     }
   }
 
-
   .categories-3articles {
     display: none;
-  }
-
-  #miam-title {
-    color: $category-food-color;
-  }
-
-  #carie-title {
-    color: $category-health-color;
-  }
-
-  #ca-coute-bonbon-title {
-    color: $category-economy-color;
-  }
-
-  #sport-title {
-    color: $category-sport-color;
-  }
-
-  #fun-title {
-    color: $category-fun-color;
   }
 }
 
@@ -98,15 +77,10 @@
       span:nth-of-type(1) {
         display: initial;
         color: $secondary-text-color;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         cursor: pointer;
-
-        &:hover {
-          color: $fairy-color;
-        }
       }
     }
-
 
     .categories-3articles {
       width: 100%;

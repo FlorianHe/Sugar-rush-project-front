@@ -1,0 +1,69 @@
+@use "/src/_import.scss" as *;
+
+.container {
+    text-align: center;
+    margin-top: $big-border;
+    margin-bottom: $big-border;
+    padding: $big-border;
+    border-radius: $big-border;
+    color: $secondary-text-color;
+
+    h1,
+    h2 {
+        font-family: "Glam-queen";
+        font-size: 3rem;
+    }
+
+    h2 {
+        color: $fairy-color;
+        margin-top: $big-border;
+        margin-bottom: $big-border;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: $big-border;
+        list-style-type: none;
+        margin-top: $big-border;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) and (min-width: $min-width-desktop) {
+    .container {
+        margin-bottom: $big-border;
+
+        .list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $big-border;
+            list-style-type: none;
+            margin-top: $big-border;
+            margin-bottom: $big-border;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: $min-width-desktop) {
+    .container {
+        margin-bottom: $big-border;
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: $big-border;
+        }
+    }
+
+
+}

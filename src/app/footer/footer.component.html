@@ -1,7 +1,16 @@
 <footer id="foot">
+    <ul class="list-footer">
+        <li *ngFor="let category of categories" class="desktop">
+            <a [ngClass]="category.slug+'-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
+                [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
+                {{category.name}}
+            </a><span>•&nbsp;</span>
+        </li>
 
-    <div id="marquee">sugar-rush - 06/2023 - l'information décryptée sur le sucre ...</div>
-
-    
+        <li class="about-us">
+            <a routerLink="/about-us">A propos</a>
+        </li>
+    </ul>
+    <div id="marquee">Sugar Rush - 2023 - L'information décryptée sur le sucre </div>
 
 </footer>

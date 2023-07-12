@@ -1,17 +1,18 @@
 <section class="title">
-    <div class="article">
-        <h1>{{ article.title }}</h1>
-        <div class="categories-{{article.category.slug}}">
-            <ul>
-                <li [ngClass]="article.category.name">{{ article.category.name }}</li>
-            </ul>
-            <p class="leads">{{ article.leads }}</p>
-        </div>
-        <div class="author">
-            <p>{{ article.author.firstname }} {{ article.author.lastname }}
-                Published: {{ article.publicationDate | date }} | Updated: {{ article.modificationDate | date }}
-            </p>
-        </div>
+  <div class="article">
+    <h1>{{ article.title }}</h1>
+    <div class="title-categories">
+      <ul>
+        <li [ngClass]="article.category.name" [ngClass]="article.category.slug + '-color'">{{ article.category.name }}
+        </li>
+      </ul>
+      <p class="leads">{{ article.leads }}</p>
     </div>
-    <img class="publication-image" src="{{ article.publicationImage }}" alt="Publication Image">
+    <div class="author">
+      <p>{{ article.author.firstname }} {{ article.author.lastname }}
+        Published: {{ article.publicationDate | date }} | Updated: {{ article.modificationDate | date }}
+      </p>
+    </div>
+  </div>
+  <img class="publication-image" src="{{ article.publicationImage }}" alt="Publication Image">
 </section>
