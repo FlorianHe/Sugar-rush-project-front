@@ -50,6 +50,11 @@ $angular-template-theme: mat.define-light-theme((color: (primary: $angular-templ
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -58,31 +63,6 @@ a,
 a:visited {
   color: inherit;
   text-decoration: none;
-}
-
-@media screen and (min-width: $min-width-desktop) {
-  #page-content {
-    width: 70%;
-    /* Set the width to 60% of the screen */
-    max-width: 71em;
-    /* Optional: Set a maximum width for larger screens */
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    background-color: $main-background-color;
-    box-shadow: 0.75rem 0 0 $secondary-background-color, -0.75rem 0 0 $secondary-background-color;
-    overflow: initial;
-    margin: 0 auto;
-    /* Center the element horizontally */
-  }
-
-  #page-wrap {
-    display: flex;
-    justify-content: center;
-    /* Horizontally center the content */
-    align-items: center;
-    /* Vertically center the content */
-    background-color: $secondary-background-color;
-  }
 }
 
 /* Temporary before the content get change */
@@ -130,16 +110,6 @@ h2.h2-title-article-fun {
   font-size: 1.5rem;
   margin-bottom: $small-border;
   color: $category-fun-color;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .modal-login {
