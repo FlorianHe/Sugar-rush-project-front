@@ -45,6 +45,7 @@ import { SugarDataComponent } from './components/sugar-data/sugar-data.component
 import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { PersonComponent } from './components/person/person.component';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
     FormsModule,
   ],
   providers: [],
