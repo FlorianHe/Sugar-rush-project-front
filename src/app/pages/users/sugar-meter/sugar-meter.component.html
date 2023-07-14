@@ -2,7 +2,6 @@
 
   <div id="meter-description">
     <h1 id="meter-description-title" (click)="slideDescription()">Voici votre Sucromètre personnalisé !</h1>
-    <!-- on click will hide under the h1 -->
     <p id="meter-description-text"><span></span>L'OMS recommande que les sucres libres ne représentent pas plus de 10%
       de l'apport énergétique
       quotidien, même si
@@ -31,5 +30,13 @@
       <app-profiles></app-profiles>
     </mat-tab>
   </mat-tab-group>
+
+  <div class="profile-creation">
+    <h2>Créer un nouveau Profil :</h2>
+    <!-- Name, BirthDate and Logo -->
+    <input type="text">
+    <input type="text">
+    <input type="text">
+  </div>
 
 </section>

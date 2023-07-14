@@ -1,0 +1,19 @@
+@use "/src/_import.scss" as *;
+
+.meter-section-svg {
+  height: 100%;
+
+  .meter-svg {
+    height: 100%;
+
+    svg {
+      width: 30px;
+      position: relative;
+      top: 100px;
+    }
+  }
+}
+
+@media only screen and (min-width: $min-width-desktop) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {}

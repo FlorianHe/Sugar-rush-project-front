@@ -1,20 +1,23 @@
-<section>
+<section class="sugar-meter-box">
 
-  <app-sugar-data></app-sugar-data>
+  <h2>Rappel: 1 carré de sucre = 4gr de sucre</h2>
 
-  <app-sugar-inputs></app-sugar-inputs>
+  <div class="sugar-meter-children">
+    <app-sugar-data></app-sugar-data>
 
-  <div class="meter-reaction">
-    <!-- Afficher une phrase random en fonction du niveau du sucrometre -->
-    Hey le sucre c'est pas bien hein
+    <app-sugar-inputs></app-sugar-inputs>
   </div>
 
-  <div class="profile-creation">
-    <h2>Créer un nouveau Profil :</h2>
+  <p class="meter-reaction">
+    <!-- Afficher une phrase random en fonction du niveau du sucrometre -->
+    Hey le sucre c'est pas bien hein
+  </p>
+
+  <div class="profile-modification">
+    <h2>Modifie ton Profil :</h2>
     <!-- Name, BirthDate and Logo -->
     <input type="text">
     <input type="text">
     <input type="text">
   </div>
-
 </section>
