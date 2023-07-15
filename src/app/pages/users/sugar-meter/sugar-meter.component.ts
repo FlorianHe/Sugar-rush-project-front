@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sugar-meter',
   templateUrl: './sugar-meter.component.html',
   styleUrls: ['./sugar-meter.component.scss'],
 })
-export class SugarMeterComponent {
+export class SugarMeterComponent implements OnInit {
 
   lotsOfTabs = new Array(10).fill(0).map((_, index) => `Tab ${index}`);
 
