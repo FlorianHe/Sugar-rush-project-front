@@ -37,27 +37,29 @@ import { ConnectionComponent } from './components/user/connection/connection.com
 import { DetailComponent } from './components/user/detail/detail.component';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { ParagraphComponent } from './components/paragraph/paragraph.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
-    ArticleTypeMainComponent, 
-    ArticleTypeSideComponent, 
-    ArticleTypeSmallComponent, 
-    CategoriesComponent, 
-    CategoryComponent, 
-    PageNotFoundComponent, 
-    ArticleComponent, 
-    TitleComponent, 
-    BodyComponent, 
-    OtherComponent, 
-    HeaderComponent, 
-    FooterComponent, 
+    ArticleTypeMainComponent,
+    ArticleTypeSideComponent,
+    ArticleTypeSmallComponent,
+    CategoriesComponent,
+    CategoryComponent,
+    PageNotFoundComponent,
+    ArticleComponent,
+    TitleComponent,
+    BodyComponent,
+    OtherComponent,
+    HeaderComponent,
+    FooterComponent,
     StockComponent,
     PercentChangePipe,
     AddPlusPipe,
@@ -65,10 +67,12 @@ import { PersonComponent } from './components/person/person.component';
     ConnectionComponent,
     DetailComponent,
     ArticleCommentComponent,
+
     CommentComponent,
     CategoryBlockComponent,
     AboutUsComponent,
-    PersonComponent
+    PersonComponent,
+    ParagraphComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,8 @@ import { PersonComponent } from './components/person/person.component';
     MatInputModule,
     FormsModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

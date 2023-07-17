@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { ParagraphService } from 'src/app/services/paragraph-api.service';
+import { Article } from 'src/app/shared/interfaces/article';
+import { Paragraph } from 'src/app/shared/interfaces/paragraph';
 
 @Component({
   selector: 'app-article-body',
@@ -9,11 +12,23 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class BodyComponent {
 
   @Input()
-  content!: string;
+  article!: Article;
+  _paragraphs!: Paragraph[];
 
-  constructor(private sanitizer: DomSanitizer) {}
 
-  sanitizeHtml(content: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(content);
+  constructor(private paragraphService: ParagraphService) { }
+
+  ngOnInit(): void {
+    this.getParagraphsByArticle();
+
   }
+
+  getParagraphsByArticle(): void {
+    this.paragraphService.getParagraphsByArticle(this.article.id).subscribe((paragraphs) => {
+      this._paragraphs = paragraphs;
+
+    });
+  }
+
+
 }
