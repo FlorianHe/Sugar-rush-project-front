@@ -7,8 +7,7 @@ export const css_class = {
     6: "category-economy"
 }
 
-type ParagrapheTypeContent = 'I' | 'C' | 'P';
-export const CSS_PARAGRAPH: { [key in ParagrapheTypeContent]: string } = {
+export const CSS_PARAGRAPH: { [key: string]: string } = {
 
     "I": "introduction",
     "P": "paragraph",
