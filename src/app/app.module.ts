@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -42,6 +42,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
+import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,7 @@ import { PersonComponent } from './components/person/person.component';
     FormsModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CommentService } from 'src/app/services/comment-api.service';
+import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Comment } from 'src/app/shared/interfaces/comment';
 import { User } from 'src/app/shared/interfaces/user';
@@ -19,7 +20,7 @@ export class ArticleCommentComponent implements OnInit {
   _comments!: Comment[];
 
 
-  constructor(private commentService: CommentService) {}
+  constructor(private commentService: CommentService, private userService : UserService) {}
 
   ngOnInit(): void {
     this.getCommentsByArticle();
@@ -32,22 +33,26 @@ export class ArticleCommentComponent implements OnInit {
   }
 
   createComment(form: NgForm): void {
-    const loggedInUserString = localStorage.getItem('user');
+    const loggedInUserString = this.userService.getUser();
+    console.log(loggedInUserString)
     if (loggedInUserString) {
-      const loggedInUser: User = JSON.parse(loggedInUserString);
       const comment: Comment = {
         id: 0,
         articleId: this.article.id,
         content: form.value.content,
-        creation_date: new Date(),
-        user: loggedInUser
+        user: {id:loggedInUserString.id}
       };
 
-      this.commentService.createComment(comment).subscribe(createdComment => {
-        this.getCommentsByArticle();
-        this._comments.push(createdComment);
-        form.reset();
-      });
+      this.commentService.createComment(comment).subscribe(  
+        (createdComment) => {
+            this.getCommentsByArticle();
+            this._comments.push(createdComment);
+            form.reset();
+        },
+        (error) => {
+          // Handle the error message returned by the service
+          console.error('Error creating comment:', error);
+        });
     }
   }
 

@@ -43,9 +43,10 @@ export class ConnectionComponent implements OnInit {
     const email = this.userForm.value.email;
     const password = this.userForm.value.password;
     console.log(email, password);
-    this.usersApiService.login(email, password).subscribe((token) => {
-      console.log(token);
-      this.userService.setToken(token.token);
+    this.usersApiService.login(email, password).subscribe((response) => {
+      console.log(response);
+      this.userService.setToken(response.token);
+      this.userService.setUser(response.user)
     });
   }
 

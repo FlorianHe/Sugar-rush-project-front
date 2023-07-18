@@ -18,6 +18,9 @@ export class UserService {
     return localStorage.getItem('token');
   }
 
+  public deleteToken(): void {
+    localStorage.removeItem('token');
+  }
 
   public getUser(): User | null {
     const userString = localStorage.getItem('user');
@@ -25,6 +28,10 @@ export class UserService {
       return JSON.parse(userString);
     }
     return null;
+  }
+
+  public setUser(user: User): void {
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
 }

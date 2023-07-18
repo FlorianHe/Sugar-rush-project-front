@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Comment } from '../shared/interfaces/comment';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,7 @@ import { Comment } from '../shared/interfaces/comment';
 export class CommentService {
 
   private apiUrl = 'http://localhost:8080';
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   getCommentsByArticle(articleId: number): Observable<Comment[]> {
     const url = `${this.apiUrl}/articles/${articleId}/comments`;
@@ -18,8 +18,7 @@ export class CommentService {
   }
 
   createComment(comment: Comment): Observable<Comment> {
-    const url = `${this.apiUrl}/articles/${comment.articleId
-    }/comments`;
+    const url = `${this.apiUrl}/articles/${comment.articleId}/comments`;
     return this.http.post<Comment>(url, comment);
   }
 

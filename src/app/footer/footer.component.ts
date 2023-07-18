@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { APP_ROUTES } from '../shared/globals/routes';
 import { Category } from '../shared/interfaces/category';
 import { CategoriesApiService } from '../services/categories-api.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +14,7 @@ export class FooterComponent implements OnInit {
 
   private _categories!: Category[];
 
-  constructor(public categoriesService: CategoriesApiService) {}
+  constructor(public categoriesService: CategoriesApiService, private userService : UserService) {}
   ngOnInit(): void {
     this.categoriesService.getCategories()
       .subscribe(categories => {
@@ -25,4 +26,9 @@ export class FooterComponent implements OnInit {
     return this._categories;
   }
 
+  deleteToken() {
+    this.userService.deleteToken();
+    console.log("plus de token");
+    console.log(this.userService.getToken())
+  }
 }
