@@ -1,5 +1,6 @@
 <div *ngIf="comment" class="comment">
     <h4>{{ comment.user.firstName + " " + comment.user.lastName | titlecase }}</h4>
+    <p class="creation-date"> {{ comment.creation_date | date }}</p>
     <p>{{ comment.content }}</p>
     <i class="fa-solid fa-trash {{categorySlug}}-comment delete-icon" (click)="deleteComment(comment)"></i>
 </div>

@@ -6,11 +6,11 @@
         <li [ngClass]="article.category.name" [ngClass]="article.category.slug + '-color'">{{ article.category.name }}
         </li>
       </ul>
-      <p class="leads">{{ article.leads }}</p>
+      <p>{{ article.leads }}</p>
     </div>
-    <div class="author">
-      <p>{{ article.author.firstName |titlecase }} {{ article.author.lastName | titlecase }}
-        Published: {{ article.publicationDate | date }} | Updated: {{ article.modificationDate | date }}
+    <div>
+      <p>{{ article.author.firstName | titlecase }} {{ article.author.lastName | titlecase }}</p>
+      <p class="published">Publié: {{ article.publicationDate | date }} | Modifié: {{ article.modificationDate | date }}
       </p>
     </div>
   </div>
