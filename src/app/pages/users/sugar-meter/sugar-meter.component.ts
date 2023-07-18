@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
+import { Profile } from 'src/app/shared/interfaces/profile';
 
 @Component({
   selector: 'app-sugar-meter',
@@ -7,30 +10,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SugarMeterComponent implements OnInit {
 
-  lotsOfTabs = new Array(10).fill(0).map((_, index) => `Tab ${index}`);
+  private _profiles!: Profile[];
+
+  constructor(public sugarMeterService: SugarMeterApiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    const description = document.getElementById('meter-description-text');
-    const box = document.getElementById('meter-description');
-    const title = document.getElementById('meter-description-title');
-    let height = title!.getBoundingClientRect().height + description!.getBoundingClientRect().height;
-    box!.style.height = height + 'px';
+    this.sugarMeterService.getProfiles()
+      .subscribe(profiles => {
+        this._profiles = profiles;
+      });
   }
 
-  async slideDescription() {
-    const description = document.getElementById('meter-description-text');
-    const box = document.getElementById('meter-description');
-    const title = document.getElementById('meter-description-title');
-    if (description?.style.transform === 'translateY(-100%)') {
-      let height = title!.getBoundingClientRect().height + description.getBoundingClientRect().height;
-      box!.style.height = height + 'px';
-      description.style.transform = 'translateY(0%)';
-      description.style.visibility = 'visible';
-    } else {
-      let height = title!.getBoundingClientRect().height;
-      description!.style.transform = 'translateY(-100%)';
-      description!.style.visibility = 'hidden';
-      box!.style.height = height + 'px';
+  profileCreationForm = this.fb.group({
+    name: ['', [Validators.required]],
+    birthDate: [new Date(), [Validators.required]],
+    logo: ['', [Validators.required]],
+  });
+
+  onSubmit() {
+    if (this.profileCreationForm.valid && this.profileCreationForm.dirty) {
+      const profile = {
+        id: 0,
+        name: this.profileCreationForm.value.name!,
+        birthDate: this.profileCreationForm.value.birthDate!,
+        logo: this.profileCreationForm.value.logo!
+      };
+      this.sugarMeterService.addProfile(profile).subscribe();
     }
   }
+
+  get profiles(): Profile[] {
+    return this._profiles;
+  }
+
+  // fixHeight() {
+  //   const description = document.getElementById('meter-description-text');
+  //   const box = document.getElementById('meter-description');
+  //   const title = document.getElementById('meter-description-title');
+  //   let height = title!.getBoundingClientRect().height + description!.getBoundingClientRect().height;
+  //   box!.style.height = height + 'px';
+  // }
+
+  // async slideDescription() {
+  //   const description = document.getElementById('meter-description-text');
+  //   const box = document.getElementById('meter-description');
+  //   const title = document.getElementById('meter-description-title');
+  //   if (description?.style.transform === 'translateY(-100%)') {
+  //     let height = title!.getBoundingClientRect().height + description.getBoundingClientRect().height;
+  //     box!.style.height = height + 'px';
+  //     description.style.transform = 'translateY(0%)';
+  //     description.style.visibility = 'visible';
+  //   } else {
+  //     let height = title!.getBoundingClientRect().height;
+  //     description!.style.transform = 'translateY(-100%)';
+  //     description!.style.visibility = 'hidden';
+  //     box!.style.height = height + 'px';
+  //   }
+  // }
 }

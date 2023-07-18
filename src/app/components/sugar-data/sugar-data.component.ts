@@ -1,25 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-sugar-data',
   templateUrl: './sugar-data.component.html',
   styleUrls: ['./sugar-data.component.scss']
 })
-export class SugarDataComponent implements OnInit {
+export class SugarDataComponent {
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      for (let i = 0; i < 8; i++) {
-        const svg = document.getElementById(`svg-${i}`);
-        if (svg!.id === 'svg-0' || svg!.id === 'svg-2' || svg!.id === 'svg-4' || svg!.id === 'svg-6') {
-          svg!.style.right = `calc(5% + ${svg!.getBoundingClientRect().width}px)`;
-        }
-        if (svg) {
-          svg.style.width = svg.getBoundingClientRect().height + 'px';
-        }
-      }
-    }, 0);
-  }
+  // @ViewChildren('svgElement') svgElements!: QueryList<ElementRef>;
+
+  // getSvgElements(): HTMLElement[] {
+  //   return this.svgElements.map((svgElement: ElementRef) => svgElement.nativeElement);
+  // }
 }
 
 

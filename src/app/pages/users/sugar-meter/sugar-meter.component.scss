@@ -15,12 +15,12 @@
     overflow: hidden;
     transition: 1s;
 
-    h1 {
+    .meter-description-title {
       z-index: 2;
       background-color: white;
       color: $fairy-color;
       text-align: center;
-      font-size: 1.9rem;
+      font-size: 1.5rem;
       font-family: "Glam-queen";
       width: 100%;
       border-bottom: 2px solid $secondary-text-color;
@@ -37,37 +37,8 @@
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       transition: 1s;
-
-      // span:nth-of-type(1),
-      // span:nth-of-type(2) {
-      //   margin-left: $main-border;
-      // }
-
-      // span:nth-of-type(3) {
-      //   text-align: center;
-      // }
     }
   }
-
-  // mat-tab-group {
-  //   mat-tab {
-  //     .meter-tab {
-  //       color: $secondary-text-color;
-  //     }
-
-  //     .mdc-tab__text-label {
-  //       color: $fairy-color;
-
-  //       &:active {
-  //         color: $secondary-text-color;
-  //       }
-
-  //       .exemple-tab-icon {
-  //         margin-right: $small-border;
-  //       }
-  //     }
-  //   }
-  // }
 
   .profile-creation {}
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
+import { Profile } from 'src/app/shared/interfaces/profile';
 
 @Component({
   selector: 'app-sugar-inputs',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class SugarInputsComponent {
 
+  @Input()
+  public profile!: Profile;
+
+  sugarDataAmounts: number[] = [1, 2, 3, 5, 10];
+
+  constructor(private sugarMeterService: SugarMeterApiService) {}
+
+  createSugarData(amount: number) {
+    const sugarData = { id: 0, amount: amount, profile: this.profile };
+    this.sugarMeterService.addSugarData(sugarData).subscribe();
+  }
 }

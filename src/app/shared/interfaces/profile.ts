@@ -1,6 +1,6 @@
 export interface Profile {
   id: number;
   name: string;
-  birthdate: Date;
+  birthDate: Date;
   logo: string;
 }

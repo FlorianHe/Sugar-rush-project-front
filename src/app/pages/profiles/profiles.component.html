@@ -5,7 +5,7 @@
   <div class="sugar-meter-children">
     <app-sugar-data></app-sugar-data>
 
-    <app-sugar-inputs></app-sugar-inputs>
+    <app-sugar-inputs [profile]="profile"></app-sugar-inputs>
   </div>
 
   <p class="meter-reaction">
@@ -16,8 +16,27 @@
   <div class="profile-modification">
     <h2>Modifie ton Profil :</h2>
     <!-- Name, BirthDate and Logo -->
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <form [formGroup]="profileModificationForm"
+      (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
+
+      <label>Nom
+        <input type="text" formControlName="name" placeholder="{{profile.name}}"></label>
+
+      <label>Date de naissance
+        <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"></label>
+
+      <label>Icone
+        <input type="text" formControlName="logo" placeholder="{{profile.logo}}"></label>
+
+      <!-- <div *ngIf="myForm.get('credentials.email')?.errors && !myForm.get('credentials.email')?.pristine"
+          class="error-msg">
+          <div [hidden]="!myForm.get('credentials.email')?.errors?.['required']">email is required.</div>
+          <div [hidden]="!myForm.get('credentials.email')?.invalid">email is invalid: {{
+            myForm.get("credentials.email")?.errors?.['email'].rules }}</div>
+        </div> -->
+
+      <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
+        type="submit">Valider</button>
+    </form>
   </div>
 </section>
