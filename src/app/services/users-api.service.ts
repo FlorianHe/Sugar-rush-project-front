@@ -9,13 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class UsersApiService {
 
-  constructor(private HttpClient : HttpClient) { }
+  constructor(private HttpClient: HttpClient) {}
 
   public login(credentials: any): Observable<any> {
-    return this.HttpClient.get<any>(`${SUGAR_RUSH_API.baseApi}/login.php`, credentials);
+    return this.HttpClient.post<User>(`${SUGAR_RUSH_API.baseApi}/login`, credentials);
   }
 
-  public getUser(id : number) {
-    return this.HttpClient.get<User>(SUGAR_RUSH_API.baseUsers+id);
+  public register(user: User): Observable<User> {
+    return this.HttpClient.post<User>(`${SUGAR_RUSH_API.baseApi}/register`, user);
+  }
+
+  public getUser(id: number) {
+    return this.HttpClient.get<User>(SUGAR_RUSH_API.baseUsers + id);
   }
 }

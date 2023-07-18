@@ -9,7 +9,7 @@
       <p class="leads">{{ article.leads }}</p>
     </div>
     <div class="author">
-      <p>{{ article.author.firstname }} {{ article.author.lastname }}
+      <p>{{ article.author.firstName |titlecase }} {{ article.author.lastName | titlecase }}
         Published: {{ article.publicationDate | date }} | Updated: {{ article.modificationDate | date }}
       </p>
     </div>

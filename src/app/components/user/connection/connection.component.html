@@ -1,44 +1,64 @@
 <mat-tab-group animationDuration="0ms" class="connection-group">
   <mat-tab label="Connexion">
-  <div class="login">
+    <div class="login">
       <form [formGroup]="userForm" (ngSubmit)="login()">
-          <div class="login-field">
-            <label for="username">Email : <span>*</span></label>
-            <input type="text" formControlName="username">
-          </div>
-          <div class="login-field">
-              <label for="password">Mot de passe : <span>*</span></label>
-              <input type="password" formControlName="password">
-            </div>
-          <div class="login-btn">
-            <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
-          </div>
-      </form>
-  </div>
-  </mat-tab>
-  <mat-tab label="Inscription">
-  <div class="login">
-    <form [formGroup]="userForm" (ngSubmit)="login()">
         <div class="login-field">
           <label for="username">Email : <span>*</span></label>
           <input type="text" formControlName="username">
         </div>
         <div class="login-field">
-          <label for="pseudo">Pseudo : <span>*</span></label>
-          <input type="text" formControlName="pseudo">
+          <label for="password">Mot de passe : <span>*</span></label>
+          <input type="password" formControlName="password">
         </div>
-        <div class="login-field">
-            <label for="password">Mot de passe : <span>*</span></label>
-            <input type="password" formControlName="password">
-          </div>
-          <div class="login-field">
-            <label for="confirmPassword">Confirmez votre mot de passe : <span>*</span></label>
-            <input type="password" formControlName="confirmPassword">
-          </div>
         <div class="login-btn">
           <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
         </div>
-    </form>
-</div>
-</mat-tab>
+      </form>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Inscription">
+    <div class="register">
+      <form [formGroup]="userForm" (ngSubmit)="register()">
+        <div class="register-field">
+          <label for="email">Email : <span>*</span></label>
+          <input type="email" formControlName="email">
+          <div *ngIf="userForm.controls['email'].errors && !userForm.controls['email'].pristine" class="error-msg">
+            <div [hidden]="!userForm.controls['email'].errors['required']">Requis</div>
+            <div [hidden]="!userForm.controls['email'].invalid">Requis</div>
+          </div>
+        </div>
+        <div class="register-field">
+          <label for="username">Pseudo : <span>*</span></label>
+          <input type="text" formControlName="username">
+          <div *ngIf="userForm.controls['username'].errors && !userForm.controls['username'].pristine"
+            class="error-msg">
+            <div [hidden]="!userForm.controls['username'].errors['required']">Requis</div>
+            <div [hidden]="!userForm.controls['username'].invalid">Requis</div>
+          </div>
+        </div>
+        <div class="register-field">
+          <label for="password">Mot de passe : <span>*</span></label>
+          <input type="text" formControlName="password">
+          <div *ngIf="userForm.controls['password'].errors && !userForm.controls['password'].pristine"
+            class="error-msg">
+            <div [hidden]="!userForm.controls['password'].errors['required']">Requis</div>
+            <div [hidden]="!userForm.controls['password'].invalid">Requis</div>
+          </div>
+        </div>
+        <div class="register-field">
+          <label for="confirmPassword">Confirmez votre mot de passe : <span>*</span></label>
+          <input type="text" formControlName="confirmPassword">
+          <div *ngIf="userForm.controls['confirmPassword'].errors && !userForm.controls['confirmPassword'].pristine"
+            class="error-msg">
+            <div [hidden]="!userForm.controls['confirmPassword'].errors['required']">Requis</div>
+            <div [hidden]="!userForm.controls['confirmPassword'].invalid">Requis</div>
+          </div>
+        </div>
+        <div class="register-button">
+          <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
+        </div>
+      </form>
+    </div>
+  </mat-tab>
 </mat-tab-group>

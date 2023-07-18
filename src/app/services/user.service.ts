@@ -10,14 +10,18 @@ export class UserService {
 
   constructor(private usersApiService : UsersApiService) { }
 
-  public login(username: string, password: string) : Observable<any> {
-    const credentials = {username, password};
+  public login(email: string, password: string) : Observable<any> {
+    const credentials = {email, password};
     return this.usersApiService.login(credentials).pipe(
       tap(response => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
       })
     );
+  }
+
+  public register(user: User) : Observable<User> {
+    return this.usersApiService.register(user);
   }
 
   public getUser() : User | null {
@@ -27,4 +31,5 @@ export class UserService {
     }
     return null;
   }
+
 }
