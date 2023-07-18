@@ -11,12 +11,12 @@ export class UsersApiService {
 
   constructor(private HttpClient: HttpClient) {}
 
-  public login(credentials: any): Observable<any> {
-    return this.HttpClient.post<User>(`${SUGAR_RUSH_API.baseApi}/login`, credentials);
+  public login(email: string, password: string): Observable<any> {
+    return this.HttpClient.post<any>(`${SUGAR_RUSH_API.baseApi}/login?email=${email}&password=${password}`, null);
   }
 
-  public register(user: User): Observable<User> {
-    return this.HttpClient.post<User>(`${SUGAR_RUSH_API.baseApi}/register`, user);
+  public register(user: User): Observable<any> {
+    return this.HttpClient.post<any>(`${SUGAR_RUSH_API.baseApi}/register?id=${user.id}&firstName=Alex&lastName=Bo&username=${user.username}&email=${user.email}&password=${user.password}`, null);
   }
 
   public getUser(id: number) {

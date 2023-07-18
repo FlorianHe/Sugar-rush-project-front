@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import { UsersApiService } from 'src/app/services/users-api.service';
 import { User } from 'src/app/shared/interfaces/user';
 import { confirmPasswordValidator, emailValidator, passwordValidator } from 'src/app/shared/validators/validators';
 
@@ -20,22 +22,31 @@ export class ConnectionComponent implements OnInit {
     confirmPassword: ['', [Validators.required, confirmPasswordValidator]],
   });
 
+  durationInSeconds = 5;
 
   public user!: User | null;
-  constructor(private userService: UserService, private fb: FormBuilder) {
+
+  constructor(private userService: UserService, private usersApiService: UsersApiService, private fb: FormBuilder, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-    this.user = this.userService.getUser();
+   // this.user = this.userService.getUser();
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(ConnectionComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 
   login(): void {
     const email = this.userForm.value.email;
     const password = this.userForm.value.password;
-    this.userService.login(email, password).subscribe((user) => {
-      this.user = user;
+    console.log(email, password);
+    this.usersApiService.login(email, password).subscribe((token) => {
+      console.log(token);
+      this.userService.setToken(token.token);
     });
-
   }
 
   register(): void {
@@ -48,8 +59,9 @@ export class ConnectionComponent implements OnInit {
       password: this.userForm.value.password,
     };
 
-    this.userService.register(user).subscribe((user) => {
-      console.log(user);
+    this.usersApiService.register(user).subscribe((token) => {
+      console.log(token);
+      this.userService.setToken(token.token);
     });
   }
 

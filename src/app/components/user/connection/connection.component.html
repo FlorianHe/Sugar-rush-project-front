@@ -3,15 +3,15 @@
     <div class="login">
       <form [formGroup]="userForm" (ngSubmit)="login()">
         <div class="login-field">
-          <label for="username">Email : <span>*</span></label>
-          <input type="text" formControlName="username">
+          <label for="email">Email : <span>*</span></label>
+          <input type="text" formControlName="email">
         </div>
         <div class="login-field">
           <label for="password">Mot de passe : <span>*</span></label>
           <input type="password" formControlName="password">
         </div>
         <div class="login-btn">
-          <button mat-button [mat-dialog-close]="true" [disabled]="!userForm.valid" type="submit">Connection</button>
+          <button mat-button [mat-dialog-close]="true" type="submit">Connection</button>
         </div>
       </form>
     </div>

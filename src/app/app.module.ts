@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -81,6 +82,7 @@ import { PersonComponent } from './components/person/person.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
