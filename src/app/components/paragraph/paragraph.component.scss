@@ -43,3 +43,13 @@
 .ca-coute-bonbon-comment {
     color: $category-economy-color;
 }
+
+[class$="introduction"]+p {
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+[class$="conclusion"]+p {
+    font-weight: bolder;
+}
