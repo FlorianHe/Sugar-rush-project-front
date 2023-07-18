@@ -1,0 +1,52 @@
+.test {display: flex;}
+
+.test-svg-blue {
+    background-color: blue;
+    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
+    mask-image: url("./assets/logo/sugar-logo.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.test-svg-orange {
+    background-color: orange;
+    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
+    mask-image: url("./assets/logo/sugar-logo.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.test-yolo {
+    background-color: red;
+    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
+    mask-image: url("./assets/logo/sugar-logo.svg");
+    width: var(--yolo);
+    height: 60px;
+}
+
+/* You can add global styles to this file, and also import other style files */
+.waffle {display: flex;}
+
+.waffle-svg-blue {
+    background-color: blue;
+    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+    mask-image: url("./assets/logo/waffle-logo.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.waffle-svg-orange {
+    background-color: orange;
+    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+    mask-image: url("./assets/logo/waffle-logo.svg");
+    width: 60px;
+    height: 60px;
+}
+
+.waffle-yolo {
+    background-color: red;
+    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+    mask-image: url("./assets/logo/waffle-logo.svg");
+    width: var(--yolo);
+    height: 60px;
+}

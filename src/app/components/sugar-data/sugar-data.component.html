@@ -1,5 +1,6 @@
 <!-- Pile de sucres qui se colorit en fonction du nombre de sucres dans le profile ce jour ci  fill="#FECEE9" stroke="#FECEE9" stroke-width="14.525"-->
 <section class="meter-section-svg">
+  <div class="test" [innerHTML]="4.9 | sugarmeter"></div>
   <div class="meter-svg">
     <svg #svgElement *ngFor="let i of [0,1,2,3,4,5,6,7]" class="svg-class svg-class-{{i}}" version="1.1"
       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.00 415.00" xmlns:xlink="http://www.w3.org/1999/xlink"
