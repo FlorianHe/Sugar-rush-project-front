@@ -1,4 +1,8 @@
-.test {display: flex;}
+.test {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 240px;
+}
 
 .test-svg-blue {
     background-color: blue;
@@ -35,6 +39,14 @@
     height: 60px;
 }
 
+.waffle-svg-black {
+    background-color: black;
+    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+    mask-image: url("./assets/logo/waffle-logo.svg");
+    width: 60px;
+    height: 60px;
+}
+
 .waffle-svg-orange {
     background-color: orange;
     -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
@@ -44,9 +56,9 @@
 }
 
 .waffle-yolo {
-    background-color: red;
+    background: linear-gradient(to left, black var(--yolo), red var(--yolo));
     -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
     mask-image: url("./assets/logo/waffle-logo.svg");
-    width: var(--yolo);
+    width: 60px;
     height: 60px;
 }
