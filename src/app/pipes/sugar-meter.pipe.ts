@@ -2,49 +2,67 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Pipe({
-  name: 'sugarmeter'
+  name: 'sugarMeter'
 })
 export class SugarMeterPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
-  
-  transform(rating: number): SafeHtml  {
-    const fullStarCount = Math.floor(rating); // Number of full stars
-    const partialStarWidth = rating - fullStarCount; // Width of the partial star
-    const logo = "waffle"
-    let stars = '';
-    let i = 0;
-    // Print full stars
-    /*for (i; i < fullStarCount && i < 4; i++) {
-      stars += `<div class="${logo}-svg-blue"></div>`; // Replace with your SVG code for a full star
+
+  transform(amount: number, logo: string, age: number): SafeHtml {
+
+    let amountLimit = 0;
+
+    if (age < 6) {
+      amountLimit = 20;
+      amount = Math.min(Math.max(amount, 0), amountLimit);
+    } else if (age < 10 && age >= 6) {
+      amountLimit = 24;
+      amount = Math.min(Math.max(amount, 0), amountLimit);
+    } else {
+      amountLimit = 30;
+      amount = Math.min(Math.max(amount, 0), amountLimit);
     }
 
-    for (i; i < fullStarCount && i < 8; i++) {
-      stars += `<div class="${logo}-svg-orange"></div>`; // Replace with your SVG code for a full star
+    let fullLogoCount = Math.floor(amount / 4);
+
+    let sugarLimit = 0;
+
+    if (age < 6) {
+      sugarLimit = 5;
+      fullLogoCount = Math.min(Math.max(fullLogoCount, 0), sugarLimit);
+    } else if (age < 10 && age >= 6) {
+      sugarLimit = 6;
+      fullLogoCount = Math.min(Math.max(fullLogoCount, 0), sugarLimit);
+    } else {
+      sugarLimit = 7;
+      fullLogoCount = Math.min(Math.max(fullLogoCount, 0), sugarLimit);
     }
 
-    // Print partial star if there is any
-    if (partialStarWidth > 0) {
-      stars += `<div class="${logo}-yolo" style="--yolo: ${100 - (partialStarWidth*100)}%"></div>`; // Replace with your SVG code for a partial star
-    }*/
+    const colorArrayClass = ['purple', 'darkblue', 'lightblue', 'lightgreen', 'yellow', 'orange', 'red'];
 
-    for (i; i < 16;i++) {
-      if (i < 4 && i < fullStarCount) {
-        stars += `<div class="${logo}-svg-blue"></div>`; // Replace with your SVG code for a full star
-      } else if (i < 8 && i < fullStarCount) {
-        stars += `<div class="${logo}-svg-orange"></div>`; // Replace with your SVG code for a full star
-      } else if (i < 12 && i < fullStarCount) {
-        stars += `<div class="${logo}-svg-blue sport-background"></div>`; // Replace with your SVG code for a full star
-      } else if (i < 16 && i < fullStarCount) {
-        stars += `<div class="${logo}-svg-blue fun-background"></div>`; // Replace with your SVG code for a full star
-      } else {
-        stars += `<div class="${logo}-svg-black"></div>`; // Replace with your SVG code for a full star
+    let i = 1;
+    let logos = '';
+
+    for (i; i <= sugarLimit; i++) {
+      while (i <= fullLogoCount) {
+        if (sugarLimit == 5) {
+          logos += `<div class="svgs-class svg-${logo}" style="--color: ${colorArrayClass[i + 1]}"></div>`;
+        } else if (sugarLimit == 6) {
+          logos += `<div class="svgs-class svg-${logo}" style="--color: ${colorArrayClass[i]}"></div>`;
+        } else if (sugarLimit == 7) {
+          logos += `<div class="svgs-class svg-${logo}" style="--color: ${colorArrayClass[i - 1]}"></div>`;
+        }
+        i++;
+      }
+      if (fullLogoCount == 0) {
+        logos += `<div class="svgs-class svg-${logo}" style="--color: #FECEE9"></div>`;
+      } else if (i > fullLogoCount + 1) {
+        logos += `<div class="svgs-class svg-${logo}" style="--color: #FECEE9"></div>`;
       }
     }
 
+    const sanitizedLogos = this.sanitizer.bypassSecurityTrustHtml(logos);
 
-    const sanitizedStars = this.sanitizer.bypassSecurityTrustHtml(stars);
-
-    return sanitizedStars;
+    return sanitizedLogos;
 
   }
 

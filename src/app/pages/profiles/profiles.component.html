@@ -1,9 +1,9 @@
 <section class="sugar-meter-box">
 
-  <h2>Rappel: 1 carré de sucre = 4gr de sucre</h2>
+  <h2>Chaque icone vaut 4gr de sucre</h2>
 
   <div class="sugar-meter-children">
-    <app-sugar-data></app-sugar-data>
+    <app-sugar-data [profile]="profile"></app-sugar-data>
 
     <app-sugar-inputs [profile]="profile"></app-sugar-inputs>
   </div>
@@ -20,13 +20,20 @@
       (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
 
       <label>Nom
-        <input type="text" formControlName="name" placeholder="{{profile.name}}"></label>
+        <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
 
       <label>Date de naissance
-        <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"></label>
+        <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
+          value="{{profile.birthDate}}"></label>
 
       <label>Icone
-        <input type="text" formControlName="logo" placeholder="{{profile.logo}}"></label>
+        <div *ngFor="let logo of logos">
+          <label>
+            <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">{{
+            logo.label}}
+          </label>
+        </div>
+      </label>
 
       <!-- <div *ngIf="myForm.get('credentials.email')?.errors && !myForm.get('credentials.email')?.pristine"
           class="error-msg">

@@ -4,12 +4,8 @@
   height: 100%;
 
   .meter-svg {
-    height: 100%;
-
-    svg {
-      height: 50px;
-      width: 50px;
-    }
+    display: flex;
+    justify-content: center;
   }
 }
 

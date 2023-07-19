@@ -1,64 +1,27 @@
-.test {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    max-width: 240px;
+@use "/src/_import.scss" as *;
+
+.svgs-class {
+  height: 50px;
+  width: 50px;
+  background-color: var(--color);
 }
 
-.test-svg-blue {
-    background-color: blue;
-    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
-    mask-image: url("./assets/logo/sugar-logo.svg");
-    width: 60px;
-    height: 60px;
+.svg-sugar {
+  -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
+  mask-image: url("./assets/logo/sugar-logo.svg");
 }
 
-.test-svg-orange {
-    background-color: orange;
-    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
-    mask-image: url("./assets/logo/sugar-logo.svg");
-    width: 60px;
-    height: 60px;
+.svg-waffle {
+  -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+  mask-image: url("./assets/logo/waffle-logo.svg");
 }
 
-.test-yolo {
-    background-color: red;
-    -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
-    mask-image: url("./assets/logo/sugar-logo.svg");
-    width: var(--yolo);
-    height: 60px;
+.svg-ice-cream {
+  -webkit-mask-image: url("./assets/logo/ice-cream-logo.svg");
+  mask-image: url("./assets/logo/ice-cream-logo.svg");
 }
 
-/* You can add global styles to this file, and also import other style files */
-.waffle {display: flex;}
-
-.waffle-svg-blue {
-    background-color: blue;
-    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
-    mask-image: url("./assets/logo/waffle-logo.svg");
-    width: 60px;
-    height: 60px;
-}
-
-.waffle-svg-black {
-    background-color: black;
-    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
-    mask-image: url("./assets/logo/waffle-logo.svg");
-    width: 60px;
-    height: 60px;
-}
-
-.waffle-svg-orange {
-    background-color: orange;
-    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
-    mask-image: url("./assets/logo/waffle-logo.svg");
-    width: 60px;
-    height: 60px;
-}
-
-.waffle-yolo {
-    background: linear-gradient(to left, black var(--yolo), red var(--yolo));
-    -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
-    mask-image: url("./assets/logo/waffle-logo.svg");
-    width: 60px;
-    height: 60px;
+.svg-cupcake {
+  -webkit-mask-image: url("./assets/logo/cupcake-logo.svg");
+  mask-image: url("./assets/logo/cupcake-logo.svg");
 }

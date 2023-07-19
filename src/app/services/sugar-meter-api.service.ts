@@ -42,9 +42,9 @@ export class SugarMeterApiService {
     return this.http.delete<Profile>(url);
   }
 
-  getSugarDatasByProfileId(): Observable<SugarData[]> {
-    const url = `${SUGAR_RUSH_API.baseProfiles}/{id}/sugar-datas`;
-    return this.http.get<SugarData[]>(url);
+  getSugarDatasByProfileId(id: number): Observable<number> {
+    const url = `${SUGAR_RUSH_API.baseProfiles}/${id}/sugar-datas`;
+    return this.http.get<number>(url);
   }
 
   addSugarData(sugarData: SugarData): Observable<SugarData> {

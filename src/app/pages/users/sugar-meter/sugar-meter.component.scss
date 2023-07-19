@@ -40,7 +40,15 @@
     }
   }
 
-  .profile-creation {}
+  .profile-creation {
+    h2 {
+      text-align: center;
+      font-size: 1rem;
+      color: $secondary-text-color;
+      padding-top: $main-border;
+      padding-bottom: $main-border;
+    }
+  }
 }
 
 @media only screen and (min-width: $min-width-desktop) and (max-width: 1024px) {

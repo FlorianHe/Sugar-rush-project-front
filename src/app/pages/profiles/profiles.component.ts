@@ -14,16 +14,32 @@ export class ProfilesComponent {
   @Input()
   public profile!: Profile;
 
+  public logos = [
+    { label: 'Gauffre', value: 'waffle' },
+    { label: 'Sucre', value: 'sugar' },
+    { label: 'Glace', value: 'ice-cream' },
+    { label: 'Muffin', value: 'cupcake' },
+  ];
+
   constructor(private fb: FormBuilder, private sugarMeterService: SugarMeterApiService) {}
 
   profileModificationForm = this.fb.group({
-    name: ['', [Validators.required]],
-    birthDate: [new Date(), [Validators.required]],
-    logo: ['', [Validators.required]],
+    name: [''],
+    birthDate: [new Date()],
+    logo: [''],
   });
 
   onSubmit() {
     if (this.profileModificationForm.valid && this.profileModificationForm.dirty) {
+      if (this.profileModificationForm.value.name === '') {
+        this.profileModificationForm.value.name = this.profile.name;
+      }
+      if (this.profileModificationForm.value.birthDate === new Date()) {
+        this.profileModificationForm.value.birthDate = this.profile.birthDate;
+      }
+      if (this.profileModificationForm.value.logo === '') {
+        this.profileModificationForm.value.logo = this.profile.logo;
+      }
       const profile = {
         id: this.profile.id,
         name: this.profileModificationForm.value.name!,
