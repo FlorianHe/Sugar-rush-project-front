@@ -17,6 +17,11 @@
     </div>
   </mat-tab>
 
+  <mat-form-field>
+    <mat-label>Snack bar duration (seconds)</mat-label>
+    <input type="number" [(ngModel)]="durationInSeconds" matInput>
+  </mat-form-field>
+
   <mat-tab label="Inscription">
     <div class="register">
       <form [formGroup]="userForm" (ngSubmit)="register()">

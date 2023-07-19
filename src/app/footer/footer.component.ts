@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
 
   private _categories!: Category[];
 
-  constructor(public categoriesService: CategoriesApiService, private userService : UserService) {}
+  constructor(public categoriesService: CategoriesApiService, private userService: UserService) {}
   ngOnInit(): void {
     this.categoriesService.getCategories()
       .subscribe(categories => {

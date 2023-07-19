@@ -30,7 +30,7 @@ export class ConnectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.user = this.userService.getUser();
+   this.user = this.userService.getUser();
   }
 
   openSnackBar() {
@@ -59,7 +59,6 @@ export class ConnectionComponent implements OnInit {
       email: this.userForm.value.email,
       password: this.userForm.value.password,
     };
-
     this.usersApiService.register(user).subscribe((token) => {
       console.log(token);
       this.userService.setToken(token.token);
