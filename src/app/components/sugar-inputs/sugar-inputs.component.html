@@ -5,7 +5,8 @@
     </ul>
 
     <ul class="meter-minus">
-      <li class="btn-minus" *ngFor="let amount of sugarDataAmounts" (click)="createSugarData(amount*-1)">-{{amount}}
+      <li class="btn-minus" *ngFor="let amount of sugarDataAmounts"><span *ngIf="sugarDatas >= amount"
+          (click)="createSugarData(amount*-1)">-{{amount}}</span>
       </li>
     </ul>
   </div>

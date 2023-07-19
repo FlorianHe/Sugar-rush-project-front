@@ -14,6 +14,9 @@ export class SugarInputsComponent {
 
   sugarDataAmounts: number[] = [1, 2, 3, 5, 10];
 
+  @Input()
+  public sugarDatas!: number;
+
   constructor(private sugarMeterService: SugarMeterApiService) {}
 
   createSugarData(amount: number) {

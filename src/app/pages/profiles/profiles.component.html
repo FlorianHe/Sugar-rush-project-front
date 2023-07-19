@@ -3,14 +3,14 @@
   <h2>Chaque icone vaut 4gr de sucre</h2>
 
   <div class="sugar-meter-children">
-    <app-sugar-data [profile]="profile"></app-sugar-data>
+    <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
 
-    <app-sugar-inputs [profile]="profile"></app-sugar-inputs>
+    <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-inputs>
   </div>
 
   <p class="meter-reaction">
     <!-- Afficher une phrase random en fonction du niveau du sucrometre -->
-    Hey le sucre c'est pas bien hein
+    Montant actuel: {{sugarDatas}}gr - Hey le sucre c'est pas bien hein
   </p>
 
   <div class="profile-modification">

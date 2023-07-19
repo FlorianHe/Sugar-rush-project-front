@@ -21,20 +21,13 @@ export class SugarDataComponent implements OnInit {
   public profile!: Profile;
   private _age!: number;
 
-  private _sugarDatas!: number;
+  @Input()
+  public sugarDatas!: number;
 
   constructor(private sugarMeterService: SugarMeterApiService, private ageCalculatorService: AgeCalculatorService) {}
 
   ngOnInit(): void {
-    this.sugarMeterService.getSugarDatasByProfileId(this.profile.id)
-      .subscribe(datas => {
-        this._sugarDatas = datas;
-      });
     this._age = this.ageCalculatorService.calculateAge(this.profile.birthDate);
-  }
-
-  get sugarDatas(): number {
-    return this._sugarDatas;
   }
 
   get age(): number {
