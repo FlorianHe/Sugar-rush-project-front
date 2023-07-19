@@ -3,23 +3,26 @@ import { Injectable } from '@angular/core';
 import { Article } from '../shared/interfaces/article';
 import { Observable } from 'rxjs';
 import { ArticleDisplayed } from '../shared/interfaces/articleDisplayed';
+import { SUGAR_RUSH_API } from '../shared/globals/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleApiService {
 
-  private apiUrl = 'http://localhost:8080';
-
   constructor(private http: HttpClient) {}
 
-  getArticles(): Observable<ArticleDisplayed[]> {
-    const url = `${this.apiUrl}/articles?limit=9&offset=0`;
+  getArticles(limit: number, offset: number): Observable<ArticleDisplayed[]> {
+    const url = `${SUGAR_RUSH_API.baseArticles}?limit=${limit}&offset=${offset}`;
     return this.http.get<ArticleDisplayed[]>(url);
   }
 
+  getArticleMain(): Observable<ArticleDisplayed> {
+    return this.http.get<Article>(`${SUGAR_RUSH_API.baseArticles}/main`)
+  }
+
   getArticleById(id: number): Observable<Article> {
-    const url = `${this.apiUrl}/articles/${id}`;
+    const url = `${SUGAR_RUSH_API.baseArticles}/${id}`;
     return this.http.get<Article>(url);
   }
 }

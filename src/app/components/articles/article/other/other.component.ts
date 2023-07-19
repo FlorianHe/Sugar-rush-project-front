@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ArticleApiService } from 'src/app/services/article-api.service';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
-import { Article } from 'src/app/shared/interfaces/article';
+import { INFINITE_SCROLL_PARAMS } from 'src/app/shared/globals/api';
 import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 
 
@@ -15,10 +14,13 @@ export class OtherComponent implements OnInit {
   @Input() categorySlug!: string
   private _articles!: ArticleDisplayed[];
 
+  private limit = INFINITE_SCROLL_PARAMS.limitOther;
+  private offset = INFINITE_SCROLL_PARAMS.offsetArticles;
+
   constructor(private categoriesService: CategoriesApiService) {}
 
   ngOnInit(): void {
-    this.categoriesService.getArticlesByCategorySlug(this.categorySlug, 3, 0).subscribe((articles) => {
+    this.categoriesService.getArticlesByCategorySlug(this.categorySlug, this.limit, this.offset).subscribe((articles) => {
       this._articles = articles;
     }
     );
