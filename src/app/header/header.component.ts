@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { APP_ROUTES } from '../shared/globals/routes';
 import { MatDialog } from '@angular/material/dialog';
 import { ConnectionComponent } from '../components/user/connection/connection.component';
 import { Category } from '../shared/interfaces/category';
 import { CategoriesApiService } from '../services/categories-api.service';
+import { User } from '../shared/interfaces/user';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,12 @@ import { CategoriesApiService } from '../services/categories-api.service';
 })
 export class HeaderComponent {
   public APP_ROUTES = APP_ROUTES;
-  
+
   private _categories!: Category[];
+
+  isLoggedIn = false;
+
+  user = {} as User;
 
   constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog) {}
 
@@ -23,12 +28,15 @@ export class HeaderComponent {
         this._categories = categories;
       });
   }
+  
   openModal() {
     const dialogRef = this.dialog.open(ConnectionComponent, {
       panelClass: 'modal-login',
+      data: { isLoggedIn: this.isLoggedIn }
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.isLoggedIn = result.isLoggedIn;
     });
   }
 
