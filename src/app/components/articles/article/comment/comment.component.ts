@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConnectionComponent } from 'src/app/components/user/connection/connection.component';
 import { CommentService } from 'src/app/services/comment-api.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
@@ -16,14 +18,18 @@ export class ArticleCommentComponent implements OnInit {
   @Input()
   article!: Article;
 
+  public user!: User | null;
+  connectionStatus = this.userService.userLoggedIn;
 
   _comments!: Comment[];
 
 
-  constructor(private commentService: CommentService, private userService : UserService) {}
+  constructor(private commentService: CommentService, private userService : UserService, private dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.getCommentsByArticle();
+    this.user = this.userService.getUser();
   }
 
   getCommentsByArticle(): void {
@@ -34,7 +40,6 @@ export class ArticleCommentComponent implements OnInit {
 
   createComment(form: NgForm): void {
     const loggedInUserString = this.userService.getUser();
-    console.log(loggedInUserString)
     if (loggedInUserString) {
       const comment: Comment = {
         id: 0,
@@ -46,7 +51,6 @@ export class ArticleCommentComponent implements OnInit {
       this.commentService.createComment(comment).subscribe(  
         (createdComment) => {
             this.getCommentsByArticle();
-            this._comments.push(createdComment);
             form.reset();
         },
         (error) => {
@@ -72,5 +76,14 @@ export class ArticleCommentComponent implements OnInit {
     if (commentDeleted) {
       this.getCommentsByArticle();
     }
+  }
+
+  openModal() {
+    const dialogRef = this.dialog.open(ConnectionComponent, {
+      panelClass: 'modal-login',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

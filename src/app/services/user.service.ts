@@ -1,21 +1,41 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/interfaces/user';
-import { UsersApiService } from './users-api.service';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private usersApiService: UsersApiService) {}
+  private userLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isUserLoggedIn());
+  userLoggedIn: Observable<boolean> = this.userLoggedInSubject.asObservable();
+
+  constructor() {}
+
+  private isUserLoggedIn(): boolean {
+    if (this.getUser())
+      return true;
+    return false
+  }
+
+  public loginUser() {
+    this.userLoggedInSubject.next(true);
+  }
+
+  public logoutUser() {
+    this.userLoggedInSubject.next(false);
+  }
 
   public setToken(token: string): void {
     localStorage.setItem('token', token);
   }
 
   public getToken(): string | null {
-    return localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    if (token) {
+      return token;
+    }
+    return null;
   }
 
   public deleteToken(): void {
@@ -33,5 +53,10 @@ export class UserService {
   public setUser(user: User): void {
     localStorage.setItem('user', JSON.stringify(user));
   }
+
+  public deleteUser() : void {
+    localStorage.removeItem('user')
+  }
+
 
 }

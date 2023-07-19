@@ -42,11 +42,10 @@ export class ConnectionComponent implements OnInit {
   login(): void {
     const email = this.userForm.value.email;
     const password = this.userForm.value.password;
-    console.log(email, password);
     this.usersApiService.login(email, password).subscribe((response) => {
-      console.log(response);
       this.userService.setToken(response.token);
       this.userService.setUser(response.user)
+      this.userService.loginUser();
     });
   }
 
@@ -59,9 +58,7 @@ export class ConnectionComponent implements OnInit {
       email: this.userForm.value.email,
       password: this.userForm.value.password,
     };
-    this.usersApiService.register(user).subscribe((token) => {
-      console.log(token);
-      this.userService.setToken(token.token);
+    this.usersApiService.register(user).subscribe(() => {
     });
   }
 

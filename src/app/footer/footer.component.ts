@@ -28,6 +28,8 @@ export class FooterComponent implements OnInit {
 
   deleteToken() {
     this.userService.deleteToken();
+    this.userService.deleteUser();
+    this.userService.logoutUser();
     console.log("plus de token");
     console.log(this.userService.getToken())
   }
