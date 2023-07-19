@@ -1,50 +1,5 @@
 @use "/src/_import.scss" as *;
 
-.comment {
-    background-color: #f9f9f9;
-    padding: $small-border;
-    margin-bottom: $main-border;
-    border-radius: 5px;
-    position: relative;
-
-    h4 {
-        font-size: 16px;
-
-        margin-bottom: 2rem;
-        color: $secondary-text-color;
-    }
-
-    p {
-
-        margin-bottom: 10px;
-    }
-
-    .delete-icon {
-        position: absolute;
-        top: $small-border;
-        right: $small-border;
-    }
-}
-
-.fun-comment {
-    color: $category-fun-color;
-}
-
-.sport-comment {
-    color: $category-sport-color;
-}
-
-.miam-comment {
-    color: $category-food-color;
-}
-
-.carie-comment {
-    color: $category-health-color;
-}
-
-.ca-coute-bonbon-comment {
-    color: $category-economy-color;
-}
 
 [class$="introduction"]+p {
     font-weight: bold;
