@@ -9,6 +9,8 @@ export class UserService {
 
   private userLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isUserLoggedIn());
   userLoggedIn: Observable<boolean> = this.userLoggedInSubject.asObservable();
+  private userUsernameSubject: BehaviorSubject<string> = new BehaviorSubject<string>("");
+  userUsername: Observable<string> = this.userUsernameSubject.asObservable();
 
   constructor() {}
 
@@ -18,12 +20,14 @@ export class UserService {
     return false
   }
 
-  public loginUser() {
+  public loginUser(username: string) {
     this.userLoggedInSubject.next(true);
+    this.userUsernameSubject.next(username);
   }
 
   public logoutUser() {
     this.userLoggedInSubject.next(false);
+    this.userUsernameSubject.next("");
   }
 
   public setToken(token: string): void {
@@ -54,9 +58,8 @@ export class UserService {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  public deleteUser() : void {
+  public deleteUser(): void {
     localStorage.removeItem('user')
   }
-
 
 }

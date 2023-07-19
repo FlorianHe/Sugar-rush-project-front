@@ -21,6 +21,8 @@ const APP_ROUTES = {
   rNotFound: '404',
   aboutUs: '/about-us',
   rAboutUs: 'about-us',
+  rPersonalAccount: 'personal-account',
+  personalAccount: '/personal-account',
   article: (id: number) => `articles/${id}`
 };
 

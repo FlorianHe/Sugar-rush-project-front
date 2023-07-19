@@ -5,6 +5,8 @@ import { ConnectionComponent } from '../components/user/connection/connection.co
 import { Category } from '../shared/interfaces/category';
 import { CategoriesApiService } from '../services/categories-api.service';
 import { User } from '../shared/interfaces/user';
+import { UserService } from '../services/user.service';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
@@ -16,11 +18,15 @@ export class HeaderComponent {
 
   private _categories!: Category[];
 
-  isLoggedIn = false;
+  isLoggedIn = this.userService.userLoggedIn;
 
-  user = {} as User;
+  user = this.userService.getUser();
+  usernameUser = this.userService.userUsername;
 
-  constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog) {}
+  @ViewChild(MatMenuTrigger) 
+  menuTrigger!: MatMenuTrigger;
+
+  constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog, private userService: UserService) {}
 
   ngOnInit(): void {
     this.categoriesService.getCategories()
@@ -28,16 +34,18 @@ export class HeaderComponent {
         this._categories = categories;
       });
   }
-  
+
   openModal() {
     const dialogRef = this.dialog.open(ConnectionComponent, {
       panelClass: 'modal-login',
-      data: { isLoggedIn: this.isLoggedIn }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.isLoggedIn = result.isLoggedIn;
     });
+  }
+
+  logout() {
+    this.userService.logoutUser();
   }
 
   get categories(): Category[] {

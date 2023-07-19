@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import { UsersApiService } from 'src/app/services/users-api.service';
 import { User } from 'src/app/shared/interfaces/user';
@@ -22,7 +22,9 @@ export class ConnectionComponent implements OnInit {
     confirmPassword: ['', [Validators.required, confirmPasswordValidator]],
   });
 
-  durationInSeconds = 5;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
 
   public user!: User | null;
 
@@ -35,7 +37,9 @@ export class ConnectionComponent implements OnInit {
 
   openSnackBar() {
     this._snackBar.openFromComponent(ConnectionComponent, {
-      duration: this.durationInSeconds * 1000,
+      duration: 1000,
+      verticalPosition: this.verticalPosition,
+      horizontalPosition: this.horizontalPosition,
     });
   }
 
@@ -44,8 +48,9 @@ export class ConnectionComponent implements OnInit {
     const password = this.userForm.value.password;
     this.usersApiService.login(email, password).subscribe((response) => {
       this.userService.setToken(response.token);
-      this.userService.setUser(response.user)
-      this.userService.loginUser();
+      this.userService.setUser(response.user);
+      this.userService.loginUser(response.user.username);
+      this._snackBar.open('Vous êtes connecté !', "Fermer");
     });
   }
 
@@ -59,6 +64,7 @@ export class ConnectionComponent implements OnInit {
       password: this.userForm.value.password,
     };
     this.usersApiService.register(user).subscribe(() => {
+      this._snackBar.open('Vous êtes inscrit !', "Fermer");
     });
   }
 
