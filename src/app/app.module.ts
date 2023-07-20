@@ -87,7 +87,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    US-S4-Front-User
     MatSnackBarModule,
     MatMenuModule,
     MatIconModule,
