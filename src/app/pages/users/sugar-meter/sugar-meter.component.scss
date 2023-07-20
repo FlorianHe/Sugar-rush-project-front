@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: $big-border;
+    margin-bottom: $small-border;
     overflow: hidden;
     transition: 1s;
 
@@ -40,6 +40,8 @@
   }
 
   .profile-creation {
+    margin-top: $main-border;
+
     h2 {
       text-align: center;
       font-size: 1rem;

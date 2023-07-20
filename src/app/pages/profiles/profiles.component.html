@@ -7,7 +7,8 @@
 
     <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
 
-    <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-inputs>
+    <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"
+      (datasUpdated)="onDatasUpdated($event)"></app-sugar-inputs>
 
     <p class="meter-reaction" *ngIf="sugarDatas">
       <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
@@ -15,29 +16,36 @@
   </div>
 
   <div class="profile-modification">
-    <h2>Modifie ton Profil :</h2>
-    <form [formGroup]="profileModificationForm"
-      (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="meter-description-title">
+          <h2>Modifie ton Profil :</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
-      <label>Nom
-        <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
+      <form [formGroup]="profileModificationForm"
+        (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
 
-      <label>Date de naissance
-        <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
-          value="{{profile.birthDate}}"></label>
+        <label>Nom
+          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
 
-      <label>Icone
-        <div *ngFor="let logo of logos">
-          <label>
-            <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">&nbsp;<div
-              class="example-tab-icon svg-{{logo.value}}"></div>
-          </label>
+        <label>Date de naissance
+          <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
+            value="{{profile.birthDate}}"></label>
 
-        </div>
-      </label>
+        <label>Icone
+          <div *ngFor="let logo of logos">
+            <label>
+              <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
+              <div class="example-tab-icon svg-{{logo.value}}"></div>
+            </label>
 
-      <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
-        type="submit">Valider</button>
-    </form>
+          </div>
+        </label>
+
+        <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
+          type="submit">Valider</button>
+      </form>
+    </mat-expansion-panel>
   </div>
 </section>

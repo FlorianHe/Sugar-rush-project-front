@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
 import { Profile } from 'src/app/shared/interfaces/profile';
 
@@ -17,10 +17,13 @@ export class SugarInputsComponent {
   @Input()
   public sugarDatas!: number;
 
+  @Output()
+  datasUpdated = new EventEmitter<Boolean>();
+
   constructor(private sugarMeterService: SugarMeterApiService) {}
 
   createSugarData(amount: number) {
     const sugarData = { id: 0, amount: amount, profile: this.profile };
-    this.sugarMeterService.addSugarData(sugarData).subscribe();
+    this.sugarMeterService.addSugarData(sugarData).subscribe(() => this.datasUpdated.emit(true));
   }
 }

@@ -38,26 +38,33 @@
   </mat-tab-group>
 
   <div class="profile-creation">
-    <h2>Créer un nouveau Profil :</h2>
-    <form [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="meter-description-title">
+          <h2>Créer un nouveau Profil :</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
-      <label>Nom
-        <input type="text" formControlName="name"></label>
+      <form [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
-      <label>Date de naissance
-        <input type="date" formControlName="birthDate"></label>
+        <label>Nom
+          <input type="text" formControlName="name"></label>
 
-      <label>Icone
-        <div *ngFor="let logo of logos">
-          <label>
-            <input type="radio" [value]="logo.value" formControlName="logo">{{
-            logo.label}}
-          </label>
-          <div class="example-tab-icon svg-{{logo.value}}"></div>
-        </div>
-      </label>
+        <label>Date de naissance
+          <input type="date" formControlName="birthDate"></label>
 
-      <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
-    </form>
+        <label>Icone
+          <div *ngFor="let logo of logos">
+            <label>
+              <input type="radio" [value]="logo.value" formControlName="logo">
+              <div class="example-tab-icon svg-{{logo.value}}"></div>
+            </label>
+          </div>
+        </label>
+
+        <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
+
+      </form>
+    </mat-expansion-panel>
   </div>
 </section>

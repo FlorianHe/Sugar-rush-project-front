@@ -54,6 +54,14 @@ export class ProfilesComponent implements OnInit {
     }
   }
 
+  onDatasUpdated(event: Boolean) {
+    if (event)
+      this.sugarMeterService.getSugarDatasByProfileId(this.profile.id)
+        .subscribe(datas => {
+          this._sugarDatas = datas;
+        });
+  }
+
   get sugarDatas(): number {
     return this._sugarDatas;
   }
