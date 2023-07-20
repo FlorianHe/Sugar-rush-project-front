@@ -54,8 +54,9 @@ const routes: Routes = [
     title: 'Sugar Rush : Not Found',
   },
   {
-    path: 'sugar-meter',
+    path: APP_ROUTES.rSugarMeter,
     component: SugarMeterComponent,
+    title: 'Sugar Rush : Sucro-mètre',
   },
   {
     path: '**',

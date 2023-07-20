@@ -23,7 +23,9 @@ const APP_ROUTES = {
   rAboutUs: 'about-us',
   detailUser: `/user`,
   rdetailUser: 'user',
-  article: (id: number) => `articles/${id}`
+  article: (id: number) => `articles/${id}`,
+  rSugarMeter: 'sugar-meter',
+  sugarMeter: '/sugar-meter',
 };
 
 export { ROUTES, FRONTEND_URL, APP_ROUTES };

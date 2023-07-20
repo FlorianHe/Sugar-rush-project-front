@@ -14,23 +14,11 @@ export class SugarMeterApiService {
 
   constructor(private http: HttpClient) {}
 
-  //Temp
-  getProfilesByUserId(id: number): Observable<Profile[]> {
-    const url = `${SUGAR_RUSH_API.baseUsers}/${id}`;
-    return this.http.get<Profile[]>(url);
-  }
-
-  //Temp
-  getProfiles(): Observable<Profile[]> {
-    const url = `${SUGAR_RUSH_API.baseProfiles}`;
-    return this.http.get<Profile[]>(url);
-  }
-
-  //Will need a user id
-  addProfile(profile: Profile): Observable<Profile> {
-    const url = `${SUGAR_RUSH_API.baseProfiles}`;
-    return this.http.post<Profile>(url, profile);
-  }
+  //Will need a user id COMING SOON
+  // addProfile(profile: Profile): Observable<Profile> {
+  //   const url = `${SUGAR_RUSH_API.baseProfiles}`;
+  //   return this.http.post<Profile>(url, profile);
+  // }
 
   updateProfile(id: number, profile: Profile): Observable<Profile> {
     const url = `${SUGAR_RUSH_API.baseProfiles}/${id}`;

@@ -10,28 +10,24 @@ export class SugarMeterPipe implements PipeTransform {
 
   transform(amount: number, logo: string, age: number): SafeHtml {
 
-    let sugarLimit = 0;
-    if (amount < 0) {
-      amount = 0;
-    }
+    let i = 0;
 
     if (age < 6) {
-      sugarLimit = 5;
+      i = 2;
     } else if (age <= 10 && age >= 6) {
-      sugarLimit = 6;
+      i = 1;
     } else if (age > 10) {
-      sugarLimit = 7;
+      i = 0;
     }
 
     let fullLogoCount = Math.floor(amount / 4);
     let halfLogoCount = amount / 4 - fullLogoCount;
-
     let logos = '';
 
-    for (let j = 0; j < sugarLimit; j++) {
-      if (j < fullLogoCount) {
+    for (let j = i; j < 7; j++) {
+      if (j < fullLogoCount + i) {
         logos += `<div class="svgs-class svg-${logo}" style="--color: ${COLOR_ARRAY_CLASS[j]}"></div>`;
-      } else if (j == fullLogoCount) {
+      } else if (j == fullLogoCount + i) {
         logos += `<div class="svgs-class svg-half svg-${logo}" style="--color: ${COLOR_ARRAY_CLASS[j]}; --half: ${100 - halfLogoCount * 100}%"></div>`;
       } else {
         logos += `<div class="svgs-class svg-${logo}" style="--color: #FECEE9"></div>`;

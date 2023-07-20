@@ -32,7 +32,7 @@
         &nbsp;{{profile.name}}
       </ng-template>
 
-      <app-profiles [profile]="profile"></app-profiles>
+      <app-profiles [profile]="profile" (profilesUpdated)="onProfilesUpdated($event)"></app-profiles>
 
     </mat-tab>
   </mat-tab-group>

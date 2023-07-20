@@ -46,6 +46,8 @@
         <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
           type="submit">Valider</button>
       </form>
+
+      <button (click)="deleteProfile()">Supprimer profil</button>
     </mat-expansion-panel>
   </div>
 </section>

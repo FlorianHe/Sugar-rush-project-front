@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
 import { LOGOS } from 'src/app/shared/globals/sugar-meter';
 import { Profile } from 'src/app/shared/interfaces/profile';
@@ -18,7 +19,10 @@ export class ProfilesComponent implements OnInit {
 
   public logos = LOGOS;
 
-  constructor(private fb: FormBuilder, private sugarMeterService: SugarMeterApiService) {}
+  @Output()
+  profilesUpdated = new EventEmitter<Boolean>();
+
+  constructor(private snackBarService: SnackBarService, private fb: FormBuilder, private sugarMeterService: SugarMeterApiService) {}
 
   ngOnInit(): void {
     this.sugarMeterService.getSugarDatasByProfileId(this.profile.id)
@@ -48,9 +52,14 @@ export class ProfilesComponent implements OnInit {
         id: this.profile.id,
         name: this.profileModificationForm.value.name!,
         birthDate: this.profileModificationForm.value.birthDate!,
-        logo: this.profileModificationForm.value.logo!
+        logo: this.profileModificationForm.value.logo!,
+        user: this.profile.user
       };
-      this.sugarMeterService.updateProfile(this.profile.id, profile).subscribe();
+      this.sugarMeterService.updateProfile(this.profile.id, profile).subscribe(
+        () => {
+          this.profilesUpdated.emit(true)
+          this.snackBarService.openSnackBar('Profil ' + profile.name + ' modifié !', 'Fermer');
+        });
     }
   }
 
@@ -60,6 +69,15 @@ export class ProfilesComponent implements OnInit {
         .subscribe(datas => {
           this._sugarDatas = datas;
         });
+  }
+
+  deleteProfile() {
+    this.sugarMeterService.deleteProfile(this.profile.id).subscribe(
+      () => {
+        this.profilesUpdated.emit(true)
+        this.snackBarService.openSnackBar('Profil ' + this.profile.name + ' supprimé !', 'Fermer');
+      });
+
   }
 
   get sugarDatas(): number {
