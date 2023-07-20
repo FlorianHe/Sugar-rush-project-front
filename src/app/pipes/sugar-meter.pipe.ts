@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { COLOR_ARRAY_CLASS } from '../shared/globals/pipe';
+import { COLOR_ARRAY_CLASS } from '../shared/globals/sugar-meter';
 
 @Pipe({
   name: 'sugarMeter'

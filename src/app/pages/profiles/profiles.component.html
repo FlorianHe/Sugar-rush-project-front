@@ -9,7 +9,7 @@
 
     <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-inputs>
 
-    <p class="meter-reaction">
+    <p class="meter-reaction" *ngIf="sugarDatas">
       <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
     </p>
   </div>
@@ -29,9 +29,10 @@
       <label>Icone
         <div *ngFor="let logo of logos">
           <label>
-            <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">{{
-            logo.label}}
+            <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">&nbsp;<div
+              class="example-tab-icon svg-{{logo.value}}"></div>
           </label>
+
         </div>
       </label>
 

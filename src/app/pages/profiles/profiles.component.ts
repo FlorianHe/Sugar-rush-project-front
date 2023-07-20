@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { SugarDataComponent } from 'src/app/components/sugar-data/sugar-data.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
+import { LOGOS } from 'src/app/shared/globals/sugar-meter';
 import { Profile } from 'src/app/shared/interfaces/profile';
 
 @Component({
@@ -16,12 +16,7 @@ export class ProfilesComponent implements OnInit {
 
   private _sugarDatas!: number;
 
-  public logos = [
-    { label: 'Gauffre', value: 'waffle' },
-    { label: 'Sucre', value: 'sugar' },
-    { label: 'Glace', value: 'ice-cream' },
-    { label: 'Muffin', value: 'cupcake' },
-  ];
+  public logos = LOGOS;
 
   constructor(private fb: FormBuilder, private sugarMeterService: SugarMeterApiService) {}
 

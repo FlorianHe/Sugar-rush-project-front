@@ -1,20 +1,6 @@
 <section id="sugar-meter">
 
   <div id="meter-description">
-    <!-- <h1 id="meter-description-title" (click)="slideDescription()">Voici votre Sucromètre personnalisé !</h1>
-    <p id="meter-description-text"><span></span>L'OMS recommande que les sucres libres ne représentent pas plus de 10%
-      de l'apport énergétique
-      quotidien, même si
-      idéalement il conviendrait de réduire les surcres libres à 5% de l'apport énergétique total.
-      <br><span></span>Cela signifie donc que:
-      <br>- Les adultes ne devraient pas consommer plus de 30g de sucres libres par jour (soit 7 morceaux de sucres)
-      <br>- Les enfants de 7 à 10 ans ne devraient pas consommer plus de 24g de sucres libres par jour (soit 6 morceaux
-      de sucres)
-      <br>- Les enfants de 4 à 6 ans ne devraient pas consommer plus de 19g de sucres libres par jour (soit 5 morceaux
-      de sucres)
-      <br><span>Ainsi, notre Sucromètre vous permet de savoir si vous avez dépassé votre quota de sucres libres
-        journalier !</span>
-    </p> -->
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title class="meter-description-title">
@@ -39,22 +25,20 @@
   </div>
 
   <mat-tab-group class="connection-group">
-    <!-- Loop on Profiles -->
     <mat-tab *ngFor="let profile of profiles">
-      <!-- Represent the title of the tab -->
+
       <ng-template mat-tab-label class="meter-tab">
-        <!-- Custom icons to do -->
-        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        {{profile.name}}
+        <mat-icon class="example-tab-icon svg-{{profile.logo}}"></mat-icon>
+        &nbsp;{{profile.name}}
       </ng-template>
-      <!-- Content -->
+
       <app-profiles [profile]="profile"></app-profiles>
+
     </mat-tab>
   </mat-tab-group>
 
   <div class="profile-creation">
     <h2>Créer un nouveau Profil :</h2>
-    <!-- Name, BirthDate and Logo -->
     <form [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
       <label>Nom
@@ -64,10 +48,16 @@
         <input type="date" formControlName="birthDate"></label>
 
       <label>Icone
-        <input type="text" formControlName="logo"></label>
+        <div *ngFor="let logo of logos">
+          <label>
+            <input type="radio" [value]="logo.value" formControlName="logo">{{
+            logo.label}}
+          </label>
+          <div class="example-tab-icon svg-{{logo.value}}"></div>
+        </div>
+      </label>
 
       <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
     </form>
   </div>
-
 </section>

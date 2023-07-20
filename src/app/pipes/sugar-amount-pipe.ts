@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { AgeCalculatorService } from '../services/age-calculator.service';
-import { SENTENCES } from '../shared/globals/pipe';
+import { SENTENCES } from '../shared/globals/sugar-meter';
 
 @Pipe({
   name: 'sugarAmount'
@@ -13,10 +13,6 @@ export class SugarAmountPipe implements PipeTransform {
 
     const age = this.ageCalculatorService.calculateAge(birthDate);
 
-    if (amount < 0) {
-      amount = 0;
-    }
-
     let amountMax = 0;
     if (age < 6) {
       amountMax = 19;
@@ -26,21 +22,11 @@ export class SugarAmountPipe implements PipeTransform {
       amountMax = 30;
     }
 
-    let sentenceIndex = 0;
-    if (amount > amountMax) {
-      sentenceIndex = 5;
-    } else if (amount == amountMax) {
+    let sentenceIndex = Math.floor(amount / amountMax * 5);
+    if (sentenceIndex > 4) {
       sentenceIndex = 4;
-    } else if (amount >= amountMax * 75 / 100) {
-      sentenceIndex = 3;
-    } else if (amount >= amountMax / 2) {
-      sentenceIndex = 2;
-    } else if (amount >= amountMax / 4) {
-      sentenceIndex = 1;
     }
 
-    let sentence = SENTENCES[sentenceIndex][Math.floor(Math.random() * 6)]
-
-    return sentence;
+    return SENTENCES[sentenceIndex][Math.floor(Math.random() * 6)];
   }
 }

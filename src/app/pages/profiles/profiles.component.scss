@@ -24,7 +24,13 @@
     }
   }
 
-  .profile-modification {}
+  .profile-modification {
+    .example-tab-icon {
+      width: 20px;
+      height: 20px;
+      background-color: $secondary-text-color;
+    }
+  }
 }
 
 @media only screen and (min-width: $min-width-desktop) and (max-width: 1024px) {

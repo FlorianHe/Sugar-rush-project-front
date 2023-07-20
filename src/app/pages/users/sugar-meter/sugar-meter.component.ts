@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
 import { Profile } from 'src/app/shared/interfaces/profile';
+import { LOGOS } from 'src/app/shared/globals/sugar-meter';
 
 @Component({
   selector: 'app-sugar-meter',
@@ -11,6 +12,8 @@ import { Profile } from 'src/app/shared/interfaces/profile';
 export class SugarMeterComponent implements OnInit {
 
   private _profiles!: Profile[];
+
+  public logos = LOGOS;
 
   constructor(public sugarMeterService: SugarMeterApiService, private fb: FormBuilder) {}
 

@@ -51,5 +51,11 @@ const SENTENCES = [
 
 const COLOR_ARRAY_CLASS = ['purple', 'darkblue', 'lightblue', 'lightgreen', 'yellow', 'orange', 'red'];
 
+const LOGOS = [
+  { label: 'Gauffre', value: 'waffle' },
+  { label: 'Sucre', value: 'sugar' },
+  { label: 'Glace', value: 'ice-cream' },
+  { label: 'Muffin', value: 'cupcake' },
+];
 
-export { SENTENCES, COLOR_ARRAY_CLASS }
+export { SENTENCES, COLOR_ARRAY_CLASS, LOGOS }
