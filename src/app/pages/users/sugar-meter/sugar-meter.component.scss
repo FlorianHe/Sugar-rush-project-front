@@ -12,22 +12,38 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: $small-border;
-    overflow: hidden;
     transition: 1s;
+    color: $secondary-text-color;
+
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+      box-shadow: none;
+    }
+
+    .mat-expansion-panel-header {
+      padding: 0;
+      display: inline-flex;
+      border-bottom: 2px solid $secondary-text-color;
+      width: 100%;
+      padding-right: 20px;
+    }
+
+    .mat-expansion-panel-header.mat-expanded {
+      height: auto;
+    }
+
+    .mat-expansion-panel {
+      text-align: center;
+    }
 
     .meter-description-title {
-      z-index: 2;
-      color: $secondary-text-color;
       text-align: center;
       font-size: 1.5rem;
       font-family: "Glam-queen";
       width: 100%;
-      border-bottom: 2px solid $secondary-text-color;
     }
 
     p {
-      z-index: 1;
-      color: $secondary-text-color;
+      text-align: left;
       padding: $small-border;
       margin-left: $small-border;
       margin-right: $small-border;
@@ -35,7 +51,6 @@
       border-top: 0px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
-      transition: 1s;
     }
   }
 
@@ -48,6 +63,15 @@
       color: $secondary-text-color;
       padding-top: $main-border;
       padding-bottom: $main-border;
+    }
+
+    .profileCreationForm {
+      color: $secondary-text-color;
+
+      label {
+
+        input {}
+      }
     }
   }
 

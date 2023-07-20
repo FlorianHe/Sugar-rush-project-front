@@ -4,7 +4,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title class="meter-description-title">
-          Voici votre Sucromètre personnalisé !
+          Voici votre Sucromètre personnalisé ! &nbsp;
         </mat-panel-title>
       </mat-expansion-panel-header>
       <p id="meter-description-text">&nbsp;L'OMS recommande que les sucres libres ne représentent pas plus de 10%
@@ -40,12 +40,13 @@
   <div class="profile-creation">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
-        <mat-panel-title class="meter-description-title">
+        <mat-panel-title>
           <h2>Créer un nouveau Profil :</h2>
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <form [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
+      <form class="profileCreationForm" [formGroup]="profileCreationForm"
+        (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
         <label>Nom
           <input type="text" formControlName="name"></label>
