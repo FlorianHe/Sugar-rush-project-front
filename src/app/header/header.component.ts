@@ -31,7 +31,6 @@ export class HeaderComponent {
         this._categories = categories;
       });
     if (this.userService.getUser()) {
-      console.log(this.userService.user);
       this.userService.loginUser();
     }
   }
