@@ -6,6 +6,8 @@
   .meter-svg {
     display: flex;
     justify-content: center;
+    padding-top: $big-border;
+    padding-bottom: $big-border;
   }
 }
 

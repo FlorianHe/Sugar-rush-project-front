@@ -48,6 +48,7 @@ import { PersonComponent } from './components/person/person.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
     SugarInputsComponent,
     AboutUsComponent,
     PersonComponent,
-    SugarMeterPipe
+    SugarMeterPipe,
+    SugarAmountPipe
   ],
   imports: [
     BrowserModule,

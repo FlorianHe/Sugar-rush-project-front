@@ -3,19 +3,19 @@
   <h2>Chaque icone vaut 4gr de sucre</h2>
 
   <div class="sugar-meter-children">
+    <p class="meter-amount">Montant actuel: {{sugarDatas}}gr</p>
+
     <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
 
     <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-inputs>
-  </div>
 
-  <p class="meter-reaction">
-    <!-- Afficher une phrase random en fonction du niveau du sucrometre -->
-    Montant actuel: {{sugarDatas}}gr - Hey le sucre c'est pas bien hein
-  </p>
+    <p class="meter-reaction">
+      <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
+    </p>
+  </div>
 
   <div class="profile-modification">
     <h2>Modifie ton Profil :</h2>
-    <!-- Name, BirthDate and Logo -->
     <form [formGroup]="profileModificationForm"
       (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
 
@@ -34,13 +34,6 @@
           </label>
         </div>
       </label>
-
-      <!-- <div *ngIf="myForm.get('credentials.email')?.errors && !myForm.get('credentials.email')?.pristine"
-          class="error-msg">
-          <div [hidden]="!myForm.get('credentials.email')?.errors?.['required']">email is required.</div>
-          <div [hidden]="!myForm.get('credentials.email')?.invalid">email is invalid: {{
-            myForm.get("credentials.email")?.errors?.['email'].rules }}</div>
-        </div> -->
 
       <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
         type="submit">Valider</button>
