@@ -3,7 +3,7 @@ const STOCK_API = {
 };
 
 const SUGAR_RUSH_API = {
-    baseApi: "http://localhost:8080/",
+    baseApi: "http://localhost:8080",
     baseUsers: "http://localhost:8080/users",
     baseArticles: "http://localhost:8080/articles",
     baseCategories: "http://localhost:8080/categories",

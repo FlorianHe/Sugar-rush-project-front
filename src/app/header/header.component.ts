@@ -30,9 +30,6 @@ export class HeaderComponent {
       .subscribe(categories => {
         this._categories = categories;
       });
-    if (this.userService.getUser()) {
-      this.userService.loginUser();
-    }
   }
 
   openModal() {
