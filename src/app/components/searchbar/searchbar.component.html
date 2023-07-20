@@ -1,0 +1,8 @@
+<form class="search-from" [formGroup]="searchForm" >
+    <div class="search-container">
+        <input type="text" formControlName="searchTerm" placeholder="Search">
+        <button [routerLink]="APP_ROUTES.search" [queryParams]="getQueryParams()" class="search-icon">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+  </form>
