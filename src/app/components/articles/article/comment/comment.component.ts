@@ -18,18 +18,16 @@ export class ArticleCommentComponent implements OnInit {
   @Input()
   article!: Article;
 
-  public user!: User | null;
-  connectionStatus = this.userService.userLoggedIn;
+  connectionStatus = this.userService.user;
 
   _comments!: Comment[];
 
 
-  constructor(private commentService: CommentService, private userService : UserService, private dialog: MatDialog) {
+  constructor(private commentService: CommentService, private userService: UserService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this.getCommentsByArticle();
-    this.user = this.userService.getUser();
   }
 
   getCommentsByArticle(): void {
@@ -45,13 +43,13 @@ export class ArticleCommentComponent implements OnInit {
         id: 0,
         articleId: this.article.id,
         content: form.value.content,
-        user: {id:loggedInUserString.id}
+        user: { id: loggedInUserString.id }
       };
 
-      this.commentService.createComment(comment).subscribe(  
+      this.commentService.createComment(comment).subscribe(
         (createdComment) => {
-            this.getCommentsByArticle();
-            form.reset();
+          this.getCommentsByArticle();
+          form.reset();
         },
         (error) => {
           // Handle the error message returned by the service

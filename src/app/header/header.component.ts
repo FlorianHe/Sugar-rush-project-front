@@ -4,9 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConnectionComponent } from '../components/user/connection/connection.component';
 import { Category } from '../shared/interfaces/category';
 import { CategoriesApiService } from '../services/categories-api.service';
-import { User } from '../shared/interfaces/user';
 import { UserService } from '../services/user.service';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { SnackBarService } from '../services/snack-bar.service';
 
 @Component({
   selector: 'app-header',
@@ -18,21 +18,22 @@ export class HeaderComponent {
 
   private _categories!: Category[];
 
-  isLoggedIn = this.userService.userLoggedIn;
+  user = this.userService.user;
 
-  user = this.userService.getUser();
-  usernameUser = this.userService.userUsername;
-
-  @ViewChild(MatMenuTrigger) 
+  @ViewChild(MatMenuTrigger)
   menuTrigger!: MatMenuTrigger;
 
-  constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog, private userService: UserService) {}
+  constructor(public categoriesService: CategoriesApiService, private dialog: MatDialog, private userService: UserService, private snackBarService: SnackBarService) {}
 
   ngOnInit(): void {
     this.categoriesService.getCategories()
       .subscribe(categories => {
         this._categories = categories;
       });
+    if (this.userService.getUser()) {
+      console.log(this.userService.user);
+      this.userService.loginUser();
+    }
   }
 
   openModal() {
@@ -46,9 +47,12 @@ export class HeaderComponent {
 
   logout() {
     this.userService.logoutUser();
+    this.snackBarService.openSnackBar('Vous êtes déconnecté !', "Fermer");
   }
 
   get categories(): Category[] {
     return this._categories;
   }
+
+
 }

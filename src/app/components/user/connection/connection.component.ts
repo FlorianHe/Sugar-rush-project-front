@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import { UsersApiService } from 'src/app/services/users-api.service';
 import { User } from 'src/app/shared/interfaces/user';
 import { confirmPasswordValidator, emailValidator, passwordValidator } from 'src/app/shared/validators/validators';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-user-connection',
@@ -22,25 +22,13 @@ export class ConnectionComponent implements OnInit {
     confirmPassword: ['', [Validators.required, confirmPasswordValidator]],
   });
 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
-
-
   public user!: User | null;
 
-  constructor(private userService: UserService, private usersApiService: UsersApiService, private fb: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private userService: UserService, private usersApiService: UsersApiService, private fb: FormBuilder, private snackBarService: SnackBarService) {
   }
 
   ngOnInit(): void {
-   this.user = this.userService.getUser();
-  }
-
-  openSnackBar() {
-    this._snackBar.openFromComponent(ConnectionComponent, {
-      duration: 1000,
-      verticalPosition: this.verticalPosition,
-      horizontalPosition: this.horizontalPosition,
-    });
+    this.user = this.userService.getUser();
   }
 
   login(): void {
@@ -49,8 +37,8 @@ export class ConnectionComponent implements OnInit {
     this.usersApiService.login(email, password).subscribe((response) => {
       this.userService.setToken(response.token);
       this.userService.setUser(response.user);
-      this.userService.loginUser(response.user.username);
-      this._snackBar.open('Vous êtes connecté !', "Fermer");
+      this.userService.loginUser();
+      this.snackBarService.openSnackBar('Vous êtes connecté !', "Fermer");
     });
   }
 
@@ -64,7 +52,7 @@ export class ConnectionComponent implements OnInit {
       password: this.userForm.value.password,
     };
     this.usersApiService.register(user).subscribe(() => {
-      this._snackBar.open('Vous êtes inscrit !', "Fermer");
+      this.snackBarService.openSnackBar('Vous êtes inscrit !', "Fermer");
     });
   }
 

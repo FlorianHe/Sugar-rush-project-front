@@ -7,27 +7,24 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 })
 export class UserService {
 
-  private userLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isUserLoggedIn());
-  userLoggedIn: Observable<boolean> = this.userLoggedInSubject.asObservable();
-  private userUsernameSubject: BehaviorSubject<string> = new BehaviorSubject<string>("");
-  userUsername: Observable<string> = this.userUsernameSubject.asObservable();
+  private userSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(this.userExists());
+  user: Observable<User | null> = this.userSubject.asObservable();
 
   constructor() {}
 
-  private isUserLoggedIn(): boolean {
-    if (this.getUser())
-      return true;
-    return false
+  private userExists(): User | null {
+    return this.getUser();
   }
 
-  public loginUser(username: string) {
-    this.userLoggedInSubject.next(true);
-    this.userUsernameSubject.next(username);
+
+  public loginUser() {
+    this.userSubject.next(this.getUser() as User);
   }
 
   public logoutUser() {
-    this.userLoggedInSubject.next(false);
-    this.userUsernameSubject.next("");
+    this.userSubject.next(null);
+    this.deleteToken();
+    this.deleteUser();
   }
 
   public setToken(token: string): void {

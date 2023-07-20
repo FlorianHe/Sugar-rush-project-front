@@ -16,7 +16,7 @@ export class CommentComponent {
   @Input()
   categorySlug!: string;
 
-  currentUser = this.userService.getUser();
+  user = this.userService.user;
 
   @Output()
   commentDeleted = new EventEmitter<Boolean>();
