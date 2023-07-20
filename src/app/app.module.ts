@@ -41,6 +41,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { PersonComponent } from './components/person/person.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent],
