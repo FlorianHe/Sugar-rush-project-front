@@ -14,18 +14,25 @@ export class CommentComponent {
   comment!: Comment;
 
   @Input()
-  categorySlug! : string;
+  categorySlug!: string;
 
   currentUser = this.userService.getUser();
 
   @Output()
   commentDeleted = new EventEmitter<Boolean>();
 
-  constructor(private commentService: CommentService, private userService : UserService) {}
+  constructor(private commentService: CommentService, private userService: UserService) {}
 
   deleteComment(comment: Comment): void {
     this.commentService.deleteComment(comment.id).subscribe(() => {
       this.commentDeleted.emit(true);
     });
+  }
+
+  getNameOrUsername(): string {
+    if ((this.comment.user.firstName != "") && (this.comment.user.lastName != "")) {
+      return this.comment.user.firstName + " " + this.comment.user.lastName;
+    }
+    return this.comment.user.userStringName as string;
   }
 }
