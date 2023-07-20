@@ -9,6 +9,7 @@ import { APP_ROUTES } from './shared/globals/routes';
 import { ArticleComponent } from './pages/article/article.component';
 import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { DetailComponent } from './components/user/detail/detail.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
     path: APP_ROUTES.rAboutUs,
     title: 'Sugar Rush : A propos',
     component: AboutUsComponent
+  },
+  {
+    path: APP_ROUTES.rdetailUser,
+    title: 'Sugar Rush : Utilisateur',
+    component: DetailComponent
   },
   {
     path: APP_ROUTES.rNotFound,
