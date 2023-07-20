@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleApiService } from 'src/app/services/article-api.service';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
+import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
+import { Paragraph } from 'src/app/shared/interfaces/paragraph';
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-creation-article',
@@ -11,16 +15,18 @@ export class CreationArticleComponent implements OnInit {
   
   article!:Article;
 
+  user = this.userService.getUser() as User;
+
   categories!:any;
 
   paragraphTitle:string[]=[];
   paragraphTypeContent:string[]=[];
   paragraphContent:string[]=[];
 
-  constructor(public categoriesService: CategoriesApiService) {
-    this.article={  id: 1,isMain: false,title: '',slug: '',publicationDate: new Date(),
-      modificationDate: new Date (),leads: '',content: '',publicationImage:'',
-      author: {   id:1, firstname:'',lastname:''},
+  constructor(private articleApiService: ArticleApiService, private categoriesService: CategoriesApiService, private userService: UserService) {
+    this.article={  id: 0,isMain: false,title: '',slug: '',publicationDate: new Date(),
+      modificationDate: new Date (), listParagraphs: [], leads: '',publicationImage:'',
+      author: { id:this.user.id },
       category: {id:1,name:'fun',slug:'fun'}};
 
   }
@@ -86,12 +92,12 @@ getParagraphs(){
 onSubmit(){
 this.getParagraphs();
 
-let jsonParagraphs = [];
+let jsonParagraphs : Paragraph[] = [];
 
 for (let i = 0; i < this.paragraphTypeContent.length; i++) {
   jsonParagraphs.push({
-        id:i+1,
-        type: this.paragraphTypeContent[i][0],
+        id:0,
+        typeContent: this.paragraphTypeContent[i][0],
         title: this.paragraphTitle[i],
         content: this.paragraphContent[i],
         
@@ -99,9 +105,11 @@ for (let i = 0; i < this.paragraphTypeContent.length; i++) {
 }
 
   this.article.slug=this.slugify(this.article.title);
-  
-  console.log(JSON.stringify(this.article));
-  console.log(JSON.stringify(jsonParagraphs));
+  this.article.listParagraphs = jsonParagraphs;
+  this.articleApiService.createArticle(this.article).subscribe((article)=> {
+    console.log(article);
+  });
+  console.log(this.article);
 }
 
   ngOnInit() {

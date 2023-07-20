@@ -25,4 +25,9 @@ export class ArticleApiService {
     const url = `${SUGAR_RUSH_API.baseArticles}/${id}`;
     return this.http.get<Article>(url);
   }
+
+  createArticle(article : Article): Observable<Article> {
+    console.log('added');
+    return this.http.post<Article>(`${SUGAR_RUSH_API.baseArticles}`, article);
+  }
 }

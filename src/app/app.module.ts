@@ -2,14 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-import { MatTabsModule } from '@angular/material/tabs';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -33,27 +29,24 @@ import { ArticleComponent } from './pages/article/article.component';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
-import { StockComponent } from './components/stock/stock.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { StockComponent } from './components/stock/stock.component';
 import { PercentChangePipe } from './pipes/percent-change.pipe';
+import { AddPlusPipe } from './pipes/add-plus.pipe';
 
-import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
-import { CommentComponent } from './components/comment/comment.component';
+import { UsersComponent } from './pages/users/users.component';
 import { ConnectionComponent } from './components/user/connection/connection.component';
 import { DetailComponent } from './components/user/detail/detail.component';
-import { UsersComponent } from './pages/users/users.component';
+import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
-import { PersonComponent } from './components/person/person.component';
-
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
-
+import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
+import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 
 @NgModule({
   declarations: [

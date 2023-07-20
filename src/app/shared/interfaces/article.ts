@@ -1,4 +1,5 @@
 import { Category } from './category'
+import { Paragraph } from './paragraph'
 import { User } from './user'
 
 export interface Article {
@@ -10,8 +11,8 @@ export interface Article {
   publicationDate: Date
   modificationDate: Date
   leads: string
-  content: string
   publicationImage: string
   author: User
   category: Category
+  listParagraphs?: Paragraph[]
 }

@@ -4,16 +4,12 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryComponent } from './pages/category/category.component';
 
-import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { ArticleComponent } from './pages/article/article.component';
-import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
-
 import { ArticleComponent } from './pages/article/article.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { DetailComponent } from './components/user/detail/detail.component';
-
+import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 
 const routes: Routes = [
   {
@@ -45,12 +41,7 @@ const routes: Routes = [
   {
     path: APP_ROUTES.rAboutUs,
     title: 'Sugar Rush : A propos',
-    component: AboutUsComponent,
-  },
-  {
-    path: APP_ROUTES.rCreation,
-    component:CreationArticleComponent,
-    title: 'Sugar Rush : Create your own article',
+    component: AboutUsComponent
   },
   {
     path: APP_ROUTES.rdetailUser,
@@ -61,6 +52,11 @@ const routes: Routes = [
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,
     title: 'Sugar Rush : Not Found',
+  },
+  {
+    path: APP_ROUTES.rCreation,
+    component: CreationArticleComponent,
+    title: 'Sugar Rush : Create your own article',
   },
   {
     path: '**',
