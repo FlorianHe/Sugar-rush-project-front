@@ -11,7 +11,7 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
   templateUrl: './connection.component.html',
   styleUrls: ['./connection.component.scss']
 })
-export class ConnectionComponent implements OnInit {
+export class ConnectionComponent {
 
   userForm: FormGroup = this.fb.group({
     firstname: [''],
@@ -25,10 +25,6 @@ export class ConnectionComponent implements OnInit {
   public user!: User | null;
 
   constructor(private userService: UserService, private usersApiService: UsersApiService, private fb: FormBuilder, private snackBarService: SnackBarService) {
-  }
-
-  ngOnInit(): void {
-    this.user = this.userService.getUser();
   }
 
   login(): void {

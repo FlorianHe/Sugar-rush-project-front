@@ -2,8 +2,6 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const email = control.value;
-
-    // Expression régulière pour la validation de l'adresse e-mail
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const valid = emailRegex.test(email);
 
@@ -20,7 +18,6 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 export function passwordValidator(control: AbstractControl): ValidationErrors | null {
     const password = control.value;
 
-    // Vérification de la longueur minimale
     if (password.length < 8) {
         return {
             password: {
@@ -29,7 +26,6 @@ export function passwordValidator(control: AbstractControl): ValidationErrors | 
         };
     }
 
-    // Vérification de la présence d'au moins 1 majuscule, 1 minuscule et 1 chiffre
     const uppercaseRegex = RegExp('[A-Z]');
     const lowercaseRegex = RegExp('[a-z]');
     const digitRegex = RegExp('[0-9]');
@@ -58,7 +54,6 @@ export function passwordValidator(control: AbstractControl): ValidationErrors | 
         };
     }
 
-    // Le mot de passe respecte toutes les règles
     return null;
 }
 

@@ -52,7 +52,6 @@ export class ArticleCommentComponent implements OnInit {
           form.reset();
         },
         (error) => {
-          // Handle the error message returned by the service
           console.error('Error creating comment:', error);
         });
     }
