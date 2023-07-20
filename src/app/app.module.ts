@@ -1,11 +1,19 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,8 +47,13 @@ import { UsersComponent } from './pages/users/users.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { PersonComponent } from './components/person/person.component';
+
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
+
+import { AuthInterceptor } from './http-interceptor/auth-interceptor';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -82,8 +95,12 @@ import { CreationArticleComponent } from './pages/creation-article/creation-arti
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    MatIconModule,
+    InfiniteScrollModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

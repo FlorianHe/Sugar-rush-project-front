@@ -23,6 +23,8 @@ const APP_ROUTES = {
   rAboutUs: 'about-us',
   creation:'/creation',
   rCreation:'creation',
+  detailUser: `/user`,
+  rdetailUser: 'user',
   article: (id: number) => `articles/${id}`
 };
 

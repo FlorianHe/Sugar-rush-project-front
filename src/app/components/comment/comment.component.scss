@@ -17,6 +17,11 @@
     margin-bottom: 10px;
   }
 
+  .creation-date {
+    font-size: 11px;
+    color: $secondary-text-color;
+  }
+
   .delete-icon {
     position: absolute;
     top: $small-border;

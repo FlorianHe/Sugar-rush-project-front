@@ -4,6 +4,6 @@ export interface Comment {
     id: number;
     content: string;
     articleId: number;
-    creation_date: Date;
+    creation_date?: Date;
     user: User;
 }
