@@ -63,5 +63,4 @@ export class UserService {
     this.setUser(user);
     this.loginUser();
   }
-
 }

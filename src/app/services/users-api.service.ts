@@ -12,7 +12,7 @@ export class UsersApiService {
   constructor(private HttpClient: HttpClient) {}
 
   public login(email: string, password: string): Observable<any> {
-    return this.HttpClient.post<any>(`${SUGAR_RUSH_API.baseApi}/login`, {email, password});
+    return this.HttpClient.post<any>(`${SUGAR_RUSH_API.baseApi}/login`, { email, password });
   }
 
   public register(user: User): Observable<any> {
@@ -25,5 +25,9 @@ export class UsersApiService {
 
   public updateUser(user: User) {
     return this.HttpClient.put<User>(SUGAR_RUSH_API.baseUsers + "/" + user.id, user);
+  }
+
+  public deleteUser(id: number) {
+    return this.HttpClient.delete<User>(SUGAR_RUSH_API.baseUsers + "/" + id);
   }
 }
