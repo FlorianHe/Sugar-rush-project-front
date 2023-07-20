@@ -90,6 +90,7 @@ let jsonParagraphs = [];
 
 for (let i = 0; i < this.paragraphTypeContent.length; i++) {
   jsonParagraphs.push({
+        id:i+1,
         type: this.paragraphTypeContent[i][0],
         title: this.paragraphTitle[i],
         content: this.paragraphContent[i],
