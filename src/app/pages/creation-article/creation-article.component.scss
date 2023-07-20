@@ -1,0 +1,119 @@
+@use "/src/_import.scss" as *;
+
+.infos{
+    border:solid 1px $fairy-color;
+    border-radius:5px;
+    margin-bottom: 1rem;
+    .checkbox{
+        font-family: "Glam-queen";
+        color:$fairy-color;
+        font-size:1.5rem;
+        font-weight:bold;
+        padding:1rem;
+    }
+.fields-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+
+    h1, .categories {
+        font-family: "Glam-queen";
+        color:$fairy-color;
+    }
+    h1 {
+        font-size:2rem;
+    }
+
+    .img {
+        width:500px;
+        height:300px;
+        border:solid 1px $fairy-color;
+        border-radius:5px;
+        background-size: cover;
+        background-position: center;
+    }
+    .text {
+        width:400px;
+        height:30px;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .categories {
+        font-size:1.5rem;
+        font-weight: bold;
+    }
+
+    .categories, select {
+        border-radius: 5px;
+    }
+}
+}
+
+.content{
+    border:solid 1px $fairy-color;
+    border-radius:5px;
+    border-radius:5px;
+    padding:1rem;
+    margin-bottom: 1rem;
+
+    .sub-content{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        
+        .type, h1{
+            font-family: "Glam-queen";
+            font-weight: bold;
+            color:$fairy-color;
+
+        }
+
+            select {
+                border-radius:5px;
+            }
+    
+
+        i{
+            color:$fairy-color;
+        }
+
+        i:hover{
+            color:$fairy-color;
+            scale:1.5;
+        }
+
+    }
+    .title-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        h1{
+            font-family: "Glam-queen";
+            color:$fairy-color;
+        }
+        .text {
+            width:90%;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .textarea {
+            height:250px;
+        }
+    }
+}
+
+button {
+    background-color: $fairy-color;
+    border-radius: 5px;
+    border: 0;
+    padding: $small-border;
+    font-size: 16px;
+    width:30%;
+}

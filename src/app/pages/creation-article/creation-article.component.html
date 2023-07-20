@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-TsVM3+4o4VLbyIor0/qWPYBB7YBNihC9xdM6Ahx5jZRe8NjZQ5mPno9BVe6YilgHPj/zekyxD+me3ZJgrmDew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="article-creation">
+    <div class="infos">
+        <div class="checkbox">
+            <input type="checkbox" name="main" [(ngModel)]="article.isMain">
+            <label for="main"> Article Principal</label>
+        </div>
+        <div class="fields-container">
+            <h1>Titre</h1>
+            <input type="text" class="text" placeholder="Titre" [(ngModel)]="article.title">
+            <h1>Chapeau</h1>
+            <input type="text" class="text" placeholder="Chapeau" [(ngModel)]="article.leads">
+            <h1>URL de l'image</h1>
+            <input type="text" class="text" placeholder="URL de l'image" [(ngModel)]="article.publicationImage">
+            <div class="img" [ngStyle]="{ 'background-image': 'url(' + article.publicationImage + ')'}"></div>
+            <div>
+                <label for="categories" class="categories">Catégorie : </label>
+                <select [(ngModel)]="article.category" >
+                    <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="sub-content">
+            <div class="menu">
+                <label for="type" class="type">Type : </label>
+                <select class="target">
+                    <option>Introduction</option>
+                    <option>Contenu</option>
+                    <option>Conclusion</option>
+                </select>
+            </div>
+            <i class="fa-solid fa-plus" (click)="duplicateContent($event)"></i>
+        </div>
+        <div class="title-text">
+            <h1>Titre</h1>
+            <input type="text" class="text target" placeholder="Titre">
+            <h1>Texte</h1>
+            <textarea class="text textarea target"></textarea>
+        </div>
+    </div>
+    <button (click)="onSubmit()">Enregistrer</button>
+</div>

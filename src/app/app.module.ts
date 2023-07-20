@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,21 +25,22 @@ import { ArticleComponent } from './pages/article/article.component';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+import { StockComponent } from './components/stock/stock.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { StockComponent } from './components/stock/stock.component';
-import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { PercentChangePipe } from './pipes/percent-change.pipe';
 
-import { UsersComponent } from './pages/users/users.component';
-import { ConnectionComponent } from './components/user/connection/connection.component';
-import { DetailComponent } from './components/user/detail/detail.component';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { ConnectionComponent } from './components/user/connection/connection.component';
+import { DetailComponent } from './components/user/detail/detail.component';
+import { UsersComponent } from './pages/users/users.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,8 @@ import { PersonComponent } from './components/person/person.component';
     CommentComponent,
     CategoryBlockComponent,
     AboutUsComponent,
-    PersonComponent
+    PersonComponent,
+    CreationArticleComponent
   ],
   imports: [
     BrowserModule,

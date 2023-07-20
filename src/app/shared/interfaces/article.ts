@@ -1,10 +1,10 @@
-import { User } from './user'
 import { Category } from './category'
+import { User } from './user'
 
 export interface Article {
 
   id: number
-  // isMain: boolean
+  isMain: boolean
   title: string
   slug: string
   publicationDate: Date
