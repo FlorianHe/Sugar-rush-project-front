@@ -45,6 +45,8 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -85,9 +87,11 @@ import { AuthInterceptor } from './http-interceptor/auth-interceptor';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    US-S4-Front-User
     MatSnackBarModule,
     MatMenuModule,
     MatIconModule,
+    InfiniteScrollModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
