@@ -1,0 +1,14 @@
+@use "/src/_import.scss" as *;
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+.button {
+    align-items: center;
+    color: $secondary-text-color;
+    border : none;
+    border-radius: $big-border;
+    background-color: $fairy-color;
+    padding: $main-border;
+}

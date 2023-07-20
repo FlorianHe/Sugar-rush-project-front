@@ -46,6 +46,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InformationComponent } from './components/user/information/information.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CommentComponent,
     CategoryBlockComponent,
     AboutUsComponent,
-    PersonComponent
+    PersonComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,

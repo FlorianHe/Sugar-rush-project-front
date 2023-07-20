@@ -1,0 +1,35 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Entrer votre nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Entrez votre prénom</mat-label>
+            <input matInput placeholder="Prénom" formControlName="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Entrez votre adresse mail</mat-label>
+            <input matInput placeholder="Adresse mail" formControlName="email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Entrez votre ancien mot de passe</mat-label>
+            <input matInput type="password" placeholder="Mot de passe" formControlName="password" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Entrez votre nouveau mot de passe</mat-label>
+            <input matInput type="password" placeholder="Mot de passe" formControlName="password" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Confirmez votre mot de passe</mat-label>
+            <input matInput type="password" placeholder="Mot de passe" formControlName="password" required>
+        </mat-form-field>
+    </div>
+
+    <button type="submit" class="button">Submit</button>
+</form>

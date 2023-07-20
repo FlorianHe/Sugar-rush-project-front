@@ -59,4 +59,9 @@ export class UserService {
     localStorage.removeItem('user')
   }
 
+  public updateUser(user: User): void {
+    this.setUser(user);
+    this.loginUser();
+  }
+
 }
