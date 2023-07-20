@@ -27,6 +27,10 @@ export class ConnectionComponent {
   constructor(private userService: UserService, private usersApiService: UsersApiService, private fb: FormBuilder, private snackBarService: SnackBarService) {
   }
 
+  ngOnInit(): void {
+    this.user = this.userService.getUser();
+  }
+
   login(): void {
     const email = this.userForm.value.email;
     const password = this.userForm.value.password;
