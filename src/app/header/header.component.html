@@ -17,6 +17,7 @@
 
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
+            <button *ngIf="checkAdmin((user | async)?.authorities)" mat-menu-item [routerLink]="APP_ROUTES.detailUser">Admin</button>
             <button mat-menu-item (click)="logout()">Déconnexion</button>
           </mat-menu>
         </li>
