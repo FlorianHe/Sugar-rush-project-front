@@ -1,5 +1,6 @@
 <div *ngIf="comment" class="comment">
-    <h4>{{ comment.user.firstname + " " + comment.user.lastname }}</h4>
+    <h4>{{ getNameOrUsername() | titlecase }}</h4>
+    <p class="creation-date"> {{ comment.creation_date | date }}</p>
     <p>{{ comment.content }}</p>
-    <i class="fa-solid fa-trash {{categorySlug}}-comment delete-icon" (click)="deleteComment(comment)"></i>
+    <i *ngIf="(user | async)?.id == comment.user.id" class="fa-solid fa-trash {{categorySlug}}-comment delete-icon" (click)="deleteComment(comment)"></i>
 </div>

@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,7 +44,9 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
+import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -82,9 +87,12 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    MatIconModule,
     InfiniteScrollModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

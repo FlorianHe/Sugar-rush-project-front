@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Comment } from '../shared/interfaces/comment';
+import { UserService } from './user.service';
 import { SUGAR_RUSH_API } from '../shared/globals/api';
 
 @Injectable({
@@ -10,6 +11,7 @@ import { SUGAR_RUSH_API } from '../shared/globals/api';
 export class CommentService {
 
   constructor(private http: HttpClient) {}
+
 
   getCommentsByArticle(articleId: number): Observable<Comment[]> {
     const url = `${SUGAR_RUSH_API.baseArticles}/${articleId}/comments`;

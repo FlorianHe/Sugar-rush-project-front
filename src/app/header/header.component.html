@@ -12,8 +12,16 @@
             {{category.name}}
           </a>
         </li>
+        <li *ngIf="user | async" [matMenuTriggerFor]="menu"><a id="login">{{(user | async)?.userStringName}}<i
+              class="fa fa-user" aria-hidden="true"></i></a>
 
-        <li><a id="login" (click)="openModal()">Connexion<i class="fa fa-user" aria-hidden="true"></i></a></li>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+        </li>
+        <li *ngIf="!(user | async)"><a id="login" (click)="openModal()">Connexion<i class="fa fa-user"
+              aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   </div>
