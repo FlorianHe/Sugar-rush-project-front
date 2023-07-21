@@ -1,11 +1,18 @@
 @use "/src/_import.scss" as *;
 
-.stock {
+.top-bar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  .stock {
     display: flex;
     gap: $main-border;
     margin: $main-border 0;
-    justify-content: center;
+  }
+  .search {
+    margin: $main-border 0;
+  }
 }
+
 
 #page-content {
   padding-bottom: 70px;
