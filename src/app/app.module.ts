@@ -8,7 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,11 +41,22 @@ import { ArticleCommentComponent } from './components/articles/article/comment/c
 import { CommentComponent } from './components/comment/comment.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
+import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
+import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { InformationComponent } from './components/user/information/information.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchComponent } from './pages/search/search.component';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
 
 @NgModule({
   declarations: [
@@ -73,9 +83,17 @@ import { InformationComponent } from './components/user/information/information.
     ArticleCommentComponent,
     CommentComponent,
     CategoryBlockComponent,
+    SugarMeterComponent,
+    ProfilesComponent,
+    SugarDataComponent,
+    SugarInputsComponent,
     AboutUsComponent,
     PersonComponent,
     InformationComponent,
+    SugarMeterPipe,
+    SugarAmountPipe,
+    SearchbarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +105,8 @@ import { InformationComponent } from './components/user/information/information.
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatExpansionModule,
     FormsModule,
     MatSnackBarModule,
     MatMenuModule,

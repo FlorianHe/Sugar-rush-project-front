@@ -3,6 +3,7 @@ import { SUGAR_RUSH_API } from '../shared/globals/api';
 import { User } from '../shared/interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Profile } from '../shared/interfaces/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,15 @@ export class UsersApiService {
 
   public deleteUser(id: number) {
     return this.HttpClient.delete<User>(SUGAR_RUSH_API.baseUsers + "/" + id);
+  }
+
+  public getProfilesByUserId(id: number): Observable<Profile[]> {
+    const url = `${SUGAR_RUSH_API.baseUsers}/${id}/profiles`;
+    return this.HttpClient.get<Profile[]>(url);
+  }
+
+  public addProfile(id: number, profile: Profile): Observable<Profile> {
+    const url = `${SUGAR_RUSH_API.baseUsers}/${id}/profiles`;
+    return this.HttpClient.post<Profile>(url, profile);
   }
 }
