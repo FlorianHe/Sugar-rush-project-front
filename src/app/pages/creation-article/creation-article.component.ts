@@ -106,10 +106,8 @@ for (let i = 0; i < this.paragraphTypeContent.length; i++) {
 
   this.article.slug=this.slugify(this.article.title);
   this.article.listParagraphs = jsonParagraphs;
-  this.articleApiService.createArticle(this.article).subscribe((article)=> {
-    console.log(article);
+  this.articleApiService.createArticle(this.article).subscribe(()=> {
   });
-  console.log(this.article);
 }
 
   ngOnInit() {
