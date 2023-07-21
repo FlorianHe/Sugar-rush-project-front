@@ -35,6 +35,11 @@
   }
 }
 
+.connect-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .fun-button {
   background-color: $category-fun-color;
 }

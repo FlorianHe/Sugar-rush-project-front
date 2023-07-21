@@ -41,7 +41,7 @@ export class AboutUsComponent {
     image : "assets/images/guillaume.png",
     linkedin: 'https://www.linkedin.com/in/11gg/',
     github: 'https://github.com/Guillaum6e/',
-    color: "health"
+    color: "carie"
   };
 
   public patrick: Person = {
@@ -50,7 +50,7 @@ export class AboutUsComponent {
     image : "assets/images/Patrick.jpg",
     linkedin: 'https://viadeo.journaldunet.com/p/patrick-harle-159799',
     github: '"https://github.com/pwah59"',
-    color: "food"
+    color: "miam"
   };
 
   public benjamin: Person = {
@@ -59,7 +59,7 @@ export class AboutUsComponent {
     image : "assets/images/Benji.png",
     linkedin: 'https://www.linkedin.com/in/benjamin-beugnet-web-services/',
     github: "https://github.com/Benja-san",
-    color: "economy"
+    color: "ca-coute-bonbon"
   };
 
   public team: Person[] = [this.selin, this.florian, this.alexandre, this.guillaume, this.patrick, this.benjamin];

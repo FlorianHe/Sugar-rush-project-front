@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
-import { Article } from 'src/app/shared/interfaces/article';
 import { Category } from 'src/app/shared/interfaces/category';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
 import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
