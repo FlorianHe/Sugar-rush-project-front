@@ -6,3 +6,10 @@ export const css_class = {
     5: "category-food",
     6: "category-economy"
 }
+
+export const CSS_PARAGRAPH: { [key: string]: string } = {
+
+    "I": "introduction",
+    "P": "paragraph",
+    "C": "conclusion",
+}

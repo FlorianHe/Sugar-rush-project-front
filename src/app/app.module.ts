@@ -39,6 +39,7 @@ import { ConnectionComponent } from './components/user/connection/connection.com
 import { DetailComponent } from './components/user/detail/detail.component';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { ParagraphComponent } from './components/paragraph/paragraph.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
@@ -57,6 +58,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
 import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
+
 
 @NgModule({
   declarations: [
@@ -81,6 +83,7 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
     ConnectionComponent,
     DetailComponent,
     ArticleCommentComponent,
+
     CommentComponent,
     CategoryBlockComponent,
     SugarMeterComponent,
@@ -90,6 +93,7 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
     AboutUsComponent,
     PersonComponent,
     InformationComponent,
+    ParagraphComponent
     SugarMeterPipe,
     SugarAmountPipe,
     SearchbarComponent,
@@ -116,4 +120,4 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
