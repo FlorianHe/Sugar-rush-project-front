@@ -93,7 +93,7 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
     AboutUsComponent,
     PersonComponent,
     InformationComponent,
-    ParagraphComponent
+    ParagraphComponent,
     SugarMeterPipe,
     SugarAmountPipe,
     SearchbarComponent,
