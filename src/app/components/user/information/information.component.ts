@@ -22,7 +22,7 @@ export class InformationComponent {
 
   deleteButtonClicked: Boolean = false;
 
-  user = this.userService.getUser() as User;
+  user = this.userService.user;
 
   constructor(private fb: FormBuilder, private userService: UserService, private userApiService: UsersApiService, private snackBarService: SnackBarService, private router: Router) {
   }
@@ -49,7 +49,6 @@ export class InformationComponent {
       this.userApiService.updateUser(user).subscribe((updatedUser) => {
         this.userService.updateUser(updatedUser);
         this.userForm.reset();
-        this.router.navigate(['/']);
         this.snackBarService.openSnackBar('Vos informations ont été modifiées !', "Fermer");
       });
       if (this.deleteButtonClicked) {

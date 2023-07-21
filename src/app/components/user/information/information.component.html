@@ -1,19 +1,19 @@
 <h2>Informations Personnelles</h2>
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="example-container form-field-container">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" >
             <mat-label>Entrer votre nom</mat-label>
-            <input matInput placeholder={{user.lastName}} formControlName="lastName">
+            <input matInput [placeholder]="(user | async)?.lastName ?? ''" formControlName="lastName">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Entrez votre prénom</mat-label>
-            <input matInput placeholder={{user.firstName}} formControlName="firstName" >
+            <input matInput [placeholder]="(user | async)?.firstName ?? ''" formControlName="firstName" >
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Entrez votre adresse mail</mat-label>
-            <input matInput placeholder={{user.email}} formControlName="email">
+            <input matInput [placeholder]="(user | async)?.email ?? ''" formControlName="email">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
