@@ -19,7 +19,6 @@ export class SearchComponent {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.articleApiService.searchArticle(params["keyword"]).subscribe((searchResults) => {
-        console.log(searchResults)
         this.searchResults = searchResults;
       });
     });
