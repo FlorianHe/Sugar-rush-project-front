@@ -1,0 +1,13 @@
+<section class="meter-inputs-section">
+  <div class="meter-inputs">
+    <ul class="meter-plus">
+      <li class="btn-plus" *ngFor="let amount of sugarDataAmounts" (click)="createSugarData(amount)">+{{amount}}</li>
+    </ul>
+
+    <ul class="meter-minus">
+      <li class="btn-minus" *ngFor="let amount of sugarDataAmounts"><span *ngIf="sugarDatas >= amount"
+          (click)="createSugarData(amount*-1)">-{{amount}}</span>
+      </li>
+    </ul>
+  </div>
+</section>

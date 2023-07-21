@@ -1,5 +1,5 @@
 <h1 class="main-title">Sugar Rush : Votre actu sucrée au quotidien !</h1>
-<div *ngIf="articles" class="top">
+<div *ngIf="mainArticle" class="top">
     <app-article-type-main [article]="mainArticle" class="main"></app-article-type-main>
     <div class="side">
         <h2>Plus de <span class="{{mainArticle.category.slug}}-color">{{mainArticle.category.name}}</span></h2>

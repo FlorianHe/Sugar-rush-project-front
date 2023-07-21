@@ -1,0 +1,53 @@
+<section class="sugar-meter-box">
+
+  <h2>Chaque icone vaut 4gr de sucre</h2>
+
+  <div class="sugar-meter-children">
+    <p class="meter-amount">Montant actuel: {{sugarDatas}}gr</p>
+
+    <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
+
+    <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"
+      (datasUpdated)="onDatasUpdated($event)"></app-sugar-inputs>
+
+    <p class="meter-reaction" *ngIf="sugarDatas">
+      <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
+    </p>
+  </div>
+
+  <div class="profile-modification">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="meter-description-title">
+          <h2>Modifie ton Profil :</h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="profileModificationForm"
+        (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
+
+        <label>Nom
+          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
+
+        <label>Date de naissance
+          <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
+            value="{{profile.birthDate}}"></label>
+
+        <label>Icone
+          <div *ngFor="let logo of logos">
+            <label>
+              <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
+              <div class="example-tab-icon svg-{{logo.value}}"></div>
+            </label>
+
+          </div>
+        </label>
+
+        <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
+          type="submit">Valider</button>
+      </form>
+
+      <button (click)="deleteProfile()">Supprimer profil</button>
+    </mat-expansion-panel>
+  </div>
+</section>
