@@ -20,7 +20,7 @@ export class ArticleComponent implements OnInit {
       this.articleService.getArticleById(params['id'])
         .subscribe(article => {
           this._article = article;
-          // Temporaire le temps de merge les users pour éviter une erreur
+          // TODO : A retirer après les merges le temps de merge les users pour éviter une erreur
           this._article.author = {id: 1, firstname: "test", lastname: "test"}
         });
     });

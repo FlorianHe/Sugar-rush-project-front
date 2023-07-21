@@ -1,5 +1,4 @@
-<div *ngIf="paragraph" class="paragraph">
-    <h4 [ngClass]="categorySlug+'-color ' + CSS_PARAGRAPH[paragraph.typeContent] ">{{ paragraph.title }}</h4>
-
+<div *ngIf="paragraph" [ngClass]="'paragraph ' + CSS_PARAGRAPH[paragraph.typeContent]">
+    <h4 *ngIf="paragraph.typeContent=='P'" [ngClass]="categorySlug+'-color'">{{ paragraph.title }}</h4>
     <p>{{ paragraph.content }}</p>
 </div>
