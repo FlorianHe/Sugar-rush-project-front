@@ -21,7 +21,15 @@ export class UsersApiService {
   }
 
   public getUser(id: number) {
-    return this.HttpClient.get<User>(SUGAR_RUSH_API.baseUsers + id);
+    return this.HttpClient.get<User>(SUGAR_RUSH_API.baseUsers + "/" + id);
+  }
+
+  public updateUser(user: User) {
+    return this.HttpClient.put<User>(SUGAR_RUSH_API.baseUsers + "/" + user.id, user);
+  }
+
+  public deleteUser(id: number) {
+    return this.HttpClient.delete<User>(SUGAR_RUSH_API.baseUsers + "/" + id);
   }
 
   public getProfilesByUserId(id: number): Observable<Profile[]> {
