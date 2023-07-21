@@ -49,6 +49,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchComponent } from './pages/search/search.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -87,7 +89,9 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
     AboutUsComponent,
     PersonComponent,
     SugarMeterPipe,
-    SugarAmountPipe
+    SugarAmountPipe,
+    SearchbarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

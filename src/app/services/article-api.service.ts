@@ -25,4 +25,8 @@ export class ArticleApiService {
     const url = `${SUGAR_RUSH_API.baseArticles}/${id}`;
     return this.http.get<Article>(url);
   }
+
+  searchArticle(keyword: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${SUGAR_RUSH_API.baseArticles}/search?keyword=${keyword}`)
+  }
 }
