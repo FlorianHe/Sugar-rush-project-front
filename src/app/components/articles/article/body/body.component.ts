@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Article } from 'src/app/shared/interfaces/article';
 
 @Component({
   selector: 'app-article-body',
@@ -9,11 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class BodyComponent {
 
   @Input()
-  content!: string;
+  article!: Article;
+  
 
-  constructor(private sanitizer: DomSanitizer) {}
-
-  sanitizeHtml(content: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(content);
-  }
 }

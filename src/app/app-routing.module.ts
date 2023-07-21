@@ -7,6 +7,10 @@ import { CategoryComponent } from './pages/category/category.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './shared/globals/routes';
 import { ArticleComponent } from './pages/article/article.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { DetailComponent } from './components/user/detail/detail.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -36,9 +40,29 @@ const routes: Routes = [
     component: CategoryComponent
   },
   {
+    path: APP_ROUTES.rAboutUs,
+    title: 'Sugar Rush : A propos',
+    component: AboutUsComponent
+  },
+  {
+    path: APP_ROUTES.rdetailUser,
+    title: 'Sugar Rush : Utilisateur',
+    component: DetailComponent
+  },
+  {
+    path: APP_ROUTES.rSearch,
+    title: 'Sugar Rush : Recherche',
+    component: SearchComponent
+  },
+  {
     path: APP_ROUTES.rNotFound,
     component: PageNotFoundComponent,
     title: 'Sugar Rush : Not Found',
+  },
+  {
+    path: APP_ROUTES.rSugarMeter,
+    component: SugarMeterComponent,
+    title: 'Sugar Rush : Sucro-mètre',
   },
   {
     path: '**',

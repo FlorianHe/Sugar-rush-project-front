@@ -1,175 +1,66 @@
 @use "/src/_import.scss" as *;
+
 .article {
-    background-color: $main-background-color;
-    padding-left: $big-border; 
-    padding-right: $big-border;
+  background-color: $main-background-color;
+  padding-left: $big-border;
+  padding-right: $big-border;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 24px;
+    color: $main-text-color;
+    margin-bottom: $small-border;
+  }
+
+  .title-categories {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: baseline;
+    margin-bottom: $small-border;
+  }
 
-    h1 {
-        font-size: 24px;
-        color: $main-text-color;
-        margin-bottom: $small-border;
-    }
+  .title-categories ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    .categories-sport {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: $small-border;
-
-    }
-
-    .categories-sport ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .categories-sport li {
-        margin-right: 10px;
-        font-size: 16px;
-        font-family: "Glam-queen";
-        font-size: 3em;
-        color: $category-sport-color;
-    }
-
-    .categories-carie {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: $small-border;
-
-    }
-
-    .categories-carie ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .categories-carie li {
-        margin-right: 10px;
-        font-size: 16px;
-        font-family: "Glam-queen";
-        font-size: 3em;
-        color: $category-health-color;
-    }
-
-    .categories-miam {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: $small-border;
-
-    }
-
-    .categories-miam ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .categories-miam li {
-        margin-right: 10px;
-        font-size: 16px;
-        font-family: "Glam-queen";
-        font-size: 3em;
-        color: $category-food-color;
-    }
-
-    .categories-ca-coute-bonbon {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: $small-border;
-
-    }
-
-    .categories-ca-coute-bonbon ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .categories-ca-coute-bonbon li {
-        margin-right: 10px;
-        font-size: 16px;
-        font-family: "Glam-queen";
-        font-size: 3em;
-        color: $category-economy-color;
-    }
-
-    .categories-fun {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: $small-border;
-
-    }
-
-    .categories-fun ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .categories-fun li {
-        margin-right: 10px;
-        font-size: 16px;
-        font-family: "Glam-queen";
-        font-size: 3em;
-        color: $category-fun-color;
-    }
-
-    .leads {
-        margin-top: 10px;
-        font-size: 14px;
-        color: $main-text-color;
-        margin-top: $big-border;
-    }
-
-    .author {
-        margin-top: 10px;
-        font-size: 14px;
-        color: $main-text-color;
-    }
+  .title-categories li {
+    margin-right: 10px;
+    font-size: 16px;
+    font-family: "Glam-queen";
+    font-size: 3em;
+  }
+  
+  .published {
+    font-size: 12px;
+  }
 }
 
 .publication-image {
-    width: 100%;
-    max-height: 50vh;
-    object-fit: contain;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
-//.article .categories .category-food {
-//   color: $category-food-color;
-// }
-//.article .categories .category-health {
-//   color: $category-health-color;
-// }
 
+@media screen and (min-width: $min-width-desktop) {
 
+  .article {
+    width: 100%;
+    padding-left: $big-border;
+    padding-right: $big-border;
 
+  }
 
-@media screen and (min-width: 1036px) {
-
-    .article {
-        width: 100%;
-        padding-left: $big-border; 
-        padding-right: $big-border;
-
-    }
-
-    .publication-image {
-        width: 100%;
-        max-height: 70vh;
-        object-fit: cover;
-        padding-left: $big-border; 
-        padding-right: $big-border;
-        margin-bottom: $big-border;
-    }
-
-   
+  .publication-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    padding-left: $big-border;
+    padding-right: $big-border;
+    margin-bottom: $big-border;
+  }
 }

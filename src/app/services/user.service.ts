@@ -1,30 +1,69 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/interfaces/user';
-import { UsersApiService } from './users-api.service';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { APP_ROUTES } from '../shared/globals/routes';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private usersApiService : UsersApiService) { }
+  private userSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(this.userExists());
+  user: Observable<User | null> = this.userSubject.asObservable();
 
-  public login(username: string, password: string) : Observable<any> {
-    const credentials = {username, password};
-    return this.usersApiService.login(credentials).pipe(
-      tap(response => {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
-      })
-    );
+  constructor(private router: Router) {}
+
+  private userExists(): User | null {
+    return this.getUser();
   }
 
-  public getUser() : User | null {
+
+  public loginUser() {
+    this.userSubject.next(this.getUser() as User);
+  }
+
+  public logoutUser() {
+    this.userSubject.next(null);
+    this.deleteToken();
+    this.deleteUser();
+    this.router.navigate([APP_ROUTES.index]);
+  }
+
+  public setToken(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  public getToken(): string | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      return token;
+    }
+    return null;
+  }
+
+  public deleteToken(): void {
+    localStorage.removeItem('token');
+  }
+
+  public getUser(): User | null {
     const userString = localStorage.getItem('user');
     if (userString) {
       return JSON.parse(userString);
     }
     return null;
+  }
+
+  public setUser(user: User): void {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  public deleteUser(): void {
+    localStorage.removeItem('user')
+  }
+
+  public updateUser(user: User): void {
+    this.setUser(user);
+    this.loginUser();
   }
 }

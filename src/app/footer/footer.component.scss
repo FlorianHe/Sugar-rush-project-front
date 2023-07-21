@@ -2,20 +2,30 @@
 
 @media screen and (min-width: $min-width-desktop) {
   #foot {
-    background-color: #FECEE9;
-    height: 20%;
+    height: 40px;
+    border-top-style: groove;
+    border-top-color: $secondary-text-color;
 
     #marquee {
-
-
-      background-color: #FECEE9;
       color: $secondary-text-color;
+      margin-top: $main-border;
+      padding-bottom: $main-border;
       text-align: center;
+      font-style: italic;
       visibility: visible;
     }
 
     #smallscr {
       visibility: hidden;
+    }
+
+    ul {
+      text-align: center;
+      margin-top: $main-border;
+    }
+
+    li {
+      display: inline-block;
     }
 
   }

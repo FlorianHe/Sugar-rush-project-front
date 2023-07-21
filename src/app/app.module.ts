@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,25 +39,43 @@ import { ConnectionComponent } from './components/user/connection/connection.com
 import { DetailComponent } from './components/user/detail/detail.component';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { ParagraphComponent } from './components/paragraph/paragraph.component';
 
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
+import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
+import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { PersonComponent } from './components/person/person.component';
+import { AuthInterceptor } from './http-interceptor/auth-interceptor';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InformationComponent } from './components/user/information/information.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchComponent } from './pages/search/search.component';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
-    ArticleTypeMainComponent, 
-    ArticleTypeSideComponent, 
-    ArticleTypeSmallComponent, 
-    CategoriesComponent, 
-    CategoryComponent, 
-    PageNotFoundComponent, 
-    ArticleComponent, 
-    TitleComponent, 
-    BodyComponent, 
-    OtherComponent, 
-    HeaderComponent, 
-    FooterComponent, 
+    ArticleTypeMainComponent,
+    ArticleTypeSideComponent,
+    ArticleTypeSmallComponent,
+    CategoriesComponent,
+    CategoryComponent,
+    PageNotFoundComponent,
+    ArticleComponent,
+    TitleComponent,
+    BodyComponent,
+    OtherComponent,
+    HeaderComponent,
+    FooterComponent,
     StockComponent,
     PercentChangePipe,
     AddPlusPipe,
@@ -63,8 +83,21 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     ConnectionComponent,
     DetailComponent,
     ArticleCommentComponent,
+
     CommentComponent,
-    CategoryBlockComponent
+    CategoryBlockComponent,
+    SugarMeterComponent,
+    ProfilesComponent,
+    SugarDataComponent,
+    SugarInputsComponent,
+    AboutUsComponent,
+    PersonComponent,
+    InformationComponent,
+    ParagraphComponent,
+    SugarMeterPipe,
+    SugarAmountPipe,
+    SearchbarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,9 +109,15 @@ import { CategoryBlockComponent } from './components/category-block/category-blo
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatExpansionModule,
     FormsModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    MatIconModule,
+    InfiniteScrollModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

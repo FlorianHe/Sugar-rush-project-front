@@ -1,9 +1,10 @@
 <section class="section">
-<app-comment *ngFor="let comment of _comments" [comment]="comment">
+<h2 class="{{article.category.slug}}-background">Commentaires</h2>
+<app-comment *ngFor="let comment of _comments" [comment]="comment" [categorySlug]="article.category.slug" (commentDeleted)="onCommentDeleted($event)">
 </app-comment>
-
-<form #commentForm="ngForm" (ngSubmit)="createComment(commentForm)">
-    <textarea [(ngModel)]="commentForm.value.content" name="content" required></textarea>
-    <button type="submit">Ajouter un commentaire</button>
+<form *ngIf="connectionStatus | async" #commentForm="ngForm" (ngSubmit)="createComment(commentForm)" class="comment-form">
+    <textarea [(ngModel)]="commentForm.value.content" name="content" class="textArea" maxlength="255" rows="4" cols="50" required></textarea>
+    <button class="submitButton {{article.category.slug}}-button" type="submit">Ajouter un commentaire</button>
 </form>
+<div *ngIf="!(connectionStatus | async)">Vous devez être connecté pour poster un commentaire. <span (click)="openModal()" class="{{article.category.slug}}-color connect-link">Connectez vous !</span></div>
 </section>

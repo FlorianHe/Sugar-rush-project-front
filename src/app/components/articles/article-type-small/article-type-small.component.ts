@@ -10,5 +10,7 @@ import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 export class ArticleTypeSmallComponent {
   @Input() article!:ArticleDisplayed
 
+  @Input() pos! :number;
+  
   public APP_ROUTES=APP_ROUTES;
 }

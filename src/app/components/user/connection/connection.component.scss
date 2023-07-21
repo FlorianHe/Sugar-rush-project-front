@@ -4,9 +4,9 @@
     border-bottom: 2px solid $fairy-color;
 }
 
-.login {
+.login, .register {
     padding: $big-border;
-    .login-field {
+    .login-field, .register-field {
         padding-bottom: 0.75rem;
     
         label {
@@ -31,7 +31,7 @@
             transition: border-color .2s;
         }
     }
-    .login-btn {
+    .login-btn, .register-button {
         text-align: center;
         margin-top: $big-border;
         button {

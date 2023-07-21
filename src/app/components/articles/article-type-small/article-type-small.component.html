@@ -1,10 +1,9 @@
-<article class="main-type3" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}">
-  <img src={{article.publicationImage}}>
-  <div [ngClass]="'description '+article.category.slug+'-background'">
-    <div class="titles">
-      <h4 [ngClass]="article.category.slug+'-color'"><span>{{article.category.name}}</span></h4>
-      <h3>{{article.title}}</h3>
-      <time>{{article.publicationDate | date : 'dd/M/yy' }}</time>
+<article class="main-type3 radius-{{pos}}" [routerLink]="APP_ROUTES.articles+'/'+article.slug" [queryParams]="{id: article.id}" [ngStyle]="{ 'background-image': 'url(' + article.publicationImage + ')' }">
+    <div [ngClass]="'description '+ article.category.slug+'-background '+ 'radius-bottom-'+pos">
+      <div class="titles">
+        <h4 [ngClass]="article.category.slug+'-color'"><span>{{article.category.name}}</span></h4>
+        <h3>{{article.title}}</h3>
+        <time>{{article.publicationDate | date : 'dd/M/yy' }}</time>
+      </div>
     </div>
-  </div>
-</article>
+  </article>

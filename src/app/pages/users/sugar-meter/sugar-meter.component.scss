@@ -1,0 +1,120 @@
+@use "/src/_import.scss" as *;
+
+#sugar-meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $small-border;
+  padding-top: 0;
+
+  #meter-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $small-border;
+    transition: 1s;
+    color: $secondary-text-color;
+
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+      box-shadow: none;
+    }
+
+    .mat-expansion-panel-header {
+      padding: 0;
+      display: inline-flex;
+      border-bottom: 2px solid $secondary-text-color;
+      width: 100%;
+      padding-right: 20px;
+    }
+
+    .mat-expansion-panel-header.mat-expanded {
+      height: auto;
+    }
+
+    .mat-expansion-panel {
+      text-align: center;
+    }
+
+    .meter-description-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-family: "Glam-queen";
+      width: 100%;
+    }
+
+    p {
+      text-align: left;
+      padding: $small-border;
+      margin-left: $small-border;
+      margin-right: $small-border;
+      border: 1px solid $secondary-text-color;
+      border-top: 0px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+  .profile-creation {
+    margin-top: $main-border;
+
+    h2 {
+      text-align: center;
+      font-size: 1rem;
+      color: $secondary-text-color;
+      padding-top: $main-border;
+      padding-bottom: $main-border;
+    }
+
+    .profileCreationForm {
+      color: $secondary-text-color;
+
+      label {
+
+        input {}
+      }
+    }
+  }
+
+  .example-tab-icon {
+    width: 20px;
+    height: 20px;
+    background-color: $secondary-text-color;
+  }
+
+  .connection-group {
+    padding-bottom: $main-border;
+    border-bottom: $secondary-text-color 2px solid;
+  }
+}
+
+@media only screen and (min-width: $min-width-desktop) and (max-width: 1024px) {
+  #sugar-meter {
+
+    #meter-description {
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      p {}
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  #sugar-meter {
+    #meter-description {
+      h1 {
+        cursor: pointer;
+        font-size: 3rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      p {
+        margin-left: $big-border;
+        margin-right: $big-border;
+      }
+    }
+  }
+}
