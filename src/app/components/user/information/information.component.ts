@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { UserService } from 'src/app/services/user.service';
 import { UsersApiService } from 'src/app/services/users-api.service';
 import { User } from 'src/app/shared/interfaces/user';
-import { emailValidator, passwordValidator } from 'src/app/shared/validators/validators';
 
 @Component({
   selector: 'app-user-information',
@@ -15,13 +14,15 @@ import { emailValidator, passwordValidator } from 'src/app/shared/validators/val
 export class InformationComponent {
 
   userForm: FormGroup = this.fb.group({
-    lastName: ['', Validators.required],
-    firstName: ['', Validators.required],
-    email: ['', [Validators.required, emailValidator]],
-    password: ['', [Validators.required, passwordValidator]],
+    lastName: [''],
+    firstName: [''],
+    email: [''],
+    password: [''],
   });
 
   deleteButtonClicked: Boolean = false;
+
+  user = this.userService.getUser() as User;
 
   constructor(private fb: FormBuilder, private userService: UserService, private userApiService: UsersApiService, private snackBarService: SnackBarService, private router: Router) {
   }
@@ -29,34 +30,26 @@ export class InformationComponent {
 
   onSubmit() {
     const currentUser = this.userService.getUser() as User;
+    const user: User = { id: currentUser.id };
 
-    if (this.userForm.valid && this.userForm.dirty) {
-      if (this.userForm.value.firstName == "") {
-        this.userForm.value.firstName = currentUser?.firstName;
+    if (this.userForm.valid) {
+      if (this.userForm.value.firstName != "") {
+        user.firstName = this.userForm.value.firstName;
       }
-      if (this.userForm.value.lastName == "") {
-        this.userForm.value.lastName = currentUser?.lastName;
+      if (this.userForm.value.lastName != "") {
+        user.lastName = this.userForm.value.lastName;
       }
-      if (this.userForm.value.email == "") {
-        this.userForm.value.email = currentUser?.email;
+      if (this.userForm.value.email != "") {
+        user.email = this.userForm.value.email;
       }
-      if (this.userForm.value.password == "") {
-        this.userForm.value.password = currentUser?.password;
+      if (this.userForm.value.password != "") {
+        user.password = this.userForm.value.password;
       }
 
-      const formData = this.userForm.value;
-      const user: User = {
-        id: currentUser.id,
-        lastName: formData.lastName,
-        firstName: formData.firstName,
-        email: formData.email,
-        password: formData.password,
-      };
-      
-      this.userApiService.updateUser(user).subscribe(() => {
-        this.userService.updateUser(user);
-        this.userService.loginUser();
+      this.userApiService.updateUser(user).subscribe((updatedUser) => {
+        this.userService.updateUser(updatedUser);
         this.userForm.reset();
+        this.router.navigate(['/']);
         this.snackBarService.openSnackBar('Vos informations ont été modifiées !', "Fermer");
       });
       if (this.deleteButtonClicked) {
