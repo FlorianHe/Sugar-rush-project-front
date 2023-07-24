@@ -27,7 +27,7 @@ const APP_ROUTES = {
   sugarMeter: '/sugar-meter',
   search: '/search',
   rSearch: 'search',
-  article: (id: number) => `articles/${id}`
+  article: (id: number) => `articles/${id}`,
 };
 
 export { ROUTES, FRONTEND_URL, APP_ROUTES };

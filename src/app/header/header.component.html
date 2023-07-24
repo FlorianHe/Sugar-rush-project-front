@@ -3,17 +3,23 @@
   <div>
     <nav>
       <ul class="divnav">
-        <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil</a></li>
+        <li [routerLink]="APP_ROUTES.index">
+          <a id="accueil"></a>
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </li>
         <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
 
         <li *ngFor="let category of categories" class="desktop">
-          <a [ngClass]="category.slug+'-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
-            [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
-            {{category.name}}
+          <a [ngClass]="category.slug + '-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
+            [queryParams]="{ id: category.id, name: category.name, slug: category.slug }">
+            {{ category.name }}
           </a>
         </li>
-        <li *ngIf="user | async" [matMenuTriggerFor]="menu"><a id="login">{{(user | async)?.userStringName}}<i
-              class="fa fa-user" aria-hidden="true"></i></a>
+        <li *ngIf="user | async" [matMenuTriggerFor]="menu">
+          <a id="login">
+            {{ (user | async)?.userStringName }}
+          </a>
+          <i class="fa fa-user" aria-hidden="true"></i>
 
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
@@ -21,8 +27,10 @@
             <button mat-menu-item (click)="logout()">Déconnexion</button>
           </mat-menu>
         </li>
-        <li *ngIf="!(user | async)"><a id="login" (click)="openModal()">Connexion<i class="fa fa-user"
-              aria-hidden="true"></i></a></li>
+        <li *ngIf="!(user | async)" (click)="openModal()">
+          <a id="login">Connexion</a>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </li>
       </ul>
     </nav>
   </div>
