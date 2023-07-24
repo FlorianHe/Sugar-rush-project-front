@@ -2,8 +2,10 @@
 
 .introduction {
     margin-bottom: $main-border;
+    line-height: $main-line-height;
+
     p {
-        font-weight: bold;
+        // font-weight: bold;
         font-style: italic;
     }
 }
@@ -11,11 +13,16 @@
 .conclusion {
     p {
         font-weight: bolder;
+        line-height: $main-line-height;
     }
+}
+
+h4{
+    font-size: $main-border;
 }
 
 h4+p {
     margin-top: $small-border;
     margin-bottom: $main-border;
-
+    line-height: $main-line-height;
 }

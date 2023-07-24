@@ -10,30 +10,16 @@
 
   h1 {
     font-size: 24px;
-    color: $main-text-color;
     margin-bottom: $small-border;
   }
 
   .title-categories {
     display: flex;
-    align-items: baseline;
     margin-bottom: $small-border;
-  }
-
-  .title-categories ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .title-categories li {
-    margin-right: 10px;
+    line-height: $main-line-height;
     font-size: 16px;
-    font-family: "Glam-queen";
-    font-size: 3em;
   }
-  
+
   .published {
     font-size: 12px;
   }
