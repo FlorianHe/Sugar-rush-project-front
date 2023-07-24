@@ -141,15 +141,15 @@
     }
   }
 
+
   #accueil {
-    background-image: image-set("/assets/images/home.png");
+    display: none;
     background-repeat: no-repeat;
-    color: transparent;
   }
 
   #login {
-    background-image: image-set("/assets/images/user.png");
+    display: none;
     background-repeat: no-repeat;
-    color: transparent;
   }
+
 }
