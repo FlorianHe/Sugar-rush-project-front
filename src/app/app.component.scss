@@ -23,12 +23,11 @@
 @media screen and (min-width: $min-width-desktop) {
   #page-content {
     width: 70%;
-    margin-top: 16.1% !important;
+    margin-top: 20.1% !important;
     max-width: 71em;
     padding-left: $big-border;
     padding-right: $big-border;
     background-color: $main-background-color;
-    box-shadow: 0.75rem 0 0 $secondary-background-color, -0.75rem 0 0 $secondary-background-color;
     overflow: initial;
     margin: 0 auto;
   }
@@ -45,9 +44,11 @@
 
     background-size: 100%;
     background-position: top center;
+    background-attachment: fixed;
+    background-position-y: 90px;
 
     background-repeat: no-repeat;
 
-    background-color: #f31fa8;
+    background-color: $secondary-background-color;
   }
 }
