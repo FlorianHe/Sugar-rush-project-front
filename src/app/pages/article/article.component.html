@@ -1,4 +1,5 @@
 <article *ngIf="article" id="main-content">
+    <app-ariane [name]="article.category.name" [color]="article.category.slug"></app-ariane>
     <app-article-title [article]="article" class="title"></app-article-title>
     <app-article-body [article]="article" class="body"></app-article-body>
     <div class="article-bottom">

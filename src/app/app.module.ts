@@ -58,6 +58,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
 import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { ArianeComponent } from './components/ariane/ariane.component';
 
 
 
@@ -100,6 +101,7 @@ import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
     SearchbarComponent,
     SearchComponent,
     DateDisplayPipe,
+    ArianeComponent,
   ],
   imports: [
     BrowserModule,
