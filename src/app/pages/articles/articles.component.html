@@ -1,3 +1,12 @@
+<div class="top-bar">
+    <div class="stock">
+        <app-stock [stockName]="'SUGAR'"></app-stock>
+        <app-stock [stockName]="'CORN'"></app-stock>
+    </div>
+    <div class="search">
+        <app-searchbar></app-searchbar>
+    </div>
+</div>
 <h1 class="main-title">Sugar Rush : Votre actu sucrée au quotidien !</h1>
 <div *ngIf="mainArticle" class="top">
     <app-article-type-main [article]="mainArticle" class="main"></app-article-type-main>
