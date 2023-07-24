@@ -21,6 +21,7 @@
 @media screen and (min-width: $min-width-desktop) {
     #page-content {
       width: 70%;
+      margin-top:16.1% !important;
       max-width: 71em;
       padding-left: $big-border;
       padding-right: $big-border;
@@ -38,6 +39,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $secondary-background-color;
+      background-image: url('../assets/images/barbieAd.jpg');
+
+      background-size: contain; 
+
+      background-repeat: no-repeat; 
+
+      background-color: #f31fa8;
     }
   }
