@@ -21,8 +21,9 @@
     bottom: -194px;
     position: relative;
     object-position: left bottom;
-    padding-left: .5rem;
-    opacity: 0.7;
+    padding-left: $small-border;
+    padding-right: $small-border;
+    opacity: 0.8;
 
 
     .titles {
@@ -54,9 +55,15 @@
       }
     }
   }
+
+  .fun-back-opacity,
+  .ca-coute-bonbon-back-opacity {
+    opacity: 0.9;
+  }
+
 }
 
-@media (min-width: 768px) {
+@media (min-width: $min-width-desktop) {
   .radius-1 {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
