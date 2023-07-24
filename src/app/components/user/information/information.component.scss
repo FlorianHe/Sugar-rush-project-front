@@ -1,19 +1,19 @@
 @use "/src/_import.scss" as *;
 
-.example-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .form-field-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5,1fr);
     flex-direction: column;
     gap: 8px;
+
+    .element{
+        grid-column: span 2;
+    }
 }
 
 .mat-form-field {
-    width: 70%;
+    width: 100%;
 }
 
 h2 {
@@ -23,35 +23,34 @@ h2 {
     text-align: center;
     margin-bottom: $main-border;
 }
+
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-    margin-top: $big-border;
+    gap: $big-border;
+}
 
-    .update-btn {
-        color: $secondary-text-color;
-        background-color: $fairy-color;
-        padding: $main-border;
-        border: none;
-        border-radius: $big-border;
-    }
+.update-btn {
+    color: $secondary-text-color;
+    background-color: $fairy-color;
+    padding: $main-border;
+    border: none;
+    border-radius: $big-border;
+    cursor: pointer;    
+    width: max-content;
+    margin: 0 auto;
+}
 
-    .update-btn:hover {
-        background-color: darken($fairy-color, 10%);
-        color: $main-text-color;
-    }
+.update-btn:hover {
+    background-color: darken($fairy-color, 10%);
+    color: $main-text-color;
+}
 
-    .delete-btn {
-        background-color: $category-economy-color;
-        border: none;
-        padding: $main-border;
-        border-radius: $big-border;
-    }
-
-    .delete-btn:hover {
-        background-color: darken($category-economy-color, 10%);
-        color: $main-text-color;
-    }
+.delete-btn {
+    border: none;
+    text-decoration: underline;
+    background-color: $main-background-color;
+    color: $category-economy-color;   
+    cursor: pointer;
+    font-size: 10px;
 }
