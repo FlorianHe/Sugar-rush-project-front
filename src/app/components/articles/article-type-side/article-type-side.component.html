@@ -2,7 +2,7 @@
     <div class="side-band">
         <div class="image-side"><img src={{article.publicationImage}}></div>
         <div class="description">
-            <h4>{{article.publicationDate | date : 'HH:mm'}} | <span [ngClass]="article.category.slug+'-color'">{{article.category.name}}</span></h4>
+            <h4>{{article.publicationDate | displayDate}} | <span [ngClass]="article.category.slug+'-color'">{{article.category.name}}</span></h4>
             <h3>{{article.title}}</h3>
         </div>
     </div>
