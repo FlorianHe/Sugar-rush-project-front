@@ -3,11 +3,15 @@
   <div>
     <nav>
       <ul class="divnav">
-        <li [routerLink]="APP_ROUTES.index">
-          <a id="accueil"></a>
-          <i class="fa fa-home" aria-hidden="true"></i>
+        <li id="accueil" [routerLink]="APP_ROUTES.index">
+          <i id="fahome" class="fa fa-home" aria-hidden="true"></i>
+          Accueil
         </li>
-        <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+        <li class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">
+          <i class="fa fa-duotone fa-cubes-stacked"
+            style="--fa-primary-color: #410b13; --fa-secondary-color: #410b13"></i>
+          Catégories
+        </li>
 
         <li *ngFor="let category of categories" class="desktop">
           <a [ngClass]="category.slug + '-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
@@ -15,21 +19,18 @@
             {{ category.name }}
           </a>
         </li>
-        <li *ngIf="user | async" [matMenuTriggerFor]="menu">
-          <a id="login">
-            {{ (user | async)?.userStringName }}
-          </a>
-          <i class="fa fa-user" aria-hidden="true"></i>
-
+        <li *ngIf="user | async" [matMenuTriggerFor]="menu" id="login">
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
             <button mat-menu-item [routerLink]="APP_ROUTES.sugarMeter">Sucro-mètre</button>
             <button mat-menu-item (click)="logout()">Déconnexion</button>
           </mat-menu>
-        </li>
-        <li *ngIf="!(user | async)" (click)="openModal()">
-          <a id="login">Connexion</a>
           <i class="fa fa-user" aria-hidden="true"></i>
+          {{ (user | async)?.userStringName }}
+        </li>
+        <li *ngIf="!(user | async)" (click)="openModal()" id="login">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Connexion
         </li>
       </ul>
     </nav>

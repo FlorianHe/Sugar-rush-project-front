@@ -22,6 +22,10 @@
       height: 80px;
     }
 
+    #categ2+i {
+      display: none;
+    }
+
     nav {
       align-self: center;
       visibility: visible;
@@ -32,6 +36,8 @@
           display: none;
         }
       }
+
+
 
       ul {
 
@@ -68,6 +74,11 @@
       visibility: hidden;
     }
   }
+
+  #fahome {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: $min-width-desktop) {
@@ -122,6 +133,8 @@
   li {
     height: 70px;
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
   }
 
   .divnav {
@@ -141,15 +154,8 @@
     }
   }
 
-
-  #accueil {
-    display: none;
-    background-repeat: no-repeat;
-  }
-
-  #login {
-    display: none;
-    background-repeat: no-repeat;
+  i {
+    font-size: 2rem;
   }
 
 }
