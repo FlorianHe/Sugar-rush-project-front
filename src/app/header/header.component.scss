@@ -22,6 +22,14 @@
       height: 80px;
     }
 
+    #accueil+i {
+      display: none;
+    }
+
+    #categ2+i {
+      display: none;
+    }
+
     nav {
       align-self: center;
       visibility: visible;
@@ -122,6 +130,8 @@
   li {
     height: 70px;
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
   }
 
   .divnav {
@@ -141,21 +151,8 @@
     }
   }
 
-
-  #accueil {
-    display: none;
-    font-size: 2.5rem;
-    background-repeat: no-repeat;
-  }
-
   i {
-    font-size: 2.5rem;
-
-  }
-
-  #login {
-    display: none;
-    background-repeat: no-repeat;
+    font-size: 2rem;
   }
 
 }
