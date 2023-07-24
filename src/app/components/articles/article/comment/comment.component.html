@@ -6,5 +6,5 @@
     <textarea [(ngModel)]="commentForm.value.content" name="content" class="textArea" maxlength="255" rows="4" cols="50" required></textarea>
     <button class="submitButton {{article.category.slug}}-button" type="submit">Ajouter un commentaire</button>
 </form>
-<div *ngIf="!(connectionStatus | async)">Vous devez être connecté pour poster un commentaire. <span (click)="openModal()" class="{{article.category.slug}}-color connect-link">Connectez vous !</span></div>
+<div *ngIf="!(connectionStatus | async)">Vous devez être connecté pour poster un commentaire. <span (click)="openModal()" class="{{article.category.slug}}-color connect-link">Connectez-vous !</span></div>
 </section>
