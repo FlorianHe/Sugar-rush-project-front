@@ -1,21 +1,5 @@
 @use "/src/_import.scss" as *;
 
-.top-bar {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-
-  .stock {
-    display: flex;
-    gap: $main-border;
-    margin: $main-border 0;
-  }
-
-  .search {
-    margin: $main-border 0;
-  }
-}
-
-
 #page-content {
   padding-bottom: 70px;
 }
@@ -30,10 +14,6 @@
     background-color: $main-background-color;
     overflow: initial;
     margin: 0 auto;
-  }
-
-  .stock {
-    justify-content: flex-start;
   }
 
   #page-wrap {
