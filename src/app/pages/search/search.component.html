@@ -1,3 +1,13 @@
+
+<div class="search">
+    <app-searchbar class="search-bar"></app-searchbar>
+</div>
+
 <div *ngIf="searchResults" class="small">
     <app-article-type-small class="article-small" *ngFor="let article of searchResults; let i = index" [article]="article" [pos]="(i % 3) + 1"></app-article-type-small>
+</div>
+
+<div *ngIf="searchResults.length===0">
+    <i class="fa-solid fa-magnifying-glass child"></i>
+    <p class="child"> Aucun articles ne correspond à votre recherche </p>
 </div>
