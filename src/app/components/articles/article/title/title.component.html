@@ -5,7 +5,7 @@
       <p>{{ article.leads }}</p>
     </div>
     <div>
-      <p>{{ article.author.firstName | titlecase }} {{ article.author.lastName | titlecase }}</p>
+      <p><span>{{ article.author.firstName | titlecase }}</span>&nbsp;<span>{{ article.author.lastName | titlecase }}</span></p>
       <p class="published">Publié: {{ article.publicationDate | date }} | Modifié: {{ article.modificationDate | date }}
       </p>
     </div>
