@@ -39,8 +39,12 @@ export class ConnectionComponent {
       this.userService.setUser(response.user);
       this.userService.loginUser();
       this.snackBarService.openSnackBar('Vous êtes connecté !', "Fermer");
-    });
+    },
+      error => {
+        this.snackBarService.openSnackBar('Vos identifiants sont incorrects, veuillez réessayer', "Fermer");
+      });
   }
+
 
   register(): void {
     const user: User = {
