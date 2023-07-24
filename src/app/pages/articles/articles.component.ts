@@ -26,7 +26,7 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.articlesService.getArticleMain().subscribe((mainArticle) =>{
       this.mainArticle = mainArticle
-      this.categoriesService.getArticlesSideByCategorySlug(this.mainArticle.category.slug, this.mainArticle.id, INFINITE_SCROLL_PARAMS.limitSide, INFINITE_SCROLL_PARAMS.offsetArticles+1).subscribe((articles) => {
+      this.categoriesService.getArticlesSideByCategorySlug(this.mainArticle.category.slug, this.mainArticle.id, INFINITE_SCROLL_PARAMS.limitSide, INFINITE_SCROLL_PARAMS.offsetArticles).subscribe((articles) => {
         this.articlesSide = articles;
       });
     });

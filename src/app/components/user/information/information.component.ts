@@ -13,33 +13,37 @@ import { User } from 'src/app/shared/interfaces/user';
 })
 export class InformationComponent {
 
-  userForm: FormGroup = this.fb.group({
-    lastName: [''],
-    firstName: [''],
-    email: [''],
-    password: [''],
-  });
+  userForm!: FormGroup;
 
   deleteButtonClicked: Boolean = false;
 
   user = this.userService.user;
+  currentUser: User = this.userService.getUser() as User;
 
   constructor(private fb: FormBuilder, private userService: UserService, private userApiService: UsersApiService, private snackBarService: SnackBarService, private router: Router) {
   }
 
+  ngOnInit(): void {
+    this.userForm = this.fb.group({
+      lastName: [this.currentUser.lastName],
+      firstName: [this.currentUser.firstName],
+      email: [this.currentUser.email],
+      password: [''],
+    });
+  }
 
   onSubmit() {
     const currentUser = this.userService.getUser() as User;
     const user: User = { id: currentUser.id };
 
     if (this.userForm.valid) {
-      if (this.userForm.value.firstName != "") {
+      if (this.userForm.value.firstName != "" || this.userForm.value.firstName != currentUser.firstName) {
         user.firstName = this.userForm.value.firstName;
       }
-      if (this.userForm.value.lastName != "") {
+      if (this.userForm.value.lastName != "" || this.userForm.value.lastName != currentUser.lastName) {
         user.lastName = this.userForm.value.lastName;
       }
-      if (this.userForm.value.email != "") {
+      if (this.userForm.value.email != "" || this.userForm.value.email != currentUser.email) {
         user.email = this.userForm.value.email;
       }
       if (this.userForm.value.password != "") {
@@ -48,7 +52,6 @@ export class InformationComponent {
 
       this.userApiService.updateUser(user).subscribe((updatedUser) => {
         this.userService.updateUser(updatedUser);
-        this.userForm.reset();
         this.snackBarService.openSnackBar('Vos informations ont été modifiées !', "Fermer");
       });
       if (this.deleteButtonClicked) {
