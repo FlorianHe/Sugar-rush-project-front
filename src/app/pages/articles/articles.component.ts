@@ -33,8 +33,7 @@ export class ArticlesComponent implements OnInit {
     this.articlesService.getArticles(this.limit, this.offset)
       .subscribe(articles => {
         this.articles = articles;
-        this.limit += INFINITE_SCROLL_PARAMS.limitArticles;
-        this.offset += INFINITE_SCROLL_PARAMS.limitArticles;
+        this.offset = INFINITE_SCROLL_PARAMS.offsetArticles + INFINITE_SCROLL_PARAMS.limitArticles;
     });
   }
 
@@ -42,7 +41,6 @@ export class ArticlesComponent implements OnInit {
     this.articlesService.getArticles(this.limit, this.offset)
       .subscribe(articles => {
         this.articles = this.articles.concat(articles);
-        this.limit += INFINITE_SCROLL_PARAMS.limitArticles;
         this.offset += INFINITE_SCROLL_PARAMS.limitArticles;
       });
   }

@@ -13,7 +13,7 @@ const SUGAR_RUSH_API = {
 }
 
 const INFINITE_SCROLL_PARAMS = {
-  limitArticles: 9,
+  limitArticles: 6,
   offsetArticles: 0,
   limitOther: 3,
   limitSide: 4
