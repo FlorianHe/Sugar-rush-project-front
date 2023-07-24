@@ -25,6 +25,8 @@ export class CategoryComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
+      this.limit = INFINITE_SCROLL_PARAMS.limitArticles;
+      this.offset = INFINITE_SCROLL_PARAMS.offsetArticles;
       this._category = params as Category;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
       this.categoriesService.getArticlesByCategorySlug(this._category.slug, this.limit, this.offset).subscribe((articles) => {

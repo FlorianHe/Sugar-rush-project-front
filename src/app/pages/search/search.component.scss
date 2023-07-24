@@ -1,17 +1,36 @@
 @use "/src/_import.scss" as *;
 
+.search {
+  margin-top: $big-border;
+  display: flex; 
+  justify-content:center; 
+  align-items:center;
+  .search-bar{
+    width:150%;
+  }
+}
+
 .small {
+  margin-top:$big-border;
     margin-bottom: $big-border;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $main-border;
   }
 
+  .child{
+    display:inline-block;
+    padding: $small-border;
+  }
+
   @media(max-width:$min-width-desktop) {
 
+    .search-bar{
+      padding:$small-border;
+    }
     .small {
       margin: 0;
-  
+      display:inline;
       .article-small {
         margin: $main-border;
       }
