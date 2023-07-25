@@ -13,7 +13,7 @@ export class SugarDataComponent implements OnInit {
   @Input()
   public profile!: Profile;
   private _age!: number;
-
+  public grid!:number;
   @Input()
   public sugarDatas!: number;
 
@@ -21,6 +21,13 @@ export class SugarDataComponent implements OnInit {
 
   ngOnInit(): void {
     this._age = this.ageCalculatorService.calculateAge(this.profile.birthDate);
+    if (this.age < 6) {
+      this.grid = 5;
+    } else if (this.age <= 10 && this.age >= 6) {
+      this.grid = 6;
+    } else if (this.age > 10) {
+      this.grid = 7;
+    }
   }
 
   get age(): number {
