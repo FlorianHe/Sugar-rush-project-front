@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
-import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,39 +27,40 @@ import { ArticleComponent } from './pages/article/article.component';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+import { StockComponent } from './components/stock/stock.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { StockComponent } from './components/stock/stock.component';
-import { PercentChangePipe } from './pipes/percent-change.pipe';
 import { AddPlusPipe } from './pipes/add-plus.pipe';
+import { PercentChangePipe } from './pipes/percent-change.pipe';
 
-import { UsersComponent } from './pages/users/users.component';
-import { ConnectionComponent } from './components/user/connection/connection.component';
-import { DetailComponent } from './components/user/detail/detail.component';
 import { ArticleCommentComponent } from './components/articles/article/comment/comment.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { ParagraphComponent } from './components/paragraph/paragraph.component';
+import { ConnectionComponent } from './components/user/connection/connection.component';
+import { DetailComponent } from './components/user/detail/detail.component';
+import { UsersComponent } from './pages/users/users.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
-import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
-import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { PersonComponent } from './components/person/person.component';
 import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
 import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
-import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { PersonComponent } from './components/person/person.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
 
 import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 
-import { InformationComponent } from './components/user/information/information.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { InformationComponent } from './components/user/information/information.component';
 import { SearchComponent } from './pages/search/search.component';
 
-import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { MatIconModule } from '@angular/material/icon';
 import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
+import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { SubSectionComponent } from './pages/creation-article/sub-section/sub-section.component';
 
 
 @NgModule({
@@ -95,13 +95,14 @@ import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
     SugarInputsComponent,
     AboutUsComponent,
     PersonComponent,
-    CreationArticleComponent
+    CreationArticleComponent,
     InformationComponent,
     ParagraphComponent,
     SugarMeterPipe,
     SugarAmountPipe,
     SearchbarComponent,
     SearchComponent,
+    SubSectionComponent,
   ],
   imports: [
     BrowserModule,

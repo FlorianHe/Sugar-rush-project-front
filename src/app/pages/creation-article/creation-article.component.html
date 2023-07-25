@@ -20,25 +20,8 @@
             </div>
         </div>
     </div>
-
-    <div class="content">
-        <div class="sub-content">
-            <div class="menu">
-                <label for="type" class="type">Type : </label>
-                <select class="target">
-                    <option>Introduction</option>
-                    <option>Paragraphe</option>
-                    <option>Conclusion</option>
-                </select>
-            </div>
-            <i class="fa-solid fa-plus" (click)="duplicateContent($event)"></i>
-        </div>
-        <div class="title-text">
-            <h1>Titre</h1>
-            <input type="text" class="text target" placeholder="Titre">
-            <h1>Texte</h1>
-            <textarea class="text textarea target"></textarea>
-        </div>
+    <div *ngFor="let subsection of subsections; let index = index">
+        <app-sub-section  [subsections]="subsections" [subsection]="subsection" [index]="index"></app-sub-section>
     </div>
     <button (click)="onSubmit()">Enregistrer</button>
 </div>

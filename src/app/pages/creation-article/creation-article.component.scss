@@ -53,62 +53,6 @@
 }
 }
 
-.content{
-    border:solid 1px $fairy-color;
-    border-radius:5px;
-    border-radius:5px;
-    padding:1rem;
-    margin-bottom: 1rem;
-
-    .sub-content{
-        display:flex;
-        flex-direction:row;
-        justify-content: space-between;
-        
-        .type, h1{
-            font-family: "Glam-queen";
-            font-weight: bold;
-            color:$fairy-color;
-
-        }
-
-            select {
-                border-radius:5px;
-            }
-    
-
-        i{
-            color:$fairy-color;
-        }
-
-        i:hover{
-            color:$fairy-color;
-            scale:1.5;
-        }
-
-    }
-    .title-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        h1{
-            font-family: "Glam-queen";
-            color:$fairy-color;
-        }
-        .text {
-            width:90%;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .textarea {
-            height:250px;
-        }
-    }
-}
-
 button {
     background-color: $fairy-color;
     border-radius: 5px;
