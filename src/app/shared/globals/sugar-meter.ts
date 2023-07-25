@@ -49,7 +49,7 @@ const SENTENCES = [
   ]
 ];
 
-const COLOR_ARRAY_CLASS = ['purple', 'darkblue', 'lightblue', 'lightgreen', 'yellow', 'orange', 'red'];
+const COLOR_ARRAY_CLASS = ['#5D2B7D', '#A72D89', '#1474BB', '#8FC33E', '#F1BE02', 'orange', '#E41E26', '#E41E26'];
 
 const LOGOS = [
   { label: 'Gauffre', value: 'waffle' },
