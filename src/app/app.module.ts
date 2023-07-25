@@ -59,7 +59,8 @@ import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
 import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
 import { ArianeComponent } from './components/ariane/ariane.component';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -119,7 +120,9 @@ import { ArianeComponent } from './components/ariane/ariane.component';
     MatSnackBarModule,
     MatMenuModule,
     MatIconModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],

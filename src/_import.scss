@@ -20,17 +20,6 @@ $big-border: 2rem;
 
 $min-width-desktop: 800px;
 
-::ng-deep .mdc-tab--active .mdc-tab__text-label {
-  color: $secondary-text-color !important;
-}
-
-::ng-deep .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content {
-  border-color: $secondary-text-color;
-}
-
-::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:active {
-  background-color: $fairy-color;
-}
 
 @mixin buttons {
   color: $secondary-text-color;
@@ -42,11 +31,12 @@ $min-width-desktop: 800px;
   width: max-content;
 }
 
+::ng-deep .mdc-tab--active .mdc-tab__text-label {
+  color: $secondary-text-color !important;
+}
 
-@media only screen and (min-width: $min-width-desktop) {
-  ::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:hover {
-    background-color: $fairy-color;
-  }
+::ng-deep .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content {
+  border-color: $secondary-text-color;
 }
 
 

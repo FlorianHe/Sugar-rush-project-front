@@ -35,37 +35,45 @@
       <app-profiles [profile]="profile" (profilesUpdated)="onProfilesUpdated($event)"></app-profiles>
 
     </mat-tab>
-  </mat-tab-group>
-
-  <div class="profile-creation">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h2>Créer un nouveau Profil :</h2>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <form class="profileCreationForm" [formGroup]="profileCreationForm"
+    <mat-tab>
+      <ng-template mat-tab-label class="meter-tab">
+      <i class="fa fa-plus"></i>&nbsp;Nouveau profil
+      </ng-template>
+      <form class="form-border" [formGroup]="profileCreationForm"
         (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
-        <label>Nom
-          <input type="text" formControlName="name"></label>
+        <div class="input-container">
+          <label>Nom</label>
+          <input type="text" formControlName="name">
+        </div>
 
-        <label>Date de naissance
-          <input type="date" formControlName="birthDate"></label>
+        <div class="input-container">
+          <label>Date de naissance</label>
+          <mat-form-field color="accent">
+            <input type="date" formControlName="birthDate" matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-        <label>Icone
-          <div *ngFor="let logo of logos">
-            <label>
-              <input type="radio" [value]="logo.value" formControlName="logo">
-              <div class="example-tab-icon svg-{{logo.value}}"></div>
-            </label>
-          </div>
+        <div class="input-container icone-create">
+          <label>Icone
         </label>
+        <div class="logo-list">
+            <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
+              <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
+                <input type="radio" [value]="logo.value" formControlName="logo" placeholder="">
+                <div class="example-tab-icon svg-{{logo.value}}"></div>
+              </label>
+            </div>
+          </div>
+        </div>
 
-        <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
+        <div class="button-profile">
+          <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
+        </div>
 
       </form>
-    </mat-expansion-panel>
-  </div>
+    </mat-tab>
+  </mat-tab-group>
 </section>

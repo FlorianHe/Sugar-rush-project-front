@@ -73,6 +73,14 @@ export class SugarMeterComponent implements OnInit {
         });
   }
 
+  isSelected(logoValue: string): boolean {
+    return this.profileCreationForm.get('logo')?.value === logoValue;
+  }
+
+  selectLogo(logo: any): void {
+    this.profileCreationForm.get('logo')?.setValue(logo.value);
+  }
+
   get profiles(): Profile[] {
     return this._profiles;
   }

@@ -1,4 +1,4 @@
-<section class="sugar-meter-box">
+<section class="sugar-meter-box delete-box">
 
   <h2>Chaque icone vaut 4gr de sucre</h2>
 
@@ -23,16 +23,18 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <form [formGroup]="profileModificationForm"
-        (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
+      <form class="form-border" [formGroup]="profileModificationForm"
+        (ngSubmit)="profileModificationForm.valid && onSubmit()">
 
-        <label>Nom
-          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
-          <label>Date de naissance
-            <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
-              value="{{profile.birthDate}}"></label>
-        <label>
-          <div class="logo-list">
+        <div class="input-container">
+          <label>Nom</label>
+          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}">
+        </div>
+
+        <div class="input-container">
+          <label>Icone
+        </label>
+        <div class="logo-list">
             <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
               <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
                 <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
@@ -40,13 +42,24 @@
               </label>
             </div>
           </div>
-        </label>
+        </div>
 
-        <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
-          type="submit">Valider</button>
-      </form>
+        <div class="button-profile">
+          <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
+            type="submit">Valider</button>
+          <mat-expansion-panel> 
+            <mat-expansion-panel-header>
+              <mat-panel-title class="delete-btn-header">
+                Supprimer le compte
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            Etes vous sûr ?<br>
+            <div (click)="deleteProfile()">Supprimer</div>
+          </mat-expansion-panel>
+        </div>
+    </form>
 
-      <button (click)="deleteProfile()">Supprimer profil</button>
+      
     </mat-expansion-panel>
   </div>
 </section>
