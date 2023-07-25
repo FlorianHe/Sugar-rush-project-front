@@ -14,6 +14,11 @@
     padding-bottom: $main-border;
   }
 
+  .container-texte {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
   .sugar-meter-children {
     display: block;
     text-align: center;
