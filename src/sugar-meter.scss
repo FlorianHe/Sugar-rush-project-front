@@ -1,0 +1,31 @@
+@use "/src/_import.scss" as *;
+
+.svgs-class {
+  height: 50px;
+  width: 50px;
+  background-color: var(--color);
+}
+
+.svg-half {
+  background: linear-gradient(to left, $fairy-color var(--half), var(--color) var(--half));
+}
+
+.svg-sugar {
+  -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
+  mask-image: url("./assets/logo/sugar-logo.svg");
+}
+
+.svg-waffle {
+  -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
+  mask-image: url("./assets/logo/waffle-logo.svg");
+}
+
+.svg-ice-cream {
+  -webkit-mask-image: url("./assets/logo/ice-cream-logo.svg");
+  mask-image: url("./assets/logo/ice-cream-logo.svg");
+}
+
+.svg-cupcake {
+  -webkit-mask-image: url("./assets/logo/cupcake-logo.svg");
+  mask-image: url("./assets/logo/cupcake-logo.svg");
+}

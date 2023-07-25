@@ -25,6 +25,10 @@ const APP_ROUTES = {
   rCreation:'creation',
   detailUser: `/user`,
   rdetailUser: 'user',
+  rSugarMeter: 'sugar-meter',
+  sugarMeter: '/sugar-meter',
+  search: '/search',
+  rSearch: 'search',
   article: (id: number) => `articles/${id}`
 };
 

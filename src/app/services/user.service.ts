@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/interfaces/user';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { APP_ROUTES } from '../shared/globals/routes';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class UserService {
   private userSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(this.userExists());
   user: Observable<User | null> = this.userSubject.asObservable();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   private userExists(): User | null {
     return this.getUser();
@@ -25,6 +27,7 @@ export class UserService {
     this.userSubject.next(null);
     this.deleteToken();
     this.deleteUser();
+    this.router.navigate([APP_ROUTES.index]);
   }
 
   public setToken(token: string): void {
@@ -59,4 +62,8 @@ export class UserService {
     localStorage.removeItem('user')
   }
 
+  public updateUser(user: User): void {
+    this.setUser(user);
+    this.loginUser();
+  }
 }

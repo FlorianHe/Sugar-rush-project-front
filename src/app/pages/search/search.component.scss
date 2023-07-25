@@ -1,0 +1,19 @@
+@use "/src/_import.scss" as *;
+
+.small {
+    margin-bottom: $big-border;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $main-border;
+  }
+
+  @media(max-width:$min-width-desktop) {
+
+    .small {
+      margin: 0;
+  
+      .article-small {
+        margin: $main-border;
+      }
+    }
+  }

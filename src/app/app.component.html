@@ -1,10 +1,16 @@
 <app-header></app-header>
 <main id="page-wrap">
     <div id="page-content">
-        <div class="stock">
-            <app-stock [stockName]="'SUGAR'"></app-stock>
-            <app-stock [stockName]="'CORN'"></app-stock>
+        <div class="top-bar">
+            <div class="stock">
+                <app-stock [stockName]="'SUGAR'"></app-stock>
+                <app-stock [stockName]="'CORN'"></app-stock>
+            </div>
+            <div class="search">
+                <app-searchbar></app-searchbar>
+            </div>
         </div>
+        
         <router-outlet></router-outlet>
     </div>
 </main>
