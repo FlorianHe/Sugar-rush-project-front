@@ -1,0 +1,48 @@
+@use "/src/_import.scss" as *;
+
+#sugar-meter .mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+#sugar-meter .mat-expansion-panel-header {
+  border-bottom: 2px solid $secondary-text-color;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  height: min-content;
+}
+
+#sugar-meter .mat-focus-indicator {
+  height: min-content;
+}
+
+#sugar-meter .mat-expansion-panel-title {
+  margin: 0;
+}
+
+#sugar-meter .mat-content {
+  flex: none;
+}
+
+#sugar-meter .mat-expansion-indicator {}
+
+.private-infos .mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.private-infos .mat-expansion-panel-header {
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.private-infos .mat-expansion-panel .mat-expansion-panel-header-title {
+  color: $secondary-text-color;
+}
+
+.private-infos .mat-content {
+  flex: none;
+}
+
+.private-infos .mat-expansion-indicator {
+  display: none;
+}

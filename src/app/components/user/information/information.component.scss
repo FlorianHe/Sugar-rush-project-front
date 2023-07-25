@@ -1,56 +1,59 @@
 @use "/src/_import.scss" as *;
 
-.form-field-container {
+.private-infos {
+  .form-field-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5,1fr);
+    grid-template-rows: repeat(5, 1fr);
     flex-direction: column;
     gap: 8px;
 
-    .element{
-        grid-column: span 2;
+    .element {
+      grid-column: span 2;
     }
-}
+  }
 
-.mat-form-field {
+  .mat-form-field {
     width: 100%;
-}
+  }
 
-h2 {
+  h2 {
     font-family: "Glam-queen";
     font-size: 3rem;
     color: $fairy-color;
     text-align: center;
     margin-bottom: $main-border;
-}
+  }
 
-.buttons {
-    display: flex;
-    flex-direction: row;
-    gap: $big-border;
-}
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.update-btn {
+  .update-btn {
     color: $secondary-text-color;
     background-color: $fairy-color;
     padding: $main-border;
     border: none;
     border-radius: $big-border;
-    cursor: pointer;    
+    cursor: pointer;
+    height: 50px;
     width: max-content;
     margin: 0 auto;
-}
+    grid-column: 2/3;
+  }
 
-.update-btn:hover {
+  .update-btn:hover {
     background-color: darken($fairy-color, 10%);
     color: $main-text-color;
-}
+  }
 
-.delete-btn {
+  .delete-btn {
     border: none;
     text-decoration: underline;
     background-color: $main-background-color;
-    color: $category-economy-color;   
+    color: $category-economy-color;
     cursor: pointer;
     font-size: 10px;
+  }
 }
