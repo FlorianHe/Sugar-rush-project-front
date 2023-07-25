@@ -13,7 +13,12 @@
     justify-content: space-around;
     border-bottom-style: groove;
     border-bottom-color: $secondary-text-color;
-
+    #accueil {
+      cursor: pointer;
+    }
+    #login {
+      cursor: pointer;
+    }
     .logo {
       background-image: url("/assets/images/sugar_rush.png");
       background-repeat: no-repeat;
