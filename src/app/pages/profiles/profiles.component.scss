@@ -14,6 +14,11 @@
     padding-bottom: $main-border;
   }
 
+  .container-texte {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
   .sugar-meter-children {
     display: block;
     text-align: center;
@@ -37,6 +42,8 @@
 }
 
 .sugar-meter-box .mat-expansion-panel-header {
+  border-bottom: 2px solid $secondary-text-color;
+  border-radius: 0;
   display: flex;
   justify-content: center;
   height: min-content;

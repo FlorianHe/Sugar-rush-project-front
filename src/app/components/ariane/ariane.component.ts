@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { APP_ROUTES } from 'src/app/shared/globals/routes';
 import { Category } from 'src/app/shared/interfaces/category';
 
 @Component({
@@ -8,7 +9,6 @@ import { Category } from 'src/app/shared/interfaces/category';
 })
 export class ArianeComponent {
   @Input()
-  public color!: string;
-  @Input()
-  public name!: string;
+  public category!: Category;
+  public APP_ROUTES=APP_ROUTES;
 }

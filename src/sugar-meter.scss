@@ -10,6 +10,10 @@
   background: linear-gradient(to left, $fairy-color var(--half), var(--color) var(--half));
 }
 
+.svg-half-over {
+  background: linear-gradient(to left, white var(--half), var(--color) var(--half));
+}
+
 .svg-sugar {
   -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
   mask-image: url("./assets/logo/sugar-logo.svg");

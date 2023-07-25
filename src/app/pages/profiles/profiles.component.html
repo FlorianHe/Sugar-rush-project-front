@@ -10,9 +10,11 @@
     <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"
       (datasUpdated)="onDatasUpdated($event)"></app-sugar-inputs>
 
-    <p class="meter-reaction" *ngIf="sugarDatas">
-      <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
-    </p>
+    <div class="container-texte">
+      <p class="meter-reaction" *ngIf="sugarDatas">
+        <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
+      </p>
+    </div>
   </div>
 
   <div class="profile-modification">
