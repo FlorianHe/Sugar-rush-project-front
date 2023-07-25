@@ -37,20 +37,19 @@
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label class="meter-tab">
-      <i class="fa fa-plus"></i>&nbsp;Nouveau profil
+        <i class="fa fa-plus"></i>&nbsp;Nouveau profil
       </ng-template>
-      <form class="form-border" [formGroup]="profileCreationForm"
-        (ngSubmit)="profileCreationForm.valid && onSubmit()">
+      <form class="form-border" [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
         <div class="input-container">
           <label>Nom</label>
           <input type="text" formControlName="name">
         </div>
 
-        <div class="input-container">
+        <div class="input-container sugar-meter-date">
           <label>Date de naissance</label>
-          <mat-form-field color="accent">
-            <input type="date" formControlName="birthDate" matInput [matDatepicker]="picker2">
+          <mat-form-field>
+            <input formControlName="birthDate" matInput [matDatepicker]="picker2">
             <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
           </mat-form-field>
@@ -58,8 +57,8 @@
 
         <div class="input-container icone-create">
           <label>Icone
-        </label>
-        <div class="logo-list">
+          </label>
+          <div class="logo-list">
             <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
               <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
                 <input type="radio" [value]="logo.value" formControlName="logo" placeholder="">

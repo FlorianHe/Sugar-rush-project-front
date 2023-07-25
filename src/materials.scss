@@ -24,6 +24,42 @@
   flex: none;
 }
 
+#sugar-meter .sugar-meter-date .mdc-icon-button {
+  height: min-content;
+  width: min-content;
+  padding: 0;
+}
+
+#sugar-meter .sugar-meter-date .mat-mdc-form-field {
+  width: 100%;
+}
+
+#sugar-meter .sugar-meter-date .mat-mdc-form-field-infix,
+#sugar-meter .sugar-meter-date .mat-mdc-text-field-wrapper {
+  padding: 0;
+  min-height: min-content;
+  border-bottom: none;
+}
+
+#sugar-meter .sugar-meter-date .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+#sugar-meter .sugar-meter-date .mat-mdc-form-field-icon-suffix {
+  padding: 4px 4px 0 4px;
+  border: 1px solid $secondary-text-color;
+  border-radius: 0.3rem;
+}
+
+#sugar-meter .sugar-meter-date .mat-mdc-form-field-input-control {
+  font-size: 15px;
+  border: 2px solid $secondary-text-color;
+}
+
+#sugar-meter .sugar-meter-date .mat-mdc-form-field.mat-accent .mdc-text-field__input {
+  caret-color: $secondary-text-color;
+}
+
 .delete-box .mat-expansion-panel {
   box-shadow: none !important;
   order: 2;
