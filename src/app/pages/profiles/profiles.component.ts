@@ -80,6 +80,14 @@ export class ProfilesComponent implements OnInit {
 
   }
 
+  isSelected(logoValue: string): boolean {
+    return this.profileModificationForm.get('logo')?.value === logoValue;
+  }
+
+  selectLogo(logo: any): void {
+    this.profileModificationForm.get('logo')?.setValue(logo.value);
+  }
+
   get sugarDatas(): number {
     return this._sugarDatas;
   }

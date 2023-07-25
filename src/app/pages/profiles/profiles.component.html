@@ -28,18 +28,17 @@
 
         <label>Nom
           <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
-
-        <label>Date de naissance
-          <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
-            value="{{profile.birthDate}}"></label>
-
-        <label>Icone
-          <div *ngFor="let logo of logos">
-            <label>
-              <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
-              <div class="example-tab-icon svg-{{logo.value}}"></div>
-            </label>
-
+          <label>Date de naissance
+            <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
+              value="{{profile.birthDate}}"></label>
+        <label>
+          <div class="logo-list">
+            <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
+              <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
+                <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
+                <div class="example-tab-icon svg-{{logo.value}}"></div>
+              </label>
+            </div>
           </div>
         </label>
 
