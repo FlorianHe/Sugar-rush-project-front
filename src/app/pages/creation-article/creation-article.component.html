@@ -2,7 +2,7 @@
     <div class="infos">
         <div class="checkbox">
             <input type="checkbox" name="main" [(ngModel)]="article.isMain">
-            <label for="main"> Article Principal</label>
+            <label for="main">Article Principal</label>
         </div>
         <div class="fields-container">
             <h1>Titre</h1>
@@ -14,14 +14,16 @@
             <div class="img" [ngStyle]="{ 'background-image': 'url(' + article.publicationImage + ')'}"></div>
             <div>
                 <label for="categories" class="categories">Catégorie : </label>
-                <select [(ngModel)]="article.category" >
+                <select [(ngModel)]="article.category">
                     <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
                 </select>
             </div>
         </div>
     </div>
     <div *ngFor="let subsection of subsections; let index = index">
-        <app-sub-section  [subsections]="subsections" [subsection]="subsection" [index]="index"></app-sub-section>
+        <app-sub-section [subsections]="subsections" [subsection]="subsection" [index]="index"></app-sub-section>
     </div>
-    <button (click)="onSubmit()">Enregistrer</button>
+    <div class="button">
+        <button (click)="onSubmit()">Enregistrer</button>
+    </div>
 </div>
