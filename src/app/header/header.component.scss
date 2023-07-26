@@ -127,12 +127,15 @@
   }
 
   a {
-    height: 3rem;
     background-color: #FECEE9;
     text-decoration: none;
     align-items: center;
     gap: 12px;
     height: 4rem;
+    
+  }
+  .accueil {
+    height: max-content;
   }
 
   li {

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
 import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
+import { ROUTES } from 'src/app/shared/globals/routes';
 
 @Component({
   selector: 'app-search',
@@ -13,6 +14,7 @@ export class SearchComponent {
 
   public APP_ROUTES = APP_ROUTES;
   public searchResults!: ArticleDisplayed[];
+  private _imageRoute = ROUTES.imageFolder;
 
   constructor(public articleApiService: ArticleApiService, private route: ActivatedRoute) {}
 
@@ -22,6 +24,10 @@ export class SearchComponent {
         this.searchResults = searchResults;
       });
     });
+  }
+
+  public get pictureRoute(): string {
+    return this._imageRoute;
   }
   
 }

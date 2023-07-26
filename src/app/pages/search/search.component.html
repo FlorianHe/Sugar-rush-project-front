@@ -2,12 +2,23 @@
   <app-searchbar class="search-bar"></app-searchbar>
 </div>
 
-<div *ngIf="searchResults" class="small">
-  <app-article-type-small class="article-small" *ngFor="let article of searchResults; let i = index" [article]="article"
-    [pos]="(i % 3) + 1"></app-article-type-small>
-</div>
+<section>
+  <div *ngIf="searchResults">
+    <div class="small">
+      <app-article-type-small *ngFor="let article of searchResults; let i = index" [article]="article"
+        [pos]="(i % 3) + 1"></app-article-type-small>
+    </div>
+  </div>
 
-<div *ngIf="searchResults.length===0">
-  <i class="fa-solid fa-magnifying-glass child"></i>
-  <p class="child"> Aucun article ne correspond à votre recherche </p>
-</div>
+  <div *ngIf="searchResults.length===0">
+
+    <p class="child"><i class="fa-solid fa-magnifying-glass child"></i> Aucun article ne correspond à votre recherche
+    </p>
+    <div class="not-found-404">
+      <img class="image" src="{{ pictureRoute + '4-not-found.png' }}" alt="4" />
+      <img class="image" src="{{ pictureRoute + 'donut-not-found.png' }}" alt="0" />
+      <img class="image" src="{{ pictureRoute + '4-not-found.png' }}" alt="4" />
+    </div>
+    <h1 class="title">News not found</h1>
+  </div>
+</section>

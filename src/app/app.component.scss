@@ -1,5 +1,8 @@
 @use "/src/_import.scss" as *;
 
+#page-content {
+  padding-bottom: 70px;
+}
 @media screen and (min-width: $min-width-desktop) {
   #page-content {
     width: 70%;
@@ -7,6 +10,7 @@
     max-width: 71em;
     padding-left: $big-border;
     padding-right: $big-border;
+    padding-bottom: 0;
     background-color: $main-background-color;
     overflow: initial;
     margin: 0 auto;

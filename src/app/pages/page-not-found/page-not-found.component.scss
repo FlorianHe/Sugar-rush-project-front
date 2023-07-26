@@ -11,20 +11,15 @@
 
   .title {
     margin-top: $big-border;
+    color: $secondary-text-color
   }
 
   .link {
-    background-color: $secondary-background-color;
-    padding: 12px 16px;
-    border-radius: 25px;
-    color: $secondary-text-color;
-    font-size: $main-border;
-    transition: color 0.4s, background-color 0.4s;
+    @include buttons;
     margin: $big-border 0;
 
     &:hover {
-      background-color: $secondary-text-color;
-      color: $secondary-background-color;
+      border-color: $secondary-text-color;
     }
   }
 
@@ -40,5 +35,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media(max-width:$min-width-desktop) {
+  .not-found-section {
+    margin:0;
+    margin-top: $big-border;
+  }
+  .not-found-404 {
+    flex-direction: column;
   }
 }

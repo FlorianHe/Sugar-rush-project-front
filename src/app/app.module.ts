@@ -43,15 +43,18 @@ import { UsersComponent } from './pages/users/users.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CategoryBlockComponent } from './components/category-block/category-block.component';
 import { PersonComponent } from './components/person/person.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SugarDataComponent } from './components/sugar-data/sugar-data.component';
 import { SugarInputsComponent } from './components/sugar-inputs/sugar-inputs.component';
-import { InformationComponent } from './components/user/information/information.component';
 import { AuthInterceptor } from './http-interceptor/auth-interceptor';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProfilesComponent } from './pages/profiles/profiles.component';
-import { SearchComponent } from './pages/search/search.component';
 import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
+
+import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
+
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { InformationComponent } from './components/user/information/information.component';
+import { SearchComponent } from './pages/search/search.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
@@ -61,6 +64,7 @@ import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
 import { ArianeComponent } from './components/ariane/ariane.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SubSectionComponent } from './pages/creation-article/sub-section/sub-section.component';
 
 
 @NgModule({
@@ -86,7 +90,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     ConnectionComponent,
     DetailComponent,
     ArticleCommentComponent,
-
     CommentComponent,
     CategoryBlockComponent,
     SugarMeterComponent,
@@ -95,6 +98,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     SugarInputsComponent,
     AboutUsComponent,
     PersonComponent,
+    CreationArticleComponent,
     InformationComponent,
     ParagraphComponent,
     SugarMeterPipe,
@@ -103,6 +107,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     SearchComponent,
     DateDisplayPipe,
     ArianeComponent,
+    SubSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,4 +132,4 @@ import { MatNativeDateModule } from '@angular/material/core';
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
