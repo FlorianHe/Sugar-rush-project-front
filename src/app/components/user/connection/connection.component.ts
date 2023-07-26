@@ -13,6 +13,17 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
 })
 export class ConnectionComponent {
 
+  showPassword: boolean = false;
+  showConfirmedPassword: boolean = false;
+
+  public togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
+  public toggleConfirmedPassword() {
+    this.showConfirmedPassword = !this.showConfirmedPassword;
+  }
+
   userForm: FormGroup = this.fb.group({
     firstname: [''],
     lastname: [''],

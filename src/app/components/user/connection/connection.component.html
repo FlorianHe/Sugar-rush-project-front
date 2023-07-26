@@ -8,7 +8,10 @@
         </div>
         <div class="login-field">
           <label for="password">Mot de passe : <span>*</span></label>
-          <input type="password" formControlName="password">
+          <input type="{{showPassword ? 'text' : 'password' }}" formControlName="password">
+          <a (click)="togglePassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
         </div>
         <div class="login-btn">
           <button mat-button [mat-dialog-close]="true" type="submit">Connexion</button>
@@ -39,7 +42,11 @@
         </div>
         <div class="register-field">
           <label for="password">Mot de passe : <span>*</span></label>
-          <input type="text" formControlName="password">
+          <input type="{{showPassword ? 'text' : 'password' }}" formControlName="password">
+          <a (click)="togglePassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
+
           <div *ngIf="userForm.controls['password'].errors && !userForm.controls['password'].pristine"
             class="error-msg">
             <div [hidden]="!userForm.controls['password'].errors['required']">Requis</div>
@@ -48,7 +55,11 @@
         </div>
         <div class="register-field">
           <label for="confirmPassword">Confirmez votre mot de passe : <span>*</span></label>
-          <input type="text" formControlName="confirmPassword">
+          <input type="{{showConfirmedPassword ? 'text' : 'password' }}" formControlName="confirmPassword">
+          <a (click)="toggleConfirmedPassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
+
           <div *ngIf="userForm.controls['confirmPassword'].errors && !userForm.controls['confirmPassword'].pristine"
             class="error-msg">
             <div [hidden]="!userForm.controls['confirmPassword'].errors['required']">Requis</div>
