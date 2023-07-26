@@ -1,5 +1,21 @@
 @use "/src/_import.scss" as *;
 
+.top-bar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: $main-border;
+
+  .stock {
+    display: flex;
+    gap: $main-border;
+    margin: $main-border 0;
+  }
+
+  .search {
+    margin: $main-border 0;
+  }
+}
+
 @media(min-width:$min-width-desktop) {
 
   .main-title {
@@ -35,6 +51,23 @@
 
   h1 {
     display: none;
+  }
+
+  .top-bar {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .stock {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .search {
+      width: 100%;
+      padding: 0 $big-border;
+    }
   }
 
   .main-title {

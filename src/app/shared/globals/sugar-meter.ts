@@ -1,3 +1,5 @@
+import { Logo } from "../interfaces/logo";
+
 const SENTENCES = [
   [
     "Votre douceur intérieure rayonne comme un rayon de soleil sans sucre !",
@@ -49,13 +51,14 @@ const SENTENCES = [
   ]
 ];
 
-const COLOR_ARRAY_CLASS = ['purple', 'darkblue', 'lightblue', 'lightgreen', 'yellow', 'orange', 'red'];
+const COLOR_ARRAY_CLASS = ['#5D2B7D', '#A72D89', '#1474BB', '#8FC33E', '#F1BE02', 'orange', '#E41E26', '#E41E26'];
 
-const LOGOS = [
+const LOGOS: Logo[] = [
   { label: 'Gauffre', value: 'waffle' },
-  { label: 'Sucre', value: 'sugar' },
   { label: 'Glace', value: 'ice-cream' },
   { label: 'Muffin', value: 'cupcake' },
+  { label: 'Donut', value: 'donut' },
+  { label: 'Croissant', value: 'croissant' },
 ];
 
 export { SENTENCES, COLOR_ARRAY_CLASS, LOGOS }

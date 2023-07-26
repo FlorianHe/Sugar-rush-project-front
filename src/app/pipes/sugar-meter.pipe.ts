@@ -33,6 +33,12 @@ export class SugarMeterPipe implements PipeTransform {
         logos += `<div class="svgs-class svg-${logo}" style="--color: #FECEE9"></div>`;
       }
     }
+    for (let k = 7 - i; k < amount/4 && k < 14 - i *2; k++) {
+      if (k == fullLogoCount) {
+        logos += `<div class="svgs-class svg-half-over svg-${logo}" style="--color: ${COLOR_ARRAY_CLASS[7]}; --half: ${100 - halfLogoCount * 100}%"></div>`;
+      } else 
+        logos += `<div class="svgs-class svg-${logo}" style="--color: ${COLOR_ARRAY_CLASS[7]}"></div>`;
+    }
 
     const sanitizedLogos = this.sanitizer.bypassSecurityTrustHtml(logos);
 

@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding: $small-border;
-  padding-top: 0;
+
 
   #meter-description {
     display: flex;
@@ -15,26 +15,6 @@
     transition: 1s;
     color: $secondary-text-color;
 
-    .mat-expansion-panel:not([class*=mat-elevation-z]) {
-      box-shadow: none;
-    }
-
-    .mat-expansion-panel-header {
-      padding: 0;
-      display: inline-flex;
-      border-bottom: 2px solid $secondary-text-color;
-      width: 100%;
-      padding-right: 20px;
-    }
-
-    .mat-expansion-panel-header.mat-expanded {
-      height: auto;
-    }
-
-    .mat-expansion-panel {
-      text-align: center;
-    }
-
     .meter-description-title {
       text-align: center;
       font-size: 1.5rem;
@@ -43,7 +23,7 @@
     }
 
     p {
-      text-align: left;
+      text-align: justify;
       padding: $small-border;
       margin-left: $small-border;
       margin-right: $small-border;
@@ -64,51 +44,121 @@
       padding-top: $main-border;
       padding-bottom: $main-border;
     }
-
-    .profileCreationForm {
-      color: $secondary-text-color;
-
-      label {
-
-        input {}
-      }
-    }
   }
 
   .example-tab-icon {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-color: $secondary-text-color;
   }
 
   .connection-group {
     padding-bottom: $main-border;
-    border-bottom: $secondary-text-color 2px solid;
   }
-}
 
-@media only screen and (min-width: $min-width-desktop) and (max-width: 1024px) {
-  #sugar-meter {
+  .logo-list {
+    display: flex;
+    align-items: center;
+  }
 
-    #meter-description {
+  .logo-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
 
-      h1 {
-        font-size: 2.8rem;
-      }
+    div {
+      opacity: 0.3;
+    }
+  }
 
-      p {}
+  .logo-option input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+
+  .input-container {
+    padding-top: $main-border;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    display: block;
+    font-weight: 700;
+    padding-bottom: $small-border;
+    text-align: center;
+    color: $secondary-text-color;
+
+    span {
+      color: $fairy-color;
+    }
+  }
+
+  input {
+    display: block;
+    height: auto;
+    width: 100%;
+    padding: $small-border;
+    border-radius: 0.3em;
+    border: 1px solid $secondary-text-color;
+    background-color: white;
+    line-height: 1.3;
+    color: $secondary-text-color;
+    box-shadow: none;
+    transition: border-color .2s;
+    font-size: 15px;
+  }
+
+  .logo-option.selected div {
+    opacity: 1;
+  }
+
+  .button-profile {
+    display: flex;
+    justify-content: center;
+    margin-top: $main-border;
+
+    button {
+      @include buttons;
+      border-radius: $big-border;
+      border-color: $fairy-color;
+        &:hover {
+          border-color: $secondary-text-color;
+        }
     }
   }
 }
 
-@media screen and (min-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: $min-width-desktop) and (orientation: landscape) {
   #sugar-meter {
+    .form-border {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $big-border;
+
+      .icone-create {
+        grid-column: 1/3;
+      }
+
+      .button-profile {
+        grid-column: 1/3;
+      }
+    }
+
     #meter-description {
       h1 {
         cursor: pointer;
         font-size: 3rem;
         padding-left: 5rem;
         padding-right: 5rem;
+      }
+
+      .meter-description-title {
+        font-size: 2.5rem;
       }
 
       p {

@@ -1,9 +1,7 @@
 @use "/src/_import.scss" as *;
 
 .other {
-    margin-right: $big-border;
-    margin-left: $big-border;
-    margin-top: $big-border; 
+    margin: $big-border 0;
     
     .miam {
       background-color: $category-food-color;
@@ -24,6 +22,7 @@
     h2 {
       padding: $small-border;
       margin-bottom: $small-border;
+      color: white;
     }
   
     .article-list {

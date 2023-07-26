@@ -2,20 +2,28 @@
 
 .introduction {
     margin-bottom: $main-border;
+    line-height: $main-line-height;
+
     p {
-        font-weight: bold;
         font-style: italic;
+        color: $secondary-text-color;
     }
 }
 
 .conclusion {
     p {
-        font-weight: bolder;
+        line-height: $main-line-height;
+        color: $secondary-text-color;
     }
+}
+
+h4{
+    font-size: $main-border;
 }
 
 h4+p {
     margin-top: $small-border;
     margin-bottom: $main-border;
-
+    line-height: $main-line-height;
 }
+

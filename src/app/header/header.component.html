@@ -3,27 +3,37 @@
   <div>
     <nav>
       <ul class="divnav">
-        <li><a id="accueil" [routerLink]="APP_ROUTES.index">Accueil</a></li>
-        <li><a class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">Catégories</a></li>
+        <li id="accueil" [routerLink]="APP_ROUTES.index">
+          <i id="fahome" class="fa fa-home" aria-hidden="true"></i>
+          <a class="accueil">Accueil</a>
+        </li>
+        <li class="categ" id="categ2" [routerLink]="APP_ROUTES.categories">
+          <i class="fa fa-duotone fa-cubes-stacked"
+            style="--fa-primary-color: #410b13; --fa-secondary-color: #410b13"></i>
+          Catégories
+        </li>
 
         <li *ngFor="let category of categories" class="desktop">
-          <a [ngClass]="category.slug+'-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
-            [queryParams]="{id: category.id, name:category.name, slug:category.slug}">
-            {{category.name}}
+          <a [ngClass]="category.slug + '-color'" [routerLink]="APP_ROUTES.categories + '/' + category.slug"
+            [queryParams]="{ id: category.id, name: category.name, slug: category.slug }">
+            {{ category.name }}
           </a>
         </li>
-        <li *ngIf="user | async" [matMenuTriggerFor]="menu"><a id="login">{{(user | async)?.userStringName}}<i
-              class="fa fa-user" aria-hidden="true"></i></a>
-
+        <li *ngIf="user$ | async" [matMenuTriggerFor]="menu" id="login">
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
-            <button *ngIf="checkAdmin((user | async)?.authorities)" mat-menu-item [routerLink]="APP_ROUTES.creation">Créer un article</button>
+            <button *ngIf="checkAdmin((user$ | async)?.authorities)" mat-menu-item
+              [routerLink]="APP_ROUTES.creation">Créer un article</button>
             <button mat-menu-item [routerLink]="APP_ROUTES.sugarMeter">Sucro-mètre</button>
             <button mat-menu-item (click)="logout()">Déconnexion</button>
           </mat-menu>
+          <i class="fa fa-user" aria-hidden="true"></i>
+          {{ (user$ | async)?.userStringName }}
         </li>
-        <li *ngIf="!(user | async)"><a id="login" (click)="openModal()">Connexion<i class="fa fa-user"
-              aria-hidden="true"></i></a></li>
+        <li *ngIf="!(user$ | async)" (click)="openModal()" id="login">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Connexion
+        </li>
       </ul>
     </nav>
   </div>

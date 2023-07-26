@@ -25,22 +25,21 @@ export class CategoryComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
+      this.offset = INFINITE_SCROLL_PARAMS.offsetArticles;
+      this._articles = [];
       this._category = params as Category;
       this.titleService.setTitle('Sugar Rush : ' + params['name']);
       this.categoriesService.getArticlesByCategorySlug(this._category.slug, this.limit, this.offset).subscribe((articles) => {
         this._articles = articles;
-        this.limit += INFINITE_SCROLL_PARAMS.limitArticles;
-        this.offset += INFINITE_SCROLL_PARAMS.limitArticles;
       });
     });
   };
 
   onScroll(): void {
+    this.offset += INFINITE_SCROLL_PARAMS.limitArticles;
     this.categoriesService.getArticlesByCategorySlug(this._category.slug, this.limit, this.offset)
       .subscribe(articles => {
         this._articles = this.articles.concat(articles);
-        this.limit += INFINITE_SCROLL_PARAMS.limitArticles;
-        this.offset += INFINITE_SCROLL_PARAMS.limitArticles;
       });
   }
 

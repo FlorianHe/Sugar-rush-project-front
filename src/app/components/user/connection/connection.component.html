@@ -8,7 +8,10 @@
         </div>
         <div class="login-field">
           <label for="password">Mot de passe : <span>*</span></label>
-          <input type="password" formControlName="password">
+          <input type="{{showPassword ? 'text' : 'password' }}" formControlName="password">
+          <a (click)="togglePassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
         </div>
         <div class="login-btn">
           <button mat-button [mat-dialog-close]="true" type="submit">Connexion</button>
@@ -23,36 +26,44 @@
         <div class="register-field">
           <label for="email">Email : <span>*</span></label>
           <input type="email" formControlName="email">
-          <div *ngIf="userForm.controls['email'].errors && !userForm.controls['email'].pristine" class="error-msg">
-            <div [hidden]="!userForm.controls['email'].errors['required']">Requis</div>
-            <div [hidden]="!userForm.controls['email'].invalid">Requis</div>
-          </div>
+          <mat-error *ngIf="userForm.get('email')?.invalid">
+            {{ userForm.get('email')?.getError('email')?.rules }}
+          </mat-error>
         </div>
         <div class="register-field">
           <label for="username">Pseudo : <span>*</span></label>
           <input type="text" formControlName="username">
           <div *ngIf="userForm.controls['username'].errors && !userForm.controls['username'].pristine"
             class="error-msg">
-            <div [hidden]="!userForm.controls['username'].errors['required']">Requis</div>
-            <div [hidden]="!userForm.controls['username'].invalid">Requis</div>
+            <mat-error *ngIf="userForm.get('username')?.invalid">
+              {{ userForm.get('username')?.getError('username')?.rules }}
+            </mat-error>
           </div>
         </div>
         <div class="register-field">
           <label for="password">Mot de passe : <span>*</span></label>
-          <input type="text" formControlName="password">
+          <input type="{{showPassword ? 'text' : 'password' }}" formControlName="password">
+          <a (click)="togglePassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
           <div *ngIf="userForm.controls['password'].errors && !userForm.controls['password'].pristine"
             class="error-msg">
-            <div [hidden]="!userForm.controls['password'].errors['required']">Requis</div>
-            <div [hidden]="!userForm.controls['password'].invalid">Requis</div>
+            <mat-error *ngIf="userForm.get('password')?.invalid">
+              {{ userForm.get('password')?.getError('password')?.rules }}
+            </mat-error>
           </div>
         </div>
         <div class="register-field">
           <label for="confirmPassword">Confirmez votre mot de passe : <span>*</span></label>
-          <input type="text" formControlName="confirmPassword">
+          <input type="{{showConfirmedPassword ? 'text' : 'password' }}" formControlName="confirmPassword">
+          <a (click)="toggleConfirmedPassword()" class="eye-b">
+            <i class="{{showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+          </a>
           <div *ngIf="userForm.controls['confirmPassword'].errors && !userForm.controls['confirmPassword'].pristine"
             class="error-msg">
-            <div [hidden]="!userForm.controls['confirmPassword'].errors['required']">Requis</div>
-            <div [hidden]="!userForm.controls['confirmPassword'].invalid">Requis</div>
+            <mat-error *ngIf="userForm.get('confirmPassword')?.invalid">
+              {{ userForm.get('confirmPassword')?.getError('confirmPassword')?.rules }}
+            </mat-error>
           </div>
         </div>
         <div class="register-button">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { UsersApiService } from 'src/app/services/users-api.service';
@@ -13,9 +13,18 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
 })
 export class ConnectionComponent {
 
+  showPassword: boolean = false;
+  showConfirmedPassword: boolean = false;
+
+  public togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
+  public toggleConfirmedPassword() {
+    this.showConfirmedPassword = !this.showConfirmedPassword;
+  }
+
   userForm: FormGroup = this.fb.group({
-    firstname: [''],
-    lastname: [''],
     username: ['', [Validators.required]],
     email: ['', [Validators.required, emailValidator]],
     password: ['', [Validators.required, passwordValidator]],
@@ -39,8 +48,12 @@ export class ConnectionComponent {
       this.userService.setUser(response.user);
       this.userService.loginUser();
       this.snackBarService.openSnackBar('Vous êtes connecté !', "Fermer");
-    });
+    },
+      error => {
+        this.snackBarService.openSnackBar('Vos identifiants sont incorrects, veuillez réessayer', "Fermer");
+      });
   }
+
 
   register(): void {
     const user: User = {

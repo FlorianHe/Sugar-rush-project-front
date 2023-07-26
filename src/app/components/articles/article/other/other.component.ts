@@ -12,6 +12,7 @@ import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 export class OtherComponent implements OnInit {
 
   @Input() categorySlug!: string
+  @Input() id!: number
   private _articles!: ArticleDisplayed[];
 
   private limit = INFINITE_SCROLL_PARAMS.limitOther;
@@ -20,7 +21,7 @@ export class OtherComponent implements OnInit {
   constructor(private categoriesService: CategoriesApiService) {}
 
   ngOnInit(): void {
-    this.categoriesService.getArticlesByCategorySlug(this.categorySlug, this.limit, this.offset).subscribe((articles) => {
+    this.categoriesService.getArticlesSideByCategorySlug(this.categorySlug, this.id, this.limit, this.offset).subscribe((articles) => {
       this._articles = articles;
     }
     );

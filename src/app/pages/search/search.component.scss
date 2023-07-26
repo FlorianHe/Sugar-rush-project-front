@@ -1,19 +1,69 @@
 @use "/src/_import.scss" as *;
 
+section {
+  margin-bottom: $big-border;
+}
+
+.search {
+  margin-top: $big-border;
+  display: flex; 
+  justify-content:center; 
+  align-items:center;
+  .search-bar{
+    width:150%;
+  }
+}
+
 .small {
+    margin-top:$big-border;
     margin-bottom: $big-border;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: $main-border;
   }
 
+.child{
+  display:inline-block;
+  padding: $small-border;
+}
+.title {
+  margin-top: $big-border;
+  color: $secondary-text-color;
+  text-align:center;
+}
+  
+
+.image {
+  width: 200px;
+
+  &:nth-of-type(2) {
+      width: 160px;
+  }
+}
+
+  .not-found-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media(max-width:$min-width-desktop) {
 
+    .search-bar{
+      padding:$small-border;
+    }
     .small {
       margin: 0;
-  
+      display:inline;
       .article-small {
         margin: $main-border;
       }
+    }
+
+    .not-found-404 {
+      flex-direction: column;
+    }
+    .title{
+
     }
   }

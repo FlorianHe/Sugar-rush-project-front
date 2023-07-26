@@ -58,8 +58,12 @@ import { SearchComponent } from './pages/search/search.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { SugarAmountPipe } from './pipes/sugar-amount-pipe';
 import { SugarMeterPipe } from './pipes/sugar-meter.pipe';
+import { ArianeComponent } from './components/ariane/ariane.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { SubSectionComponent } from './pages/creation-article/sub-section/sub-section.component';
 
 
@@ -86,7 +90,6 @@ import { SubSectionComponent } from './pages/creation-article/sub-section/sub-se
     ConnectionComponent,
     DetailComponent,
     ArticleCommentComponent,
-
     CommentComponent,
     CategoryBlockComponent,
     SugarMeterComponent,
@@ -102,6 +105,8 @@ import { SubSectionComponent } from './pages/creation-article/sub-section/sub-se
     SugarAmountPipe,
     SearchbarComponent,
     SearchComponent,
+    DateDisplayPipe,
+    ArianeComponent,
     SubSectionComponent,
   ],
   imports: [
@@ -120,7 +125,9 @@ import { SubSectionComponent } from './pages/creation-article/sub-section/sub-se
     MatSnackBarModule,
     MatMenuModule,
     MatIconModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],

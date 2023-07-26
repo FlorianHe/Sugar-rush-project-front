@@ -7,17 +7,15 @@
           Voici votre Sucromètre personnalisé ! &nbsp;
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p id="meter-description-text">&nbsp;L'OMS recommande que les sucres libres ne représentent pas plus de 10%
-        de l'apport énergétique
-        quotidien, même si
-        idéalement il conviendrait de réduire les surcres libres à 5% de l'apport énergétique total.
-        <br>&nbsp;Cela signifie donc que:
-        <br>- Les adultes ne devraient pas consommer plus de 30g de sucres libres par jour (soit 7 morceaux de sucres)
-        <br>- Les enfants de 7 à 10 ans ne devraient pas consommer plus de 24g de sucres libres par jour (soit 6
+      <p id="meter-description-text">L'OMS recommande que les sucres libres ne représentent pas plus de 10%
+        de l'apport énergétique quotidien, même si idéalement il conviendrait de réduire les sucres libres à 5% de l'apport énergétique total.<br>
+        <br>Cela signifie donc que:
+        <br> • Les adultes ne devraient pas consommer plus de 30g de sucres libres par jour (soit 7 morceaux de sucres)
+        <br> • Les enfants de 7 à 10 ans ne devraient pas consommer plus de 24g de sucres libres par jour (soit 6
         morceaux
         de sucres)
-        <br>- Les enfants de 4 à 6 ans ne devraient pas consommer plus de 19g de sucres libres par jour (soit 5 morceaux
-        de sucres)
+        <br> • Les enfants de 4 à 6 ans ne devraient pas consommer plus de 19g de sucres libres par jour (soit 5 morceaux
+        de sucres) <br>
         <br><span>Ainsi, notre Sucromètre vous permet de savoir si vous avez dépassé votre quota de sucres libres
           journalier !</span>
       </p>
@@ -35,37 +33,44 @@
       <app-profiles [profile]="profile" (profilesUpdated)="onProfilesUpdated($event)"></app-profiles>
 
     </mat-tab>
-  </mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label class="meter-tab">
+        <i class="fa fa-plus"></i>&nbsp;Nouveau profil
+      </ng-template>
+      <form class="form-border" [formGroup]="profileCreationForm" (ngSubmit)="profileCreationForm.valid && onSubmit()">
 
-  <div class="profile-creation">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h2>Créer un nouveau Profil :</h2>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
+        <div class="input-container">
+          <label>Nom</label>
+          <input type="text" formControlName="name">
+        </div>
 
-      <form class="profileCreationForm" [formGroup]="profileCreationForm"
-        (ngSubmit)="profileCreationForm.valid && onSubmit()">
+        <div class="input-container sugar-meter-date">
+          <label>Date de naissance</label>
+          <mat-form-field>
+            <input formControlName="birthDate" matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-        <label>Nom
-          <input type="text" formControlName="name"></label>
-
-        <label>Date de naissance
-          <input type="date" formControlName="birthDate"></label>
-
-        <label>Icone
-          <div *ngFor="let logo of logos">
-            <label>
-              <input type="radio" [value]="logo.value" formControlName="logo">
-              <div class="example-tab-icon svg-{{logo.value}}"></div>
-            </label>
+        <div class="input-container icone-create">
+          <label>Icône
+          </label>
+          <div class="logo-list">
+            <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
+              <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
+                <input type="radio" [value]="logo.value" formControlName="logo" placeholder="">
+                <div class="example-tab-icon svg-{{logo.value}}"></div>
+              </label>
+            </div>
           </div>
-        </label>
+        </div>
 
-        <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
+        <div class="button-profile">
+          <button [disabled]="!profileCreationForm.valid" type="submit">Valider</button>
+        </div>
 
       </form>
-    </mat-expansion-panel>
-  </div>
+    </mat-tab>
+  </mat-tab-group>
 </section>

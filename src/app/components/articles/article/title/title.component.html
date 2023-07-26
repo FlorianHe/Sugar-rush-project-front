@@ -1,15 +1,11 @@
 <section class="title">
   <div class="article">
-    <h1>{{ article.title }}</h1>
+    <h1 [ngClass]="article.category.slug + '-color'">{{ article.title }}</h1>
     <div class="title-categories">
-      <ul>
-        <li [ngClass]="article.category.name" [ngClass]="article.category.slug + '-color'">{{ article.category.name }}
-        </li>
-      </ul>
       <p>{{ article.leads }}</p>
     </div>
     <div>
-      <p>{{ article.author.firstName | titlecase }} {{ article.author.lastName | titlecase }}</p>
+      <p><span>{{ article.author.firstName | titlecase }}</span>&nbsp;<span>{{ article.author.lastName | titlecase }}</span></p>
       <p class="published">Publié: {{ article.publicationDate | date }} | Modifié: {{ article.modificationDate | date }}
       </p>
     </div>

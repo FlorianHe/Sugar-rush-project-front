@@ -21,7 +21,7 @@ export class HeaderComponent {
 
   private _categories!: Category[];
 
-  user = this.userService.user;
+  user$ = this.userService.user;
 
   @ViewChild(MatMenuTrigger)
   menuTrigger!: MatMenuTrigger;

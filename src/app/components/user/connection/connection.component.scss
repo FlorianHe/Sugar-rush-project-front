@@ -1,59 +1,76 @@
 @use "/src/_import.scss" as *;
 
 .connection-group .mat-tab-header {
-    border-bottom: 2px solid $fairy-color;
+  border-bottom: 2px solid $fairy-color;
 }
 
-.login, .register {
-    padding: $big-border;
-    .login-field, .register-field {
-        padding-bottom: 0.75rem;
-    
-        label {
-            display: block;
-            font-weight: 700;
-            padding-bottom: $small-border;
-            span {
-                color:$fairy-color;
-            }
-        }
-        input {
-            display: block;
-            height: auto;
-            width: 100%;
-            padding: $small-border;
-            border-radius: 0.3em;
-            border: 1px solid $secondary-text-color;
-            background-color: white;
-            line-height: 1.3;
-            color: $secondary-text-color;
-            box-shadow: none;
-            transition: border-color .2s;
-        }
+.login,
+.register {
+  padding: $big-border;
+
+  .login-field,
+  .register-field {
+    padding-bottom: 0.75rem;
+    position: relative;
+
+    label {
+      display: block;
+      font-weight: 700;
+      padding-bottom: $small-border;
+
+      span {
+        color: $fairy-color;
+      }
     }
-    .login-btn, .register-button {
-        text-align: center;
-        margin-top: $big-border;
-        button {
-            background-color: $fairy-color;
-            border-radius: 5px;
-            border: 0;
-            padding: $small-border;
-            font-size: 16px;
-        }
+
+    input {
+      display: block;
+      height: auto;
+      width: 100%;
+      padding: $small-border;
+      border-radius: 0.3em;
+      border: 1px solid $secondary-text-color;
+      background-color: white;
+      line-height: 1.3;
+      color: $secondary-text-color;
+      box-shadow: none;
+      transition: border-color .2s;
+
+      &::-ms-reveal {
+        display: none;
+      }
     }
+
+    .eye-b {
+      color: #ccc;
+      position: absolute;
+      top: 35px;
+      right: 10px;
+    }
+  }
+
+  .login-btn,
+  .register-button {
+    text-align: center;
+    margin-top: $big-border;
+
+    button {
+      @include buttons;
+      padding-left: $big-border;
+      padding-right: $big-border;
+    }
+  }
 }
 
 
 ::ng-deep .mdc-tab--active .mdc-tab__text-label {
-    color: $secondary-text-color !important;
+  color: $secondary-text-color !important;
 }
 
-::ng-deep .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content{
-    border-color: $secondary-text-color;
+::ng-deep .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content {
+  border-color: $secondary-text-color;
 }
 
-::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:hover  {
-    background-color: $fairy-color;
+::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:hover {
+  background-color: $fairy-color;
 }
-    

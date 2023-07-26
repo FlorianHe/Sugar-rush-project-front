@@ -5,6 +5,8 @@ $main-text-color: #000;
 $secondary-text-color: #410B13;
 $fairy-color: #FECEE9;
 
+$main-line-height: 1.5rem;
+
 $category-un-color: #5D2B7D; // Catégorie unknown : pas encore trouvé
 $category-fun-color: #A72D89; // Catégorie Fun : a trouvé
 $category-sport-color: #1474BB; // Catégorie Sport : a trouvé
@@ -18,23 +20,24 @@ $big-border: 2rem;
 
 $min-width-desktop: 800px;
 
+
+@mixin buttons {
+  color: $secondary-text-color;
+  background-color: white;
+  padding: $main-border;
+  border: solid 1px $fairy-color;
+  border-radius: $big-border;
+  cursor: pointer;
+  height: 50px;
+  width: max-content;
+}
+
 ::ng-deep .mdc-tab--active .mdc-tab__text-label {
   color: $secondary-text-color !important;
 }
 
 ::ng-deep .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content {
   border-color: $secondary-text-color;
-}
-
-::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:active {
-  background-color: $fairy-color;
-}
-
-
-@media only screen and (min-width: $min-width-desktop) {
-  ::ng-deep .mat-mdc-tab-list .mat-mdc-tab-labels .mdc-tab:hover {
-    background-color: $fairy-color;
-  }
 }
 
 
@@ -80,4 +83,24 @@ $min-width-desktop: 800px;
 
 .ca-coute-bonbon-background {
   background-color: $category-economy-color;
+}
+
+.fun-border-left {
+  border-left: 5px solid $category-fun-color;
+}
+
+.sport-border-left {
+  border-left: 5px solid $category-sport-color;
+}
+
+.carie-border-left {
+  border-left: 5px solid $category-health-color;
+}
+
+.miam-border-left {
+  border-left: 5px solid $category-food-color;
+}
+
+.ca-coute-bonbon-border-left {
+  border-left: 5px solid $category-economy-color;
 }

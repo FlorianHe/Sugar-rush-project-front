@@ -1,18 +1,24 @@
 @use "/src/_import.scss" as *;
 
 .section {
-  margin: $big-border;
+  margin-top: $big-border;
 
   h2 {
     padding: $small-border;
     margin-bottom: $small-border;
+    color: white;
   }
-  
+
+  .article-comment-scroll {
+    max-height: 324px;
+    overflow-y: auto;
+  }
+
   .comment-form {
     padding: 10px;
     border-radius: 5px;
     margin-top: 20px;
-    
+
     .textArea {
       width: 100%;
       border: none;
@@ -24,7 +30,7 @@
     }
 
     .submitButton {
-      color: $secondary-text-color;
+      color: white;
       padding: 10px 20px;
       margin-top: $small-border;
       border: none;
@@ -38,24 +44,4 @@
 .connect-link {
   text-decoration: underline;
   cursor: pointer;
-}
-
-.fun-button {
-  background-color: $category-fun-color;
-}
-
-.sport-button {
-  background-color: $category-sport-color;
-}
-
-.miam-button {
-  background-color: $category-food-color;
-}
-
-.carie-button {
-  background-color: $category-health-color;
-}
-
-.ca-coute-bonbon-button {
-  background-color: $category-economy-color;
 }

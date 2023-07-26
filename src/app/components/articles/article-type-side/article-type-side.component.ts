@@ -9,6 +9,7 @@ import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
 })
 export class ArticleTypeSideComponent {
   @Input() article!:ArticleDisplayed
-
+  dateDisplayed!:string;
   public APP_ROUTES=APP_ROUTES;
+
 }
