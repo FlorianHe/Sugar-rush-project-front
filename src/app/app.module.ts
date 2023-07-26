@@ -55,7 +55,6 @@ import { CreationArticleComponent } from './pages/creation-article/creation-arti
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { InformationComponent } from './components/user/information/information.component';
 import { SearchComponent } from './pages/search/search.component';
-import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
