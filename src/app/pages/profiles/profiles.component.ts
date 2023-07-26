@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { SugarMeterApiService } from 'src/app/services/sugar-meter-api.service';
 import { LOGOS } from 'src/app/shared/globals/sugar-meter';
+import { Logo } from 'src/app/shared/interfaces/logo';
 import { Profile } from 'src/app/shared/interfaces/profile';
 
 @Component({
@@ -10,7 +11,7 @@ import { Profile } from 'src/app/shared/interfaces/profile';
   templateUrl: './profiles.component.html',
   styleUrls: ['./profiles.component.scss']
 })
-export class ProfilesComponent implements OnInit {
+export class ProfilesComponent {
 
   @Input()
   public profile!: Profile;
@@ -19,7 +20,7 @@ export class ProfilesComponent implements OnInit {
 
   public logos = LOGOS;
 
-  public profileModificationForm! : FormGroup
+  public profileModificationForm!: FormGroup
 
   @Output()
   profilesUpdated = new EventEmitter<Boolean>();
@@ -74,14 +75,13 @@ export class ProfilesComponent implements OnInit {
         this.profilesUpdated.emit(true)
         this.snackBarService.openSnackBar('Profil ' + this.profile.name + ' supprimé !', 'Fermer');
       });
-
   }
 
   isSelected(logoValue: string): boolean {
     return this.profileModificationForm.get('logo')?.value === logoValue;
   }
 
-  selectLogo(logo: any): void {
+  selectLogo(logo: Logo): void {
     this.profileModificationForm.get('logo')?.setValue(logo.value);
   }
 

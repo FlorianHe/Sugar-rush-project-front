@@ -19,16 +19,16 @@
             {{ category.name }}
           </a>
         </li>
-        <li *ngIf="user | async" [matMenuTriggerFor]="menu" id="login">
+        <li *ngIf="user$ | async" [matMenuTriggerFor]="menu" id="login">
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="APP_ROUTES.detailUser">Mon compte</button>
             <button mat-menu-item [routerLink]="APP_ROUTES.sugarMeter">Sucro-mètre</button>
             <button mat-menu-item (click)="logout()">Déconnexion</button>
           </mat-menu>
           <i class="fa fa-user" aria-hidden="true"></i>
-          {{ (user | async)?.userStringName }}
+          {{ (user$ | async)?.userStringName }}
         </li>
-        <li *ngIf="!(user | async)" (click)="openModal()" id="login">
+        <li *ngIf="!(user$ | async)" (click)="openModal()" id="login">
           <i class="fa fa-user" aria-hidden="true"></i>
           Connexion
         </li>
