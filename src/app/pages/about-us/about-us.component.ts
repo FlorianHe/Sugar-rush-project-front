@@ -20,7 +20,7 @@ export class AboutUsComponent {
   public florian: Person = {
     name: 'Florian',
     description: " Fort d'une expérience de plus de 5 ans dans le développement, Florian est le pilier technique de l'équipe. Son expertise et sa rigueur garantissent la qualité des solutions que nous proposons.",
-    image: "assets/images/florian.png",
+    image: "assets/images/florian.jpg",
     linkedin: 'https://www.linkedin.com/in/florian-helaine/',
     github: 'https://github.com/FlorianHe/',
     color: "fun"
