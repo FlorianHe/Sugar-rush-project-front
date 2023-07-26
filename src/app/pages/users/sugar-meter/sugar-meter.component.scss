@@ -124,6 +124,11 @@
 
     button {
       @include buttons;
+      border-radius: $big-border;
+      border-color: $fairy-color;
+        &:hover {
+          border-color: $secondary-text-color;
+        }
     }
   }
 }

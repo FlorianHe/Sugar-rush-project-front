@@ -17,6 +17,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 
 export function passwordValidator(control: AbstractControl): ValidationErrors | null {
     const password = control.value;
+    console.log(password);
 
     if (password.length < 8) {
         return {
@@ -58,8 +59,24 @@ export function passwordValidator(control: AbstractControl): ValidationErrors | 
 }
 
 export function confirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
-    const password = control.get('password')?.value;
-    const confirmPassword = control.get('confirmPassword')?.value;
+    const password = control.value;
+    const confirmPassword = control.parent?.get('password')?.value;
+    console.log(password, confirmPassword);
+
+    if (password !== confirmPassword) {
+        return {
+            confirmPassword: {
+                rules: "Les deux mots de passe doivent être identiques"
+            }
+        };
+    }
+
+    return null;
+}
+
+export function anotherConfirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.value;
+    const confirmPassword = control.parent?.get('confirmPassword')?.value;
 
     if (password !== confirmPassword) {
         return {

@@ -35,6 +35,11 @@
     @include buttons;
     margin: 0 auto;
     grid-column: 2/3;
+    border-color: $fairy-color  ;
+    border-radius: $big-border;
+    &:hover {
+      border-color: $secondary-text-color;
+    }
   }
 
   .delete-btn {

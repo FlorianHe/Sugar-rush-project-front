@@ -49,6 +49,10 @@
   height: min-content;
 }
 
+.sugar-meter-box .button-profile .mat-expansion-panel-header {
+  border-bottom: none;
+}
+
 .button-profile {
   display: flex;
   flex-direction: column;
@@ -126,10 +130,15 @@ input {
 .button-profile {
   display: flex;
   justify-content: center;
-  margin-top: $main-border;
+  margin-top: $main-border; 
 
   button {
     @include buttons;
+    border-color: $fairy-color;
+    border-radius: $big-border;
+      &:hover {
+        border-color: $secondary-text-color;
+      }
   }
 
   div {
@@ -159,16 +168,5 @@ input {
     .button-delete {
       grid-column: 1/3;
     }
-  }
-
-  .sugar-meter-box {
-
-    h2 {}
-
-    .sugar-meter-children {}
-
-    .meter-reaction {}
-
-    .profile-modification {}
   }
 }

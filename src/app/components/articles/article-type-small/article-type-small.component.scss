@@ -40,6 +40,9 @@
         span {
           padding: 2px;
           background-color: $secondary-text-color;
+          border-radius: $small-border;
+          padding-left: $small-border;
+          padding-right: $small-border;
         }
       }
 
