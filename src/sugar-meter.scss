@@ -14,11 +14,6 @@
   background: linear-gradient(to left, white var(--half), var(--color) var(--half));
 }
 
-.svg-sugar {
-  -webkit-mask-image: url("./assets/logo/sugar-logo.svg");
-  mask-image: url("./assets/logo/sugar-logo.svg");
-}
-
 .svg-waffle {
   -webkit-mask-image: url("./assets/logo/waffle-logo.svg");
   mask-image: url("./assets/logo/waffle-logo.svg");
@@ -32,4 +27,14 @@
 .svg-cupcake {
   -webkit-mask-image: url("./assets/logo/cupcake-logo.svg");
   mask-image: url("./assets/logo/cupcake-logo.svg");
+}
+
+.svg-donut {
+  -webkit-mask-image: url("./assets/logo/donut-logo.svg");
+  mask-image: url("./assets/logo/donut-logo.svg");
+}
+
+.svg-croissant {
+  -webkit-mask-image: url("./assets/logo/croissant-logo.svg");
+  mask-image: url("./assets/logo/croissant-logo.svg");
 }

@@ -55,9 +55,10 @@ const COLOR_ARRAY_CLASS = ['#5D2B7D', '#A72D89', '#1474BB', '#8FC33E', '#F1BE02'
 
 const LOGOS: Logo[] = [
   { label: 'Gauffre', value: 'waffle' },
-  { label: 'Sucre', value: 'sugar' },
   { label: 'Glace', value: 'ice-cream' },
   { label: 'Muffin', value: 'cupcake' },
+  { label: 'Donut', value: 'donut' },
+  { label: 'Croissant', value: 'croissant' },
 ];
 
 export { SENTENCES, COLOR_ARRAY_CLASS, LOGOS }
