@@ -7,6 +7,9 @@ import { CategoriesApiService } from '../services/categories-api.service';
 import { UserService } from '../services/user.service';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { SnackBarService } from '../services/snack-bar.service';
+import { Authorities } from '../shared/interfaces/authorities';
+import { isFormArray } from '@angular/forms';
+import { isDataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-header',
@@ -44,6 +47,17 @@ export class HeaderComponent {
   logout() {
     this.userService.logoutUser();
     this.snackBarService.openSnackBar('Vous êtes déconnecté !', "Fermer");
+  }
+
+  checkAdmin(authorities : Authorities[] | undefined) {
+    let isAdmin = false;
+    if (authorities == undefined)
+      return false;
+    for (let authority of authorities) {
+      if (authority.authority == "ROLE_ADMIN")
+        isAdmin = true;
+    }
+    return isAdmin;
   }
 
   get categories(): Category[] {
