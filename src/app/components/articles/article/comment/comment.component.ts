@@ -6,7 +6,6 @@ import { CommentService } from 'src/app/services/comment-api.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Comment } from 'src/app/shared/interfaces/comment';
-import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-article-comment',
@@ -56,7 +55,6 @@ export class ArticleCommentComponent implements OnInit {
         });
     }
   }
-
 
 
   updateComment(comment: Comment): void {
