@@ -1,31 +1,44 @@
 @use "src/_import" as *;
 
 .not-found-section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: $big-border*2.5 0;
+
+  .title {
+    margin-top: $big-border;
+  }
+
   .link {
     background-color: $secondary-background-color;
     padding: 12px 16px;
     border-radius: 25px;
     color: $secondary-text-color;
-    font-size: 1rem;
+    font-size: $main-border;
     transition: color 0.4s, background-color 0.4s;
+    margin: $big-border 0;
 
     &:hover {
-        background-color: $secondary-text-color;
-        color: $secondary-background-color;
+      background-color: $secondary-text-color;
+      color: $secondary-background-color;
     }
-        margin: 2rem 0 4rem;
-    }
+  }
+
   .image {
     width: 200px;
+
+    &:nth-of-type(2) {
+      width: 160px;
+    }
   }
+
   .not-found-404 {
-    display: grid;
-    grid-template-columns: 33% 33% 33%
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

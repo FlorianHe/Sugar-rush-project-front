@@ -1,9 +1,5 @@
 @use "/src/_import.scss" as *;
 
-#page-content {
-  padding-bottom: 70px;
-}
-
 @media screen and (min-width: $min-width-desktop) {
   #page-content {
     width: 70%;
