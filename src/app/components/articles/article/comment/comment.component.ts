@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ConnectionComponent } from 'src/app/components/user/connection/connection.component';
@@ -27,6 +27,12 @@ export class ArticleCommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCommentsByArticle();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['article'] && this.article) {
+      this.getCommentsByArticle();
+    }
   }
 
   getCommentsByArticle(): void {
@@ -82,3 +88,4 @@ export class ArticleCommentComponent implements OnInit {
     });
   }
 }
+
