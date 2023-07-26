@@ -26,6 +26,9 @@ export class ArticleApiService {
     return this.http.get<Article>(url);
   }
 
+  createArticle(article : Article): Observable<Article> {
+    return this.http.post<Article>(`${SUGAR_RUSH_API.baseArticles}`, article);
+    }
   searchArticle(keyword: string): Observable<Article[]> {
     return this.http.get<Article[]>(`${SUGAR_RUSH_API.baseArticles}/search?keyword=${keyword}`)
   }

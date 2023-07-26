@@ -1,3 +1,5 @@
+import { Authorities } from "./authorities"
+
 export interface User {
     id: number
     firstName?: string
@@ -6,4 +8,5 @@ export interface User {
     userStringName?: string
     email?: string
     password?: string
+    authorities?: Authorities[]
 }

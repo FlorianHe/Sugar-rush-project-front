@@ -10,6 +10,7 @@ import { ArticleComponent } from './pages/article/article.component';
 import { SugarMeterComponent } from './pages/users/sugar-meter/sugar-meter.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { DetailComponent } from './components/user/detail/detail.component';
+import { CreationArticleComponent } from './pages/creation-article/creation-article.component';
 import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
@@ -60,7 +61,12 @@ const routes: Routes = [
     title: 'Sugar Rush : Not Found',
   },
   {
-    path: APP_ROUTES.rSugarMeter,
+    path: APP_ROUTES.rCreation,
+    component: CreationArticleComponent,
+    title: 'Sugar Rush : Create your own article',
+  },
+  {
+   path: APP_ROUTES.rSugarMeter,
     component: SugarMeterComponent,
     title: 'Sugar Rush : Sucro-mètre',
   },
