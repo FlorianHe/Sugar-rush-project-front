@@ -83,3 +83,23 @@ $min-width-desktop: 800px;
 .ca-coute-bonbon-background {
   background-color: $category-economy-color;
 }
+
+.fun-border-left {
+  border-left: 5px solid $category-fun-color;
+}
+
+.sport-border-left {
+  border-left: 5px solid $category-sport-color;
+}
+
+.carie-border-left {
+  border-left: 5px solid $category-health-color;
+}
+
+.miam-border-left {
+  border-left: 5px solid $category-food-color;
+}
+
+.ca-coute-bonbon-border-left {
+  border-left: 5px solid $category-economy-color;
+}

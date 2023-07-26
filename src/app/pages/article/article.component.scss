@@ -2,7 +2,6 @@
 
 #main-content {
   margin: $big-border;
-  text-align: justify;
 }
 
 @media screen and (min-width: $min-width-desktop) {
@@ -10,7 +9,7 @@
     .article-bottom {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      gap:$main-border;
+      gap: $main-border;
     }
   }
 }
