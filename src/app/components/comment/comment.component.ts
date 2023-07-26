@@ -30,7 +30,7 @@ export class CommentComponent {
   }
 
   getNameOrUsername(): string {
-    if ((this.comment.user.firstName != "") && (this.comment.user.lastName != "")) {
+    if (this.comment.user.firstName && this.comment.user.lastName) {
       return this.comment.user.firstName + " " + this.comment.user.lastName;
     }
     return this.comment.user.userStringName as string;
