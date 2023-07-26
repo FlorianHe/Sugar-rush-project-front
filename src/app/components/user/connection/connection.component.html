@@ -48,7 +48,7 @@
           </a>
           <div *ngIf="userForm.controls['password'].errors && !userForm.controls['password'].pristine"
             class="error-msg">
-            <mat-error *ngIf="userForm.get('password')?.invalid && userForm.get('confirmPassword')?.invalid">
+            <mat-error *ngIf="userForm.get('password')?.invalid">
               {{ userForm.get('password')?.getError('password')?.rules }}
             </mat-error>
           </div>
@@ -61,7 +61,7 @@
           </a>
           <div *ngIf="userForm.controls['confirmPassword'].errors && !userForm.controls['confirmPassword'].pristine"
             class="error-msg">
-            <mat-error *ngIf="userForm.get('confirmPassword')?.invalid && userForm.get('password')?.invalid">
+            <mat-error *ngIf="userForm.get('confirmPassword')?.invalid">
               {{ userForm.get('confirmPassword')?.getError('confirmPassword')?.rules }}
             </mat-error>
           </div>

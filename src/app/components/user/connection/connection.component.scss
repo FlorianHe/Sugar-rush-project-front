@@ -55,11 +55,9 @@
     margin-top: $big-border;
 
     button {
-      background-color: $fairy-color;
-      border-radius: 5px;
-      border: 0;
-      padding: $small-border;
-      font-size: 16px;
+      @include buttons;
+      padding-left: $big-border;
+      padding-right: $big-border;
     }
   }
 }

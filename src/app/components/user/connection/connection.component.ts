@@ -3,7 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { UsersApiService } from 'src/app/services/users-api.service';
 import { User } from 'src/app/shared/interfaces/user';
-import { confirmPasswordValidator, emailValidator, passwordValidator, anotherConfirmPasswordValidator } from 'src/app/shared/validators/validators';
+import { confirmPasswordValidator, emailValidator, passwordValidator } from 'src/app/shared/validators/validators';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
@@ -25,11 +25,9 @@ export class ConnectionComponent {
   }
 
   userForm: FormGroup = this.fb.group({
-    // firstname: [''],
-    // lastname: [''],
-    username: ['nana@nana.fr', [Validators.required]],
-    email: ['nana@nana.fr', [Validators.required, emailValidator]],
-    password: ['', [Validators.required, passwordValidator, anotherConfirmPasswordValidator]],
+    username: ['', [Validators.required]],
+    email: ['', [Validators.required, emailValidator]],
+    password: ['', [Validators.required, passwordValidator]],
     confirmPassword: ['', [Validators.required, confirmPasswordValidator]],
   });
 

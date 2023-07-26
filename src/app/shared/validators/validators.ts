@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const email = control.value;
@@ -72,20 +72,6 @@ export function confirmPasswordValidator(control: AbstractControl): ValidationEr
     }
 
     return null;
-}
 
-export function anotherConfirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
-    const password = control.value;
-    const confirmPassword = control.parent?.get('confirmPassword')?.value;
-
-    if (password !== confirmPassword) {
-        return {
-            confirmPassword: {
-                rules: "Les deux mots de passe doivent être identiques"
-            }
-        };
-    }
-
-    return null;
 }
 

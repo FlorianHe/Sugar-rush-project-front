@@ -1,9 +1,9 @@
 <section class="sugar-meter-box delete-box">
 
-  <h2>Chaque icone vaut 4gr de sucre</h2>
+  <h2>Chaque icône vaut 4gr de sucre</h2>
 
   <div class="sugar-meter-children">
-    <p class="meter-amount">Montant actuel: {{sugarDatas}}gr</p>
+    <p class="meter-amount">Quantité actuelle: {{sugarDatas}}gr</p>
 
     <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
 
@@ -34,7 +34,7 @@
         </div>
 
         <div class="input-container">
-          <label>Icone
+          <label>Icône
         </label>
         <div class="logo-list">
             <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
@@ -55,7 +55,7 @@
                 Supprimer le profil
               </mat-panel-title>
             </mat-expansion-panel-header>
-            Etes vous sûr de vouloir supprimer le profil ?<br>
+            Etes-vous sûr de vouloir supprimer le profil ?<br>
             <div (click)="deleteProfile()">Supprimer</div>
           </mat-expansion-panel>
         </div>
