@@ -1,7 +1,7 @@
 @use "/src/_import.scss" as *;
 
 .section {
-  margin: $big-border 0;
+  margin-top: $big-border;
 
   h2 {
     padding: $small-border;
