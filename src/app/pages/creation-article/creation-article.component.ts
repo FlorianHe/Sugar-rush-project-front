@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
+import { Category } from 'src/app/shared/interfaces/category';
 import { Paragraph } from 'src/app/shared/interfaces/paragraph';
 import { User } from 'src/app/shared/interfaces/user';
 
@@ -11,13 +12,13 @@ import { User } from 'src/app/shared/interfaces/user';
   templateUrl: './creation-article.component.html',
   styleUrls: ['./creation-article.component.scss']
 })
-export class CreationArticleComponent implements OnInit {
+export class CreationArticleComponent {
   
   article!:Article;
 
   user = this.userService.getUser() as User;
 
-  categories!:any;
+  categories!:Category[];
 
   paragraphTitle:string[]=[];
   paragraphTypeContent:string[]=[];
@@ -49,7 +50,6 @@ onSubmit(){
 
   this.article.slug=this.slugify(this.article.title);
   this.article.listParagraphs = this.subsections;
-  console.log(this.subsections);
   this.articleApiService.createArticle(this.article).subscribe(()=> {
   });
 }
