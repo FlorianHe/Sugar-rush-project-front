@@ -2,38 +2,30 @@
 
 .article {
   background-color: $main-background-color;
-  padding-left: $big-border;
-  padding-right: $big-border;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
+
   h1 {
-    font-size: 24px;
-    color: $main-text-color;
+    font-size: 28px;
     margin-bottom: $small-border;
   }
 
   .title-categories {
     display: flex;
-    align-items: baseline;
     margin-bottom: $small-border;
-  }
-
-  .title-categories ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .title-categories li {
-    margin-right: 10px;
+    line-height: $main-line-height;
     font-size: 16px;
-    font-family: "Glam-queen";
-    font-size: 3em;
+    text-align: justify;
+
+    ::first-letter {
+      font-family: "Glam-queen";
+      font-size: 32px;
+      font-weight: bold;
+    }
   }
-  
+
   .published {
     font-size: 12px;
   }
@@ -50,17 +42,12 @@
 
   .article {
     width: 100%;
-    padding-left: $big-border;
-    padding-right: $big-border;
-
   }
 
   .publication-image {
     width: 100%;
     max-height: 70vh;
     object-fit: cover;
-    padding-left: $big-border;
-    padding-right: $big-border;
     margin-bottom: $big-border;
   }
 }

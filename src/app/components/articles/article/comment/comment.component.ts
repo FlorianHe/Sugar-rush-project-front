@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ConnectionComponent } from 'src/app/components/user/connection/connection.component';
@@ -6,7 +6,6 @@ import { CommentService } from 'src/app/services/comment-api.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Comment } from 'src/app/shared/interfaces/comment';
-import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-article-comment',
@@ -28,6 +27,12 @@ export class ArticleCommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCommentsByArticle();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['article'] && this.article) {
+      this.getCommentsByArticle();
+    }
   }
 
   getCommentsByArticle(): void {
@@ -58,7 +63,6 @@ export class ArticleCommentComponent implements OnInit {
   }
 
 
-
   updateComment(comment: Comment): void {
     this.commentService.updateComment(comment.id, comment).subscribe(updatedComment => {
       this._comments.forEach((c, index) => {
@@ -84,3 +88,4 @@ export class ArticleCommentComponent implements OnInit {
     });
   }
 }
+

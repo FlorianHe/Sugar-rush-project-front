@@ -1,38 +1,51 @@
-<h2>Informations Personnelles</h2>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <div class="example-container form-field-container">
-        <mat-form-field appearance="fill" >
-            <mat-label>Entrer votre nom</mat-label>
-            <input matInput [placeholder]="(user | async)?.lastName ?? ''" formControlName="lastName">
-        </mat-form-field>
+<section class="private-infos delete-box">
+  <h2>Informations Personnelles</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-field-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Entrer votre nom</mat-label>
+        <input matInput [placeholder]="(user | async)?.lastName ?? ''" formControlName="lastName">
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Entrez votre prénom</mat-label>
-            <input matInput [placeholder]="(user | async)?.firstName ?? ''" formControlName="firstName" >
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Entrez votre prénom</mat-label>
+        <input matInput [placeholder]="(user | async)?.firstName ?? ''" formControlName="firstName">
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Entrez votre adresse mail</mat-label>
-            <input matInput [placeholder]="(user | async)?.email ?? ''" formControlName="email">
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="element">
+        <mat-label>Entrez votre adresse mail</mat-label>
+        <input matInput [placeholder]="(user | async)?.email ?? ''" formControlName="email">
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Entrez votre ancien mot de passe</mat-label>
-            <input matInput type="password" placeholder="Mot de passe">
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="element">
+        <mat-label>Entrez votre ancien mot de passe</mat-label>
+        <input matInput type="password" placeholder="Mot de passe">
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Entrez votre nouveau mot de passe</mat-label>
-            <input matInput type="password" placeholder="Nouveau mot de passe" formControlName="password">
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="element">
+        <mat-label>Entrez votre nouveau mot de passe</mat-label>
+        <input matInput type="password" placeholder="Nouveau mot de passe" formControlName="password">
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Confirmez votre nouveau mot de passe</mat-label>
-            <input matInput type="password" placeholder="Confirmer mot de passe">
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="element">
+        <mat-label>Confirmez votre nouveau mot de passe</mat-label>
+        <input matInput type="password" placeholder="Confirmer mot de passe">
+      </mat-form-field>
     </div>
     <div class="buttons">
-        <button type="submit" class="update-btn">Mettre à jour le compte</button>
-        <button type="submit" class="delete-btn" (click)="handleDelete()">Supprimer le compte</button>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="delete-btn-header">
+            Supprimer le compte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        Etes-vous sûr de vouloir supprimer le compte ?<br>
+        <button type="submit" (click)="handleDelete()" class="delete-btn">Supprimer</button>
+      </mat-expansion-panel>
+
+      <button type="submit" class="update-btn">Mettre à jour le compte</button>
+
     </div>
-</form>
+  </form>
+</section>

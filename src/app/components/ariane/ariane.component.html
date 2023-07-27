@@ -1,0 +1,4 @@
+<div class="ariane">
+    <span [routerLink]="APP_ROUTES.index">Accueil</span><span>&nbsp;>&nbsp;</span>
+    <span [routerLink]="APP_ROUTES.categories + '/' + category.slug" [queryParams]="{ id: category.id, name: category.name, slug: category.slug }" class="{{ category.slug }}-color">{{ category.name }}</span>
+</div>

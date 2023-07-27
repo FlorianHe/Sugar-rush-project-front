@@ -8,6 +8,7 @@ import { User } from 'src/app/shared/interfaces/user';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { APP_ROUTES } from 'src/app/shared/globals/routes';
 import { Router } from '@angular/router';
+import { Logo } from 'src/app/shared/interfaces/logo';
 
 @Component({
   selector: 'app-sugar-meter',
@@ -71,6 +72,14 @@ export class SugarMeterComponent implements OnInit {
         .subscribe(profiles => {
           this._profiles = profiles;
         });
+  }
+
+  isSelected(logoValue: string): boolean {
+    return this.profileCreationForm.get('logo')?.value === logoValue;
+  }
+
+  selectLogo(logo: Logo): void {
+    this.profileCreationForm.get('logo')?.setValue(logo.value);
   }
 
   get profiles(): Profile[] {

@@ -21,13 +21,16 @@ const APP_ROUTES = {
   rNotFound: '404',
   aboutUs: '/about-us',
   rAboutUs: 'about-us',
+  creation:'/creation',
+  rCreation:'creation',
   detailUser: `/user`,
   rdetailUser: 'user',
   rSugarMeter: 'sugar-meter',
   sugarMeter: '/sugar-meter',
   search: '/search',
   rSearch: 'search',
-  article: (id: number) => `articles/${id}`
+  article: (id: number) => `articles/${id}`,
 };
 
-export { ROUTES, FRONTEND_URL, APP_ROUTES };
+export { APP_ROUTES, FRONTEND_URL, ROUTES };
+

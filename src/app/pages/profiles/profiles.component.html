@@ -1,18 +1,20 @@
-<section class="sugar-meter-box">
+<section class="sugar-meter-box delete-box">
 
-  <h2>Chaque icone vaut 4gr de sucre</h2>
+  <h2>Chaque icône vaut 4gr de sucre</h2>
 
   <div class="sugar-meter-children">
-    <p class="meter-amount">Montant actuel: {{sugarDatas}}gr</p>
+    <p class="meter-amount">Quantité actuelle: {{sugarDatas}}gr</p>
 
     <app-sugar-data [profile]="profile" [sugarDatas]="sugarDatas"></app-sugar-data>
 
     <app-sugar-inputs [profile]="profile" [sugarDatas]="sugarDatas"
       (datasUpdated)="onDatasUpdated($event)"></app-sugar-inputs>
 
-    <p class="meter-reaction" *ngIf="sugarDatas">
-      <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
-    </p>
+    <div class="container-texte">
+      <p class="meter-reaction" *ngIf="sugarDatas">
+        <span>{{sugarDatas | sugarAmount : profile.birthDate}}</span>
+      </p>
+    </div>
   </div>
 
   <div class="profile-modification">
@@ -23,31 +25,43 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <form [formGroup]="profileModificationForm"
-        (ngSubmit)="profileModificationForm.valid && profileModificationForm.dirty && onSubmit()">
+      <form class="form-border" [formGroup]="profileModificationForm"
+        (ngSubmit)="profileModificationForm.valid && onSubmit()">
 
-        <label>Nom
-          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}"></label>
+        <div class="input-container">
+          <label>Nom</label>
+          <input type="text" formControlName="name" placeholder="{{profile.name}}" value="{{profile.name}}">
+        </div>
 
-        <label>Date de naissance
-          <input type="date" formControlName="birthDate" placeholder="{{profile.birthDate}}"
-            value="{{profile.birthDate}}"></label>
-
-        <label>Icone
-          <div *ngFor="let logo of logos">
-            <label>
-              <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
-              <div class="example-tab-icon svg-{{logo.value}}"></div>
-            </label>
-
-          </div>
+        <div class="input-container">
+          <label>Icône
         </label>
+        <div class="logo-list">
+            <div *ngFor="let logo of logos" (click)="selectLogo(logo)">
+              <label class="logo-option" [ngClass]="{'selected': isSelected(logo.value)}">
+                <input type="radio" [value]="logo.value" formControlName="logo" placeholder="{{profile.logo}}">
+                <div class="example-tab-icon svg-{{logo.value}}"></div>
+              </label>
+            </div>
+          </div>
+        </div>
 
-        <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
-          type="submit">Valider</button>
-      </form>
+        <div class="button-profile">
+          <button [disabled]="!profileModificationForm.valid && profileModificationForm.dirty"
+            type="submit">Valider</button>
+          <mat-expansion-panel> 
+            <mat-expansion-panel-header>
+              <mat-panel-title class="delete-btn-header">
+                Supprimer le profil
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            Etes-vous sûr de vouloir supprimer le profil ?<br>
+            <div (click)="deleteProfile()">Supprimer</div>
+          </mat-expansion-panel>
+        </div>
+    </form>
 
-      <button (click)="deleteProfile()">Supprimer profil</button>
+      
     </mat-expansion-panel>
   </div>
 </section>
