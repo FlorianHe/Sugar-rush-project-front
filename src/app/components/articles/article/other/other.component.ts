@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
 import { INFINITE_SCROLL_PARAMS } from 'src/app/shared/globals/api';
 import { ArticleDisplayed } from 'src/app/shared/interfaces/articleDisplayed';
@@ -21,10 +21,19 @@ export class OtherComponent implements OnInit {
   constructor(private categoriesService: CategoriesApiService) {}
 
   ngOnInit(): void {
+    this.getArticlesSide()
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['id'] && this.id) {
+      this.getArticlesSide();
+    }
+  }
+
+  getArticlesSide(): void {
     this.categoriesService.getArticlesSideByCategorySlug(this.categorySlug, this.id, this.limit, this.offset).subscribe((articles) => {
       this._articles = articles;
-    }
-    );
+    });
   }
 
   get articles(): ArticleDisplayed[] {
