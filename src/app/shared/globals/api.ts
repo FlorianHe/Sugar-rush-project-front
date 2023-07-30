@@ -2,14 +2,16 @@ const STOCK_API = {
   base_alphavantage: 'https://www.alphavantage.co/query',
 };
 
+const API_URL = "http://api.sugarrush.helaine.eu";
+
 const SUGAR_RUSH_API = {
-  baseApi: "http://localhost:8080",
-  baseUsers: "http://localhost:8080/users",
-  baseArticles: "http://localhost:8080/articles",
-  baseCategories: "http://localhost:8080/categories",
-  baseComments: "http://localhost:8080/comments",
-  baseProfiles: "http://localhost:8080/profiles",
-  baseSugarDatas: "http://localhost:8080/sugar-datas",
+  baseApi: API_URL,
+  baseUsers: API_URL+"/users",
+  baseArticles: API_URL+"/articles",
+  baseCategories: API_URL+"/categories",
+  baseComments: API_URL+"/comments",
+  baseProfiles: API_URL+"/profiles",
+  baseSugarDatas: API_URL+"/sugar-datas",
 }
 
 const INFINITE_SCROLL_PARAMS = {
