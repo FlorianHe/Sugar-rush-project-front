@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ArticleApiService } from 'src/app/services/article-api.service';
 import { CategoriesApiService } from 'src/app/services/categories-api.service';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { UserService } from 'src/app/services/user.service';
 import { Article } from 'src/app/shared/interfaces/article';
 import { Category } from 'src/app/shared/interfaces/category';
@@ -27,7 +28,7 @@ export class CreationArticleComponent {
   subsections:Paragraph[]=[];
   
   
-  constructor(private articleApiService: ArticleApiService, private categoriesService: CategoriesApiService, private userService: UserService) {
+  constructor(private articleApiService: ArticleApiService, private categoriesService: CategoriesApiService, private userService: UserService, private snackBarService: SnackBarService) {
     this.article={  id: 0,isMain: false,title: '',slug: '',publicationDate: new Date(),
       modificationDate: new Date (), listParagraphs: [], leads: '',publicationImage:'',
       author: { id:this.user.id },
@@ -51,6 +52,12 @@ onSubmit(){
   this.article.slug=this.slugify(this.article.title);
   this.article.listParagraphs = this.subsections;
   this.articleApiService.createArticle(this.article).subscribe(()=> {
+    this.snackBarService.openSnackBar("Article créé avec succès !", "Fermer");
+    this.article={  id: 0,isMain: false,title: '',slug: '',publicationDate: new Date(),
+      modificationDate: new Date (), listParagraphs: [], leads: '',publicationImage:'',
+      author: { id:this.user.id },
+      category: {id:1,name:'fun',slug:'fun'}};
+      this.subsections=[{id:0,title:'',typeContent:'',content:''}];
   });
 }
 
