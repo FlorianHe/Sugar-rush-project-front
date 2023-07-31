@@ -51,4 +51,4 @@ jobs:
             docker stop sugar-rush-front || true
             docker rm sugar-rush-front || true
             docker pull sugar-rush-front:latest
-            docker run -d --name sugar-rush-front -p 4200:4200 sugar-rush-front:latest
+            docker run -d --name sugar-rush-front -p 4200:4200 nairolfln/sugar-rush-front:latest
