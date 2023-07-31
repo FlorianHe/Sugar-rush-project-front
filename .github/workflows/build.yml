@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
 
@@ -24,22 +24,22 @@ jobs:
           npm run build
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist/
 
       - name: Build Docker image
-        run: docker build -t sugar-rush-front .
+        run: docker build -t nairolfln/sugar-rush-front .
 
       - name: Log in to Docker Hub (if using Docker Hub for registry)
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push Docker image to registry (if using Docker Hub)
-        run: docker push sugar-rush-front:latest
+        run: docker push nairolfln/sugar-rush-front:latest
 
       - name: SSH into deployment server
         uses: appleboy/ssh-action@master
